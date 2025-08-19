@@ -165,6 +165,16 @@ export default function Header() {
             <ul className="p-2">
               <li>
                 <Link
+                  href="/"
+                  onClick={closeMenu}
+                  className="block rounded-xl px-4 py-3 text-[16px] text-ink hover:bg-[#F4F1EC] transition flex items-center justify-between"
+                >
+                  <span>Home</span>
+                  <span className="text-xs text-neutral-500">Go to homepage</span>
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/about-us"
                   onClick={closeMenu}
                   className="block rounded-xl px-4 py-3 text-[16px] text-ink hover:bg-[#F4F1EC] transition flex items-center justify-between"
