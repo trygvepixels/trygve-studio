@@ -124,12 +124,12 @@ export default function ContactPage() {
                   </div>
                 </a>
 
-                <a href="tel:+917233811034" className="group flex items-start gap-3">
+                <a href="tel:+919554440400" className="group flex items-start gap-3">
                   <FiPhone className="mt-0.5" />
                   <div>
                     <div className="font-medium">Phone</div>
                     <div className="text-neutral-700 group-hover:underline">
-                      +91 72338 11034
+                      +91 95544 40400
                     </div>
                   </div>
                 </a>
