@@ -291,10 +291,19 @@ export default function FooterPremium({ variant = "bronze" }) {
           </div>
 
           <div className="opacity-80 text-center md:text-right">
-            <span>
-              We will confirm our availability based on our schedule. Looking
-              forward to connecting with you.
-            </span>
+             <p className="text-center">
+    Designed & Developed by{" "}
+    <a
+      href="https://genforgestudio.com/"
+      title="Web & App Development by GenForge Studio"
+      className="text-indigo-400 font-medium hover:underline hover:text-indigo-300 transition-colors"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      GenForge Studio
+    </a>
+    {" "}— Global Web & App Development Agency
+  </p>
           </div>
         </div>
       </section>
