@@ -72,7 +72,7 @@ export default function ContactPage() {
               Start Your Project <FiArrowRight />
             </a>
             <a
-              href="https://wa.me/917000000000" // ← replace with your WhatsApp
+              href="https://wa.me/919554440400" // ← replace with your WhatsApp
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-2 rounded-full border border-[#101010] px-5 py-3 text-sm md:text-[15px] hover:bg-black hover:text-white transition"
@@ -279,7 +279,7 @@ export default function ContactPage() {
                   </button>
 
                   <a
-                    href="https://wa.me/917000000000" // ← replace
+                    href="https://wa.me/919554440400" // ← replace
                     target="_blank"
                     rel="noreferrer"
                     className="inline-flex items-center gap-2 rounded-full border border-[#101010] px-5 py-3 text-sm md:text-[15px] hover:bg-black hover:text-white transition"
