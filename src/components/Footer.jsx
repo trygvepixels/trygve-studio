@@ -78,11 +78,11 @@ export default function FooterPremium({ variant = "bronze" }) {
                 <FaWhatsapp /> Chat on WhatsApp
               </a>
               <a
-                href="mailto:enquiry@trygvestudio.com"
+                href="mailto:faisal.saif@trygvestudio.com"
                 className="inline-flex items-center gap-2 rounded-full border px-5 py-3 text-sm transition hover:opacity-90"
                 style={{ borderColor: c.line }}
               >
-                <FiMail /> enquiry@trygvestudio.com
+                <FiMail /> faisal.saif@trygvestudio.com
               </a>
             </div>
           </div>
@@ -177,10 +177,10 @@ export default function FooterPremium({ variant = "bronze" }) {
               <li className="flex items-start gap-2">
                 <FiMail className="mt-1" />{" "}
                 <a
-                  href="mailto:enquiry@trygvestudio.com"
+                  href="mailto:faisal.saif@trygvestudio.com"
                   className="hover:underline"
                 >
-                  enquiry@trygvestudio.com
+                  faisal.saif@trygvestudio.com
                 </a>
               </li>
               <li className="flex items-start gap-2">

@@ -106,10 +106,10 @@ export default function AboutUs() {
               <FiPhone /> +91 95544 40400
             </a>
             <a
-              href="mailto:enquiry@trygvestudio.com"
+              href="mailto:faisal.saif@trygvestudio.com"
               className="inline-flex items-center gap-2 rounded-full border border-[#101010] px-5 py-3 text-sm md:text-[15px] hover:bg-black hover:text-white transition"
             >
-              <FiMail /> enquiry@trygvestudio.com
+              <FiMail /> faisal.saif@trygvestudio.com
             </a>
           </div>
         </div>
