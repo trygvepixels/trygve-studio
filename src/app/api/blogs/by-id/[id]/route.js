@@ -1,6 +1,6 @@
- import Blog from "@/app/models/Blog";
-import mongoose from "mongoose";
+ import mongoose from "mongoose";
 import { connectDB } from "@/lib/mongodb";
+import Blog from "@/models/Blog";
 
 function isValidObjectId(id) {
   return mongoose.Types.ObjectId.isValid(id);

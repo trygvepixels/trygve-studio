@@ -1,8 +1,9 @@
-export const dynamic = "force-dynamic";
-import { notFound } from "next/navigation";
+export const dynamic = 'force-dynamic';
+// optionally:
+export const revalidate = 0; import { notFound } from "next/navigation";
 import BlogsClientUI from "@/components/BlogsClientUI";
 
-const API_BASE = "http://localhost:3000";
+const API_BASE = "https://www.trygvestudio.com";
 
 // --- data ---
 async function getBlog(slug) {
