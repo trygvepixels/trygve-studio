@@ -5,6 +5,7 @@ import { FaWhatsapp } from "react-icons/fa";
 export default function TrygveAnnouncement() {
   return (
     <section className="relative overflow-hidden">
+    
       {/* Background: soft gradient + grid */}
       <div
         aria-hidden

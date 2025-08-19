@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 export const metadata = {
   title: "Trygve Studio Private Limited | Best Architecture Company | Best Construction Company | Best Interior Designer",
@@ -18,8 +19,12 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         <Header />
-        {children}
+        <div className="md:pt-24 pt-32">
+          {children}
+        </div>
+        <Footer variant="oxblood" />
       </body>
+
     </html>
   );
 }

@@ -5,12 +5,14 @@ export default function Hero() {
   return (
     <section className="bg-bgWarm md:px-0 px-4">
       {/* Headline */}
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 pt-6 sm:pt-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-0 pt-10 sm:pt-10">
         <h1 className="
-          md:text-5xl text-4xl text-right font-semibold leading-tight
+          md:text-5xl text-2xl text-right font-semibold leading-tight
          
-        ">
-          we are architects & interior designers.<br className="hidden sm:block" />
+        "> 
+          we are <span className="bg-[#234D7E] text-white px-2 rounded-md"> 
+            architects
+            </span>  & <span className="bg-[#234D7E] text-white px-2 rounded-md">interior designers</span><br className="" />
           we create timeless spaces,<br className="hidden sm:block" />
           integrating form, function, and detail,<br className="hidden sm:block" />
           to craft places people remember.
@@ -18,7 +20,7 @@ export default function Hero() {
       </div>
 
       {/* Image */}
-      <div className="max-w-[1200px] mx-auto mt-6 sm:mt-8 px-4 sm:px-6 pb-8">
+      <div className="max-w-7xl mx-auto mt-6 sm:mt-8 px-4 sm:px-0 pb-8">
         <div className="relative w-full h-[220px] sm:h-[360px] md:h-[440px] lg:h-[520px]">
           <Image
             src={herobg}

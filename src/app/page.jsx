@@ -5,14 +5,22 @@ import Projects from '@/components/Projects'
 import ProjectsGrid from '@/components/ProjectsGrid'
 import Footer from '@/components/Footer'
 import ContactSection from '@/components/ContactSection'
-const page = () => {
+import ClientsMarquee from '@/components/ClientsMarquee'
+import TestimonialsMarquee from '@/components/TestimonialsMarquee'
+import Stats from '@/components/Stats'
+ const page = () => {
   return (
-    <div className='bg-[#F4F1EC]'>
+    <div className='bg-[#F4F1EC] '>
+ 
       <Hero />
       {/* <About /> */}
+      <ClientsMarquee />
+      <Stats />
       <Projects/>
-      <ProjectsGrid />
+       <ProjectsGrid />
       <ContactSection />
+            <TestimonialsMarquee />
+
       {/* <Footer /> */}
     </div>
   )
