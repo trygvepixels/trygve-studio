@@ -7,23 +7,55 @@ import {
   FaInstagram, FaLinkedin, FaBehance, FaWhatsapp,
 } from "react-icons/fa";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 import contactImg from '@/assets/contact/contact.png'
 
 export default function ContactPage() {
   const [submitting, setSubmitting] = useState(false);
+  const [status, setStatus] = useState({ state: "idle", message: "" });
+  const router = useRouter();
 
   async function handleSubmit(e) {
     e.preventDefault();
+    const form = e.currentTarget;
     setSubmitting(true);
-    // TODO: hook up to your backend / form service (e.g., API route, Formspree)
-    // Example payload:
-    const data = Object.fromEntries(new FormData(e.currentTarget));
-    console.log("Form submit:", data);
-    // Simulate
-    setTimeout(() => setSubmitting(false), 900);
-  }
 
+    try {
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData);
+
+      const res = await fetch("/api/submitContact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      const result = await res.json();
+      if (!res.ok || !result.success) {
+        throw new Error(result.error || "Failed to submit");
+      }
+
+      setSubmitting(false);
+      form?.reset();
+      setStatus({ state: "success", message: "Thanks! Your enquiry has been saved." });
+      // Navigate to thank-you. Use SPA replace, then hard fallback just in case.
+      try {
+        router.replace("/thankyou");
+        // Fallback in case client-side nav is interrupted by form context or transitions
+        setTimeout(() => {
+          if (typeof window !== "undefined" && window.location.pathname !== "/thankyou") {
+            window.location.assign("/thankyou");
+          }
+        }, 50);
+      } catch (_) {
+        if (typeof window !== "undefined") window.location.assign("/thankyou");
+      }
+    } catch (err) {
+      console.error(err);
+      setSubmitting(false);
+    }
+  }
   return (
     <main className="bg-[#F4F1EC]   pt-10 pb-6 md:pt-16 text-[#101010]">
        
@@ -205,6 +237,7 @@ export default function ContactPage() {
             {/* Form */}
             <div id="project-form" className="rounded-2xl border border-black/10 bg-white p-6 md:p-8">
               <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-5">
+                <input type="text" name="_honey" tabIndex="-1" autoComplete="off" className="hidden" aria-hidden="true" />
                 <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
                   <Field label="Full name" name="name" required />
                   <Field label="Email" name="email" type="email" required />
@@ -227,6 +260,7 @@ export default function ContactPage() {
                       "Landscape",
                       "Interior Renovation",
                       "Concept / Feasibility",
+                      "Others"
                     ]}
                     required
                   />
@@ -265,7 +299,7 @@ export default function ContactPage() {
                 />
 
                 <label className="flex items-start gap-3 text-sm text-neutral-700">
-                  <input type="checkbox" name="consent" className="mt-1" required />
+                  <input type="checkbox" name="consent" value="yes" className="mt-1" required />
                   I consent to Trygve Studio contacting me about this enquiry and agree to the privacy policy.
                 </label>
 
@@ -292,6 +326,14 @@ export default function ContactPage() {
                 <p className="text-xs text-neutral-500">
                   We usually reply within 24 hours. For urgent requests, call us.
                 </p>
+                <div aria-live="polite" className="text-sm mt-2">
+                  {status.state === 'success' && (
+                    <p className="text-green-700">{status.message}</p>
+                  )}
+                  {status.state === 'error' && (
+                    <p className="text-red-700">{status.message}</p>
+                  )}
+                </div>
               </form>
             </div>
           </div>
