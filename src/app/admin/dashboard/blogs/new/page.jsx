@@ -16,7 +16,7 @@ export default function NewBlogPage() {
 
     if (res.ok) {
       alert('Blog created successfully');
-      router.push('/admin/blogs'); // Redirect to list (you’ll build this later)
+      router.push('/blogs'); // Redirect to list (you’ll build this later)
     } else {
       const error = await res.json();
       alert('Error: ' + error?.error || 'Unknown error');

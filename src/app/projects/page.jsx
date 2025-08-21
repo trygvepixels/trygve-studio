@@ -207,7 +207,7 @@ function Lightbox({ open, item, onClose }) {
             </div>
 
             {/* Counter + dots */}
-            <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
+            {/* <div className="absolute -bottom- left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
               <span className="px-2 py-0.5 rounded-full text-xs bg-black/70 text-white">
                 {index + 1} / {images.length}
               </span>
@@ -221,7 +221,7 @@ function Lightbox({ open, item, onClose }) {
                   />
                 ))}
               </div>
-            </div>
+            </div> */}
           </div>
           {/* <div className="absolute bottom-0 left-0 w-full h-f ull bg-gradient-to-bl from-transparent to-black/50 h-20 z -10">
 
@@ -231,17 +231,17 @@ function Lightbox({ open, item, onClose }) {
             {/* <div className="text-[11px] uppercase tracking-[0.16em] bg-[#F4F1EC] px-2  text-neutral-600">
               {item.type}
             </div> */}
-            <h3 className="text-2xl bg-[#F4F1EC] px-2  md:text-3xl font-semibold mt-1.5">
+            {/* <h3 className="text-2xl bg-[#F4F1EC] px-2  md:text-3xl font-semibold mt-1.5">
               {item.title}
-            </h3>
+            </h3> */}
             {/* <div className="mt-2 text-neutral-700 leading-relaxed">
               {item.description}
             </div> */}
 
             <div className="mt-4 grid gap-2 text-sm">
-              <div className="flex items-center gap-2 text-white">
+              {/* <div className="flex items-center gap-2 text-white">
                 <FiMapPin className="shrink-0" /> {item.location}
-              </div>
+              </div> */}
               {/* <div className="flex items-center gap-2 text-neutral-700">
                 <FiCalendar className="shrink-0" /> {item.timeline}
               </div> */}

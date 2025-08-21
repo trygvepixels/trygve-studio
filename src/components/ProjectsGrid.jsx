@@ -55,7 +55,7 @@ function Tile({ title, variant }) {
 export default function ProjectsGrid() {
   return (
     <section className="bg-[#1f1f1f]">
-      <div className="mx-auto max-w-[1200px] px-4 sm:px-6 py-8 sm:py-10">
+      <div className="mx-auto max-w-7xl px-4 sm:px-0 py-8 sm:py-10">
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {tiles.map((tile) => (
             <Tile key={tile.title} {...tile} />

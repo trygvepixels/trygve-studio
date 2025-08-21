@@ -73,7 +73,7 @@ export default function Stats() {
         <div className="grid grid-cols-3 md:grid-cols-3 gap-y-10 pt-2 sm:gap-y-12">
           <Stat value={1000} suffix="+" label="Served Projects" />
           {/* <Stat value={20} suffix="+" label="Projects" /> */}
-          <Stat value={200} suffix="+" label="Satisfied Customers" />
+          <Stat value={1000} suffix="+" label="Satisfied Customers" />
           <Stat value={1} suffix="st" label="Top in India" />
         </div>
       </div>

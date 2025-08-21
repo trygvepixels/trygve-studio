@@ -12,6 +12,8 @@ import {
   FiLogOut,
   FiSettings,
   FiChevronRight,
+  FiStar,
+  FiBriefcase,
 } from "react-icons/fi";
 import {
   MdOutlineSpaceDashboard,
@@ -132,8 +134,18 @@ export default function AdminDashboard() {
                 />
                 <SideItem
                   href="/admin/dashboard/upload-project"
-                  icon={<FiPlus />}
+                  icon={<FiUpload />}
                   label="Upload Project"
+                />
+                <SideItem
+                  href="/admin/dashboard/featured-projects"
+                  icon={<FiStar />}
+                  label="Featured Projects"
+                />
+                <SideItem
+                  href="/admin/dashboard/jobs"
+                  icon={<FiBriefcase />}
+                  label="Jobs"
                 />
               </ul>
 
@@ -188,6 +200,20 @@ export default function AdminDashboard() {
                 icon={<FiUpload />}
                 title="Upload Project"
                 desc="Add a new project with images & meta."
+                primary
+              />
+              <ActionCard
+                href="/admin/dashboard/featured-projects"
+                icon={<FiStar />}
+                title="Featured Projects"
+                desc="Promote or curate homepage spotlight."
+                primary
+              />
+              <ActionCard
+                href="/admin/dashboard/jobs"
+                icon={<FiBriefcase />}
+                title="Manage Jobs"
+                desc="Post, edit, and close roles."
                 primary
               />
             </section>

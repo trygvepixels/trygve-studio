@@ -28,8 +28,8 @@ const projects = [
 export default function RecentProjects() {
   return (
     <section className="bg-bgWarm text-ink">
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 py-8 sm:py-12">
-        <h2 className="text-[28px] sm:text-[44px] lg:text-[56px] font-medium tracking-tight mb-6 sm:mb-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-0 py-8 sm:py-12">
+        <h2 className="text-3xl md:text-4xl font-semibold mb-6">
           Recent Projects
         </h2>
 

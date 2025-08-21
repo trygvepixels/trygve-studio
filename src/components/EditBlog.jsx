@@ -34,7 +34,7 @@ export default function EditBlog() {
           setOriginalSlug(data.urlSlug);
         } else {
           alert("Blog not found");
-          router.push("/admin/blogs");
+          router.push("/admin/dashboard/blogs");
         }
       } catch (err) {
         console.error("Error loading blog:", err);
@@ -63,9 +63,9 @@ export default function EditBlog() {
         // Redirect only if slug has changed
         const newSlug = result.blog.urlSlug;
         if (newSlug !== originalSlug) {
-          router.push(`/admin/blogs/${newSlug}`);
+          router.push(`/admin/dashboard/blogs/${newSlug}`);
         } else {
-          router.push("/admin/blogs");
+          router.push("/admin/dashboard/blogs");
         }
       } else {
         alert("Update failed: " + result?.error || "Unknown error");
