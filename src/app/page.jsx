@@ -24,7 +24,7 @@ const Page = () => {
 
   // open after 10s
   useEffect(() => {
-    const timer = setTimeout(() => setShowPopup(true), 500);
+    const timer = setTimeout(() => setShowPopup(true), 10000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -124,7 +124,7 @@ const Page = () => {
       {/* Popup */}
       {showPopup && (
         <div
-          className={`fixed inset-0 z-[1000000] flex items-center justify-center p-4 transition-opacity duration-200 ${
+          className={`fixed inset-0 z-[1000000]  flex items-center justify-center p-8 transition-opacity duration-200 ${
             entered ? "opacity-100" : "opacity-0"
           } bg-black/60 backdrop-blur-sm`}
           role="dialog"
@@ -155,18 +155,18 @@ const Page = () => {
               </div>
 
               {/* Contact form inside popup */}
-              <main className="pt- pb-2 md:pt-8 text-[#101010]">
+              <main className=" text-[#101010]">
                 
                 <section className="">
-                  <div className="mx-auto px-6 md:px-8 pb-6">
-                    <div className="grid grid-cols-1 gap-8">
+                  <div className="mx-auto  px-6 md:px-8 pb-6">
+                    <div className="grid  grid-cols-1 gap-8">
                       <div
                         id="project-form"
                         className={`rounded-2xl border border-black/10 bg-white p-5 md:p-6 ${
                           submitting ? "opacity-90" : ""
                         }`}
                       >
-                        <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-5" noValidate>
+                        <form onSubmit={handleSubmit} className="grid p-4 grid-cols-1 gap-5" noValidate>
                           <input
                             type="text"
                             name="_honey"
@@ -237,11 +237,16 @@ const Page = () => {
                             </a>
                           </div>
 
- 
-                          <div aria-live="polite" className="text-sm mt-2 min-h-[1.25rem]">
-                            {status.state === "success" && <p className="text-green-700">{status.message}</p>}
-                            {status.state === "error" && <p className="text-red-700">{status.message}</p>}
-                          </div>
+                          {status.state === "error" && (
+                            <p className="text-sm text-red-600" role="alert">
+                              {status.message}
+                            </p>
+                          )}
+                          {status.state === "success" && (
+                            <p className="text-sm text-green-600" role="alert">
+                              {status.message}
+                            </p>
+                          )}
                         </form>
                       </div>
                     </div>

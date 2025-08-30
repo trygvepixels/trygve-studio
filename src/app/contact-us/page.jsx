@@ -57,7 +57,7 @@ export default function ContactPage() {
     }
   }
   return (
-    <main className="bg-[#F4F1EC]   pt-10 pb-6 md:pt-16 text-[#101010]">
+    <main className="bg-[#F4F1EC]     pt-10 pb-6 md:pt-16 text-[#101010]">
        
       {/* ===== Hero ===== */}
       <section className="relative overflow-hidden">
@@ -71,7 +71,7 @@ export default function ContactPage() {
           }}
         />
         
-        <div className="max-w-max-w-7xl mx-auto px-5   pb-10   md:pb-16 relative">
+        <div className="max-w-7xl mx-auto px-5   pb-10   md:pb-16 relative">
           <div className="flex items-center gap-2 text-sm tracking-wide text-neutral-700">
             <div>
                 <div className="flex items-center gap-2 text-sm tracking-wide text-neutral-700">
@@ -135,7 +135,7 @@ export default function ContactPage() {
 
       {/* ===== Contact + Form ===== */}
       <section className="relative mt-20 ">
-        <div className="max-w-max-w-7xl mx-auto px-5 pb-20">
+        <div className="max-w-7xl mx-auto px-5 pb-20">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-[0.9fr_1.1fr]">
             {/* Info panel */}
             <aside className="rounded-2xl border border-black/10 bg-white p-6 md:p-8">
