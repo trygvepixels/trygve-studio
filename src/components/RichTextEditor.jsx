@@ -7,25 +7,17 @@ import ImageTool from '@editorjs/image';
 import List from '@editorjs/list';
 import Table from '@editorjs/table';
 
-export default function RichTextEditor({
-  defaultValue = {},
-  onChange,
-  onImageUpload, // (file: File) => Promise<string>
-}) {
+export default function EditorJSRenderer({ value, onChange }) {
   const editorRef = useRef(null);
   const holderRef = useRef(null);
-  const destroyingRef = useRef(false);
 
   useEffect(() => {
-    if (!holderRef.current || editorRef.current || destroyingRef.current) return;
-
-    let cancelled = false;
+    if (!holderRef.current || editorRef.current) return;
 
     const editor = new EditorJS({
       holder: holderRef.current,
-      data: defaultValue || {},
+      data: value || {},
       autofocus: true,
-      readOnly: false,
       tools: {
         header: Header,
         list: List,
@@ -35,95 +27,43 @@ export default function RichTextEditor({
           config: {
             uploader: {
               async uploadByFile(file) {
-                // Prefer parent-provided uploader (Cloudinary via BlogForm)
-                if (onImageUpload) {
-                  const url = await onImageUpload(file);
-                  return { success: 1, file: { url } };
-                }
+                const formData = new FormData();
+                formData.append('file', file);
+                formData.append('upload_preset', process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET);
 
-                // Fallback: unsigned Cloudinary upload using NEXT_PUBLIC_* envs
-                const fd = new FormData();
-                fd.append('file', file);
-                fd.append(
-                  'upload_preset',
-                  process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET
-                );
                 const res = await fetch(
-                  `https://api.cloudinary.com/v1_1/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/auto/upload`,
-                  { method: 'POST', body: fd }
+                  `https://api.cloudinary.com/v1_1/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload`,
+                  { method: 'POST', body: formData }
                 );
+
                 const data = await res.json();
-                if (!res.ok) throw new Error(data?.error?.message || 'Upload failed');
-                return { success: 1, file: { url: data.secure_url } };
+                return {
+                  success: 1,
+                  file: { url: data.secure_url },
+                };
               },
             },
           },
         },
       },
-
-      onReady: () => {
-        if (cancelled) return;
-
-        // Paste & drag-drop image files → upload → insert
-        const holder = holderRef.current;
-        if (!holder) return;
-
-        holder.addEventListener('paste', async (e) => {
-          const file = [...(e.clipboardData?.items || [])]
-            .map((it) => (it.kind === 'file' ? it.getAsFile() : null))
-            .find(Boolean);
-          if (file && file.type?.startsWith('image/')) {
-            e.preventDefault();
-            const res = await editor.configuration.tools.image.config.uploader.uploadByFile(file);
-            if (res?.file?.url) {
-              editor.blocks.insert('image', { file: { url: res.file.url } }, {}, editor.blocks.getCurrentBlockIndex() + 1, true);
-            }
-          }
-        });
-
-        holder.addEventListener('drop', async (e) => {
-          const file = (e.dataTransfer?.files || [])[0];
-          if (file && file.type?.startsWith('image/')) {
-            e.preventDefault();
-            const res = await editor.configuration.tools.image.config.uploader.uploadByFile(file);
-            if (res?.file?.url) {
-              editor.blocks.insert('image', { file: { url: res.file.url } }, {}, editor.blocks.getCurrentBlockIndex() + 1, true);
-            }
-          }
-        });
-      },
-
-      async onChange(api) {
-        try {
-          const saved = await api.saver.save();
-          onChange?.(saved);
-        } catch (e) {
-          // ignore transient errors while typing
-        }
+      onChange: async () => {
+        const saved = await editor.saver.save();
+        onChange?.(saved);
       },
     });
 
     editorRef.current = editor;
 
     return () => {
-      cancelled = true;
-      if (editorRef.current) {
-        destroyingRef.current = true;
-        editorRef.current.isReady
-          .then(() => editorRef.current?.destroy())
-          .catch(() => {})
-          .finally(() => {
-            editorRef.current = null;
-            destroyingRef.current = false;
-          });
-      }
+      editor.isReady
+        .then(() => editor.destroy())
+        .catch((e) => console.warn('Editor cleanup error:', e));
+      editorRef.current = null;
     };
-    // empty deps ⇒ initialize once; guards handle React 18 strict re-mounts
-  }, [defaultValue, onChange, onImageUpload]);
+  }, []); // EMPTY dependencies → ensures it only runs ONCE
 
   return (
     <div>
-      {/* The holder element Editor.js mounts into */}
       <div ref={holderRef} className="border rounded-xl p-4 bg-white" />
     </div>
   );
