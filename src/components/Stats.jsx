@@ -69,12 +69,12 @@ function Stat({ value, suffix, label }) {
 export default function Stats() {
   return (
     <section className="bg-white md:my-20">
-      <div className="max-w-[1200px] mx-auto px-5 py-4 sm:py-8">
+      <div className="max-w-7xl mx-auto px-5 py-4 sm:py-8">
         <div className="grid grid-cols-3 md:grid-cols-3 gap-y-10 pt-2 sm:gap-y-12">
-          <Stat value={1000} suffix="+" label="Served Projects" />
+          <Stat value={9} suffix="+" label="Years" />
           {/* <Stat value={20} suffix="+" label="Projects" /> */}
-          <Stat value={1000} suffix="+" label="Satisfied Customers" />
-          <Stat value={1} suffix="st" label="Top in India" />
+          <Stat value={1000} suffix="+" label="Projects" />
+          <Stat value={50} suffix="+" label="Locations" />
         </div>
       </div>
     </section>

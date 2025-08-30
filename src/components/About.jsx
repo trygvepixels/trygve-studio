@@ -96,6 +96,9 @@ export default function TrygveAnnouncement() {
           </div>
         </div>
 
+
+        
+
         {/* Decorative corner accents (Awwwards vibe) */}
         <div
           aria-hidden

@@ -81,7 +81,7 @@ export default function AboutUs() {
               "radial-gradient(1200px 600px at 80% -20%, rgba(0,0,0,0.06), transparent 60%), radial-gradient(800px 400px at 10% 110%, rgba(0,0,0,0.05), transparent 60%)",
           }}
         />
-        <div className="relative max-w-[1200px] mx-auto px-5 pt-16 pb-10 md:pt-24 md:pb-16">
+        <div className="relative max-w-7xl mx-auto px-5 pt-16 pb-10 md:pt-24 md:pb-16">
           <div className="flex items-center gap-2 text-sm tracking-wide text-neutral-700">
             <FiGlobe className="shrink-0" />
             <span>Architectural & Interior Works — Delivered Worldwide</span>
@@ -116,7 +116,7 @@ export default function AboutUs() {
       </div>
 
       {/* ===== Stats / Registry ===== */}
-      <div className="max-w-[1200px] mx-auto px-5 pb-12 mt-10">
+      <div className="max-w-7xl mx-auto px-5 pb-12 mt-10">
         <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-4">
           {stats.map((s) => (
             <div
@@ -138,7 +138,7 @@ export default function AboutUs() {
       </div>
 
       {/* ===== What We Do ===== */}
-      <div className="max-w-[1200px] mx-auto px-5 pb-6">
+      <div className="max-w-7xl mx-auto px-5 pb-6">
         <div className="rounded-2xl border border-black/10 bg-white p-6 md:p-8">
           <div className="flex items-center gap-2">
             <FiBriefcase />
@@ -163,7 +163,7 @@ export default function AboutUs() {
       </div>
 
       {/* ===== Leadership ===== */}
-      <div className="max-w-[1200px] mx-auto px-5 pb-6">
+      <div className="max-w-7xl mx-auto px-5 pb-6">
         <div className="rounded-2xl border border-black/10 bg-white p-6 md:p-8">
           <div className="flex items-center gap-2">
             <FiUsers />
@@ -229,7 +229,7 @@ export default function AboutUs() {
       </div>
 
       {/* ===== Global Presence ===== */}
-      <div className="max-w-[1200px] mx-auto px-5 pb-6">
+      <div className="max-w-7xl mx-auto px-5 pb-6">
         <div className="rounded-2xl border border-black/10 bg-white p-6 md:p-8">
           <div className="flex items-center gap-2">
             <FiGlobe />
@@ -263,8 +263,35 @@ Uttar Pradesh – 226026, India
         </div>
       </div>
 
+
+      {/* Location / Office Pin */}
+<section id="location" className="relative bg-[#F3F1EB] py-4">
+  <div className="mx-auto max-w-7xl px-6">
+    <div className="mx-auto max-w-2xl text-center">
+      <h2 className="text-3xl font-semibold md:text-4xl">Our Location</h2>
+      <p className="mt-2 text-black/60">
+        Visit our studio or find us easily on the map below.
+      </p>
+    </div>
+
+    <div className="mt-4 overflow-hidden rounded-2xl border border-black/10 shadow-lg">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3557.0843091250363!2d80.9687785762818!3d26.93254157663538!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399a25e439709cd1%3A0x28927eb890a78697!2sTrygve%20Studio%20Private%20Limited%20%7C%20Best%20Architecture%20Company%20%7C%20Best%20Construction%20Company%20%7C%20Best%20Interior%20Designer!5e0!3m2!1sen!2sin!4v1756397068097!5m2!1sen!2sin"
+        width="100%"
+        height="450"
+        style={{ border: 0 }}
+        allowFullScreen=""
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+
+    
+  </div>
+</section>
+
       {/* ===== Gallery / Proof ===== */}
-      <div className="max-w-[1200px] mx-auto px-5 pb-16">
+      {/* <div className="max-w-7xl mx-auto px-5 pb-16">
         <div className="rounded-2xl overflow-hidden border border-black/10">
           <div className="grid md:grid-cols-4">
             {gallery.map((g, i) => (
@@ -282,11 +309,8 @@ Uttar Pradesh – 226026, India
             ))}
           </div>
         </div>
-        <p className="mt-3 text-xs text-neutral-500">
-          *Images are placeholders. Replace with your project photographs /
-          renders.
-        </p>
-      </div>
+         
+      </div> */}
     </section>
   );
 }

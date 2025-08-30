@@ -433,21 +433,42 @@ export default function BlogForm({ initialData = {}, onSubmit }) {
         {/* LEFT */}
         <div className="md:col-span-8 space-y-6">
           {/* Content */}
-          <Card
-            title="Content"
-            hint="Write your article content below. Supports headings, images, embeds, and more."
-            right={
-              <span className="text-xs text-neutral-500 inline-flex items-center gap-1">
-                <FiInfo /> Rich text
-              </span>
-            }
-          >
-            <RichTextEditor
-              value={form.content}
-              onChange={(val) => setForm((f) => ({ ...f, content: val }))}
-            />
-          </Card>
+          {/* Content */}
+<Card
+  title="Content"
+  hint="Write your article content below. Supports headings, images, embeds, and more."
+  right={
+    <span className="text-xs text-neutral-500 inline-flex items-center gap-1">
+      <FiInfo /> Rich text
+    </span>
+  }
+>
+  {(() => {
+    // Freeze the initial content so React re-renders don’t reset the editor
+    const initialContentRef = useRef(
+      typeof form.content === "object" ? form.content : (form.content || {})
+    );
 
+    const handleEditorChange = (val) => {
+      // `val` is Editor.js saved data
+      setForm((f) => ({ ...f, content: val }));
+    };
+
+    const onImageUpload = async (file) => {
+      // Reuse your Cloudinary uploader; progress bar is optional here
+      const url = await uploadToCloudinary(file);
+      return url; // Editor will insert this
+    };
+
+    return (
+      <RichTextEditor
+        defaultValue={initialContentRef.current}
+        onChange={handleEditorChange}
+        onImageUpload={onImageUpload}
+      />
+    );
+  })()}
+</Card>
           {/* Basic Info */}
           <Card title="Basics" hint="Title, slug, status, author & media.">
             <div className="grid md:grid-cols-2 gap-4">
@@ -652,7 +673,7 @@ export default function BlogForm({ initialData = {}, onSubmit }) {
               </Field>
               <div className="grid grid-cols-1 gap-3">
                 <Field label="Phone">
-                  <Input name="phone" value={form.phone} onChange={handleChange} placeholder="+1 555…" />
+                  <Input name="phone" value={form.phone} onChange={handleChange} placeholder="+91 …" />
                 </Field>
                  
               </div>

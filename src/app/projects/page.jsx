@@ -357,7 +357,7 @@ export default function ProjectsPage() {
 
   return (
     <main className="bg-[#F4F1EC] text-[#101010] min-h-screen">
-      <section className="max-w-[1200px] mx-auto px-5 pt-10 pb-6 md:pt-16">
+      <section className="max-w-7xl mx-auto px-5 pt-10 pb-6 md:pt-16">
         <header className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
           <div>
             <p className="text-xs tracking-wider uppercase text-neutral-600">
@@ -431,8 +431,8 @@ export default function ProjectsPage() {
       </section>
 
       {/* Grid */}
-      <section className="max-w-[1200px] mx-auto px-5 pb-12">
-        <section className="max-w-[1200px] mx-auto md:px-0 px-4 pb-12">
+      <section className="max-w-7xl mx-auto px-5 pb-12">
+        <section className="max-w-7xl mx-auto md:px-0 px-4 pb-12">
           {loading ? (
             <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-2">
               {Array.from({ length: 6 }).map((_, i) => (

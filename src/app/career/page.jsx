@@ -69,7 +69,7 @@ export default function Careers() {
     {
       icon: <HiHeart className="h-6 w-6" />,
       title: "Time Off",
-      desc: "Flexible PTO + local holidays.",
+      desc: "Flexible PTO, local holidays & maternity/paternity leave.",
     },
   ];
 
@@ -251,28 +251,64 @@ export default function Careers() {
       </section>
 
       {/* Perks */}
-      <section id="perks" className="relative border-y border-white/10 bg-white/[0.02] py-20">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-semibold md:text-4xl">Perks & Benefits</h2>
-            <p className="mt-2 text-black/60">Everything you need to do your best work.</p>
-          </div>
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {perks.map((perk, idx) => (
-              <div
-                key={idx}
-                className="group rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition hover:border-white/20 hover:bg-white/[0.05]"
-              >
-                <div className="inline-flex items-center justify-center rounded-lg bg-white/10 p-3">
-                  {perk.icon}
-                </div>
-                <h3 className="mt-4 text-lg font-semibold">{perk.title}</h3>
-                <p className="mt-1 text-sm text-black/70">{perk.desc}</p>
+ <section id="perks" className="relative border-y border-white/10 bg-white/[0.02] py-24">
+  {/* Soft ambient backdrop */}
+  <div
+    aria-hidden
+    className="pointer-events-none absolute inset-0 -z-10 opacity-70"
+    style={{
+      background:
+        "radial-gradient(40% 40% at 15% 10%, rgba(124,92,255,0.20) 0%, rgba(11,11,15,0) 70%), radial-gradient(30% 30% at 85% 20%, rgba(255,77,141,0.20) 0%, rgba(11,11,15,0) 70%)",
+      filter: "blur(24px)",
+    }}
+  />
+
+  <div className="mx-auto max-w-7xl px-6">
+    <div className="mx-auto max-w-2xl text-center">
+      
+      <h2 className="mt-4 text-3xl font-semibold md:text-4xl">
+        Perks <span className="text-black/40">&amp;</span> Benefits
+      </h2>
+      <p className="mt-2 text-black/60">Everything you need to do your best work.</p>
+    </div>
+
+    <div className="mt-12 grid gap-6 md:grid-cols-3">
+      {perks.map((perk, idx) => (
+        <div key={idx} className="group relative">
+          {/* Glow on hover */}
+          <div
+            aria-hidden
+            className="absolute inset-0 rounded-2xl opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100"
+            style={{
+              background:
+                "radial-gradient(60% 70% at 50% 0%, rgba(35,77,126,0.18) 0%, rgba(35,77,126,0.00) 70%)",
+            }}
+          />
+
+          {/* 1px gradient border wrapper */}
+          <div className="relative rounded-2xl p-[1px] bg-gradient-to-br from-black/10 via-white/50 to-black/10">
+            {/* Card */}
+            <div className="rounded-[1rem] h-full border border-black/5 bg-white/90 p-6 backdrop-blur-sm shadow-[0_10px_40px_rgba(0,0,0,0.06)] transition-transform duration-300 group-hover:-translate-y-1">
+              {/* Icon pill */}
+              <div className="inline-flex items-center justify-center rounded-xl bg-gradient-to-br from-white to-zinc-50 p-3 ring-1 ring-black/5 shadow">
+                <span className="text-[#234D7E]">{perk.icon}</span>
               </div>
-            ))}
+
+              <h3 className="mt-4 text-lg font-semibold tracking-tight">{perk.title}</h3>
+              <p className="mt-1 text-sm leading-relaxed text-black/70">{perk.desc}</p>
+
+              {/* Subtle divider */}
+              <div className="mt-4 h-px w-full bg-gradient-to-r from-transparent via-black/10 to-transparent" />
+
+              {/* Micro copy / CTA-ish hint (optional; remove if you don’t want it) */}
+              <div className="mt-3 text-xs text-black/50">Included from day one</div>
+            </div>
           </div>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* Values */}
       <section className="mx-auto max-w-7xl px-4 md:px-0 py-20">

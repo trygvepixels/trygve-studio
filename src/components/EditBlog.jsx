@@ -79,9 +79,8 @@ export default function EditBlog() {
   if (loading) return <p className="p-4">Loading...</p>;
 
   return (
-    <div className="p-6">
-      <h1 className="text-2xl font-bold mb-4">✏️ Edit Blog Post</h1>
-      {blogData && <BlogForm initialData={blogData} onSubmit={handleUpdate} />}
+    <div className="">
+       {blogData && <BlogForm initialData={blogData} onSubmit={handleUpdate} />}
     </div>
   );
 }

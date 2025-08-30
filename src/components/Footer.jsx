@@ -8,6 +8,7 @@ import {
   FiArrowRight,
 } from "react-icons/fi";
 import { FaInstagram, FaLinkedin, FaBehance, FaWhatsapp } from "react-icons/fa";
+import FooterContactForm from "./FooterContactForm";
 
 /**
  * variant: "bronze" | "emerald" | "oxblood" | "royal"
@@ -52,12 +53,14 @@ export default function FooterPremium({ variant = "bronze" }) {
 
   return (
     <footer className="relative" style={{ background: c.base, color: c.ink }}>
+
+      <FooterContactForm />
       {/* Top CTA strip */}
       <section
         className="border-y"
         style={{ borderColor: c.line, background: c.base }}
       >
-        <div className="mx-auto max-w-[1200px] px-5 py-8">
+        <div className="mx-auto max-w-7xl px-5 py-8">
           <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             <div>
               <p className="text-xs uppercase tracking-[0.18em] opacity-70">
@@ -90,7 +93,7 @@ export default function FooterPremium({ variant = "bronze" }) {
       </section>
 
       {/* Main footer */}
-      <section className="mx-auto max-w-[1200px] px-5 py-12">
+      <section className="mx-auto max-w-7xl px-5 py-12">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-9">
           {/* Brand + socials */}
           <div className="md:col-span-4">
@@ -257,7 +260,7 @@ export default function FooterPremium({ variant = "bronze" }) {
       {/* Legal bar */}
       <section className="border-t" style={{ borderColor: c.line }}>
         <div
-          className="mx-auto flex max-w-[1200px] flex-col gap-3 px-5 py-5 text-[13px] md:flex-row md:items-center md:justify-between"
+          className="mx-auto flex max-w-7xl flex-col gap-3 px-5 py-5 text-[13px] md:flex-row md:items-center md:justify-between"
           style={{ color: c.ink }}
         >
           <div className="flex items-center gap-3 opacity-80">

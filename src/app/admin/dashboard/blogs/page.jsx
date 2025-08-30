@@ -325,7 +325,7 @@ export default function BlogListPage() {
 
                     <div className="mt-4 flex items-center justify-end gap-2 border-t pt-3">
                       <Link
-                        href={`/admin/blogs/${blog.urlSlug}`}
+                        href={`/admin/dashboard/blogs/${blog.urlSlug}`}
                         className="inline-flex items-center gap-1.5 rounded-full border border-black/20 px-3 py-1.5 text-sm hover:bg-black/5"
                         title="Edit"
                       >

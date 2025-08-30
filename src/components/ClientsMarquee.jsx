@@ -127,7 +127,7 @@ export default function ClientsMarquee() {
 
   return (
     <section className="bg-[#F4F1EC] py-12">
-      <div className="max-w-[1200px] mx-auto px-6 text-center">
+      <div className="max-w-7xl mx-auto px-6 text-center">
         <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-[#101010]">
           Trusted by Clients Worldwide
         </h2>

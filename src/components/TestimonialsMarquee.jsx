@@ -79,7 +79,7 @@ export default function TestimonialsCarousel() {
 
   return (
     <section className="bg-[#F4F1EC] py-16">
-      <div className="max-w-[1200px] mx-auto px -6">
+      <div className="max-w-7xl mx-auto px -6">
         <header className="mb-10 text-center">
           <p className="text-xs tracking-wider uppercase text-neutral-600">
             Testimonials

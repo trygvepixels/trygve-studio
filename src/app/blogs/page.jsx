@@ -94,7 +94,7 @@ export default function Page() {
   }, [blogs, selectedCategory, sortBy, submittedSearch, filterType]);
 
   return (
-    <div className="relative min-h-screen ">
+    <div className="relative bg-[#F3F1EB] min-h-screen ">
       <div
         aria-hidden
         className="pointer-events-none absolute inset-x-0 -top-40 h-80 blur-3xl"
@@ -120,7 +120,7 @@ export default function Page() {
         onSearch={() => setSubmittedSearch(searchTerm)}
       />
 
-      <section className="max-w-7xl mt-4 mx-auto px-4 sm:px-0 pb-20">
+      <section className="max-w-7xl bg-[] mt-4 mx-auto px-4 sm:px-0 pb-20">
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {loading
             ? Array.from({ length: 6 }).map((_, i) => (
@@ -252,7 +252,7 @@ function Toolbar({
   onSearch,
 }) {
   return (
-    <div className="sticky py- top-0 z-30 border-b border-zinc-100 bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60">
+    <div className="sticky py- top-0 z-30 border-b border-zinc-100 bg-[#F3F1EB] backdrop-blur supports-[backdrop-filter]:bg-white/60">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
         <div className="flex gap-2 overflow-x-auto pb-1">
           {categories.map((cat) => {

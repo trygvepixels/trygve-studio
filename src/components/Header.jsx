@@ -104,10 +104,14 @@ export default function Header() {
             <Link href="/blogs" className="text-[15px] md:text-[16px] text-ink underline-offset-4 hover:underline">
               Blogs
             </Link>
+            <Link href="/services" className="text-[15px] md:text-[16px] text-ink underline-offset-4 hover:underline">
+              Services
+            </Link>
+
             <Link href="/career" className="text-[15px] md:text-[16px] text-ink underline-offset-4 hover:underline">
               Career
             </Link>
-
+            
                  
              <Link href="/contact-us" className="text-[15px] text-white md:text-[16px] text-ink underline-offset-4 hover:underline bg-[#234D7E] px-3 py-1 rounded-[4px]">
               Contact Us
@@ -129,7 +133,7 @@ export default function Header() {
       </div>
 
       {/* Divider */}
-      <hr className="border-0 h-[1px] bg-rule max-w-[1200px] mx-auto mt-[10px]" />
+      <hr className="border-0 h-[1px] bg-rule max-w-7xl mx-auto mt-[10px]" />
 
       {/* Mobile Menu Overlay — mounted while open or closing, with elastic animations */}
       {(menuOpen || isClosing) && (
@@ -211,6 +215,16 @@ export default function Header() {
                   <span className="text-xs text-neutral-500">Know industry insights</span>
                 </Link>
               </li>
+               <li>
+                <Link
+                  href="/services"
+                  onClick={closeMenu}
+                  className="block  rounded-xl px-4 py-3 text-[16px] text-ink hover:bg-[#F4F1EC] transition flex items-center justify-between"
+                >
+                  <span>Services</span>
+                  <span className="text-xs text-neutral-500">Work with us</span>
+                </Link>
+              </li>
               <li>
                 <Link
                   href="/career"
@@ -221,6 +235,7 @@ export default function Header() {
                   <span className="text-xs text-neutral-500">Work with us</span>
                 </Link>
               </li>
+             
               <li>
                 <Link
                   href="/contact-us"
