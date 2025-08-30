@@ -82,7 +82,7 @@ export default function ContactPage() {
   }
 
   return (
-    <main className="max-w-5xl pt-10 pb-6 md:pt-16 text-[#101010]">
+    <main className="max-w-5xl   text-[#101010]">
       {/* ===== Contact + Form ===== */}
       <section className="max-w-5xl relative mt-20">
         <div className="mx-auto px-5 pb-20">

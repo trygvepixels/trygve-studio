@@ -11,7 +11,7 @@ import TestimonialsMarquee from "@/components/TestimonialsMarquee";
 import FeatureProjects from "@/components/FeatureProjects";
 import Stats from "@/components/Stats";
 import Popup from "@/components/Popup";
-import { useRouter } from "next/navigation";
+ import { useRouter } from "next/navigation";
 import { FaWhatsapp } from "react-icons/fa";
 
 const Page = () => {
@@ -24,7 +24,7 @@ const Page = () => {
 
   // open after 10s
   useEffect(() => {
-    const timer = setTimeout(() => setShowPopup(true), 10000);
+    const timer = setTimeout(() => setShowPopup(true), 500);
     return () => clearTimeout(timer);
   }, []);
 
@@ -124,7 +124,7 @@ const Page = () => {
       {/* Popup */}
       {showPopup && (
         <div
-          className={`fixed inset-0 z-[1000000]  flex items-center justify-center p-8 transition-opacity duration-200 ${
+          className={`fixed inset-0 z-[1000000]  flex items-center justify-center   transition-opacity duration-200 ${
             entered ? "opacity-100" : "opacity-0"
           } bg-black/60 backdrop-blur-sm`}
           role="dialog"
@@ -141,7 +141,7 @@ const Page = () => {
             {/* Close */}
             <button
               onClick={() => setShowPopup(false)}
-              className="absolute right-3 -top-3 inline-flex h-9 w-9 items-center justify-center rounded-full bg-white shadow-lg ring-1 ring-black/5 hover:shadow-xl"
+              className="absolute right-1 top-4 inline-flex h-9 w-9 items-center justify-center rounded-full bg-white shadow-lg ring-1 ring-black/5 hover:shadow-xl"
               aria-label="Close popup"
             >
               ✕
@@ -155,18 +155,18 @@ const Page = () => {
               </div>
 
               {/* Contact form inside popup */}
-              <main className=" text-[#101010]">
+              <main className="  mt-10 text-[#101010]">
                 
                 <section className="">
-                  <div className="mx-auto  px-6 md:px-8 pb-6">
-                    <div className="grid  grid-cols-1 gap-8">
+                  <div className="mx-auto  md:px-8 pb-6">
+                    <div className="grid  grid-cols-1 ">
                       <div
                         id="project-form"
                         className={`rounded-2xl border border-black/10 bg-white p-5 md:p-6 ${
                           submitting ? "opacity-90" : ""
                         }`}
                       >
-                        <form onSubmit={handleSubmit} className="grid p-4 grid-cols-1 gap-5" noValidate>
+                        <form onSubmit={handleSubmit} className="grid p-4 grid-cols-1 gap-2" noValidate>
                           <input
                             type="text"
                             name="_honey"
@@ -217,24 +217,16 @@ const Page = () => {
                             I consent to Trygve Studio contacting me about this enquiry and agree to the privacy policy.
                           </label>
 
-                          <div className="flex text-sm items-center gap-3 pt-2">
+                          <div className="flex flex-col   text-xs   items-center gap-3 pt-2">
                             <button
                               type="submit"
                               disabled={submitting}
-                              className="inline-flex items-center justify-center rounded-full bg-[#101010] text-white px-6 py-3 text-sm md:text-[15px] hover:opacity-90 disabled:opacity-50 transition"
+                              className=" items-center justify-center rounded-full bg-[#101010] text-white px-6 py-3 text-xs md:text-[15px] hover:opacity-90 disabled:opacity-50 transition"
                             >
                               {submitting ? "Sending…" : "Send Your Vision"}
                             </button>
 
-                            <a
-                              href="https://wa.me/919554440400"
-                              target="_blank"
-                              rel="noreferrer"
-                              className="inline-flex items-center gap-2 rounded-full border border-[#101010] px-5 py-3 text-xs md:text-[15px] hover:bg-black hover:text-white transition"
-                            >
-                              <FaWhatsapp className="text-green-600" />
-                              Or chat on WhatsApp
-                            </a>
+                            
                           </div>
 
                           {status.state === "error" && (
