@@ -177,14 +177,14 @@ function ServicesPage() {
                       </div>
 
                       <div
-                        className={`h-[3px] w-16 rounded-full mt-3 mb-5 bg-gradient-to-r from-[#244D7E] to-[#244D7E] ${isEven ? 'ml-auto' : ''}`}
+                        className={`h-[3px] w-16 rounded-full mt-3 mb-5 bg-gradient-to-r from-[#244D7E] to-[#244D7E] ${isEven ? '' : ''}`}
                       />
 
-                      <p className="text-gray-600 leading-relaxed font-">
+                      <p className="text-gray-600 text-start leading-relaxed font-">
                         {service.description}
                       </p>
 
-                      <div className={`${isEven ? 'justify-end' : 'justify-start'} flex`}>
+                      <div className={`${isEven ? 'justify-start' : 'justify-start'} flex`}>
                         <button
                           type="button"
                           onClick={() => openModal(service)}
