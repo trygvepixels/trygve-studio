@@ -24,7 +24,7 @@ const Page = () => {
 
   // open after 10s
   useEffect(() => {
-    const timer = setTimeout(() => setShowPopup(true), 500);
+    const timer = setTimeout(() => setShowPopup(true), 10000);
     return () => clearTimeout(timer);
   }, []);
 
