@@ -27,7 +27,8 @@ const Page = () => {
     const timer = setTimeout(() => setShowPopup(true), 10000);
     return () => clearTimeout(timer);
   }, []);
-
+ 
+  
   // animate in + scroll lock when open
   useEffect(() => {
     if (showPopup) {

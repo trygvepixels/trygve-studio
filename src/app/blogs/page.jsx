@@ -181,7 +181,7 @@ function Hero({ searchTerm, setSearchTerm, onSearch }) {
                 of the Industry
               </h1>
               <p className="mt-4 max-w-2xl text-zinc-600">
-                Practical growth, marketing, and product lessons from the trenches. Curated by GenForge Studio.
+                Practical growth, marketing, and product lessons from the trenches. Curated by Trygve Studio.
               </p>
 
               <form
