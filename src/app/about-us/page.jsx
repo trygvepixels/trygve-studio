@@ -18,7 +18,7 @@ export default function AboutUs() {
   const directors = [
  
     {
-      name: "FAISAL SAIF",
+      name: "Ar. FAISAL SAIF",
       role: "Founder & Director ",
       img: faisal,
       para: "Faisal Saif is the Founder and Director of Trygve Studio. With a passion for design and a keen eye for detail, he leads the team in delivering exceptional architectural and interior solutions. His vision drives the studio's commitment to excellence and innovation in every project.",
