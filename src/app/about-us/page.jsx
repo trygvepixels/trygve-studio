@@ -18,10 +18,10 @@ export default function AboutUs() {
   const directors = [
  
     {
-      name: "Ar. FAISAL SAIF",
+      name: "AR. FAISAL SAIF",
       role: "Founder & Director ",
       img: faisal,
-      para: "Faisal Saif is the Founder and Director of Trygve Studio. With a passion for design and a keen eye for detail, he leads the team in delivering exceptional architectural and interior solutions. His vision drives the studio's commitment to excellence and innovation in every project.",
+      para: "AR. Faisal Saif is the Founder and Director of Trygve Studio. With a passion for design and a keen eye for detail, he leads the team in delivering exceptional architectural and interior solutions. His vision drives the studio's commitment to excellence and innovation in every project.",
     },
   
   ];
@@ -238,7 +238,7 @@ export default function AboutUs() {
             </h2>
           </div>
           <p className="mt-2 text-neutral-700">
-            Headquartered at Indira Nagar (Lucknow), with project teams across
+            Headquartered at Eden Enclave (Lucknow), with project teams across
             APAC, EMEA and North America. We navigate local codes, materials and
             budgets while keeping a consistent global design standard.
           </p>
