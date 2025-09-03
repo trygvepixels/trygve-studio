@@ -1,4 +1,5 @@
 "use client";
+import Script from 'next/script';
 import React, { useMemo, useState, useCallback, useEffect } from 'react';
 
 const services = [
@@ -124,6 +125,65 @@ function ServicesPage() {
 
   return (
     <div className="bg-[#F4F1EC] min-h-screen antialiased selection:bg-gray-900/90 selection:text-white">
+      
+        <>
+      {/* Your Services page layout and content (sections for each service) */}
+
+      {/* JSON-LD: Services offered + Breadcrumbs */}
+      <Script id="ld-services" type="application/ld+json">
+        {JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'Service',
+          name: 'Architecture, Interiors, PMC, EPC & 3D Visualisation Services',
+          description:
+            'Trygve Studio provides Architecture, Interior Design, Project Management Consultancy (PMC), Engineering-Procurement-Construction (EPC), and 3D Visualisation services.',
+          provider: {
+            '@type': ['Organization', 'ProfessionalService'],
+            name: 'TRYGVE STUDIO PRIVATE LIMITED',
+            url: 'https://www.trygvestudio.com/',
+            telephone: '+91-9554440400',
+            email: 'faisal.saif@trygvestudio.com',
+            address: {
+              '@type': 'PostalAddress',
+              streetAddress:
+                'Plot No. 728, Khasra No. 21, Eden Enclave, Phase 2, Kursi Road, Gudamba, BKT',
+              addressLocality: 'Lucknow',
+              addressRegion: 'Uttar Pradesh',
+              postalCode: '226026',
+              addressCountry: 'IN',
+            },
+          },
+          serviceType:
+            'Architecture | Interior Design | Project Management Consultancy (PMC) | Engineering-Procurement-Construction (EPC) | 3D Visualisation',
+          areaServed: [{ '@type': 'Place', name: 'Worldwide' }],
+          audience: {
+            '@type': 'Audience',
+            name: 'Clients seeking architecture, interiors, PMC, EPC or 3D visualisation',
+          },
+        })}
+      </Script>
+
+      <Script id="ld-breadcrumbs" type="application/ld+json">
+        {JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            {
+              '@type': 'ListItem',
+              position: 1,
+              name: 'Home',
+              item: 'https://www.trygvestudio.com/',
+            },
+            {
+              '@type': 'ListItem',
+              position: 2,
+              name: 'Services',
+              item: 'https://www.trygvestudio.com/services',
+            },
+          ],
+        })}
+      </Script>
+    </>
       {/* Hero */}
       <section className="max-w-7xl mx-auto px-4 pt-20 pb-10 text-center">
         <p className="uppercase tracking-[0.25em] text-xs md:text-sm text-gray-500">

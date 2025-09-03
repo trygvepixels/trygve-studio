@@ -14,6 +14,12 @@ import {
 import Image from "next/image";
 import faisal from "@/assets/faisal.jpeg";
 
+
+ import Script from 'next/script';
+
+
+ 
+
 export default function AboutUs() {
   const directors = [
  
@@ -71,6 +77,150 @@ export default function AboutUs() {
 
   return (
     <section className="bg-[#F4F1EC] text-[#101010]">
+
+      <>
+      {/* Your actual About Us page content */}
+
+      {/* JSON-LD: AboutPage + Organization + Person + Breadcrumbs */}
+      <Script id="ld-about" type="application/ld+json">
+        {JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'AboutPage',
+          name: 'About Us — Trygve Studio',
+          url: 'https://www.trygvestudio.com/about-us',
+          mainEntity: {
+            '@type': ['Organization', 'ProfessionalService'],
+            name: 'TRYGVE STUDIO PRIVATE LIMITED',
+            url: 'https://www.trygvestudio.com/',
+            email: 'faisal.saif@trygvestudio.com',
+            telephone: '+91-9554440400',
+            foundingDate: '2017',
+            legalName: 'Trygve Studio Private Limited',
+            foundingLocation: {
+              '@type': 'Place',
+              name: 'Lucknow, Uttar Pradesh, India',
+            },
+            numberOfEmployees: {
+              '@type': 'QuantitativeValue',
+              minValue: 11,
+              maxValue: 50,
+            },
+            naics: '7414',
+            areaServed: [
+              { '@type': 'Place', name: 'APAC' },
+              { '@type': 'Place', name: 'EMEA' },
+              { '@type': 'Place', name: 'North America' },
+              { '@type': 'Country', name: 'India' },
+            ],
+            brand: { '@type': 'Brand', name: 'Trygve Studio' },
+            sameAs: ['https://wa.me/919554440400'],
+            contactPoint: [
+              {
+                '@type': 'ContactPoint',
+                contactType: 'customer support',
+                telephone: '+91-9554440400',
+                email: 'faisal.saif@trygvestudio.com',
+                availableLanguage: ['en', 'hi'],
+                areaServed: 'Worldwide',
+              },
+            ],
+            address: {
+              '@type': 'PostalAddress',
+              streetAddress:
+                'Plot No. 728, Khasra No. 21, Eden Enclave, Phase 2, Kursi Road, Gudamba, BKT',
+              addressLocality: 'Lucknow',
+              addressRegion: 'Uttar Pradesh',
+              postalCode: '226026',
+              addressCountry: 'IN',
+            },
+            location: [
+              {
+                '@type': 'Place',
+                name: 'Branch Office — Vikas Nagar',
+                address: {
+                  '@type': 'PostalAddress',
+                  streetAddress: 'Honey Lite, 1st Floor, 5/72, Sector 5, Vikas Nagar',
+                  addressLocality: 'Lucknow',
+                  addressRegion: 'Uttar Pradesh',
+                  postalCode: '226022',
+                  addressCountry: 'IN',
+                },
+              },
+              {
+                '@type': 'Place',
+                name:
+                  'Branch Office — Kursi Road (Near Integral University Hospital Gate)',
+                address: {
+                  '@type': 'PostalAddress',
+                  streetAddress:
+                    'UGF, Rukshan Complex, Gata No. 112, Dasauli, Kursi Road, Near Integral University Hospital Gate',
+                  addressLocality: 'Lucknow',
+                  addressRegion: 'Uttar Pradesh',
+                  postalCode: '226021',
+                  addressCountry: 'IN',
+                },
+              },
+              {
+                '@type': 'Place',
+                name: 'Corporate Meeting Space — Levana Cyber Heights (Regus)',
+                address: {
+                  '@type': 'PostalAddress',
+                  streetAddress:
+                    'Levana Cyber Heights, 10th Floor – Regus, Vibhuti Khand, Gomti Nagar',
+                  addressLocality: 'Lucknow',
+                  addressRegion: 'Uttar Pradesh',
+                  postalCode: '226010',
+                  addressCountry: 'IN',
+                },
+              },
+            ],
+            hasOfferCatalog: {
+              '@type': 'OfferCatalog',
+              name: 'Architecture & Allied Engineering Services',
+              itemListElement: [
+                { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Architecture' } },
+                { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Interior Design' } },
+                { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Project Management Consultancy (PMC)' } },
+                { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Engineering, Procurement & Construction (EPC)' } },
+                { '@type': 'Offer', itemOffered: { '@type': 'Service', name: '3D Visualisation' } },
+              ],
+            },
+          },
+          breadcrumb: {
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              {
+                '@type': 'ListItem',
+                position: 1,
+                name: 'Home',
+                item: 'https://www.trygvestudio.com/',
+              },
+              {
+                '@type': 'ListItem',
+                position: 2,
+                name: 'About Us',
+                item: 'https://www.trygvestudio.com/about-us',
+              },
+            ],
+          },
+        })}
+      </Script>
+
+      <Script id="ld-founder" type="application/ld+json">
+        {JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'Person',
+          name: 'Ar. Faisal Saif',
+          jobTitle: 'Founder & Director',
+          worksFor: {
+            '@type': 'Organization',
+            name: 'Trygve Studio Private Limited',
+            url: 'https://www.trygvestudio.com/',
+          },
+          email: 'faisal.saif@trygvestudio.com',
+        })}
+      </Script>
+    </>
       {/* ===== Hero ===== */}
       <div className="relative overflow-hidden">
         <div

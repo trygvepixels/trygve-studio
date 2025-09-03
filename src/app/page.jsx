@@ -13,6 +13,7 @@ import Stats from "@/components/Stats";
 import Popup from "@/components/Popup";
  import { useRouter } from "next/navigation";
 import { FaWhatsapp } from "react-icons/fa";
+ import Script from 'next/script';
 
 const Page = () => {
   const [showPopup, setShowPopup] = useState(false);
@@ -111,6 +112,144 @@ const Page = () => {
 
   return (
     <div className="bg-[#F4F1EC] relative">
+       <>
+      {/* Your homepage content goes here */}
+
+      {/* JSON-LD: Organization + ProfessionalService + OfferCatalog + Locations */}
+      <Script id="ld-org" type="application/ld+json">
+        {JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': ['Organization', 'ProfessionalService'],
+          name: 'TRYGVE STUDIO PRIVATE LIMITED',
+          url: 'https://www.trygvestudio.com/',
+          email: 'faisal.saif@trygvestudio.com',
+          telephone: '+91-9554440400',
+          brand: {
+            '@type': 'Brand',
+            name: 'Trygve Studio',
+          },
+          sameAs: ['https://wa.me/919554440400'],
+          areaServed: [
+            { '@type': 'Place', name: 'APAC' },
+            { '@type': 'Place', name: 'EMEA' },
+            { '@type': 'Place', name: 'North America' },
+          ],
+          contactPoint: [
+            {
+              '@type': 'ContactPoint',
+              contactType: 'customer support',
+              telephone: '+91-9554440400',
+              email: 'faisal.saif@trygvestudio.com',
+              availableLanguage: ['en', 'hi'],
+              areaServed: 'Worldwide',
+            },
+          ],
+          address: {
+            '@type': 'PostalAddress',
+            streetAddress:
+              'Plot No. 728, Khasra No. 21, Eden Enclave, Phase 2, Kursi Road, Gudamba, BKT',
+            addressLocality: 'Lucknow',
+            addressRegion: 'Uttar Pradesh',
+            postalCode: '226026',
+            addressCountry: 'IN',
+          },
+          location: [
+            {
+              '@type': 'Place',
+              name: 'Branch Office — Vikas Nagar',
+              address: {
+                '@type': 'PostalAddress',
+                streetAddress: 'Honey Lite, 1st Floor, 5/72, Sector 5, Vikas Nagar',
+                addressLocality: 'Lucknow',
+                addressRegion: 'Uttar Pradesh',
+                postalCode: '226022',
+                addressCountry: 'IN',
+              },
+            },
+            {
+              '@type': 'Place',
+              name:
+                'Branch Office — Kursi Road (Near Integral University Hospital Gate)',
+              address: {
+                '@type': 'PostalAddress',
+                streetAddress:
+                  'UGF, Rukshan Complex, Gata No. 112, Dasauli, Kursi Road, Near Integral University Hospital Gate',
+                addressLocality: 'Lucknow',
+                addressRegion: 'Uttar Pradesh',
+                postalCode: '226021',
+                addressCountry: 'IN',
+              },
+            },
+            {
+              '@type': 'Place',
+              name: 'Corporate Meeting Space — Levana Cyber Heights (Regus)',
+              address: {
+                '@type': 'PostalAddress',
+                streetAddress:
+                  'Levana Cyber Heights, 10th Floor – Regus, Vibhuti Khand, Gomti Nagar',
+                addressLocality: 'Lucknow',
+                addressRegion: 'Uttar Pradesh',
+                postalCode: '226010',
+                addressCountry: 'IN',
+              },
+            },
+          ],
+          hasOfferCatalog: {
+            '@type': 'OfferCatalog',
+            name: 'Architecture & Allied Engineering Services',
+            itemListElement: [
+              {
+                '@type': 'Offer',
+                itemOffered: {
+                  '@type': 'Service',
+                  name: 'Architecture',
+                  areaServed: 'Worldwide',
+                },
+              },
+              {
+                '@type': 'Offer',
+                itemOffered: {
+                  '@type': 'Service',
+                  name: 'Interior Design',
+                  areaServed: 'Worldwide',
+                },
+              },
+              {
+                '@type': 'Offer',
+                itemOffered: {
+                  '@type': 'Service',
+                  name: 'Project Management Consultancy (PMC)',
+                },
+              },
+              {
+                '@type': 'Offer',
+                itemOffered: {
+                  '@type': 'Service',
+                  name: 'Engineering, Procurement & Construction (EPC)',
+                },
+              },
+              {
+                '@type': 'Offer',
+                itemOffered: {
+                  '@type': 'Service',
+                  name: '3D Visualisation',
+                },
+              },
+            ],
+          },
+        })}
+      </Script>
+
+      {/* Optional: WebSite schema for search integration */}
+      {/* <Script id="ld-website" type="application/ld+json">
+        {JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'WebSite',
+          name: 'Trygve Studio',
+          url: 'https://www.trygvestudio.com/',
+        })}
+      </Script> */}
+    </>
       <Hero />
       {/* <About /> */}
       <ClientsMarquee />
