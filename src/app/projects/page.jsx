@@ -407,27 +407,29 @@ export default function ProjectsPage() {
         </header>
 
         {/* Tags row */}
-        <div className="mt-5 flex flex-wrap gap-2">
-          <Tag
-            label="All tags"
-            active={!tag}
-            onClick={() => {
-              setTag("");
-              setPage(1);
-            }}
-          />
-          {tags.map((t) => (
-            <Tag
-              key={t}
-              label={t}
-              active={tag === t}
-              onClick={() => {
-                setTag(t);
-                setPage(1);
-              }}
-            />
-          ))}
-        </div>
+        <div className="mt-5 overflow-x-auto">
+  <div className="grid grid-rows-3 auto-cols-max grid-flow-col gap-2">
+    <Tag
+      label="All tags"
+      active={!tag}
+      onClick={() => {
+        setTag("");
+        setPage(1);
+      }}
+    />
+    {tags.map((t) => (
+      <Tag
+        key={t}
+        label={t}
+        active={tag === t}
+        onClick={() => {
+          setTag(t);
+          setPage(1);
+        }}
+      />
+    ))}
+  </div>
+</div>
       </section>
 
       {/* Grid */}
