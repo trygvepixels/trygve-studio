@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useEffect, useState, useCallback } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import logo from "@/assets/logo.png";
+import Script from "next/script";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -53,6 +54,18 @@ export default function Header() {
 
   return (
     <header className="bg-[#F4F1EC] pt-[14px] border-b border-zinc-300 shadow-sm fixed w-full z-[100]  backdrop-blur-[0.5px]">
+      <Script
+    src="https://www.googletagmanager.com/gtag/js?id=G-8GJTSNR2BP"
+    strategy="afterInteractive"
+  />
+  <Script id="gtag-init" strategy="afterInteractive">
+    {`
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-8GJTSNR2BP');
+    `}
+  </Script>
       <div className="max-w-7xl mx-auto md:px-0 px-4 flex flex-col gap-3 md:flex-row md:items-center md:justify-between md:gap-6">
         {/* Left block (logo + title) — preserved exactly per your layout */}
         <div className="flex flex-col items-center md:grid md:grid-cols-[auto_1fr] md:items-center md:gap-[18px] md:min-h-[68px]">
