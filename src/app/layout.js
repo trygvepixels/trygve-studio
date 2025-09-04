@@ -16,8 +16,7 @@ export const metadata = {
   description:
     'Full-fledged architectural & allied engineering firm based in Lucknow, India — delivering Architecture, Interior Design, PMC, EPC, and 3D Visualisation from concept to completion with design, documentation, and site coordination. Operating globally across APAC, EMEA & North America.',
   keywords: [
-    'Trygve Studio',
-    'architecture firm Lucknow',
+     'architecture firm Lucknow',
     'architects in Lucknow',
     'interior designer Lucknow',
     'construction company Lucknow',
@@ -29,7 +28,75 @@ export const metadata = {
     'project management consultancy',
     'engineering firm',
     'global architecture studio',
-  ],
+  // Broad / Category
+  "Trygve Studio",
+  "architecture firm Lucknow",
+  "architects in Lucknow",
+  "architectural services India",
+  "interior designer Lucknow",
+  "interior design India",
+  "design studio India",
+  "construction company Lucknow",
+  "project management consultancy",
+  "engineering firm India",
+  "global architecture studio",
+  "architectural design services",
+
+  // Services
+  "architecture services",
+  "interior design services",
+  "custom home design",
+  "residential design services",
+  "commercial space planning",
+  "architectural planning and drafting",
+  "renovation and remodeling plans",
+
+  // Styles & Project Types
+  "modern architecture",
+  "minimalist house design",
+  "luxury home architect",
+  "industrial office design",
+  "hospitality design",
+  "restaurant interior design",
+  "mid century modern design",
+  "farmhouse interior design",
+
+  // Long-Tail / Niche
+  "residential architect in Lucknow",
+  "commercial architect in Lucknow",
+  "interior architect near me",
+  "sustainable architecture consulting",
+  "modern farmhouse design",
+
+  // Local / Regional
+  "architects near me",
+  "architecture firms near me",
+  "local architects near me",
+  "contemporary home design Lucknow",
+  "residential architect near me",
+
+  // Keyword Ideas from Trend Data
+  "architecture",
+  "architect",
+  "architectural design",
+  "building design",
+  "interior architecture",
+  "architectural services",
+  "architectural rendering",
+  "architectural drafting",
+
+  // Technical / Specialized
+  "3d visualisation",
+  "architectural rendering services",
+  "BIM architecture",
+  "AutoCAD architecture",
+  "architectural drafting",
+
+  // Conversational / Long-tail
+  "Who is the best architect for sustainable office design?",
+  "historic home renovation in Lucknow",
+  "sustainable architecture for residential homes"
+],
   alternates: {
     canonical: '/',
   },

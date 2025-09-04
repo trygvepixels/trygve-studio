@@ -1,0 +1,10 @@
+ 
+User-agent: *
+Allow: /
+
+# Block admin and login pages from being indexed
+Disallow: /admin/
+Disallow: /login/
+
+# Sitemap location
+Sitemap: https://trygvestudio.com/sitemap.xml
