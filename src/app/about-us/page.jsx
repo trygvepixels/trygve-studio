@@ -12,7 +12,7 @@ import {
   FiAperture,
 } from "react-icons/fi";
 import Image from "next/image";
-import faisal from "@/assets/faisal.jpeg";
+import faisal from "@/assets/image.png";
 
 
  import Script from 'next/script';

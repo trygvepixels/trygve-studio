@@ -94,7 +94,7 @@ export default function Page() {
   }, [blogs, selectedCategory, sortBy, submittedSearch, filterType]);
 
   return (
-    <div className="relative bg-[#F3F1EB] min-h-screen ">
+    <div className="relative bg-[#F3F1EB]  min-h-screen ">
       <div
         aria-hidden
         className="pointer-events-none absolute inset-x-0 -top-40 h-80 blur-3xl"
@@ -159,7 +159,7 @@ export default function Page() {
 
 function Hero({ searchTerm, setSearchTerm, onSearch }) {
   return (
-    <header className="relative bg-[#F3F1EB]">
+    <header className="relative bg-[#F3F1EB] pt">
       <div className="max-w-7xl mx-auto px-4 sm:px-0 pt-16 md:pt-10 pb-10 md:pb-16">
         <div className="relative isolate overflow-hidden rounded-3xl bg-gradient-to-br from-white via-[rgba(39,39,39,0.07)] to-[#F3F1EB] ring-1 ring-zinc-100">
           <div
