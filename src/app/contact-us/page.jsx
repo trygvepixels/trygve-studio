@@ -273,10 +273,10 @@ export default function ContactPage() {
                     name="budget"
                     options={[
                       "To be discussed",
-                      "$25k – $50k",
-                      "$50k – $100k",
-                      "$100k – $250k",
-                      "$250k+",
+                      "₹25k – ₹50k",
+                      "₹50k – ₹100k",
+                      "₹100k – ₹250k",
+                      "₹250k+",
                     ]}
                   />
                   <Select
