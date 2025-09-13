@@ -20,8 +20,9 @@ import {
 } from "react-icons/fi";
 
 /* Rich text stays as you had it */
-const RichTextEditor = dynamic(() => import("./RichTextEditor"), { ssr: false });
-
+const RichTextEditor = dynamic(() => import("./RichTextEditor"), {
+  ssr: false,
+});
 /* Cloudinary env (preset-based, unsigned) */
 const CLOUD_NAME = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME;
 const UPLOAD_PRESET = process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET || "trygve-studio";
@@ -461,11 +462,10 @@ export default function BlogForm({ initialData = {}, onSubmit }) {
     };
 
     return (
-      <RichTextEditor
-        defaultValue={initialContentRef.current}
-        onChange={handleEditorChange}
-        onImageUpload={onImageUpload}
-      />
+<RichTextEditor
+          value={form.content}
+          onChange={(val) => setForm({ ...form, content: val })}
+        />
     );
   })()}
 </Card>

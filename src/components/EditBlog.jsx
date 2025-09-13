@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useRouter, useParams } from "next/navigation";
-import BlogForm from "@/components/BlogForm";
+import BlogForm2 from "@/components/BlogForm2";
 
 export default function EditBlog() {
   const { id: slug } = useParams();
@@ -34,7 +34,7 @@ export default function EditBlog() {
           setOriginalSlug(data.urlSlug);
         } else {
           alert("Blog not found");
-          router.push("/admin/dashboard/blogs");
+          router.push("/admin");
         }
       } catch (err) {
         console.error("Error loading blog:", err);
@@ -63,9 +63,9 @@ export default function EditBlog() {
         // Redirect only if slug has changed
         const newSlug = result.blog.urlSlug;
         if (newSlug !== originalSlug) {
-          router.push(`/admin/dashboard/blogs/${newSlug}`);
+          router.push(`/admin/blogs/${newSlug}`);
         } else {
-          router.push("/admin/dashboard/blogs");
+          router.push("/admin");
         }
       } else {
         alert("Update failed: " + result?.error || "Unknown error");
@@ -79,9 +79,8 @@ export default function EditBlog() {
   if (loading) return <p className="p-4">Loading...</p>;
 
   return (
-    <div className="">
-       {blogData && <BlogForm initialData={blogData} onSubmit={handleUpdate} />}
+    <div className="p-6">
+      {blogData && <BlogForm2 initialData={blogData} onSubmit={handleUpdate} />}
     </div>
   );
 }
-

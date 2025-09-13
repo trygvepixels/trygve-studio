@@ -11,6 +11,8 @@ export default function EditorJSRenderer({ value, onChange }) {
   const editorRef = useRef(null);
   const holderRef = useRef(null);
 
+  
+
   useEffect(() => {
     if (!holderRef.current || editorRef.current) return;
 

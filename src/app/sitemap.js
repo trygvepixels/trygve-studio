@@ -48,7 +48,7 @@ export default async function sitemap() {
   const blogPostPages = blogs.map((blog) => ({
     url: `${baseUrl}/blogs/${blog.id}`,
     lastModified: new Date(blog.updatedAt || blog.createdAt || new Date()), // Use actual last modified date if available
-    changeFrequency: 'weekly', // Or 'daily' if you update frequently
+    changeFrequency: 'daily', // Or 'daily' if you update frequently
     priority: 0.7,
   }));
 
