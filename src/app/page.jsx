@@ -64,7 +64,10 @@ const Page = () => {
 
     // honeypot
     if ((formData.get("_honey") || "").toString().trim() !== "") {
-      setStatus({ state: "success", message: "Thanks! Your enquiry has been saved." });
+      setStatus({
+        state: "success",
+        message: "Thanks! Your enquiry has been saved.",
+      });
       return;
     }
 
@@ -85,11 +88,16 @@ const Page = () => {
       } catch {}
 
       if (!res.ok || !result?.success) {
-        throw new Error(result?.error || `Failed to submit (HTTP ${res.status})`);
+        throw new Error(
+          result?.error || `Failed to submit (HTTP ${res.status})`
+        );
       }
 
       form.reset();
-      setStatus({ state: "success", message: "Thanks! Your enquiry has been saved." });
+      setStatus({
+        state: "success",
+        message: "Thanks! Your enquiry has been saved.",
+      });
 
       // SPA replace + hard fallback
       try {
@@ -176,8 +184,7 @@ const Page = () => {
               },
               {
                 "@type": "Place",
-                name:
-                  "Branch Office — Kursi Road (Near Integral University Hospital Gate)",
+                name: "Branch Office — Kursi Road (Near Integral University Hospital Gate)",
                 address: {
                   "@type": "PostalAddress",
                   streetAddress:
@@ -190,8 +197,7 @@ const Page = () => {
               },
               {
                 "@type": "Place",
-                name:
-                  "Corporate Meeting Space — Levana Cyber Heights (Regus)",
+                name: "Corporate Meeting Space — Levana Cyber Heights (Regus)",
                 address: {
                   "@type": "PostalAddress",
                   streetAddress:
@@ -234,8 +240,7 @@ const Page = () => {
                   "@type": "Offer",
                   itemOffered: {
                     "@type": "Service",
-                    name:
-                      "Engineering, Procurement & Construction (EPC)",
+                    name: "Engineering, Procurement & Construction (EPC)",
                   },
                 },
                 {
@@ -250,8 +255,11 @@ const Page = () => {
           })}
         </Script>
       </>
-      <a  href="https://wa.me/919554440400"  className="fixed bottom-20 right-8 bg-wh ite text-green-500 rounded-full text-4xl z-50 ">
-          <Image src={whatsapp} height={50} />
+      <a
+        href="https://wa.me/919554440400"
+        className="fixed bottom-20 right-8 bg-wh ite text-green-500 rounded-full text-4xl z-50 "
+      >
+        <Image src={whatsapp} height={50} />
       </a>
       <Hero />
       {/* <About /> */}
@@ -408,16 +416,15 @@ const Page = () => {
                               {submitting ? "Sending…" : "Send Your Vision"}
                             </button>
 
-
-                             <a
-                                          href="https://wa.me/919554440400" // ← replace with your WhatsApp
-                                          target="_blank"
-                                          rel="noreferrer"
-                                          className="inline-flex items-center gap-2 rounded-full border border-[#101010] px-5 py-3 text-xs md:text-[15px] hover:bg-black hover:text-white transition"
-                                        >
-                                          <FaWhatsapp className="text-green-600" />
-                                          Quick Chat on WhatsApp
-                                        </a>
+                            <a
+                              href="https://wa.me/919554440400" // ← replace with your WhatsApp
+                              target="_blank"
+                              rel="noreferrer"
+                              className="inline-flex items-center gap-2 rounded-full border border-[#101010] px-5 py-3 text-xs md:text-[15px] hover:bg-black hover:text-white transition"
+                            >
+                              <FaWhatsapp className="text-green-600" />
+                              Quick Chat on WhatsApp
+                            </a>
                           </div>
 
                           {status.state === "error" && (
@@ -460,7 +467,12 @@ function Field({
     <label className="block">
       <span className="mb-2 text-xs block text-sm font-medium">
         {label}
-        {required && <span aria-hidden className="text-red-600"> *</span>}
+        {required && (
+          <span aria-hidden className="text-red-600">
+            {" "}
+            *
+          </span>
+        )}
       </span>
       <input
         type={type}
@@ -475,12 +487,23 @@ function Field({
   );
 }
 
-function Select({ label, name, options = [], required = false, disabled = false }) {
+function Select({
+  label,
+  name,
+  options = [],
+  required = false,
+  disabled = false,
+}) {
   return (
     <label className="block text-xs">
       <span className="mb-2 text-xs block text-xs font-medium">
         {label}
-        {required && <span aria-hidden className="text-red-600"> *</span>}
+        {required && (
+          <span aria-hidden className="text-red-600">
+            {" "}
+            *
+          </span>
+        )}
       </span>
       <select
         name={name}
@@ -513,7 +536,12 @@ function Textarea({
     <label className="block">
       <span className="mb-2 block text-xs font-medium">
         {label}
-        {required && <span aria-hidden className="text-red-600"> *</span>}
+        {required && (
+          <span aria-hidden className="text-red-600">
+            {" "}
+            *
+          </span>
+        )}
       </span>
       <textarea
         name={name}
