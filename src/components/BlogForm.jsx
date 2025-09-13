@@ -740,6 +740,7 @@ export default function BlogForm({ initialData = {}, onSubmit }) {
           </div>
         </div>
       </div>
+      
     </form>
   );
 }

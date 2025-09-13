@@ -14,6 +14,8 @@ import Popup from "@/components/Popup";
 import { useRouter } from "next/navigation";
 import { FaWhatsapp } from "react-icons/fa";
 import Script from "next/script";
+import whatsapp from "@/assets/whatsapp.png";
+import Image from "next/image";
 
 const Page = () => {
   const [showPopup, setShowPopup] = useState(false);
@@ -248,6 +250,9 @@ const Page = () => {
           })}
         </Script>
       </>
+      <a  href="https://wa.me/919554440400"  className="fixed bottom-20 right-8 bg-wh ite text-green-500 rounded-full text-4xl z-50 ">
+          <Image src={whatsapp} height={50} />
+      </a>
       <Hero />
       {/* <About /> */}
       <ClientsMarquee />

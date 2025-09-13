@@ -265,3 +265,15 @@ button{
 }
 
  
+.ce-block__content h1 {
+  @apply text-3xl font-bold mt-4 mb-2;
+}
+
+.ce-block__content h2 {
+  @apply text-2xl font-semibold mt-3 mb-2;
+}
+
+.ce-block__content h3 {
+  @apply text-xl font-medium mt-2 mb-1;
+}
+

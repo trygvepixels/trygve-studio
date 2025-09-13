@@ -96,7 +96,7 @@ export default function BlogsClientUI({ blog }) {
       </section>
 
       {/* Main Content Area */}
-      <div className="max-w-7xl mx-auto md:px-0 px-4 mt-10 flex flex-col lg:flex-row gap-8">
+      <div className="max-w-7xl bg-[] mx-auto md:px-0 px-4 mt-10 flex flex-col lg:flex-row gap-8">
         <div className="w-full">
           {contentData ? (
             <EditorJsRenderer content={contentData} />
@@ -173,6 +173,9 @@ export default function BlogsClientUI({ blog }) {
           <p><strong>Phone:</strong> {blog.phone}</p>
         </section>
       )} */}
+
+
+      
     </div>
   );
 }

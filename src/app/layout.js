@@ -2,7 +2,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-
  // app/page.jsx (or app/(site)/page.jsx)
 import Script from 'next/script';
 
@@ -167,7 +166,9 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body>
+
         <Header />
+        
         <div className="md:pt-24 pt-32">
           {children}
         </div>
