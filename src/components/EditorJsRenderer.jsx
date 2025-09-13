@@ -2,45 +2,27 @@
 
 import React from "react";
 
-// Utility: Clean raw text
-function cleanText(input = "") {
-  return String(input || "")
-    .replace(/&nbsp;/g, " ")
-    .replace(/<br\s*\/?>/gi, "")
-    .replace(/\s+/g, " ")
-    .trim();
-}
-
-// Utility: Clean inline HTML
-function cleanHtml(html = "") {
-  const withoutScripts = html.replace(
-    /<script[\s\S]*?>[\s\S]*?<\/script>/gi,
-    ""
-  );
-  return withoutScripts
-    .replace(/&nbsp;/g, " ")
-    .replace(/<br\s*\/?>/gi, "")
-    .trim();
-}
-
-// ✅ Main Read-Only Renderer Component
-export default function EditorJsRenderer({ content }) {
-  if (!content || !content.blocks) return null;
-  function decodeHtmlEntities(str) {
-    if (typeof window !== "undefined") {
-      const txt = document.createElement("textarea");
-      txt.innerHTML = str;
-      return txt.value;
-    }
-    return str;
+/** Utility: decode HTML entities safely */
+function decodeHtmlEntities(str = "") {
+  if (typeof window !== "undefined") {
+    const txt = document.createElement("textarea");
+    txt.innerHTML = str;
+    return txt.value;
   }
+  return str;
+}
+
+/** ✅ Redesigned EditorJsRenderer */
+export default function EditorJsRenderer({ content }) {
+  if (!content || !Array.isArray(content.blocks)) return null;
 
   return (
-    <div className="max-w-6xl mx-auto space-y-6 text-gray-800 [&_a]:text-blue-600 [&_a]:underline">
+    <div className="max-w-7xl mx-auto space-y-8 text-gray-900 leading-relaxed [&_a]:text-blue-600 [&_a]:underline">
       {content.blocks.map((block) => {
         const { type, data, id } = block;
 
         switch (type) {
+          /** Headers */
           case "header": {
             const Tag = `h${data.level || 2}`;
             const sizes = {
@@ -51,94 +33,92 @@ export default function EditorJsRenderer({ content }) {
               5: "text-lg",
               6: "text-base",
             };
-            const text = decodeHtmlEntities(cleanText(data.text));
-            if (!text) return null;
             return (
               <Tag
                 key={id}
-                className={`${sizes[data.level] || "text-xl"} font-medium  mt-6`}
-              >
-                {text}
-              </Tag>
-            );
-          }
-
-          case "paragraph": {
-            const cleaned = cleanHtml(data.text);
-            if (!cleaned) return null;
-            return (
-              <div
-                key={id}
-                className="text-base leading-relaxed"
-                dangerouslySetInnerHTML={{ __html: cleaned }}
+                className={`${sizes[data.level] || "text-2xl"} font-semibold mt-8`}
+                dangerouslySetInnerHTML={{ __html: decodeHtmlEntities(data.text || "") }}
               />
             );
           }
 
+          /** Paragraphs */
+          case "paragraph": {
+            if (!data.text) return null;
+            return (
+              <p
+                key={id}
+                className="text-base leading-7"
+                dangerouslySetInnerHTML={{ __html: decodeHtmlEntities(data.text) }}
+              />
+            );
+          }
+
+          /** Lists */
           case "list": {
             if (!Array.isArray(data.items)) return null;
-
-            const items = data.items
-              .map((item) => {
-                if (typeof item === "string") return cleanText(item);
-                if (typeof item === "object" && item.content)
-                  return cleanText(item.content);
-                if (typeof item === "object" && item.text)
-                  return cleanText(item.text);
-                return "";
-              })
-              .filter(Boolean);
-
-            if (!items.length) return null;
-
             const Tag = data.style === "ordered" ? "ol" : "ul";
             const listClass =
               data.style === "ordered"
-                ? "list-decimal ml-6 text-base"
-                : "list-disc ml-6 text-base";
+                ? "list-decimal ml-8 text-base leading-7"
+                : "list-disc ml-8 text-base leading-7";
 
             return (
               <Tag key={id} className={listClass}>
-                {items.map((item, i) => (
-                  <li key={i} className="">
-                    {item}
-                  </li>
-                ))}
+                {data.items.map((item, i) => {
+                  let value = "";
+                  if (typeof item === "string") {
+                    value = item;
+                  } else if (typeof item === "object") {
+                    value = item.text || item.content || "";
+                  }
+                  return (
+                    <li
+                      key={i}
+                      dangerouslySetInnerHTML={{ __html: decodeHtmlEntities(value) }}
+                    />
+                  );
+                })}
               </Tag>
             );
           }
 
+          /** Images */
           case "image": {
             const url = data?.file?.url || data?.url;
             if (!url) return null;
             return (
-              <div key={id} className="my-6">
+              <figure key={id} className="my-10">
                 <img
                   src={url}
                   alt={data.caption || ""}
-                  className="w-full max-h-[500px] object-contain rounded-lg shadow-md"
+                  className="w-full max-h-[600px] object-contain rounded-xl shadow-lg"
                 />
                 {data.caption && (
-                  <p className="text-sm text-center text-gray-500 mt-2">
-                    {cleanText(data.caption)}
-                  </p>
+                  <figcaption
+                    className="text-sm text-center text-gray-600 mt-3 italic"
+                    dangerouslySetInnerHTML={{ __html: decodeHtmlEntities(data.caption) }}
+                  />
                 )}
-              </div>
+              </figure>
             );
           }
 
+          /** Tables */
           case "table": {
             if (!Array.isArray(data.content)) return null;
             return (
-              <div key={id} className="overflow-x-auto my-6">
-                <table className="table-auto w-full border-collapse border border-gray-300 text-sm">
+              <div key={id} className="overflow-x-auto my-10">
+                <table className="table-auto w-full border-collapse border border-gray-400 text-base">
                   <tbody>
                     {data.content.map((row, i) => (
                       <tr key={i} className="even:bg-gray-50">
                         {row.map((cell, j) => (
-                          <td key={j} className="border px-4 py-2">
-                            {cleanText(cell)}
-                          </td>
+                          <td
+                            key={j}
+                            className="border px-5 py-3"
+                            dangerouslySetInnerHTML={{ __html: decodeHtmlEntities(cell) }}
+                          />
                         ))}
                       </tr>
                     ))}
@@ -148,24 +128,26 @@ export default function EditorJsRenderer({ content }) {
             );
           }
 
+          /** Quotes */
           case "quote": {
-            const text = cleanText(data.text);
-            if (!text) return null;
+            if (!data.text) return null;
             return (
               <blockquote
                 key={id}
-                className="border-l-4 border-blue-500 pl-4 italic text-gray-700 text-lg bg-blue-50 p-4 rounded"
+                className="border-l-4 border-blue-600 pl-6 italic text-gray-800 text-lg bg-blue-50 p-4 rounded-lg"
               >
-                {text}
+                <div dangerouslySetInnerHTML={{ __html: decodeHtmlEntities(data.text) }} />
                 {data.caption && (
-                  <footer className="mt-2 text-sm text-blue-700 font-medium">
-                    — {cleanText(data.caption)}
-                  </footer>
+                  <footer
+                    className="mt-3 text-base text-blue-700 font-medium"
+                    dangerouslySetInnerHTML={{ __html: decodeHtmlEntities(data.caption) }}
+                  />
                 )}
               </blockquote>
             );
           }
 
+          /** Default: skip unsupported blocks */
           default:
             return null;
         }

@@ -69,7 +69,7 @@ export default function BlogsClientUI({ blog }) {
   if (!mounted) return null;
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-[#F4F1EC]">
       {/* Hero Section */}
       <section className="relative w-full h-[60vh]  overflow-hidden">
         <img
@@ -77,7 +77,7 @@ export default function BlogsClientUI({ blog }) {
           alt={blog?.title || "Blog cover"}
           className="w-full h-full object-cover brightness-50 absolute"
         />
-        <div className="absolute md:px-0 px-4 inset-0 flex flex-col justify-end px-0 md:px-10 pb-10 text-white max-w-7xl mx-auto">
+        <div className="absolute md:px-0 px-4 inset-0 flex flex-col justify-end px-0 md:px-0 pb-10 text-white max-w-7xl mx-auto">
           <span className="bg-white/20 backdrop-blur px-4 py-2 rounded-full text-xs font-medium w-fit mb-3">
             {blog.category}
           </span>
@@ -96,7 +96,7 @@ export default function BlogsClientUI({ blog }) {
       </section>
 
       {/* Main Content Area */}
-      <div className="max-w-7xl bg-[] mx-auto md:px-0 px-4 mt-10 flex flex-col lg:flex-row gap-8">
+      <div className="max-w-7xl bg-[#F4F1EC] mx-auto md:px-0 px-4 mt-10 flex flex-col lg:flex-row gap-8">
         <div className="w-full">
           {contentData ? (
             <EditorJsRenderer content={contentData} />
