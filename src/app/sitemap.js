@@ -43,14 +43,21 @@ export default async function sitemap() {
   // Fetch all your dynamic blog posts
   // You need to replace `getBlogs` with your actual function to retrieve all blog post data
   // This function should return an array of objects, each with at least an `id` and `updatedAt` (or `createdAt`) property.
-  const blogs = await getBlogs(); // This will call your backend API or database
+ const blogs = await getBlogs();
 
-  const blogPostPages = blogs.map((blog) => ({
-    url: `${baseUrl}/blogs/${blog.id}`,
-    lastModified: new Date(blog.updatedAt || blog.createdAt || new Date()), // Use actual last modified date if available
-    changeFrequency: 'daily', // Or 'daily' if you update frequently
-    priority: 0.7,
-  }));
+  // --- ADD THIS CONSOLE.LOG ---
+  console.log("Raw blogs data from getBlogs():", blogs);
+  // --- AND THIS TYPE CHECK ---
+  console.log("Type of blogs data:", typeof blogs, Array.isArray(blogs));
+const blogPostPages = Array.isArray(blogs)
+    ? blogs.map((blog) => ({
+        url: `${baseUrl}/blogs/${blog.id}`,
+        lastModified: new Date(blog.updatedAt || blog.createdAt || new Date()),
+        changeFrequency: 'daily',
+        priority: 0.7,
+      }))
+    : []; // If it's not an array, default to an empty array
+
 
   return [...staticPages, ...blogPostPages];
 }
