@@ -54,7 +54,9 @@ export default function FooterPremium({ variant = "bronze" }) {
   return (
     <footer className="relative" style={{ background: c.base, color: c.ink }}>
 
-      <FooterContactForm />
+      <div className="pt-16 ">
+        <FooterContactForm />
+      </div>
       {/* Top CTA strip */}
       <section
         className="border-y"

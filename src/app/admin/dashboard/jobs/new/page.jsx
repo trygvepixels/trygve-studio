@@ -74,7 +74,7 @@ export default function NewJobPage() {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-0 md:px-8 py-4">
+    <div className="max-w-7xl mx-auto px-4 sm:px-0 md:px-8 py-4 pt-32">
       <h2 className="text-2xl font-semibold">New Job</h2>
       <form onSubmit={handleSubmit} className="mt-6 space-y-5">
         {error && <p className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-700">{error}</p>}

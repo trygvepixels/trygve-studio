@@ -186,20 +186,16 @@ export default function BlogListPage() {
   }, [blogs, dq, category, author, sort]);
 
   return (
-    <main className="min-h-screen bg-[#F4F1EC]">
+    <main className="min-h-screen pt-20 bg-[#F4F1EC]">
       {/* Header */}
-      <header className="border-b bg-[#F4F1EC]/80 backdrop-blur sticky top-0 z-20">
+      <header className=" -b bg-[#F4F1EC]/80 backdrop-blur sticky top-0 z-20">
         <div className="max-w-7xl mx-auto px-5 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <Image src={logo} alt="logo" className="h-10 w-10" />
-            <div>
-              <div className="text-xs tracking-wider uppercase text-neutral-600">Admin</div>
-              <h1 className="text-xl font-semibold leading-tight">Blog Dashboard</h1>
-            </div>
+            
           </div>
           <Link
             href="/admin/dashboard/blogs/new"
-            className="inline-flex items-center gap-2 rounded-full border border-black px-4 h-10 hover:bg-black hover:text-white transition"
+            className="inline-flex bg-[#244D7E] items-center gap-2 rounded-full   border-  px-4 h-10 text-white transition"
           >
             <FiPlus /> New Post
           </Link>

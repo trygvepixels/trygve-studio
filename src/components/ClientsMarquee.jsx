@@ -1,127 +1,24 @@
 "use client";
-import choi from '@/assets/logo/choi.png'
-import hil from '@/assets/logo/hil.png'
-import holi from '@/assets/logo/holi.png'
-import hyatt from '@/assets/logo/hyatt.png'
-import ob from '@/assets/logo/ob.png'
-import radi from '@/assets/logo/radi.png'
-import ram from '@/assets/logo/ram.png'
+import { useEffect, useState } from "react";
 import Image from 'next/image'
 
 export default function ClientsMarquee() {
-  const logos = [
-    choi,
-    hil,
-    
-    holi,
-    hyatt,
-      radi,
-    ob,
-  
-    ram,
-    choi,
-    hil,
-    
-    holi,
-    hyatt,
-      radi,
-    ob,
-  
-    ram,
-    choi,
-    hil,
-    
-    holi,
-    hyatt,
-      radi,
-    ob,
-  
-    ram,
-    choi,
-    hil,
-    
-    holi,
-    hyatt,
-      radi,
-    ob,
-  
-    ram,
-    choi,
-    hil,
-    
-    holi,
-    hyatt,
-      radi,
-    ob,
-  
-    ram,
-    choi,
-    hil,
-    
-    holi,
-    hyatt,
-      radi,
-    ob,
-  
-    ram,
-    choi,
-    hil,
-    
-    holi,
-    hyatt,
-      radi,
-    ob,
-  
-    ram,
-    choi,
-    hil,
-    
-    holi,
-    hyatt,
-      radi,
-    ob,
-  
-    ram,
-    choi,
-    hil,
-    
-    holi,
-    hyatt,
-      radi,
-    ob,
-  
-    ram,
-    choi,
-    hil,
-    
-    holi,
-    hyatt,
-      radi,
-    ob,
-  
-    ram,
-    choi,
-    hil,
-    
-    holi,
-    hyatt,
-      radi,
-    ob,
-  
-    ram,
-    choi,
-    hil,
-    
-    holi,
-    hyatt,
-      radi,
-    ob,
-  
-    ram,
+  const [logos, setLogos] = useState([]);
 
-    
-     
-  ];
+  useEffect(() => {
+    async function fetchLogos() {
+      try {
+        const res = await fetch('/api/client-logos?limit=100&sort=order', { cache: "no-store" });
+        if (!res.ok) throw new Error("Failed to fetch logos");
+        const data = await res.json();
+        console.log(data)
+        setLogos(Array.isArray(data.items) ? data.items : []);
+      } catch (err) {
+        setLogos([]);
+      }
+    }
+    fetchLogos();
+  }, []);
 
   const track = [...logos, ...logos]; // duplicate for seamless loop
 
@@ -142,19 +39,21 @@ export default function ClientsMarquee() {
           <div className="pointer-events-none absolute inset-y-0 right-0 w-10 bg-gradient-to-l from-[#F4F1EC] to-transparent" />
 
           <div className="marquee w-[200%]">
-            {track.map((src, i) => (
+            {track.map((logo, i) => (
               <div
                 key={i}
                 className="shrink-0 mx-4 md:mx-8 inline-flex h-12 w-28 md:h-16 md:w-40 items-center justify-center grayscale opacity-70 transition hover:opacity-100 hover:grayscale-0"
               >
-                <Image
-                  src={src}
-                  alt={`Client logo ${i + 1}`}
-                  width={160}
-                  height={64}
-                  className="h-full w-full object-contain"
-                  loading="lazy"
-                />
+                {logo.image?.src && (
+                  <img
+                    src={logo.image?.src}
+                    alt={logo.name || `Client logo ${i + 1}`}
+                    width={160}
+                    height={64}
+                    className="h-full w-full object-contain"
+                    loading="lazy"
+                  />
+                )}
               </div>
             ))}
           </div>

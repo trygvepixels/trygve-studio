@@ -72,7 +72,7 @@ export default function EditJobPage() {
   if (!job) return <p>Not found.</p>;
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-0 md:px-8 py-4">
+    <div className="max-w-7xl mx-auto px-4 pt-32 sm:px-0 md:px-8 py-4">
       <h2 className="text-2xl font-semibold">Edit Job</h2>
 
       {okMsg && <p className="mt-4 rounded-lg bg-emerald-50 px-3 py-2 text-sm text-emerald-700">{okMsg}</p>}

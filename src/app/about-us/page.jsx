@@ -13,6 +13,7 @@ import {
 } from "react-icons/fi";
 import Image from "next/image";
 import faisal from "@/assets/image.png";
+import TeamSection from "@/components/TeamSection";
 
 
  import Script from 'next/script';
@@ -412,7 +413,7 @@ Uttar Pradesh – 226026, India
           </div>
         </div>
       </div>
-
+<TeamSection />
 
       {/* Location / Office Pin */}
 <section id="location" className="relative bg-[#F3F1EB] py-4">

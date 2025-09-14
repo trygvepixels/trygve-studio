@@ -1,46 +1,70 @@
+// /app/api/feature-projects/[id]/route.js
 import { NextResponse } from "next/server";
-import { connectDB } from "@/lib/mongodb";
 import FeatureProject from "@/models/FeatureProject";
-import mongoose from "mongoose";
+import { connectDB } from "@/lib/mongodb";
 
-const isValidId = (id) => mongoose.Types.ObjectId.isValid(id);
+export const runtime = "nodejs";
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
+// GET /api/feature-projects/:slug   (only featured:true)
 export async function GET(_req, { params }) {
-  await connectDB();
-  const { id } = params;
-  if (!isValidId(id)) return NextResponse.json({ error: "Invalid id" }, { status: 400 });
-
-  const doc = await FeatureProject.findById(id).lean();
-  if (!doc) return NextResponse.json({ error: "Not found" }, { status: 404 });
-  return NextResponse.json(doc);
-}
-
-export async function PATCH(request, { params }) {
-  await connectDB();
-  const { id } = params;
-  if (!isValidId(id)) return NextResponse.json({ error: "Invalid id" }, { status: 400 });
-
-  const body = await request.json();
   try {
-    const doc = await FeatureProject.findByIdAndUpdate(
-      id,
-      { $set: body },
-      { new: true, runValidators: true }
-    ).lean();
+    await connectDB();
+    const slug = params.id; // treat the dynamic segment as slug
+
+    const doc = await FeatureProject.findOne({ slug, featured: true }).lean();
     if (!doc) return NextResponse.json({ error: "Not found" }, { status: 404 });
     return NextResponse.json(doc);
   } catch (err) {
-    console.error(err);
-    if (err?.code === 11000) return NextResponse.json({ error: "Slug already exists" }, { status: 409 });
+    console.error("GET /feature-projects/:slug error:", err);
+    return NextResponse.json({ error: "Failed to fetch project" }, { status: 500 });
+  }
+}
+
+// PATCH /api/feature-projects/:slug   (only featured:true)
+export async function PATCH(req, { params }) {
+  try {
+    await connectDB();
+    const slug = params.id;
+    const body = await req.json();
+
+    // Normalize legacy galleryImages -> gallery if needed
+    if ((!body.gallery || body.gallery.length === 0) && Array.isArray(body.galleryImages)) {
+      body.gallery = body.galleryImages.map((src) => ({ src, alt: "" }));
+    }
+
+    const updated = await FeatureProject.findOneAndUpdate(
+      { slug, featured: true },
+      { $set: body },
+      { new: true, runValidators: true }
+    ).lean();
+
+    if (!updated) return NextResponse.json({ error: "Not found" }, { status: 404 });
+    return NextResponse.json(updated);
+  } catch (err) {
+    console.error("PATCH /feature-projects/:slug error:", err);
+    if (err?.code === 11000) {
+      return NextResponse.json(
+        { error: "Duplicate key", fields: err.keyValue },
+        { status: 409 }
+      );
+    }
     return NextResponse.json({ error: "Failed to update project" }, { status: 500 });
   }
 }
 
+// DELETE /api/feature-projects/:slug   (only featured:true)
 export async function DELETE(_req, { params }) {
-  await connectDB();
-  const { id } = params;
-  if (!isValidId(id)) return NextResponse.json({ error: "Invalid id" }, { status: 400 });
+  try {
+    await connectDB();
+    const slug = params.id;
 
-  await FeatureProject.findByIdAndDelete(id);
-  return NextResponse.json({ ok: true });
+    const res = await FeatureProject.findOneAndDelete({ slug, featured: true }).lean();
+    if (!res) return NextResponse.json({ error: "Not found" }, { status: 404 });
+    return NextResponse.json({ ok: true });
+  } catch (err) {
+    console.error("DELETE /feature-projects/:slug error:", err);
+    return NextResponse.json({ error: "Failed to delete project" }, { status: 500 });
+  }
 }

@@ -63,7 +63,7 @@ export default function AdminJobsPage() {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-0 md:px-8 py-4 min-h-screen">
+    <div className="max-w-7xl mx-auto px-4 sm:px-0 md:px-8 py-4 pt-32 min-h-screen">
       <div className="flex items-center justify-between gap-4">
         <h2 className="text-2xl font-semibold">Jobs</h2>
         <Link

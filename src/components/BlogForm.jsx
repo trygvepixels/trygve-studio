@@ -406,7 +406,7 @@ export default function BlogForm({ initialData = {}, onSubmit }) {
   return (
     <form onSubmit={handleSubmit} className="bg-[#F4F1EC]">
       {/* Page header */}
-      <div className="max-w-7xl mx-auto md:px-0 px-4 pt-10 pb-6">
+      <div className="max-w-7xl mx-auto md:px-0 px-4 pt-24 pb-6">
         <div className="flex items-end justify-between gap-3">
           <div>
             <p className="text-xs tracking-wider uppercase text-neutral-600">Editor</p>
@@ -420,7 +420,7 @@ export default function BlogForm({ initialData = {}, onSubmit }) {
             <button
               type="submit"
               disabled={uploading}
-              className="rounded-full border border-black bg-[#234D7E] px-5 py-2 text-sm   text-white inline-flex items-center gap-2 disabled:opacity-50"
+              className="rounded-full   bg-[#244D7E] px-5 py-2 text-sm   text-white inline-flex items-center gap-2 disabled:opacity-50"
             >
               <FiCheck /> Publish
             </button>
