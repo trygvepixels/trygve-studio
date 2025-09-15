@@ -25,13 +25,19 @@ export default async function sitemap() {
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/featured-projects`,
+      url: `${baseUrl}/services`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/jobs`,
+      url: `${baseUrl}/conatct-us`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/career`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.5,

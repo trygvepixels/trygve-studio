@@ -150,7 +150,7 @@ export default function FooterPremium({ variant = "bronze" }) {
                 { label: "About Us", href: "/about-us" },
                 { label: "Projects Gallery", href: "/projects" },
                 { label: "Services", href: "/services" },
-                { label: "Contact", href: "/contact" },
+                { label: "Contact", href: "/contact-us" },
               ].map((link) => (
                 <li key={link.href}>
                   <Link
