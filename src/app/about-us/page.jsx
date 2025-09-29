@@ -14,6 +14,7 @@ import {
 import Image from "next/image";
 import faisal from "@/assets/image.png";
 import TeamSection from "@/components/TeamSection";
+import LocationsList from "@/components/LocationsList";
 
 
  import Script from 'next/script';

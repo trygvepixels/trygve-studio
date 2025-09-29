@@ -208,6 +208,12 @@ export default function AdminDashboard() {
                title="Client Logs"
                 desc="Manage brand logos for case studies."
               />
+              <ActionCard
+                href="/admin/dashboard/locations"
+                icon={<FiStar />}
+               title="Locations"
+                desc="Manage locations for offices & project sites."
+              />
                
 
             </section>

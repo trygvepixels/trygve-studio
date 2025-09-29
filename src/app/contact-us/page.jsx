@@ -10,6 +10,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 import contactImg from '@/assets/contact/contact.png'
+import LocationsList from "@/components/LocationsList";
 
 export default function ContactPage() {
   const [submitting, setSubmitting] = useState(false);
@@ -339,6 +340,8 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+        <LocationsList />
+
     </main>
   );
 }

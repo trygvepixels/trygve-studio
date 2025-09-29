@@ -13,7 +13,7 @@ export const metadata = {
     template: '%s | Trygve Studio',
   },
   description:
-    'Full-fledged architectural & allied engineering firm based in Lucknow, India — delivering Architecture, Interior Design, PMC, EPC, and 3D Visualisation from concept to completion with design, documentation, and site coordination. Operating globally across APAC, EMEA & North America.',
+    'Full-fledged architectural & allied engineering firm based in Lucknow, Hire the Best Architects in Lucknow | Modern Homes, Smart Offices, On-Time Delivery | Trygve Studio',
   keywords: [
      'architecture firm Lucknow',
     'architects in Lucknow',
