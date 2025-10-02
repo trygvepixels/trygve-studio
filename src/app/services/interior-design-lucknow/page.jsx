@@ -133,7 +133,7 @@ export default function InteriorDesignInLucknow() {
             src="https://images.unsplash.com/photo-1615874959474-d609969a20ed"
             alt="Best Interior Designers in Lucknow - Trygve Studio"
             fill
-            className="object-cover brightness-50"
+            className="object-cover md:h-auto h-full brightness-50"
           />
         </div>
         <div className="relative z-10 text-center max-w-6xl px-6">
@@ -183,7 +183,7 @@ export default function InteriorDesignInLucknow() {
                     src={service.image}
                     alt={`${service.title} - Interior Design Lucknow`}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-700"
+                    className="object-cover md:h-auto h-full group-hover:scale-105 transition-transform duration-700"
                   />
                 </div>
                 <div className="space-y-3">

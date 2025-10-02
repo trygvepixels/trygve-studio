@@ -95,7 +95,7 @@ export default function ArchitectsInLucknow() {
             src="https://images.unsplash.com/photo-1505691938895-1758d7feb511"
             alt="Best Architects in Lucknow - Trygve Studio"
             fill
-            className="object-cover brightness-50"
+            className="object-cover md:h-auto h-full brightness-50"
             priority
           />
         </div>
@@ -149,7 +149,7 @@ export default function ArchitectsInLucknow() {
                     src={service.image}
                     alt={`${service.title} - Architects in Lucknow`}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-700"
+                    className="object-cover md:h-auto h-full group-hover:scale-105 transition-transform duration-700"
                   />
                 </div>
                 <div className="space-y-3">
