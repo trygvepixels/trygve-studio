@@ -2,121 +2,121 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
- // app/page.jsx (or app/(site)/page.jsx)
-import Script from 'next/script';
+// app/page.jsx (or app/(site)/page.jsx)
+import Script from "next/script";
 
 export const metadata = {
-  metadataBase: new URL('https://www.trygvestudio.com'),
+  metadataBase: new URL("https://www.trygvestudio.com"),
   title: {
     default:
-      'Trygve Studio Private Limited — Architecture, Interiors, PMC, EPC & 3D Visualisation',
-    template: '%s | Trygve Studio',
+      "Trygve Studio Private Limited — Architecture, Interiors, PMC, EPC & 3D Visualisation",
+    template: "%s | Trygve Studio",
   },
   description:
-    'Full-fledged architectural & allied engineering firm based in Lucknow, Hire the Best Architects in Lucknow | Modern Homes, Smart Offices, On-Time Delivery | Trygve Studio',
+    "Full-fledged architectural & allied engineering firm based in Lucknow, Hire the Best Architects in Lucknow | Modern Homes, Smart Offices, On-Time Delivery | Trygve Studio",
   keywords: [
-     'architecture firm Lucknow',
-    'architects in Lucknow',
-    'interior designer Lucknow',
-    'construction company Lucknow',
-    'PMC',
-    'EPC',
-    '3D visualisation',
-    'architectural design India',
-    'interior design India',
-    'project management consultancy',
-    'engineering firm',
-    'global architecture studio',
-  // Broad / Category
-  "Trygve Studio",
-  "architecture firm Lucknow",
-  "architects in Lucknow",
-  "architectural services India",
-  "interior designer Lucknow",
-  "interior design India",
-  "design studio India",
-  "construction company Lucknow",
-  "project management consultancy",
-  "engineering firm India",
-  "global architecture studio",
-  "architectural design services",
+    "architecture firm Lucknow",
+    "architects in Lucknow",
+    "interior designer Lucknow",
+    "construction company Lucknow",
+    "PMC",
+    "EPC",
+    "3D visualisation",
+    "architectural design India",
+    "interior design India",
+    "project management consultancy",
+    "engineering firm",
+    "global architecture studio",
+    // Broad / Category
+    "Trygve Studio",
+    "architecture firm Lucknow",
+    "architects in Lucknow",
+    "architectural services India",
+    "interior designer Lucknow",
+    "interior design India",
+    "design studio India",
+    "construction company Lucknow",
+    "project management consultancy",
+    "engineering firm India",
+    "global architecture studio",
+    "architectural design services",
 
-  // Services
-  "architecture services",
-  "interior design services",
-  "custom home design",
-  "residential design services",
-  "commercial space planning",
-  "architectural planning and drafting",
-  "renovation and remodeling plans",
+    // Services
+    "architecture services",
+    "interior design services",
+    "custom home design",
+    "residential design services",
+    "commercial space planning",
+    "architectural planning and drafting",
+    "renovation and remodeling plans",
 
-  // Styles & Project Types
-  "modern architecture",
-  "minimalist house design",
-  "luxury home architect",
-  "industrial office design",
-  "hospitality design",
-  "restaurant interior design",
-  "mid century modern design",
-  "farmhouse interior design",
+    // Styles & Project Types
+    "modern architecture",
+    "minimalist house design",
+    "luxury home architect",
+    "industrial office design",
+    "hospitality design",
+    "restaurant interior design",
+    "mid century modern design",
+    "farmhouse interior design",
 
-  // Long-Tail / Niche
-  "residential architect in Lucknow",
-  "commercial architect in Lucknow",
-  "interior architect near me",
-  "sustainable architecture consulting",
-  "modern farmhouse design",
+    // Long-Tail / Niche
+    "residential architect in Lucknow",
+    "commercial architect in Lucknow",
+    "interior architect near me",
+    "sustainable architecture consulting",
+    "modern farmhouse design",
 
-  // Local / Regional
-  "architects near me",
-  "architecture firms near me",
-  "local architects near me",
-  "contemporary home design Lucknow",
-  "residential architect near me",
+    // Local / Regional
+    "architects near me",
+    "architecture firms near me",
+    "local architects near me",
+    "contemporary home design Lucknow",
+    "residential architect near me",
 
-  // Keyword Ideas from Trend Data
-  "architecture",
-  "architect",
-  "architectural design",
-  "building design",
-  "interior architecture",
-  "architectural services",
-  "architectural rendering",
-  "architectural drafting",
+    // Keyword Ideas from Trend Data
+    "architecture",
+    "architect",
+    "architectural design",
+    "building design",
+    "interior architecture",
+    "architectural services",
+    "architectural rendering",
+    "architectural drafting",
 
-  // Technical / Specialized
-  "3d visualisation",
-  "architectural rendering services",
-  "BIM architecture",
-  "AutoCAD architecture",
-  "architectural drafting",
+    // Technical / Specialized
+    "3d visualisation",
+    "architectural rendering services",
+    "BIM architecture",
+    "AutoCAD architecture",
+    "architectural drafting",
 
-  // Conversational / Long-tail
-  "Who is the best architect for sustainable office design?",
-  "historic home renovation in Lucknow",
-  "sustainable architecture for residential homes"
-],
+    // Conversational / Long-tail
+    "Who is the best architect for sustainable office design?",
+    "historic home renovation in Lucknow",
+    "sustainable architecture for residential homes",
+  ],
   alternates: {
-    canonical: '/',
+    canonical: "/",
   },
   openGraph: {
-    type: 'website',
-    url: 'https://www.trygvestudio.com/',
-    siteName: 'Trygve Studio',
+    type: "website",
+    url: "https://www.trygvestudio.com/",
+    siteName: "Trygve Studio",
     title:
-      'Trygve Studio Private Limited — Architecture, Interiors, PMC, EPC & 3D Visualisation',
+      "Trygve Studio Private Limited — Architecture, Interiors, PMC, EPC & 3D Visualisation",
     description:
-      'Architectural & allied engineering studio delivering end-to-end Architecture, Interiors, PMC, EPC & 3D Visualisation. HQ Lucknow, projects worldwide.',
-    locale: 'en_IN',
+      "Architectural & allied engineering studio delivering end-to-end Architecture, Interiors, PMC, EPC & 3D Visualisation. HQ Lucknow, projects worldwide.",
+    locale: "en_IN",
     // images: [{ url: '/og/og-home.jpg', width: 1200, height: 630, alt: 'Trygve Studio — Architecture & Interiors' }],
   },
   twitter: {
-    card: 'summary_large_image',
+    card: "summary_large_image",
     title:
-      'Trygve Studio — Architecture, Interiors, PMC, EPC & 3D Visualisation',
+      "Trygve Studio — Architecture, Interiors, PMC, EPC & 3D Visualisation",
     description:
-      'Full-fledged architectural & engineering firm based in Lucknow, delivering projects worldwide.',
-    creator: '@trygvestudio', // replace with your actual Twitter/X handle or remove if none
+      "Full-fledged architectural & engineering firm based in Lucknow, delivering projects worldwide.",
+    creator: "@trygvestudio", // replace with your actual Twitter/X handle or remove if none
     // images: ['/og/og-home.jpg'],
   },
   robots: {
@@ -126,22 +126,22 @@ export const metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-snippet': -1,
-      'max-image-preview': 'large',
-      'max-video-preview': -1,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
     },
   },
-  category: 'architecture',
-  authors: [{ name: 'Trygve Studio Private Limited' }],
-  creator: 'Trygve Studio',
-  publisher: 'Trygve Studio Private Limited',
+  category: "architecture",
+  authors: [{ name: "Trygve Studio Private Limited" }],
+  creator: "Trygve Studio",
+  publisher: "Trygve Studio Private Limited",
   icons: {
     icon: [
-      { url: '/favicon.ico' },
-      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
-      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: "/favicon.ico" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
     ],
-    apple: [{ url: '/apple-touch-icon.png' }],
+    apple: [{ url: "/apple-touch-icon.png" }],
   },
   verification: {
     // Add validation codes when available:
@@ -149,20 +149,16 @@ export const metadata = {
     // yandex: '',
     // me: '',
   },
-  referrer: 'strict-origin-when-cross-origin',
+  referrer: "strict-origin-when-cross-origin",
   other: {
-    'format-detection': 'telephone=no',
+    "format-detection": "telephone=no",
   },
 };
 
- 
-
- 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-         
         <link rel="icon" href="/favicon.ico" />
         <Script id="meta-pixel" strategy="afterInteractive">
           {`
@@ -174,26 +170,25 @@ export default function RootLayout({ children }) {
             t.src=v;s=b.getElementsByTagName(e)[0];
             s.parentNode.insertBefore(t,s)}(window, document,'script',
             'https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', '1026548329589827');
+            fbq('init', '1510015907088015');
             fbq('track', 'PageView');
           `}
         </Script>
         <noscript>
-          <img height="1" width="1" style={{ display: "none" }}
-            src="https://www.facebook.com/tr?id=1026548329589827&ev=PageView&noscript=1"
+          <img
+            height="1"
+            width="1"
+            style={{ display: "none" }}
+            src="https://www.facebook.com/tr?id=1510015907088015&ev=PageView&noscript=1"
           />
         </noscript>
       </head>
       <body>
-
         <Header />
-        
-        <div className="md:pt-24 pt-32">
-          {children}
-        </div>
+
+        <div className="md:pt-24 pt-32">{children}</div>
         <Footer variant="oxblood" />
       </body>
-
     </html>
   );
 }
