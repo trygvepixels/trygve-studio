@@ -1,6 +1,6 @@
 // src/app/sitemap.js
 
-import { getBlogs } from '../lib/api';
+import { getBlogs } from '../../lib/api';
 
 export default async function sitemap() {
   const baseUrl = 'https://trygvestudio.com';

@@ -156,6 +156,10 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  const isInteriorPage =
+    typeof window !== "undefined" &&
+    window.location.pathname === "/interior-designer";
+
   return (
     <html lang="en">
       <head>
@@ -197,10 +201,11 @@ export default function RootLayout({ children }) {
           <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TVF6BFPQ"
           height="0" width="0" style={{display:"none",visibility:"hidden"}}></iframe>
         </noscript>
-        <Header />
+        {!isInteriorPage && <Header />}
 
-        <div className="md:pt-24 pt-32">{children}</div>
-        <Footer variant="oxblood" />
+        <div className={isInteriorPage ? "" : "md:pt-24 pt-32"}>{children}</div>
+
+        {!isInteriorPage && <Footer variant="oxblood" />}
       </body>
     </html>
   );

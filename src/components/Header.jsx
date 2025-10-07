@@ -11,6 +11,15 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
 
+  const [isLPPage, setIsLPPage] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const currentPath = window.location.pathname;
+      setIsLPPage(currentPath === "/lp");
+    }
+  }, []);
+
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
     const prev = document.body.style.overflow;
@@ -52,8 +61,10 @@ export default function Header() {
     /* no-op; keep for symmetry/future */
   };
 
+  if (isLPPage) return null;
+
   return (
-    <header className="bg-[#F4F1EC] pt-[14px] border-b border-zinc-300 shadow-sm fixed w-full z-[100]  backdrop-blur-[0.5px]">
+    <header className="bg-[#F4F1EC]  pt-[14px] border-b border-zinc-300 shadow-sm fixed w-full z-[100]  backdrop-blur-[0.5px]">
       <Script
     src="https://www.googletagmanager.com/gtag/js?id=G-8GJTSNR2BP"
     strategy="afterInteractive"
