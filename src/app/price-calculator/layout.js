@@ -35,6 +35,8 @@ export default function InteriorDesignerLayout({ children }) {
             s.parentNode.insertBefore(t,s)}(window, document,'script',
             'https://connect.facebook.net/en_US/fbevents.js');
             fbq('init', '1510015907088015');
+            fbq('init', '779698648292728');
+            fbq('init', '1526099745243779');
             fbq('track', 'PageView');
           `}
         </Script>
@@ -44,6 +46,18 @@ export default function InteriorDesignerLayout({ children }) {
             width="1"
             style={{ display: "none" }}
             src="https://www.facebook.com/tr?id=1510015907088015&ev=PageView&noscript=1"
+          />
+          <img
+            height="1"
+            width="1"
+            style={{ display: "none" }}
+            src="https://www.facebook.com/tr?id=779698648292728&ev=PageView&noscript=1"
+          />
+          <img
+            height="1"
+            width="1"
+            style={{ display: "none" }}
+            src="https://www.facebook.com/tr?id=1526099745243779&ev=PageView&noscript=1"
           />
         </noscript>
       </head>
