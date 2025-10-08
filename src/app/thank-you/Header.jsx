@@ -1,4 +1,4 @@
-// Header.jsx
+"use client"
 import React, { useState } from 'react';
 import { FaBars, FaTimes, FaPhone } from 'react-icons/fa';
 import { IoMdArrowForward } from 'react-icons/io';

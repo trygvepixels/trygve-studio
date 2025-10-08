@@ -42,15 +42,15 @@ export default function ContactPage() {
       setStatus({ state: "success", message: "Thanks! Your enquiry has been saved." });
       // Navigate to thank-you. Use SPA replace, then hard fallback just in case.
       try {
-        router.replace("/thankyou");
+         window.location.href = `/thank-you`;
         // Fallback in case client-side nav is interrupted by form context or transitions
         setTimeout(() => {
-          if (typeof window !== "undefined" && window.location.pathname !== "/thankyou") {
-            window.location.assign("/thankyou");
+          if (typeof window !== "undefined" && window.location.pathname !== "/thank-you") {
+            window.location.assign("/thank-you");
           }
         }, 50);
       } catch (_) {
-        if (typeof window !== "undefined") window.location.assign("/thankyou");
+        if (typeof window !== "undefined") window.location.assign("/thank-you");
       }
     } catch (err) {
       console.error(err);

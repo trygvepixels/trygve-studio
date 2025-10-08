@@ -8,6 +8,9 @@ import Header from './Header';
 import Footer from './Footer';
 import whatsapp from "@/assets/whatsapp.png";
 import ClientsMarquee from './ClientsMarquee';
+import Image from 'next/image';
+import { FaPhoneAlt, FaWhatsapp } from 'react-icons/fa';
+import Link from 'next/link';
 
 const TrygveStudioLanding = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -69,6 +72,12 @@ const handleSubmit = async (e) => {
 
   return (
     <div className="w-full overflow-x-hidden bg-[#F4F1EC]">
+       <a
+              href="https://wa.me/919554440400"
+              className="fixed bottom-1/3 right-0 bg-white p-3  text-green-500 shadow-2xl rounded-2xl text-4xl z-50 "
+            >
+              <Image src={whatsapp} width={50} height={50} alt="WhatsApp chat" />
+            </a>
       {/* Floating CTA Button - Bottom Right */}
       <button
         onClick={openModal}
@@ -178,12 +187,12 @@ const handleSubmit = async (e) => {
             <h1 className="text-5xl lg:text-6xl font-bold mb-6 leading-tight">
               Bring home stunning interiors that fit your budget
             </h1>
-            <button 
-              onClick={openModal}
-              className="bg-[#ef4444] hover:bg-[#dc2626] text-white font-semibold px-10 py-5 rounded-full transition-all shadow-lg hover:shadow-xl text-lg mt-4"
+            <Link 
+            href="/price-calculator"
+               className="bg-[#ef4444] hover:bg-[#dc2626] uppercase  text-white font-semibold px-10 py-5 rounded-full transition-all shadow-lg hover:shadow-xl text-lg mt-4"
             >
-              Get Free Consultation
-            </button>
+              Get Instant Estimate
+            </Link>
           </div>
         </div>
       </section>
@@ -241,7 +250,7 @@ const handleSubmit = async (e) => {
               onClick={openModal}
               className="bg-[#ef4444] hover:bg-[#dc2626] text-white font-semibold px-6 py-3 rounded-full transition-all hidden md:block"
             >
-              View All
+              Get Free Quote
             </button>
           </div>
 
@@ -358,12 +367,12 @@ const handleSubmit = async (e) => {
                     </li>
                   ))}
                 </ul>
-                <button 
-                  onClick={openModal}
-                  className="w-full bg-[#ef4444] hover:bg-[#dc2626] text-white font-semibold py-3 rounded-full transition-all"
+                <Link 
+                  href="/price-calculator"
+                  className="w-full px-5 bg-[#ef4444] hover:bg-[#dc2626] text-white font-semibold py-3 rounded-full transition-all"
                 >
-                  Get Quote
-                </button>
+                  Calculate 
+                </Link>
               </div>
             ))}
           </div>
@@ -372,8 +381,8 @@ const handleSubmit = async (e) => {
 
       {/* ============= WHAT WE OFFER ============= */}
       <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-12">
+        <div className="max-w-7xl  mx-auto px-6">
+          <div className="text-center flex justify-between items-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
               What we offer
             </h2>
@@ -381,7 +390,7 @@ const handleSubmit = async (e) => {
               onClick={openModal}
               className="bg-[#ef4444] hover:bg-[#dc2626] text-white font-semibold px-6 py-3 rounded-full transition-all"
             >
-              Know More
+              Get Free Quote
             </button>
           </div>
 
@@ -524,6 +533,36 @@ const handleSubmit = async (e) => {
         </div>
       </section>
 
+
+      <section className="bg-[#F4F1EC] py-16">
+      <div className="max-w-2xl mx-auto text-center px-4">
+        <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-2">
+          Connect with us
+        </h2>
+        <p className="text-gray-600 mb-8">
+          Reach out on WhatsApp or give us a call for the best home design experience.
+        </p>
+        <div className="flex items-center justify-center gap-4 flex-wrap">
+          <a
+            href="tel:+919554440400"
+            className="flex items-center gap-2 bg-[#2f466d] text-white font-semibold px-6 py-3 rounded-full hover:bg-[#243654] transition-all"
+          >
+            <FaPhoneAlt className="text-white" />
+            <span className="text-sm uppercase tracking-wide">Call Now</span>
+          </a>
+          <a
+            href="https://wa.me/919554440400"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 bg-[#2f466d] text-white font-semibold px-6 py-3 rounded-full hover:bg-[#243654] transition-all"
+          >
+            <FaWhatsapp className="text-green-400" />
+            <span className="text-sm uppercase tracking-wide">WhatsApp</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
       {/* ============= VIDEO TESTIMONIALS ============= */}
       {/* <section className="py-20 bg-[#F4F1EC]">
         <div className="max-w-7xl mx-auto px-6">
@@ -535,7 +574,7 @@ const handleSubmit = async (e) => {
               onClick={openModal}
               className="bg-[#ef4444] hover:bg-[#dc2626] text-white font-semibold px-6 py-3 rounded-full transition-all hidden md:block"
             >
-              View All Stories
+              Get Free Quote Stories
             </button>
           </div>
 
