@@ -1,13 +1,10 @@
 "use client";
 
-import { useSearchParams } from "next/navigation";
-import Link from "next/link";
+ import Link from "next/link";
 import { CheckCircle, ArrowRight } from "lucide-react";
 
 export default function ThankYouPage() {
-  const params = useSearchParams();
-  const price = params.get("price");
-
+  
   return (
     <div className="min-h-screen bg-[#F4F1EC] from-red-50 via-white to-purple-50 flex items-center justify-center px-4 py-12">
       <div className="bg-white rounded-3xl shadow-xl max-w-lg w-full p-10 flex flex-col items-center">
@@ -16,12 +13,7 @@ export default function ThankYouPage() {
           Thank You!
         </h1>
         <p className="text-lg text-gray-700 mb-6 text-center">
-          We’ve received your enquiry{price ? ` for an estimated budget of` : ""} 
-          {price && (
-            <span className="bg-green-100 font-bold px-3 py-1 rounded-lg ml-2 text-green-700 text-xl">
-              ₹{Number(price).toLocaleString("en-IN")}
-            </span>
-          )}
+          We’ve received your enquiry
           .
         </p>
         <p className="text-md text-gray-600 mb-8 text-center">
