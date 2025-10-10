@@ -56,6 +56,18 @@ export default function RootLayout({ children }) {
       <head>
          
         <link rel="icon" href="/favicon.ico" />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-10884548494"
+          strategy="afterInteractive"
+        />
+        <Script id="google-ads-gtag" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-10884548494');
+          `}
+        </Script>
         <Script id="meta-pixel" strategy="afterInteractive">
           {`
             fbq('init', '1510015907088015');

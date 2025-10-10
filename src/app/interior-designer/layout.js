@@ -13,13 +13,16 @@ export default function InteriorDesignerLayout({ children }) {
       <head>
         <link rel="icon" href="/favicon.ico" />
         <meta name="facebook-domain-verification" content="dv4u9r79rw2om8h9acntau6pjitnsy" />
-        <Script id="google-tag-manager" strategy="afterInteractive">
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-10884548494"
+          strategy="afterInteractive"
+        />
+        <Script id="google-ads-gtag" strategy="afterInteractive">
           {`
-            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-TVF6BFPQ');
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-10884548494');
           `}
         </Script>
         <Script id="meta-pixel" strategy="afterInteractive">

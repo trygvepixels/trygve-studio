@@ -174,6 +174,18 @@ export default function RootLayout({ children }) {
             })(window,document,'script','dataLayer','GTM-TVF6BFPQ');
           `}
         </Script>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-10884548494"
+          strategy="afterInteractive"
+        />
+        <Script id="google-ads-gtag" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-10884548494');
+          `}
+        </Script>
         <Script id="meta-pixel" strategy="afterInteractive">
           {`
             !function(f,b,e,v,n,t,s)

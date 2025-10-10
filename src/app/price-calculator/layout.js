@@ -15,6 +15,18 @@ export default function InteriorDesignerLayout({ children }) {
       <head>
         <link rel="icon" href="/favicon.ico" />
         <meta name="facebook-domain-verification" content="dv4u9r79rw2om8h9acntau6pjitnsy" />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-10884548494"
+          strategy="afterInteractive"
+        />
+        <Script id="google-ads-gtag" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-10884548494');
+          `}
+        </Script>
         <Script id="google-tag-manager" strategy="afterInteractive">
           {`
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
