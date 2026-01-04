@@ -151,6 +151,8 @@ export default function FooterPremium({ variant = "bronze" }) {
                 { label: "Projects Gallery", href: "/projects" },
                 { label: "Services", href: "/services" },
                 { label: "Contact", href: "/contact-us" },
+                { label: "Privacy Policy", href: "/privacy" },
+                { label: "Terms & Conditions", href: "/terms" },
               ].map((link) => (
                 <li key={link.href}>
                   <Link
@@ -198,23 +200,23 @@ export default function FooterPremium({ variant = "bronze" }) {
 
         <div className="mt-10 grid grid-cols-1 gap-8 md:grid-cols-3">
 
-           <div
-              className="rounded-xl border p-4"
-              style={{ borderColor: c.line, background: c.chip }}
-            >
-              <h6 className="text-xs font-semibold uppercase opacity-80">
-                Head Office
-              </h6>
-              <p className="mt-1 text-[14px] leading-relaxed">
-                Plot No. 728, Khasra No. 21
-               
-                Eden Enclave, Phase 2, Kursi Road
-               
-                Gudamba, BKT, Lucknow
-               
-                Uttar Pradesh – 226026, India
-              </p>
-            </div>
+          <div
+            className="rounded-xl border p-4"
+            style={{ borderColor: c.line, background: c.chip }}
+          >
+            <h6 className="text-xs font-semibold uppercase opacity-80">
+              Head Office
+            </h6>
+            <p className="mt-1 text-[14px] leading-relaxed">
+              Plot No. 728, Khasra No. 21
+
+              Eden Enclave, Phase 2, Kursi Road
+
+              Gudamba, BKT, Lucknow
+
+              Uttar Pradesh – 226026, India
+            </p>
+          </div>
           <div
             className="  rounded-xl border p-4"
             style={{ borderColor: c.line, background: c.chip }}
@@ -224,39 +226,39 @@ export default function FooterPremium({ variant = "bronze" }) {
             </h6>
             <p className="mt-1 text-[14px] leading-relaxed">
               1. Honey Lite, 1st Floor
-             
+
               5/72, Sector 5, Vikas Nagar
-             
+
               Lucknow, Uttar Pradesh – 226022
             </p>
             <p className="mt-3 text-[14px] leading-relaxed">
               2. UGF, Rukshan Complex, Gata No. 112, Dasauli, Kursi Road
-             
+
               Near Integral University Hospital Gate
-             
+
               Lucknow, Uttar Pradesh – 226021
             </p>
           </div>
 
           <div
-              className="rounded-xl border p-4"
-              style={{ borderColor: c.line, background: c.chip }}
-            >
-              <h6 className="text-xs font-semibold uppercase opacity-80">
-                Corporate Meeting Space
-              </h6>
-              <p className="mt-1 text-[14px] leading-relaxed">
-                Levana Cyber Heights, 10th Floor – Regus
-               
-                Vibhuti Khand, Gomti Nagar
-               
-                Lucknow, Uttar Pradesh – 226010, India
-              </p>
-            </div>
+            className="rounded-xl border p-4"
+            style={{ borderColor: c.line, background: c.chip }}
+          >
+            <h6 className="text-xs font-semibold uppercase opacity-80">
+              Corporate Meeting Space
+            </h6>
+            <p className="mt-1 text-[14px] leading-relaxed">
+              Levana Cyber Heights, 10th Floor – Regus
+
+              Vibhuti Khand, Gomti Nagar
+
+              Lucknow, Uttar Pradesh – 226010, India
+            </p>
+          </div>
 
 
         </div>
- 
+
       </section>
 
       {/* Legal bar */}
@@ -296,19 +298,19 @@ export default function FooterPremium({ variant = "bronze" }) {
           </div>
 
           <div className="opacity-80 text-center md:text-right">
-             <p className="text-center">
-    Designed & Developed by{" "}
-    <a
-      href="https://genforgestudio.com/"
-      title="Web & App Development by GenForge Studio"
-      className="text-indigo-400 font-medium hover:underline hover:text-indigo-300 transition-colors"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      GenForge Studio
-    </a>
-    {" "}— Global Web & App Development Agency
-  </p>
+            <p className="text-center">
+              Designed & Developed by{" "}
+              <a
+                href="https://genforgestudio.com/"
+                title="Web & App Development by GenForge Studio"
+                className="text-indigo-400 font-medium hover:underline hover:text-indigo-300 transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GenForge Studio
+              </a>
+              {" "}— Global Web & App Development Agency
+            </p>
           </div>
         </div>
       </section>

@@ -164,7 +164,10 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         <link rel="icon" href="/favicon.ico" />
-        <meta name="facebook-domain-verification" content="dv4u9r79rw2om8h9acntau6pjitnsy" />
+        <meta
+          name="facebook-domain-verification"
+          content="dv4u9r79rw2om8h9acntau6pjitnsy"
+        />
         <Script id="google-tag-manager" strategy="afterInteractive">
           {`
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -184,6 +187,9 @@ export default function RootLayout({ children }) {
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'AW-10884548494');
+            gtag('config', 'AW-10884548494/Ex_sCP_JudsbEI6PlMYo', {
+              'phone_conversion_number': '+91 95544 40400'
+            });
           `}
         </Script>
         <Script id="meta-pixel" strategy="afterInteractive">
@@ -213,8 +219,12 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         <noscript>
-          <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TVF6BFPQ"
-          height="0" width="0" style={{display:"none",visibility:"hidden"}}></iframe>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-TVF6BFPQ"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          ></iframe>
         </noscript>
         {!isInteriorPage && <Header />}
 
