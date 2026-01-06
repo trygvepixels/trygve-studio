@@ -1,7 +1,8 @@
-// app/services/interior-design-lucknow/page.jsx
 import Image from "next/image";
 import Link from "next/link";
+import Script from "next/script";
 import TestimonialsMarquee from "./TestimonialsMarquee";
+import { FiHome, FiChevronRight } from "react-icons/fi";
 import logo from "@/assets/logo.png";
 import Script from "next/script";
 
@@ -98,7 +99,8 @@ export default function InteriorDesignInLucknow() {
 
   return (
     <main className="min-h-screen bg-[#F4F1EC] text-gray-900">
-        <Script
+      <Breadcrumbs />
+      <Script
         id="faq-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -244,14 +246,12 @@ export default function InteriorDesignInLucknow() {
             {projects.map((project, index) => (
               <div
                 key={index}
-                className={`grid lg:grid-cols-2 gap-12 items-center ${
-                  index % 2 === 1 ? "lg:grid-flow-col-dense" : ""
-                }`}
+                className={`grid lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? "lg:grid-flow-col-dense" : ""
+                  }`}
               >
                 <div
-                  className={`relative h-96 bg-gray-200 ${
-                    index % 2 === 1 ? "lg:col-start-2" : ""
-                  }`}
+                  className={`relative h-96 bg-gray-200 ${index % 2 === 1 ? "lg:col-start-2" : ""
+                    }`}
                 >
                   <img
                     src={project.image}
@@ -266,9 +266,8 @@ export default function InteriorDesignInLucknow() {
                   </div>
                 </div>
                 <div
-                  className={`space-y-6 ${
-                    index % 2 === 1 ? "lg:col-start-1" : ""
-                  }`}
+                  className={`space-y-6 ${index % 2 === 1 ? "lg:col-start-1" : ""
+                    }`}
                 >
                   <h3 className="text-3xl font-light">{project.title}</h3>
                   <p className="text-xl text-gray-600 font-light leading-relaxed">
@@ -363,9 +362,9 @@ export default function InteriorDesignInLucknow() {
         </div>
         <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-8">
           {[
-            "Gomti Nagar","Hazratganj","Indira Nagar","Aliganj",
-            "Rajajipuram","Mahanagar","Jankipuram","Ashiyana",
-            "Chinhat","Alambagh","Faizabad Road","IT City"
+            "Gomti Nagar", "Hazratganj", "Indira Nagar", "Aliganj",
+            "Rajajipuram", "Mahanagar", "Jankipuram", "Ashiyana",
+            "Chinhat", "Alambagh", "Faizabad Road", "IT City"
           ].map((area, index) => (
             <div
               key={index}
@@ -422,3 +421,29 @@ export default function InteriorDesignInLucknow() {
     </main>
   );
 }
+
+function Breadcrumbs() {
+  return (
+    <nav aria-label="Breadcrumb" className="max-w-7xl mx-auto px-6 pt-8 -mb-4 relative z-20">
+      <ol className="flex items-center space-x-2 text-[14px] text-gray-500">
+        <li className="flex items-center">
+          <Link href="/" className="flex items-center hover:text-black transition-colors">
+            <FiHome className="mr-1.5" />
+            <span>Home</span>
+          </Link>
+        </li>
+        <li className="flex items-center gap-2">
+          <FiChevronRight className="text-gray-300" />
+          <Link href="/services" className="hover:text-black transition-colors">
+            Services
+          </Link>
+        </li>
+        <li className="flex items-center gap-2">
+          <FiChevronRight className="text-gray-300" />
+          <span className="font-semibold text-black">Interior Design in Lucknow</span>
+        </li>
+      </ol>
+    </nav>
+  );
+}
+

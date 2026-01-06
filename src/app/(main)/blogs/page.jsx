@@ -4,6 +4,8 @@ import { useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { FaChevronDown, FaSearch, FaSortAmountDown } from "react-icons/fa";
+import { FiHome, FiChevronRight } from "react-icons/fi";
+import Link from "next/link";
 import BlogCard from "@/components/BlogCard.jsx";
 import BlogCardSkeleton from "@/components/BlogCardSkeleton";
 import bloghero from "@/assets/logo.png";
@@ -103,6 +105,7 @@ export default function Page() {
             "radial-gradient(60% 60% at 50% 40%, rgba(35,77,126,.25), rgba(35,77,126,0) 70%)",
         }}
       />
+      <Breadcrumbs />
       <Hero
         searchTerm={searchTerm}
         setSearchTerm={setSearchTerm}
@@ -176,7 +179,7 @@ function Hero({ searchTerm, setSearchTerm, onSearch }) {
                 <span
                   className="px-3  rounded-xl ml-1 bg-[#234D7E] text-white"
                  >
-                  Solutions
+                   Solutions
                 </span>{" "}
                 of the Industry
               </h1>
@@ -346,5 +349,24 @@ function EmptyState({ reset }) {
         </button>
       </div>
     </div>
+  );
+}
+
+function Breadcrumbs() {
+  return (
+    <nav aria-label="Breadcrumb" className="max-w-7xl mx-auto px-4 sm:px-0 pt-8 -mb-4 relative z-20">
+      <ol className="flex items-center space-x-2 text-[14px] text-neutral-500">
+        <li className="flex items-center">
+          <Link href="/" className="flex items-center hover:text-[#234D7E] transition-colors">
+            <FiHome className="mr-1.5" />
+            <span>Home</span>
+          </Link>
+        </li>
+        <li className="flex items-center gap-2">
+          <FiChevronRight className="text-neutral-300" />
+          <span className="font-semibold text-[#234D7E]">Blogs</span>
+        </li>
+      </ol>
+    </nav>
   );
 }

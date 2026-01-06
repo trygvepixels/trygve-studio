@@ -4,6 +4,7 @@ import { FaStar, FaTimes, FaCheck, FaPlay } from 'react-icons/fa';
 import { IoMdArrowForward } from 'react-icons/io';
 import { HiArrowRight } from 'react-icons/hi';
 import { BsCheckCircleFill } from 'react-icons/bs';
+import { FiHome, FiChevronRight } from 'react-icons/fi';
 import Header from './Header';
 import Footer from './Footer';
 import whatsapp from "@/assets/whatsapp.png";
@@ -175,8 +176,9 @@ const handleSubmit = async (e) => {
         </div>
       )}
       <Header openModal={openModal} />
+      <Breadcrumbs />
       {/* ============= HERO SECTION ============= */}
-      <section className="relative mt-24 flex flex-col items-center justify-center bg-cover bg-center h-[600px]" style={{
+      <section className="relative flex flex-col items-center justify-center bg-cover bg-center h-[600px]" style={{
         backgroundImage: "url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1920&q=80')"
       }}>
 
@@ -651,4 +653,24 @@ const handleSubmit = async (e) => {
   );
 };
 
+function Breadcrumbs() {
+  return (
+    <nav aria-label="Breadcrumb" className="max-w-7xl mx-auto px-6 pt-24 -mb-20 relative z-10">
+      <ol className="flex items-center space-x-2 text-[14px] text-gray-500">
+        <li className="flex items-center">
+          <Link href="/" className="flex items-center hover:text-[#ef4444] transition-colors">
+            <FiHome className="mr-1.5 text-white" />
+            <span className="text-white">Home</span>
+          </Link>
+        </li>
+        <li className="flex items-center gap-2">
+          <FiChevronRight className="text-gray-300" />
+          <span className="font-semibold text-white">Interior Designer</span>
+        </li>
+      </ol>
+    </nav>
+  );
+}
+
 export default TrygveStudioLanding;
+

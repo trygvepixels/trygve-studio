@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { FaPlus, FaMinus } from "react-icons/fa";
 import EditorJsRenderer from "./EditorJsRenderer";
 import BlogSidebarContactForm from "./BlogSidebarContactForm";
+import { FiHome, FiChevronRight } from "react-icons/fi";
+import Link from "next/link";
 
 // Reusable text cleaner
 function cleanText(input = "") {
@@ -70,6 +72,7 @@ export default function BlogsClientUI({ blog }) {
 
   return (
     <div className="min-h-screen bg-[#F4F1EC]">
+      <Breadcrumbs title={blog?.title} />
       {/* Hero Section */}
       <section className="relative w-full h-[60vh]  overflow-hidden">
         <img
@@ -175,7 +178,33 @@ export default function BlogsClientUI({ blog }) {
       )} */}
 
 
-      
+
     </div>
+  );
+}
+function Breadcrumbs({ title }) {
+  return (
+    <nav aria-label="Breadcrumb" className="max-w-7xl mx-auto px-4 md:px-0 pt-28 -mb-24 relative z-20">
+      <ol className="flex items-center space-x-2 text-[14px] text-gray-300">
+        <li className="flex items-center">
+          <Link href="/" className="flex items-center hover:text-white transition-colors">
+            <FiHome className="mr-1.5" />
+            <span>Home</span>
+          </Link>
+        </li>
+        <li className="flex items-center gap-2">
+          <FiChevronRight className="text-gray-500" />
+          <Link href="/blogs" className="hover:text-white transition-colors">
+            Blogs
+          </Link>
+        </li>
+        <li className="flex items-center gap-2">
+          <FiChevronRight className="text-gray-500" />
+          <span className="font-semibold text-white whitespace-nowrap overflow-hidden text-ellipsis max-w-[200px] md:max-w-none">
+            {title}
+          </span>
+        </li>
+      </ol>
+    </nav>
   );
 }

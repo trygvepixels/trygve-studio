@@ -1,6 +1,8 @@
 "use client";
 import Script from 'next/script';
 import React, { useMemo, useState, useCallback, useEffect } from 'react';
+import { FiHome, FiChevronRight } from "react-icons/fi";
+import Link from "next/link";
 
 const services = [
   {
@@ -125,65 +127,66 @@ function ServicesPage() {
 
   return (
     <div className="bg-[#F4F1EC] min-h-screen antialiased selection:bg-gray-900/90 selection:text-white">
-      
-        <>
-      {/* Your Services page layout and content (sections for each service) */}
+      <Breadcrumbs />
 
-      {/* JSON-LD: Services offered + Breadcrumbs */}
-      <Script id="ld-services" type="application/ld+json">
-        {JSON.stringify({
-          '@context': 'https://schema.org',
-          '@type': 'Service',
-          name: 'Architecture, Interiors, PMC, EPC & 3D Visualisation Services',
-          description:
-            'Trygve Studio provides Architecture, Interior Design, Project Management Consultancy (PMC), Engineering-Procurement-Construction (EPC), and 3D Visualisation services.',
-          provider: {
-            '@type': ['Organization', 'ProfessionalService'],
-            name: 'TRYGVE STUDIO PRIVATE LIMITED',
-            url: 'https://www.trygvestudio.com/',
-            telephone: '+91-9554440400',
-            email: 'faisal.saif@trygvestudio.com',
-            address: {
-              '@type': 'PostalAddress',
-              streetAddress:
-                'Plot No. 728, Khasra No. 21, Eden Enclave, Phase 2, Kursi Road, Gudamba, BKT',
-              addressLocality: 'Lucknow',
-              addressRegion: 'Uttar Pradesh',
-              postalCode: '226026',
-              addressCountry: 'IN',
-            },
-          },
-          serviceType:
-            'Architecture | Interior Design | Project Management Consultancy (PMC) | Engineering-Procurement-Construction (EPC) | 3D Visualisation',
-          areaServed: [{ '@type': 'Place', name: 'Worldwide' }],
-          audience: {
-            '@type': 'Audience',
-            name: 'Clients seeking architecture, interiors, PMC, EPC or 3D visualisation',
-          },
-        })}
-      </Script>
+      <>
+        {/* Your Services page layout and content (sections for each service) */}
 
-      <Script id="ld-breadcrumbs" type="application/ld+json">
-        {JSON.stringify({
-          '@context': 'https://schema.org',
-          '@type': 'BreadcrumbList',
-          itemListElement: [
-            {
-              '@type': 'ListItem',
-              position: 1,
-              name: 'Home',
-              item: 'https://www.trygvestudio.com/',
+        {/* JSON-LD: Services offered + Breadcrumbs */}
+        <Script id="ld-services" type="application/ld+json">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Service',
+            name: 'Architecture, Interiors, PMC, EPC & 3D Visualisation Services',
+            description:
+              'Trygve Studio provides Architecture, Interior Design, Project Management Consultancy (PMC), Engineering-Procurement-Construction (EPC), and 3D Visualisation services.',
+            provider: {
+              '@type': ['Organization', 'ProfessionalService'],
+              name: 'TRYGVE STUDIO PRIVATE LIMITED',
+              url: 'https://www.trygvestudio.com/',
+              telephone: '+91-9554440400',
+              email: 'faisal.saif@trygvestudio.com',
+              address: {
+                '@type': 'PostalAddress',
+                streetAddress:
+                  'Plot No. 728, Khasra No. 21, Eden Enclave, Phase 2, Kursi Road, Gudamba, BKT',
+                addressLocality: 'Lucknow',
+                addressRegion: 'Uttar Pradesh',
+                postalCode: '226026',
+                addressCountry: 'IN',
+              },
             },
-            {
-              '@type': 'ListItem',
-              position: 2,
-              name: 'Services',
-              item: 'https://www.trygvestudio.com/services',
+            serviceType:
+              'Architecture | Interior Design | Project Management Consultancy (PMC) | Engineering-Procurement-Construction (EPC) | 3D Visualisation',
+            areaServed: [{ '@type': 'Place', name: 'Worldwide' }],
+            audience: {
+              '@type': 'Audience',
+              name: 'Clients seeking architecture, interiors, PMC, EPC or 3D visualisation',
             },
-          ],
-        })}
-      </Script>
-    </>
+          })}
+        </Script>
+
+        <Script id="ld-breadcrumbs" type="application/ld+json">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              {
+                '@type': 'ListItem',
+                position: 1,
+                name: 'Home',
+                item: 'https://www.trygvestudio.com/',
+              },
+              {
+                '@type': 'ListItem',
+                position: 2,
+                name: 'Services',
+                item: 'https://www.trygvestudio.com/services',
+              },
+            ],
+          })}
+        </Script>
+      </>
       {/* Hero */}
       <section className="max-w-7xl mx-auto px-4 pt-20 pb-10 text-center">
         <p className="uppercase tracking-[0.25em] text-xs md:text-sm text-gray-500">
@@ -387,9 +390,8 @@ function ServicesPage() {
                     {activeImages.map((_, i) => (
                       <button
                         key={i}
-                        className={`h-2.5 w-2.5 rounded-full transition-all ring-1 ring-black/10 ${
-                          idx === i ? 'bg-gray-900 w-6' : 'bg-gray-300 hover:bg-gray-400'
-                        }`}
+                        className={`h-2.5 w-2.5 rounded-full transition-all ring-1 ring-black/10 ${idx === i ? 'bg-gray-900 w-6' : 'bg-gray-300 hover:bg-gray-400'
+                          }`}
                         onClick={() => setIdx(i)}
                         aria-label={`Go to slide ${i + 1}`}
                       />
@@ -413,3 +415,22 @@ function ServicesPage() {
 }
 
 export default ServicesPage;
+
+function Breadcrumbs() {
+  return (
+    <nav aria-label="Breadcrumb" className="max-w-7xl mx-auto px-4 pt-8 -mb-4 relative z-20">
+      <ol className="flex items-center space-x-2 text-[14px] text-neutral-500">
+        <li className="flex items-center">
+          <Link href="/" className="flex items-center hover:text-[#244D7E] transition-colors">
+            <FiHome className="mr-1.5" />
+            <span>Home</span>
+          </Link>
+        </li>
+        <li className="flex items-center gap-2">
+          <FiChevronRight className="text-neutral-300" />
+          <span className="font-semibold text-[#244D7E]">Services</span>
+        </li>
+      </ol>
+    </nav>
+  );
+}

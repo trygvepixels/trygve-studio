@@ -24,23 +24,23 @@ const Header = ({ openModal }) => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center gap-4   ">
-          {/* Logo */}
-          <Link
-            href="/"
-            className="relative    "
-          >
-            <Image
-              src={logo}
-              alt="TRYGVE STUDIO logo"
-              width={90}
-              height={90}
-              priority
-              className="w-[70px] h-[70px] md:w-[70px] md:h-[70px]"
-            />
-          </Link>
+            {/* Logo */}
+            <Link
+              href="/"
+              className="relative    "
+            >
+              <Image
+                src={logo}
+                alt="TRYGVE STUDIO logo"
+                width={90}
+                height={90}
+                priority
+                className="w-[70px] h-[70px] md:w-[70px] md:h-[70px]"
+              />
+            </Link>
 
-          {/* Company name */}
-          {/* <Link
+            {/* Company name */}
+            {/* <Link
             href="/"
             className="
               m-0 font-medium text-ink tracking-[0.02em]
@@ -54,7 +54,7 @@ const Header = ({ openModal }) => {
             {' '}
             LIMITED
           </Link> */}
-        </div>
+          </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
@@ -76,7 +76,7 @@ const Header = ({ openModal }) => {
               <FaPhone className="text-[#ef4444]" />
               <span className="text-sm font-semibold">+91  95544 40400</span>
             </a> */}
-            <button 
+            <button
               onClick={openModal}
               className="bg-[#ef4444] hover:bg-[#dc2626] text-white font-semibold px-6 py-3 rounded-full inline-flex items-center gap-2 transition-all shadow-lg hover:shadow-xl group"
             >
@@ -86,7 +86,7 @@ const Header = ({ openModal }) => {
           </div>
 
           {/* Mobile Menu Button */}
-          
+
         </div>
 
         {/* Mobile Menu */}
@@ -107,7 +107,7 @@ const Header = ({ openModal }) => {
                 <FaPhone className="text-[#ef4444]" />
                 <span className="text-sm font-semibold">+91 95544 40400</span>
               </a>
-              <button 
+              <button
                 onClick={() => {
                   openModal();
                   setMobileMenuOpen(false);

@@ -66,17 +66,17 @@ export default function Header() {
   return (
     <header className="bg-[#F4F1EC]  pt-[14px] border-b border-zinc-300 shadow-sm fixed w-full z-[100]  backdrop-blur-[0.5px]">
       <Script
-    src="https://www.googletagmanager.com/gtag/js?id=G-8GJTSNR2BP"
-    strategy="afterInteractive"
-  />
-  <Script id="gtag-init" strategy="afterInteractive">
-    {`
+        src="https://www.googletagmanager.com/gtag/js?id=G-8GJTSNR2BP"
+        strategy="afterInteractive"
+      />
+      <Script id="gtag-init" strategy="afterInteractive">
+        {`
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-8GJTSNR2BP');
     `}
-  </Script>
+      </Script>
       <div className="max-w-7xl mx-auto md:px-0 px-4 flex flex-col gap-3 md:flex-row md:items-center md:justify-between md:gap-6">
         {/* Left block (logo + title) — preserved exactly per your layout */}
         <div className="flex flex-col items-center md:grid md:grid-cols-[auto_1fr] md:items-center md:gap-[18px] md:min-h-[68px]">
@@ -135,9 +135,9 @@ export default function Header() {
             <Link href="/career" className="text-[15px] md:text-[16px] text-ink underline-offset-4 hover:underline">
               Career
             </Link>
-            
-                 
-             <Link href="/contact-us" className="text-[15px] text-white md:text-[16px] text-ink underline-offset-4 hover:underline bg-[#234D7E] px-3 py-1 rounded-[4px]">
+
+
+            <Link href="/contact-us" className="text-[15px] text-white md:text-[16px] text-ink underline-offset-4 hover:underline bg-[#234D7E] px-3 py-1 rounded-[4px]">
               Contact Us
             </Link>
           </nav>
@@ -167,11 +167,10 @@ export default function Header() {
             role="button"
             aria-label="Close menu"
             onClick={closeMenu}
-            className={`fixed inset-0 top-0 z-[1000000] h-screen md:hidden ${
-              isClosing
+            className={`fixed inset-0 top-0 z-[1000000] h-screen md:hidden ${isClosing
                 ? "animate-[fade-out_220ms_ease-in_forwards]"
                 : "animate-[fade-in_240ms_ease-out_forwards]"
-            } bg-black/70 backdrop-blur-sm`}
+              } bg-black/70 backdrop-blur-sm`}
             onAnimationEnd={handleBackdropAnimEnd}
           />
 
@@ -180,11 +179,10 @@ export default function Header() {
             id="mobile-menu"
             role="dialog"
             aria-modal="true"
-            className={`fixed top-6 right-4 z-[100000000] md:hidden w-[84%] max-w-sm rounded-2xl border border-black/10 bg-white shadow-[0_30px_80px_rgba(0,0,0,0.28)] overflow-hidden origin-top-right ${
-              isClosing
+            className={`fixed top-6 right-4 z-[100000000] md:hidden w-[84%] max-w-sm rounded-2xl border border-black/10 bg-white shadow-[0_30px_80px_rgba(0,0,0,0.28)] overflow-hidden origin-top-right ${isClosing
                 ? "animate-[sheet-elastic-out_460ms_cubic-bezier(0.2,0.8,0.25,1.2)_forwards]"
                 : "animate-[sheet-elastic-in_520ms_cubic-bezier(0.2,0.8,0.25,1.2)_forwards]"
-            }`}
+              }`}
             onAnimationEnd={handleSheetAnimEnd}
           >
             <div className="px-5 py-4 border-b border-black/10 flex items-center justify-between">
@@ -239,7 +237,7 @@ export default function Header() {
                   <span className="text-xs text-neutral-500">Know industry insights</span>
                 </Link>
               </li>
-               <li>
+              <li>
                 <Link
                   href="/services"
                   onClick={closeMenu}
@@ -259,7 +257,7 @@ export default function Header() {
                   <span className="text-xs text-neutral-500">Work with us</span>
                 </Link>
               </li>
-             
+
               <li>
                 <Link
                   href="/contact-us"

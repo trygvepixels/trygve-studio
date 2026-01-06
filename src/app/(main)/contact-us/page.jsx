@@ -1,8 +1,9 @@
 "use client";
 import React, { useState } from "react";
 import {
-  FiMail, FiPhone, FiGlobe, FiClock, FiMapPin, FiArrowRight,
+  FiMail, FiPhone, FiGlobe, FiClock, FiMapPin, FiArrowRight, FiHome, FiChevronRight,
 } from "react-icons/fi";
+import Link from "next/link";
 import {
   FaInstagram, FaLinkedin, FaBehance, FaWhatsapp,
 } from "react-icons/fa";
@@ -42,7 +43,7 @@ export default function ContactPage() {
       setStatus({ state: "success", message: "Thanks! Your enquiry has been saved." });
       // Navigate to thank-you. Use SPA replace, then hard fallback just in case.
       try {
-         window.location.href = `/thank-you`;
+        window.location.href = `/thank-you`;
         // Fallback in case client-side nav is interrupted by form context or transitions
         setTimeout(() => {
           if (typeof window !== "undefined" && window.location.pathname !== "/thank-you") {
@@ -59,7 +60,8 @@ export default function ContactPage() {
   }
   return (
     <main className="bg-[#F4F1EC]     pt-10 pb-6 md:pt-16 text-[#101010]">
-       
+      <Breadcrumbs />
+
       {/* ===== Hero ===== */}
       <section className="relative overflow-hidden">
         {/* subtle world-map style background */}
@@ -71,31 +73,31 @@ export default function ContactPage() {
               " ",
           }}
         />
-        
+
         <div className="max-w-7xl mx-auto px-5   pb-10   md:pb-16 relative">
           <div className="flex items-center gap-2 text-sm tracking-wide text-neutral-700">
             <div>
-                <div className="flex items-center gap-2 text-sm tracking-wide text-neutral-700">
-            <FiGlobe className="shrink-0" />
-            <span>Architecture & Interiors — Delivered Worldwide</span>
-          </div>
+              <div className="flex items-center gap-2 text-sm tracking-wide text-neutral-700">
+                <FiGlobe className="shrink-0" />
+                <span>Architecture & Interiors — Delivered Worldwide</span>
+              </div>
 
-          <h1 className="mt-4 text-4xl leading-[1.05] md:text-6xl font-semibold tracking-tight">
-            Let’s design your legacy — <br className="hidden md:block" />
-            anywhere in the world.
-          </h1>
+              <h1 className="mt-4 text-4xl leading-[1.05] md:text-6xl font-semibold tracking-tight">
+                Let’s design your legacy — <br className="hidden md:block" />
+                anywhere in the world.
+              </h1>
 
-          <p className="mt-5 max-w-2xl text-[17px] md:text-lg text-neutral-700">
-            We create timeless spaces by integrating form, function and detail.
-            From residences to hospitality & retail, we manage end-to-end —
-            concept to completion — across every country, state and city.
-          </p>
+              <p className="mt-5 max-w-2xl text-[17px] md:text-lg text-neutral-700">
+                We create timeless spaces by integrating form, function and detail.
+                From residences to hospitality & retail, we manage end-to-end —
+                concept to completion — across every country, state and city.
+              </p>
             </div>
 
-                      <Image src={contactImg} className="md:block hidden" />
+            <Image src={contactImg} className="md:block hidden" />
 
           </div>
-          
+
 
           <div className="mt-8 flex flex-wrap gap-3">
             <a
@@ -324,9 +326,6 @@ export default function ContactPage() {
                   </a>
                 </div>
 
-                <p className="text-xs text-neutral-500">
-                  We usually reply within 24 hours. For urgent requests, call us.
-                </p>
                 <div aria-live="polite" className="text-sm mt-2">
                   {status.state === 'success' && (
                     <p className="text-green-700">{status.message}</p>
@@ -340,7 +339,7 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-        <LocationsList />
+      <LocationsList />
 
     </main>
   );
@@ -393,5 +392,24 @@ function Textarea({ label, name, placeholder = "", required = false }) {
         className="w-full rounded-xl border border-black/10 bg-white px-4 py-3 outline-none ring-0 focus:border-black/30"
       />
     </label>
+  );
+}
+
+function Breadcrumbs() {
+  return (
+    <nav aria-label="Breadcrumb" className="max-w-7xl mx-auto px-5 mb-8">
+      <ol className="flex items-center space-x-2 text-[14px] text-neutral-500">
+        <li className="flex items-center">
+          <Link href="/" className="flex items-center hover:text-black transition-colors">
+            <FiHome className="mr-1.5" />
+            <span>Home</span>
+          </Link>
+        </li>
+        <li className="flex items-center gap-2">
+          <FiChevronRight className="text-neutral-300" />
+          <span className="font-semibold text-black">Contact Us</span>
+        </li>
+      </ol>
+    </nav>
   );
 }

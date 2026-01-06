@@ -1,4 +1,6 @@
 import React from "react";
+import { FiHome, FiChevronRight } from "react-icons/fi";
+import Link from "next/link";
 
 export const metadata = {
     title: "Terms and Conditions",
@@ -8,6 +10,7 @@ export const metadata = {
 const TermsAndConditions = () => {
     return (
         <main className="mx-auto max-w-4xl px-6 py-16 md:py-24">
+            <Breadcrumbs />
             <div className="mb-12">
                 <h1 className="text-4xl font-bold tracking-tight text-zinc-900 md:text-5xl">
                     Terms and Conditions
@@ -78,3 +81,23 @@ const TermsAndConditions = () => {
 };
 
 export default TermsAndConditions;
+
+function Breadcrumbs() {
+    return (
+        <nav aria-label="Breadcrumb" className="mb-8">
+            <ol className="flex items-center space-x-2 text-[14px] text-zinc-500">
+                <li className="flex items-center">
+                    <Link href="/" className="flex items-center hover:text-zinc-800 transition-colors">
+                        <FiHome className="mr-1.5" />
+                        <span>Home</span>
+                    </Link>
+                </li>
+                <li className="flex items-center gap-2">
+                    <FiChevronRight className="text-zinc-300" />
+                    <span className="font-semibold text-zinc-800">Terms and Conditions</span>
+                </li>
+            </ol>
+        </nav>
+    );
+}
+

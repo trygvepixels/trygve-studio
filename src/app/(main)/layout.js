@@ -5,153 +5,47 @@ import Footer from "@/components/Footer";
 // app/page.jsx (or app/(site)/page.jsx)
 import Script from "next/script";
 
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
 export const metadata = {
-  metadataBase: new URL("https://www.trygvestudio.com"),
-  title: {
-    default:
-      "Trygve Studio Private Limited — Architecture, Interiors, PMC, EPC & 3D Visualisation",
-    template: "%s | Trygve Studio",
-  },
+  title: "Trygve Studio - Premium Architecture & Interior Design",
   description:
-    "Full-fledged architectural & allied engineering firm based in Lucknow, Hire the Best Architects in Lucknow | Modern Homes, Smart Offices, On-Time Delivery | Trygve Studio",
-  keywords: [
-    "architecture firm Lucknow",
-    "architects in Lucknow",
-    "interior designer Lucknow",
-    "construction company Lucknow",
-    "PMC",
-    "EPC",
-    "3D visualisation",
-    "architectural design India",
-    "interior design India",
-    "project management consultancy",
-    "engineering firm",
-    "global architecture studio",
-    // Broad / Category
-    "Trygve Studio",
-    "architecture firm Lucknow",
-    "architects in Lucknow",
-    "architectural services India",
-    "interior designer Lucknow",
-    "interior design India",
-    "design studio India",
-    "construction company Lucknow",
-    "project management consultancy",
-    "engineering firm India",
-    "global architecture studio",
-    "architectural design services",
-
-    // Services
-    "architecture services",
-    "interior design services",
-    "custom home design",
-    "residential design services",
-    "commercial space planning",
-    "architectural planning and drafting",
-    "renovation and remodeling plans",
-
-    // Styles & Project Types
-    "modern architecture",
-    "minimalist house design",
-    "luxury home architect",
-    "industrial office design",
-    "hospitality design",
-    "restaurant interior design",
-    "mid century modern design",
-    "farmhouse interior design",
-
-    // Long-Tail / Niche
-    "residential architect in Lucknow",
-    "commercial architect in Lucknow",
-    "interior architect near me",
-    "sustainable architecture consulting",
-    "modern farmhouse design",
-
-    // Local / Regional
-    "architects near me",
-    "architecture firms near me",
-    "local architects near me",
-    "contemporary home design Lucknow",
-    "residential architect near me",
-
-    // Keyword Ideas from Trend Data
-    "architecture",
-    "architect",
-    "architectural design",
-    "building design",
-    "interior architecture",
-    "architectural services",
-    "architectural rendering",
-    "architectural drafting",
-
-    // Technical / Specialized
-    "3d visualisation",
-    "architectural rendering services",
-    "BIM architecture",
-    "AutoCAD architecture",
-    "architectural drafting",
-
-    // Conversational / Long-tail
-    "Who is the best architect for sustainable office design?",
-    "historic home renovation in Lucknow",
-    "sustainable architecture for residential homes",
-  ],
+    "Transform your space with Trygve Studio. We offer premium architecture and interior design services worldwide.",
+  keyword:
+    "Trygve studio, Faisal Saif, Faisal saif architetct, Architects in Lucknow, best architects in lucknow, best interior designer in lucknow, interior designers in lucknow, architecture firms in lucknow, commercial architects in lucknow, residential architects in lucknow, luxury home designers lucknow, budget architects lucknow, building contractors in lucknow, hospitality architects lucknow, retail store designers lucknow, house design services lucknow, office interior designers lucknow, farmhouse architects lucknow",
   alternates: {
-    canonical: "/",
+    canonical: "https://www.trygvestudio.com/",
   },
   openGraph: {
-    type: "website",
+    title: "Trygve Studio - Premium Architecture & Interior Design",
+    description:
+      "Transform your space with Trygve Studio. Professional architecture and interior design services.",
     url: "https://www.trygvestudio.com/",
     siteName: "Trygve Studio",
-    title:
-      "Trygve Studio Private Limited — Architecture, Interiors, PMC, EPC & 3D Visualisation",
-    description:
-      "Architectural & allied engineering studio delivering end-to-end Architecture, Interiors, PMC, EPC & 3D Visualisation. HQ Lucknow, projects worldwide.",
-    locale: "en_IN",
-    // images: [{ url: '/og/og-home.jpg', width: 1200, height: 630, alt: 'Trygve Studio — Architecture & Interiors' }],
+    images: [
+      {
+        url: "https://www.trygvestudio.com/og-image.jpg",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    locale: "en_US",
+    type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title:
-      "Trygve Studio — Architecture, Interiors, PMC, EPC & 3D Visualisation",
+    title: "Trygve Studio - Premium Architecture & Interior Design",
     description:
-      "Full-fledged architectural & engineering firm based in Lucknow, delivering projects worldwide.",
-    creator: "@trygvestudio", // replace with your actual Twitter/X handle or remove if none
-    // images: ['/og/og-home.jpg'],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    nocache: false,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-snippet": -1,
-      "max-image-preview": "large",
-      "max-video-preview": -1,
-    },
-  },
-  category: "architecture",
-  authors: [{ name: "Trygve Studio Private Limited" }],
-  creator: "Trygve Studio",
-  publisher: "Trygve Studio Private Limited",
-  icons: {
-    icon: [
-      { url: "/favicon.ico" },
-      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
-    ],
-    apple: [{ url: "/apple-touch-icon.png" }],
-  },
-  verification: {
-    // Add validation codes when available:
-    // google: '',
-    // yandex: '',
-    // me: '',
-  },
-  referrer: "strict-origin-when-cross-origin",
-  other: {
-    "format-detection": "telephone=no",
+      "Transform your space with Trygve Studio. Professional architecture and interior design services.",
+    images: ["https://www.trygvestudio.com/twitter-image.jpg"],
   },
 };
 
@@ -168,15 +62,8 @@ export default function RootLayout({ children }) {
           name="facebook-domain-verification"
           content="dv4u9r79rw2om8h9acntau6pjitnsy"
         />
-        <Script id="google-tag-manager" strategy="afterInteractive">
-          {`
-            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-TVF6BFPQ');
-          `}
-        </Script>
+
+        {/* --- Global Site Tag (gtag.js) - Google Ads --- */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=AW-10884548494"
           strategy="afterInteractive"
@@ -187,11 +74,21 @@ export default function RootLayout({ children }) {
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'AW-10884548494');
-            gtag('config', 'AW-10884548494/Ex_sCP_JudsbEI6PlMYo', {
-              'phone_conversion_number': '+91 95544 40400'
-            });
           `}
         </Script>
+
+        {/* --- Google Tag Manager --- */}
+        <Script id="google-tag-manager" strategy="afterInteractive">
+          {`
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-TVF6BFPQ');
+          `}
+        </Script>
+
+        {/* --- Meta Pixel Code --- */}
         <Script id="meta-pixel" strategy="afterInteractive">
           {`
             !function(f,b,e,v,n,t,s)
@@ -215,9 +112,49 @@ export default function RootLayout({ children }) {
             style={{ display: "none" }}
             src="https://www.facebook.com/tr?id=1510015907088015&ev=PageView&noscript=1"
           />
+          <img
+            height="1"
+            width="1"
+            style={{ display: "none" }}
+            src="https://www.facebook.com/tr?id=779698648292728&ev=PageView&noscript=1"
+          />
+          <img
+            height="1"
+            width="1"
+            style={{ display: "none" }}
+            src="https://www.facebook.com/tr?id=1526099745243779&ev=PageView&noscript=1"
+          />
         </noscript>
+
+        {/* --- Clarity Tracking Code --- */}
+        <Script id="clarity-script" strategy="afterInteractive">
+          {`
+            (function(c,l,a,r,i,t,y){
+              c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+              t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+              y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "nd74p67554");
+          `}
+        </Script>
+
+        {/* --- JSON-LD Structured Data --- */}
+        <Script id="ld-main" type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            name: "Trygve Studio",
+            url: "https://www.trygvestudio.com/",
+            potentialAction: {
+              "@type": "SearchAction",
+              target: "{search_term_string}",
+              "query-input": "required name=search_term_string",
+            },
+          })}
+        </Script>
       </head>
-      <body>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-TVF6BFPQ"

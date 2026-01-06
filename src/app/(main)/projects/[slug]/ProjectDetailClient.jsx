@@ -1,6 +1,8 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
+import { FiHome, FiChevronRight } from "react-icons/fi";
+import Link from "next/link";
 
 const cloudinaryLoader = ({ src }) => src;
 
@@ -19,6 +21,7 @@ export default function ProjectDetailClient({ project }) {
 
   return (
     <div className="min-h-screen bg-[#F4F1EC] px- py-0 lg:px-24 lg:py-0">
+      <Breadcrumbs projectTitle={project.title} />
       {/* Hero Section with Background */}
       <div
         className="relative max-w-7xl mx-auto w-full h-[60vh] rounded-xl overflow-hidden flex items-center justify-center text-center"
@@ -82,7 +85,7 @@ export default function ProjectDetailClient({ project }) {
       {/* Sidebar Section */}
       <div className="mt-20 max-w-7xl mx-auto  pb-0">
         {/* Categories Card */}
-         
+
 
         {/* Highlights Card */}
         {project.stats?.length > 0 && (
@@ -95,12 +98,12 @@ export default function ProjectDetailClient({ project }) {
                 <div
                   key={i}
                   className="p-5 rounded-xl shadow-lg border border-transparent bg-white relative overflow-hidden"
-                   
+
                 >
                   <div className="absolute inset-0 rounded-xl pointer-events-none" />
                   <p
                     className="md:text-4xl text-2xl font-semibold text-[#244D7E] relative z-10"
-                    // style={{ color: accent }}
+                  // style={{ color: accent }}
                   >
                     {stat.value}
                   </p>
@@ -177,5 +180,32 @@ export default function ProjectDetailClient({ project }) {
         </div>
       )}
     </div>
+  );
+}
+
+function Breadcrumbs({ projectTitle }) {
+  return (
+    <nav aria-label="Breadcrumb" className="max-w-7xl mx-auto px-6 py-8">
+      <ol className="flex items-center space-x-2 text-[14px] text-neutral-500">
+        <li className="flex items-center">
+          <Link href="/" className="flex items-center hover:text-black transition-colors">
+            <FiHome className="mr-1.5" />
+            <span>Home</span>
+          </Link>
+        </li>
+        <li className="flex items-center gap-2">
+          <FiChevronRight className="text-neutral-300" />
+          <Link href="/projects" className="hover:text-black transition-colors">
+            Projects
+          </Link>
+        </li>
+        <li className="flex items-center gap-2">
+          <FiChevronRight className="text-neutral-300" />
+          <span className="font-semibold text-black truncate max-w-[200px] md:max-w-none">
+            {projectTitle}
+          </span>
+        </li>
+      </ol>
+    </nav>
   );
 }

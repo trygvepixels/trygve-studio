@@ -10,7 +10,10 @@ import {
   FiFileText,
   FiCheckCircle,
   FiAperture,
+  FiHome,
+  FiChevronRight
 } from "react-icons/fi";
+import Link from "next/link";
 import Image from "next/image";
 import faisal from "@/assets/image.png";
 import TeamSection from "@/components/TeamSection";
@@ -223,6 +226,8 @@ export default function AboutUs() {
         })}
       </Script>
     </>
+      <Breadcrumbs />
+
       {/* ===== Hero ===== */}
       <div className="relative overflow-hidden">
         <div
@@ -479,5 +484,23 @@ function InfoRow({ icon, title, children }) {
         <div className="mt-1">{children}</div>
       </div>
     </div>
+  );
+}
+function Breadcrumbs() {
+  return (
+    <nav aria-label="Breadcrumb" className="max-w-7xl mx-auto px-5 pt-8 -mb-4 relative z-10">
+      <ol className="flex items-center space-x-2 text-[14px] text-neutral-500">
+        <li className="flex items-center">
+          <Link href="/" className="flex items-center hover:text-[#234D7E] transition-colors">
+            <FiHome className="mr-1.5" />
+            <span>Home</span>
+          </Link>
+        </li>
+        <li className="flex items-center gap-2">
+          <FiChevronRight className="text-neutral-300" />
+          <span className="font-semibold text-[#234D7E]">About Us</span>
+        </li>
+      </ol>
+    </nav>
   );
 }

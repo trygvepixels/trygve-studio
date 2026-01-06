@@ -1,4 +1,3 @@
-// app/interior-designer/layout.js
 import './globals.css'
 import Script from "next/script";
 
@@ -68,9 +67,10 @@ export default function InteriorDesignerLayout({ children }) {
           height="0" width="0" style={{display:"none",visibility:"hidden"}}></iframe>
         </noscript>
  
-        <div  >{children}</div>
-
-       </body>
+        <div>{children}</div>
+      </body>
     </html>
-  )
+  );
 }
+
+

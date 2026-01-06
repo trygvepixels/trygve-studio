@@ -14,6 +14,8 @@ import {
   FiChevronRight,
   FiRefreshCw,
   FiArrowRight,
+  FiHome,
+  FiChevronRight as GhostChevronRight
 } from "react-icons/fi";
 
 /* ------------------------------- helpers ------------------------------- */
@@ -30,10 +32,10 @@ function normalizeProjects(raw) {
   const arr = Array.isArray(raw?.items)
     ? raw.items
     : Array.isArray(raw?.data)
-    ? raw.data
-    : Array.isArray(raw)
-    ? raw
-    : [];
+      ? raw.data
+      : Array.isArray(raw)
+        ? raw
+        : [];
 
   return arr.map((p) => {
     const isFeature = "coverImage" in p || "galleryImages" in p;
@@ -92,11 +94,10 @@ function Pill({ active, children, onClick }) {
       onClick={onClick}
       aria-pressed={active}
       className={`px-3.5 py-1.5 rounded-full text-sm border transition-all whitespace-nowrap
-      ${
-        active
+      ${active
           ? "bg-black text-white border-black shadow-[0_6px_16px_rgba(0,0,0,0.15)]"
           : "bg-white text-neutral-700 border-black/10 hover:border-black/20 hover:shadow-[0_4px_12px_rgba(0,0,0,0.06)]"
-      }`}
+        }`}
     >
       {children}
     </button>
@@ -334,10 +335,11 @@ export default function ProjectsClient() {
 
   return (
     <main className="min-h-screen mt-10 bg-[#F5F4F1] text-[#101010]">
-      
-       <div className="fixed bottom-5 z-10 right-5">
-               
-            </div>
+      <Breadcrumbs />
+
+      <div className="fixed bottom-5 z-10 right-5">
+
+      </div>
       {/* Hero */}
       <section className="relative  overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-white via-[#F7F7F5] to-[#EFEDE8]" />
@@ -518,5 +520,24 @@ export default function ProjectsClient() {
         }
       `}</style>
     </main>
+  );
+}
+
+function Breadcrumbs() {
+  return (
+    <nav aria-label="Breadcrumb" className="max-w-7xl mx-auto px-6 lg:px-0 pt-8 -mb-4 relative z-20">
+      <ol className="flex items-center space-x-2 text-[14px] text-neutral-500">
+        <li className="flex items-center">
+          <Link href="/" className="flex items-center hover:text-black transition-colors">
+            <FiHome className="mr-1.5" />
+            <span>Home</span>
+          </Link>
+        </li>
+        <li className="flex items-center gap-2">
+          <GhostChevronRight className="text-neutral-300" />
+          <span className="font-semibold text-black">Projects</span>
+        </li>
+      </ol>
+    </nav>
   );
 }

@@ -1,7 +1,7 @@
-// app/services/architects-in-lucknow/page.jsx
 import Image from "next/image";
 import Link from "next/link";
-import  TestimonialsMarquee  from "./TestimonialsMarquee";
+import TestimonialsMarquee from "./TestimonialsMarquee";
+import { FiHome, FiChevronRight } from "react-icons/fi";
 import logo from "@/assets/logo.png"
 
 
@@ -87,7 +87,8 @@ export default function ArchitectsInLucknow() {
 
   return (
     <main className="min-h-screen bg-[#F4F1EC] text-gray-900">
-      
+      <Breadcrumbs />
+
       {/* Hero Section */}
       <section className="relative w-full h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -99,7 +100,7 @@ export default function ArchitectsInLucknow() {
             priority
           />
         </div>
-        
+
         <div className="relative z-10 text-center max-w-6xl px-6">
           <h1 className="text-6xl md:text-8xl font-light text-white mb-6 tracking-tight">
             Best Architects in
@@ -107,19 +108,19 @@ export default function ArchitectsInLucknow() {
             <span className="font-normal">Lucknow</span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-200 font-light max-w-3xl mx-auto leading-relaxed">
-            Crafting spaces with care — from concept to completion. 
+            Crafting spaces with care — from concept to completion.
             We serve brands, startups, and enterprises across Lucknow with timeless, functional designs.
           </p>
-          
+
           <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
-            <Link 
-              href="/contact-us#project-form" 
+            <Link
+              href="/contact-us#project-form"
               className="bg-[#F4F1EC] text-gray-900 px-8 py-4 text-lg font-medium hover:bg-gray-100 transition-all duration-300"
             >
               Start Your Project
             </Link>
-            <Link 
-              href="/projects" 
+            <Link
+              href="/projects"
               className="border border-white text-white px-8 py-4 text-lg font-medium hover:bg-[#F4F1EC] hover:text-gray-900 transition-all duration-300"
             >
               View Our Work
@@ -136,7 +137,7 @@ export default function ArchitectsInLucknow() {
               Architecture & Interior Design Services in Lucknow
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto font-light">
-              We have served brands, startups, and enterprises across industries. 
+              We have served brands, startups, and enterprises across industries.
               A selection of our services — crafted with care.
             </p>
           </div>
@@ -171,7 +172,7 @@ export default function ArchitectsInLucknow() {
       <section className="py-20 px-6 bg-[#F4F1EC]">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            
+
             {/* Content */}
             <div className="space-y-8">
               <div>
@@ -179,8 +180,8 @@ export default function ArchitectsInLucknow() {
                   Why Choose the Best Architecture Firm in Lucknow?
                 </h2>
                 <p className="text-xl text-gray-600 font-light leading-relaxed">
-                  At Trygve Studio, we provide comprehensive architectural and interior design solutions 
-                  across Lucknow, Gomti Nagar, Hazratganj, and beyond. From concept to execution, 
+                  At Trygve Studio, we provide comprehensive architectural and interior design solutions
+                  across Lucknow, Gomti Nagar, Hazratganj, and beyond. From concept to execution,
                   we ensure every project reflects your vision.
                 </p>
               </div>
@@ -258,7 +259,7 @@ export default function ArchitectsInLucknow() {
           <div className="space-y-12">
             {projects.map((project, index) => (
               <div key={index} className={`grid lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
-                
+
                 {/* Image */}
                 <div className={`relative h-96 bg-gray-200 ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
                   <img
@@ -280,8 +281,8 @@ export default function ArchitectsInLucknow() {
                   <p className="text-xl text-gray-600 font-light leading-relaxed">
                     {project.description}
                   </p>
-                  <Link 
-                    href="/portfolio" 
+                  <Link
+                    href="/portfolio"
                     className="inline-block text-gray-900 font-medium hover:underline"
                   >
                     View Full Project →
@@ -297,7 +298,7 @@ export default function ArchitectsInLucknow() {
       <section className="py-20 px-6 bg-[#F4F1EC]">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            
+
             {/* Content */}
             <div className="space-y-8">
               <div>
@@ -305,26 +306,26 @@ export default function ArchitectsInLucknow() {
                   Real Transformation: 2BHK Apartment in Indira Nagar
                 </h2>
                 <p className="text-xl text-gray-600 font-light leading-relaxed mb-8">
-                  Our clients in Lucknow's Indira Nagar faced a common challenge: a cramped 2BHK 
-                  apartment that lacked natural light and felt claustrophobic. 
+                  Our clients in Lucknow's Indira Nagar faced a common challenge: a cramped 2BHK
+                  apartment that lacked natural light and felt claustrophobic.
                 </p>
-                
+
                 <div className="space-y-6">
                   <div>
                     <h4 className="text-lg font-medium mb-2 text-gray-900">The Challenge</h4>
                     <p className="text-gray-600 font-light">
-                      • Limited natural light due to poor orientation<br/>
-                      • Inefficient space utilization<br/>
-                      • Outdated layout restricting movement<br/>
+                      • Limited natural light due to poor orientation<br />
+                      • Inefficient space utilization<br />
+                      • Outdated layout restricting movement<br />
                       • Need for modern amenities within budget constraints
                     </p>
                   </div>
-                  
+
                   <div>
                     <h4 className="text-lg font-medium mb-2 text-gray-900">Our Solution</h4>
                     <p className="text-gray-600 font-light">
-                      We redesigned the apartment with an open-plan concept, strategic use of mirrors, 
-                      and light-colored materials. The result: 40% more usable space and dramatically 
+                      We redesigned the apartment with an open-plan concept, strategic use of mirrors,
+                      and light-colored materials. The result: 40% more usable space and dramatically
                       improved natural lighting.
                     </p>
                   </div>
@@ -352,29 +353,29 @@ export default function ArchitectsInLucknow() {
 
             {/* Before/After Images */}
             <div className="space-y-6">
-            <div className="relative h-64 bg-gray-200">
-              <img
-                src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914"
-                alt="Before - 2BHK Apartment in Indira Nagar, Lucknow"
-                fill
-                className="object-cover"
-              />
-              <div className="absolute top-4 left-4 bg-red-600 text-white px-3 py-1 text-sm font-medium">
-                BEFORE
+              <div className="relative h-64 bg-gray-200">
+                <img
+                  src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914"
+                  alt="Before - 2BHK Apartment in Indira Nagar, Lucknow"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute top-4 left-4 bg-red-600 text-white px-3 py-1 text-sm font-medium">
+                  BEFORE
+                </div>
               </div>
-            </div>
-            
-            <div className="relative h-64 bg-gray-200">
-              <img
-                src="https://images.unsplash.com/photo-1600585154154-1c1b8a1e2c3e"
-                alt="After - 2BHK Transformation by Best Architects in Lucknow"
-                fill
-                className="object-cover"
-              />
-              <div className="absolute top-4 left-4 bg-green-600 text-white px-3 py-1 text-sm font-medium">
-                AFTER
+
+              <div className="relative h-64 bg-gray-200">
+                <img
+                  src="https://images.unsplash.com/photo-1600585154154-1c1b8a1e2c3e"
+                  alt="After - 2BHK Transformation by Best Architects in Lucknow"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute top-4 left-4 bg-green-600 text-white px-3 py-1 text-sm font-medium">
+                  AFTER
+                </div>
               </div>
-            </div>
             </div>
           </div>
         </div>
@@ -392,7 +393,7 @@ export default function ArchitectsInLucknow() {
             </p>
           </div>
 
-        <TestimonialsMarquee />
+          <TestimonialsMarquee />
         </div>
       </section>
 
@@ -433,7 +434,7 @@ export default function ArchitectsInLucknow() {
           <h2 className="text-4xl md:text-5xl font-light mb-12 text-center">
             Frequently Asked Questions
           </h2>
-          
+
           <div className="space-y-8">
             {[
               {
@@ -465,7 +466,33 @@ export default function ArchitectsInLucknow() {
           </div>
         </div>
       </section>
- 
+
     </main>
   );
 }
+
+function Breadcrumbs() {
+  return (
+    <nav aria-label="Breadcrumb" className="max-w-7xl mx-auto px-6 pt-8 -mb-4 relative z-20">
+      <ol className="flex items-center space-x-2 text-[14px] text-gray-500">
+        <li className="flex items-center">
+          <Link href="/" className="flex items-center hover:text-black transition-colors">
+            <FiHome className="mr-1.5" />
+            <span>Home</span>
+          </Link>
+        </li>
+        <li className="flex items-center gap-2">
+          <FiChevronRight className="text-gray-300" />
+          <Link href="/services" className="hover:text-black transition-colors">
+            Services
+          </Link>
+        </li>
+        <li className="flex items-center gap-2">
+          <FiChevronRight className="text-gray-300" />
+          <span className="font-semibold text-black">Architects in Lucknow</span>
+        </li>
+      </ol>
+    </nav>
+  );
+}
+
