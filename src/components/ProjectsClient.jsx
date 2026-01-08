@@ -334,7 +334,7 @@ export default function ProjectsClient() {
   const typeTabs = ["All", "Interior", "Architecture"];
 
   return (
-    <main className="min-h-screen mt-10 bg-[#F5F4F1] text-[#101010]">
+    <main className="min-h-screen mt10 bg-[#F5F4F1] text-[#101010]">
       <Breadcrumbs />
 
       <div className="fixed bottom-5 z-10 right-5">
@@ -342,7 +342,7 @@ export default function ProjectsClient() {
       </div>
       {/* Hero */}
       <section className="relative  overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-white via-[#F7F7F5] to-[#EFEDE8]" />
+        <div className="  inset-0 bg-gradient-to-b from-white via-[#F7F7F5] to-[#EFEDE8]" />
         <div
           aria-hidden
           className="pointer-events-none absolute inset-0 opacity-[0.35]"
