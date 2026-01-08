@@ -4,7 +4,6 @@ import Script from "next/script";
 import TestimonialsMarquee from "./TestimonialsMarquee";
 import { FiHome, FiChevronRight } from "react-icons/fi";
 import logo from "@/assets/logo.png";
-import Script from "next/script";
 
 export const metadata = {
   title: "Best Interior Designers in Lucknow | Trygve Studio",
