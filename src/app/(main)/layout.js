@@ -55,7 +55,7 @@ export default function RootLayout({ children }) {
     window.location.pathname === "/interior-designer";
 
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="icon" href="/favicon.ico" />
         <meta

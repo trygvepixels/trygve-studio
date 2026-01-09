@@ -7,10 +7,11 @@ import { connectDB } from "@/lib/mongodb";
 export async function GET(_req, { params }) {
   await connectDB();
   try {
-    if (!mongoose.Types.ObjectId.isValid(params.id)) {
+    const { id } = await params;
+    if (!mongoose.Types.ObjectId.isValid(id)) {
       return NextResponse.json({ success: false, message: "Invalid ID" }, { status: 400 });
     }
-    const doc = await Location.findById(params.id).lean();
+    const doc = await Location.findById(id).lean();
     if (!doc) return NextResponse.json({ success: false, message: "Not found" }, { status: 404 });
 
     return NextResponse.json({ success: true, data: { ...doc, _id: doc._id.toString() } });
@@ -22,7 +23,8 @@ export async function GET(_req, { params }) {
 export async function PUT(req, { params }) {
   await connectDB();
   try {
-    if (!mongoose.Types.ObjectId.isValid(params.id)) {
+    const { id } = await params;
+    if (!mongoose.Types.ObjectId.isValid(id)) {
       return NextResponse.json({ success: false, message: "Invalid ID" }, { status: 400 });
     }
 
@@ -39,7 +41,7 @@ export async function PUT(req, { params }) {
       },
     };
 
-    const updated = await Location.findByIdAndUpdate(params.id, payload, { new: true }).lean();
+    const updated = await Location.findByIdAndUpdate(id, payload, { new: true }).lean();
     if (!updated) return NextResponse.json({ success: false, message: "Not found" }, { status: 404 });
 
     return NextResponse.json({ success: true, data: { ...updated, _id: updated._id.toString() } });
@@ -51,11 +53,12 @@ export async function PUT(req, { params }) {
 export async function DELETE(_req, { params }) {
   await connectDB();
   try {
-    if (!mongoose.Types.ObjectId.isValid(params.id)) {
+    const { id } = await params;
+    if (!mongoose.Types.ObjectId.isValid(id)) {
       return NextResponse.json({ success: false, message: "Invalid ID" }, { status: 400 });
     }
 
-    const deleted = await Location.findByIdAndDelete(params.id);
+    const deleted = await Location.findByIdAndDelete(id);
     if (!deleted) {
       return NextResponse.json({ success: false, message: "Not found" }, { status: 404 });
     }

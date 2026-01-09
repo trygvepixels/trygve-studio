@@ -1,17 +1,21 @@
-import './globals.css'
+import "./globals.css";
 import Script from "next/script";
 
 export const metadata = {
-  title: 'Trygve Studio - Premium Interior Design Services',
-  description: 'Transform your home with stunning interior designs. Get free consultation today!',
-}
+  title: "Trygve Studio - Premium Interior Design Services",
+  description:
+    "Transform your home with stunning interior designs. Get free consultation today!",
+};
 
 export default function InteriorDesignerLayout({ children }) {
   return (
-   <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="icon" href="/favicon.ico" />
-        <meta name="facebook-domain-verification" content="dv4u9r79rw2om8h9acntau6pjitnsy" />
+        <meta
+          name="facebook-domain-verification"
+          content="dv4u9r79rw2om8h9acntau6pjitnsy"
+        />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=AW-10884548494"
           strategy="afterInteractive"
@@ -63,14 +67,16 @@ export default function InteriorDesignerLayout({ children }) {
       </head>
       <body>
         <noscript>
-          <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TVF6BFPQ"
-          height="0" width="0" style={{display:"none",visibility:"hidden"}}></iframe>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-TVF6BFPQ"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          ></iframe>
         </noscript>
- 
+
         <div>{children}</div>
       </body>
     </html>
   );
 }
-
-

@@ -312,10 +312,7 @@ export default function BlogListPage() {
                             ? new Date(blog.updatedAt).toLocaleDateString()
                             : "—"}
                         </span>
-                        <span className="inline-flex items-center gap-1">
-                          <FiUser />
-                          {blog.author || "Unknown"}
-                        </span>
+                        
                       </div>
                     </div>
 

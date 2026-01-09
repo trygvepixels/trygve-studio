@@ -6,6 +6,7 @@ import EditorJsRenderer from "./EditorJsRenderer";
 import BlogSidebarContactForm from "./BlogSidebarContactForm";
 import { FiHome, FiChevronRight } from "react-icons/fi";
 import Link from "next/link";
+import { sanitizeBlogContent } from "@/lib/contentSanitizer";
 
 // Reusable text cleaner
 function cleanText(input = "") {
@@ -13,18 +14,6 @@ function cleanText(input = "") {
     .replace(/&nbsp;/g, " ")
     .replace(/<br\s*\/?>/gi, "")
     .replace(/\s+/g, " ")
-    .trim();
-}
-
-// Safe HTML renderer (basic sanitization)
-function cleanHtml(html = "") {
-  const withoutScripts = html.replace(
-    /<script[\s\S]*?>[\s\S]*?<\/script>/gi,
-    ""
-  );
-  return withoutScripts
-    .replace(/&nbsp;/g, " ")
-    .replace(/<br\s*\/?>/gi, "")
     .trim();
 }
 
@@ -53,6 +42,8 @@ function FaqItem({ faq }) {
 export default function BlogsClientUI({ blog }) {
   const [mounted, setMounted] = useState(false);
 
+  console.log(blog);
+
   // Safely parse Editor.js content
   const contentData = (() => {
     const raw = blog?.content;
@@ -76,10 +67,18 @@ export default function BlogsClientUI({ blog }) {
       {/* Hero Section */}
       <section className="relative w-full h-[60vh]  overflow-hidden">
         <img
-          src={blog?.image || "/placeholder-hero.jpg"}
-          alt={blog?.title || "Blog cover"}
+          src={blog?.featuredImage || blog?.imageUrl || blog?.image || "/placeholder-hero.jpg"}
+          alt={blog?.imageAlt || blog?.title || "Blog cover"}
           className="w-full h-full object-cover brightness-50 absolute"
         />
+        {/* Image Attribution */}
+        {blog?.imageAttribution && (
+          <div className="absolute top-4 right-4 z-10">
+            <p className="text-xs text-white/70 bg-black/30 backdrop-blur px-2 py-1 rounded">
+              {blog.imageAttribution}
+            </p>
+          </div>
+        )}
         <div className="absolute md:px-0 px-4 inset-0 flex flex-col justify-end px-0 md:px-0 pb-10 text-white max-w-7xl mx-auto">
           <span className="bg-white/20 backdrop-blur px-4 py-2 rounded-full text-xs font-medium w-fit mb-3">
             {blog.category}
@@ -88,7 +87,7 @@ export default function BlogsClientUI({ blog }) {
             {blog.title}
           </h1>
           <p className="text-sm text-gray-300">
-            {blog.author || "Unknown"} •{" "}
+            {"Trygve Studio Team"} •{" "}
             {blog?.createdAt ? new Date(blog.createdAt).toLocaleDateString("en-GB", {
               day: "2-digit",
               month: "short",
@@ -104,10 +103,13 @@ export default function BlogsClientUI({ blog }) {
           {contentData ? (
             <EditorJsRenderer content={contentData} />
           ) : (
-            <div className="prose max-w-none">
+            <div className="prose prose-lg max-w-none">
               {/* Fallback: render sanitized HTML or plain text if content isn’t valid Editor.js JSON */}
               {typeof blog?.content === "string" ? (
-                <div dangerouslySetInnerHTML={{ __html: cleanHtml(blog.content) }} />
+                <div
+                  className="blog-content"
+                  dangerouslySetInnerHTML={{ __html: sanitizeBlogContent(blog.content) }}
+                />
               ) : (
                 <p className="text-slate-600">No content available.</p>
               )}

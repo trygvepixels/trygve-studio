@@ -1,7 +1,7 @@
 import { getBlogs, getProjects, getServices } from "../../lib/api";
 
 export default async function sitemap() {
-  const baseUrl = "https://trygvestudio.com";
+  const baseUrl = "https://www.trygvestudio.com";
 
   // 1. Static Pages
   const staticPages = [
@@ -67,21 +67,19 @@ export default async function sitemap() {
     },
   ];
 
-  // 2. Specific Service Landing Pages (Static folders)
-  const serviceLandingPages = [
-    {
-      url: `${baseUrl}/services/architects-in-lucknow`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/services/interior-design-lucknow`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
+  // 2. Specific Service Landing Pages (These have their own folders and specific content)
+  // We define these separately to avoid duplication with dynamic service data
+  const serviceLandingSlugs = [
+    "architects-in-lucknow",
+    "interior-design-lucknow",
   ];
+
+  const serviceLandingPages = serviceLandingSlugs.map((slug) => ({
+    url: `${baseUrl}/services/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly",
+    priority: 0.8,
+  }));
 
   // 3. Dynamic Blogs
   const blogs = await getBlogs();
@@ -109,17 +107,19 @@ export default async function sitemap() {
       }))
     : [];
 
-  // 5. Dynamic Services
+  // 5. Dynamic Services (Filter out those that have static landing pages to avoid duplicate content)
   const servicesData = await getServices();
   const dynamicServicePages = Array.isArray(servicesData)
-    ? servicesData.map((service) => ({
-        url: `${baseUrl}/services/${service.slug}`,
-        lastModified: new Date(
-          service.updatedAt || service.createdAt || new Date()
-        ),
-        changeFrequency: "monthly",
-        priority: 0.7,
-      }))
+    ? servicesData
+        .filter((service) => !serviceLandingSlugs.includes(service.slug))
+        .map((service) => ({
+          url: `${baseUrl}/services/${service.slug}`,
+          lastModified: new Date(
+            service.updatedAt || service.createdAt || new Date()
+          ),
+          changeFrequency: "monthly",
+          priority: 0.7,
+        }))
     : [];
 
   return [

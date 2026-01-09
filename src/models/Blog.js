@@ -17,6 +17,15 @@ const blogSchema = new mongoose.Schema(
   {
     title: String,
     image: String,
+    // New image fields from external CMS
+    featuredImage: String,
+    imageUrl: String,
+    imageAlt: String,
+    imageAttribution: String,
+    imagePhotographer: String,
+    imagePhotographerUrl: String,
+    imageSource: String,
+    // Existing fields
     video: String,
     oldslug: String,
     category: String,
@@ -38,9 +47,11 @@ const blogSchema = new mongoose.Schema(
     focusKeyword: [String],
     phone: String,
     websiteName: String,
-    author: String, 
+    author: String,
     status: { type: String, default: "visible" },
     lastUpdated: { type: Date, default: Date.now },
+    // Source tracking
+    source: String, // e.g., "Antigravity-SEO-CMS"
   },
   { timestamps: true }
 );

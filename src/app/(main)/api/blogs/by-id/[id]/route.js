@@ -1,4 +1,4 @@
- import mongoose from "mongoose";
+import mongoose from "mongoose";
 import { connectDB } from "@/lib/mongodb";
 import Blog from "@/models/Blog";
 
@@ -8,7 +8,7 @@ function isValidObjectId(id) {
 
 export async function GET(req, context) {
   try {
-    const { id } = context.params;
+    const { id } = await context.params;
 
     if (!isValidObjectId(id)) {
       return Response.json({ error: "Invalid blog ID" }, { status: 400 });

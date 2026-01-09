@@ -1,10 +1,9 @@
-
 import { connectDB } from "@/lib/mongodb";
 import Blog from "@/models/Blog";
 // GET blog by urlSlug
 export async function GET(req, context) {
   try {
-    const { id } = await context.params;  
+    const { id } = await context.params;
     await connectDB();
 
     const blog = await Blog.findOne({ urlSlug: id });
@@ -19,15 +18,14 @@ export async function GET(req, context) {
   }
 }
 
-
- // PUT blog by urlSlug
+// PUT blog by urlSlug
 export async function PUT(req, context) {
   try {
-    const { params } = context;
+    const { id } = await context.params;
     await connectDB();
     const body = await req.json();
 
-    const blog = await Blog.findOne({ urlSlug: params.id });
+    const blog = await Blog.findOne({ urlSlug: id });
     if (!blog) {
       return Response.json({ error: "Blog not found" }, { status: 404 });
     }
@@ -63,15 +61,13 @@ export async function PUT(req, context) {
   }
 }
 
-
-
 // DELETE blog by urlSlug
 export async function DELETE(req, context) {
   try {
-    const { params } = context;
+    const { id } = await context.params;
     await connectDB();
 
-    const deleted = await Blog.findOneAndDelete({ urlSlug: params.id });
+    const deleted = await Blog.findOneAndDelete({ urlSlug: id });
 
     if (!deleted) {
       return Response.json({ error: "Blog not found" }, { status: 404 });

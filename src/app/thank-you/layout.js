@@ -11,7 +11,7 @@ export const metadata = {
 
 export default function InteriorDesignerLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="icon" href="/favicon.ico" />
         <meta

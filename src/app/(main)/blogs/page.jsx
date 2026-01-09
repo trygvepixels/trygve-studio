@@ -36,6 +36,10 @@ export default function Page() {
           const formatted = data.blogs.map((blog) => ({
             id: blog._id,
             image: blog.image,
+            // New image fields from external CMS
+            featuredImage: blog.featuredImage,
+            imageUrl: blog.imageUrl,
+            imageAlt: blog.imageAlt,
             category: blog.category || "General",
             date: new Date(blog.createdAt).toLocaleDateString("en-GB", {
               day: "2-digit",

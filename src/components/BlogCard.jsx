@@ -3,6 +3,9 @@ import Image from "next/image";
 
 const BlogCard = ({
   image,
+  featuredImage,
+  imageUrl,
+  imageAlt,
   category,
   date,
   readTime,
@@ -11,16 +14,21 @@ const BlogCard = ({
   authorName,
   authorImage,
 }) => {
-   const toTitleCase = (str) =>
-      str
-        .toLowerCase()
-        .split(" ")
-        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-        .join(" ");
+  const toTitleCase = (str) =>
+    str
+      .toLowerCase()
+      .split(" ")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" ");
+
+  // Use featuredImage or imageUrl as fallback, then image
+  const displayImage = featuredImage || imageUrl || image || "/placeholder-hero.jpg";
+  const displayAlt = imageAlt || title || "Blog cover";
+
   return (
     <div className="rounded-xl overflow-hidden bg-white shadow-sm">
       <div className="relative h-52 w-full">
-        <img src={image} alt={title} fill className="w-full object-cover h-52" />
+        <img src={displayImage} alt={displayAlt} fill className="w-full object-cover h-52" />
         {/* <span className="absolute top-3 left-3 bg-gray-900 text-white text-xs font-medium px-3 py-1 rounded-full">
           {category}
         </span> */}
@@ -39,7 +47,7 @@ const BlogCard = ({
             height={28}
             className="rounded-full object-cover"
           /> */}
-          <p className="text-sm font-medium text-gray-800">{authorName}</p>
+          <p className="text-sm font-medium text-gray-800">Team Trygve Studio</p>
         </div>
       </div>
     </div>

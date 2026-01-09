@@ -11,12 +11,16 @@ export const revalidate = 0;
 export async function GET(_req, { params }) {
   try {
     await connectDB();
-    const doc = await Service.findOne({ slug: params.slug }).lean();
+    const { slug } = await params;
+    const doc = await Service.findOne({ slug }).lean();
     if (!doc) return NextResponse.json({ error: "Not found" }, { status: 404 });
     return NextResponse.json(doc);
   } catch (err) {
     console.error("GET /services/:slug error:", err);
-    return NextResponse.json({ error: "Failed to fetch service" }, { status: 500 });
+    return NextResponse.json(
+      { error: "Failed to fetch service" },
+      { status: 500 }
+    );
   }
 }
 
@@ -24,26 +28,37 @@ export async function GET(_req, { params }) {
 export async function PATCH(req, { params }) {
   try {
     await connectDB();
+    const { slug } = await params;
     const body = await req.json();
 
     if (body?.slug)
       body.slug = String(body.slug).trim().toLowerCase().replace(/\s+/g, "-");
 
-    if (body?.points && (!Array.isArray(body.points) || body.points.length !== 3)) {
-      return NextResponse.json({ error: "points must contain exactly three items" }, { status: 400 });
+    if (
+      body?.points &&
+      (!Array.isArray(body.points) || body.points.length !== 3)
+    ) {
+      return NextResponse.json(
+        { error: "points must contain exactly three items" },
+        { status: 400 }
+      );
     }
 
     const updated = await Service.findOneAndUpdate(
-      { slug: params.slug },
+      { slug },
       { $set: body },
       { new: true, runValidators: true }
     ).lean();
 
-    if (!updated) return NextResponse.json({ error: "Not found" }, { status: 404 });
+    if (!updated)
+      return NextResponse.json({ error: "Not found" }, { status: 404 });
     return NextResponse.json(updated);
   } catch (err) {
     console.error("PATCH /services/:slug error:", err);
-    return NextResponse.json({ error: "Failed to update service" }, { status: 500 });
+    return NextResponse.json(
+      { error: "Failed to update service" },
+      { status: 500 }
+    );
   }
 }
 
@@ -51,11 +66,15 @@ export async function PATCH(req, { params }) {
 export async function DELETE(_req, { params }) {
   try {
     await connectDB();
-    const res = await Service.findOneAndDelete({ slug: params.slug }).lean();
+    const { slug } = await params;
+    const res = await Service.findOneAndDelete({ slug }).lean();
     if (!res) return NextResponse.json({ error: "Not found" }, { status: 404 });
     return NextResponse.json({ ok: true });
   } catch (err) {
     console.error("DELETE /services/:slug error:", err);
-    return NextResponse.json({ error: "Failed to delete service" }, { status: 500 });
+    return NextResponse.json(
+      { error: "Failed to delete service" },
+      { status: 500 }
+    );
   }
 }

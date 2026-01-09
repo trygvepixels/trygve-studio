@@ -9,7 +9,8 @@ export const revalidate = 0;
 export async function GET(_req, { params }) {
   try {
     await connectDB();
-    const doc = await Capability.findOne({ slug: params.slug }).lean();
+    const { slug } = await params;
+    const doc = await Capability.findOne({ slug }).lean();
     if (!doc) return NextResponse.json({ error: "Not found" }, { status: 404 });
     return NextResponse.json(doc);
   } catch (e) {
@@ -21,20 +22,31 @@ export async function GET(_req, { params }) {
 export async function PATCH(req, { params }) {
   try {
     await connectDB();
+    const { slug } = await params;
     const body = await req.json();
 
-    if (body?.slug) body.slug = body.slug.trim().toLowerCase().replace(/\s+/g, "-");
-    if (body?.images && (!Array.isArray(body.images) || body.images.length !== 4 || body.images.some((i) => !i?.src))) {
-      return NextResponse.json({ error: "images must have exactly 4 items with src" }, { status: 400 });
+    if (body?.slug)
+      body.slug = body.slug.trim().toLowerCase().replace(/\s+/g, "-");
+    if (
+      body?.images &&
+      (!Array.isArray(body.images) ||
+        body.images.length !== 4 ||
+        body.images.some((i) => !i?.src))
+    ) {
+      return NextResponse.json(
+        { error: "images must have exactly 4 items with src" },
+        { status: 400 }
+      );
     }
 
     const updated = await Capability.findOneAndUpdate(
-      { slug: params.slug },
+      { slug },
       { $set: body },
       { new: true, runValidators: true }
     ).lean();
 
-    if (!updated) return NextResponse.json({ error: "Not found" }, { status: 404 });
+    if (!updated)
+      return NextResponse.json({ error: "Not found" }, { status: 404 });
     return NextResponse.json(updated);
   } catch (e) {
     console.error("PATCH /capabilities/:slug", e);
@@ -45,7 +57,8 @@ export async function PATCH(req, { params }) {
 export async function DELETE(_req, { params }) {
   try {
     await connectDB();
-    const res = await Capability.findOneAndDelete({ slug: params.slug }).lean();
+    const { slug } = await params;
+    const res = await Capability.findOneAndDelete({ slug }).lean();
     if (!res) return NextResponse.json({ error: "Not found" }, { status: 404 });
     return NextResponse.json({ ok: true });
   } catch (e) {

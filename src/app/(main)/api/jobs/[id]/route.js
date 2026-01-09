@@ -9,8 +9,9 @@ function isValidId(id) {
 
 export async function GET(_req, { params }) {
   await connectDB();
-  const { id } = params;
-  if (!isValidId(id)) return NextResponse.json({ error: "Invalid id" }, { status: 400 });
+  const { id } = await params;
+  if (!isValidId(id))
+    return NextResponse.json({ error: "Invalid id" }, { status: 400 });
 
   const job = await Job.findById(id).lean();
   if (!job) return NextResponse.json({ error: "Not found" }, { status: 404 });
@@ -20,8 +21,9 @@ export async function GET(_req, { params }) {
 
 export async function PATCH(request, { params }) {
   await connectDB();
-  const { id } = params;
-  if (!isValidId(id)) return NextResponse.json({ error: "Invalid id" }, { status: 400 });
+  const { id } = await params;
+  if (!isValidId(id))
+    return NextResponse.json({ error: "Invalid id" }, { status: 400 });
 
   const body = await request.json();
 
@@ -36,14 +38,18 @@ export async function PATCH(request, { params }) {
     return NextResponse.json(job);
   } catch (err) {
     console.error(err);
-    return NextResponse.json({ error: "Failed to update job" }, { status: 500 });
+    return NextResponse.json(
+      { error: "Failed to update job" },
+      { status: 500 }
+    );
   }
 }
 
 export async function DELETE(_req, { params }) {
   await connectDB();
-  const { id } = params;
-  if (!isValidId(id)) return NextResponse.json({ error: "Invalid id" }, { status: 400 });
+  const { id } = await params;
+  if (!isValidId(id))
+    return NextResponse.json({ error: "Invalid id" }, { status: 400 });
 
   await Job.findByIdAndDelete(id);
   return NextResponse.json({ ok: true });
