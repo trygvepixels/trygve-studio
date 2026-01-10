@@ -3,6 +3,20 @@ import dbConnect from "@/lib/dbConnect"; // Your DB connect utility
 import Blog from "@/models/Blog"; // The model you provided me
 import { sanitizeBlogContent } from "@/lib/contentSanitizer";
 
+// CORS headers helper function
+function corsHeaders() {
+  return {
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+    "Access-Control-Allow-Headers": "Content-Type, X-CMS-AUTH-KEY",
+  };
+}
+
+// OPTIONS handler for preflight requests
+export async function OPTIONS() {
+  return NextResponse.json({}, { status: 200, headers: corsHeaders() });
+}
+
 export async function GET() {
   return NextResponse.json(
     {
@@ -26,7 +40,7 @@ export async function GET() {
         "author",
       ],
     },
-    { status: 200 }
+    { status: 200, headers: corsHeaders() }
   );
 }
 
@@ -71,14 +85,20 @@ export async function POST(req) {
 
     const saved = await newBlog.save();
 
-    return NextResponse.json({
-      success: true,
-      id: saved._id,
-      slug: saved.urlSlug,
-      url: `https://your-client-domain.com/blogs/${saved.urlSlug}`,
-    });
+    return NextResponse.json(
+      {
+        success: true,
+        id: saved._id,
+        slug: saved.urlSlug,
+        url: `https://your-client-domain.com/blogs/${saved.urlSlug}`,
+      },
+      { headers: corsHeaders() }
+    );
   } catch (error) {
     console.error("CMS Receiver Error:", error);
-    return NextResponse.json({ error: error.message }, { status: 500 });
+    return NextResponse.json(
+      { error: error.message },
+      { status: 500, headers: corsHeaders() }
+    );
   }
 }
