@@ -179,14 +179,62 @@ export default function BlogsClientUI({ blog }) {
         </section>
       )} */}
 
+      {/* Contact Information */}
+      <section className="max-w-7xl mx-auto py-10 md:px-0 px-4">
+        <div className="border border-gray-300 rounded-lg bg-white/50 backdrop-blur p-6 space-y-4">
+          <div className="flex items-center gap-3">
+            <span className="text-gray-700 font-medium">Email:</span>
+            <a
+              href="mailto:faisal.saif@trygvestudio.com"
+              className="text-blue-600 hover:underline"
+            >
+              faisal.saif@trygvestudio.com
+            </a>
+          </div>
 
+          <div className="flex items-center gap-3">
+            <span className="text-gray-700 font-medium">Phone:</span>
+            <a
+              href="tel:+919554440400"
+              className="text-blue-600 hover:underline"
+            >
+              +91 95544 40400
+            </a>
+          </div>
+
+          <div className="pt-2 border-t border-gray-200">
+            <p className="text-gray-600 font-medium mb-3">
+              Trygve Studio — Best Interior Designers in Lucknow
+            </p>
+            
+            <div className="flex flex-wrap gap-4">
+              <a 
+                href="https://www.trygvestudio.com/projects" 
+                className="text-blue-600 hover:underline font-medium"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View Our Projects
+              </a>
+              <a 
+                href="https://www.trygvestudio.com/about-us" 
+                className="text-blue-600 hover:underline font-medium"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                About Us
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
 
     </div>
   );
 }
 function Breadcrumbs({ title }) {
   return (
-    <nav aria-label="Breadcrumb" className="max-w-7xl mx-auto px-4 md:px-0 pt-28 -mb-24 relative z-20">
+    <nav aria-label="Breadcrumb" className="max-w-7xl mx-auto px-4 md:px-0 pt-16 -mb-24 relative z-20">
       <ol className="flex items-center space-x-2 text-[14px] text-gray-300">
         <li className="flex items-center">
           <Link href="/" className="flex items-center hover:text-white transition-colors">

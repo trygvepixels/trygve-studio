@@ -1,5 +1,9 @@
 import { getBlogs, getProjects, getServices } from "../../lib/api";
 
+// Revalidate sitemap every 2 days (48 hours = 172800 seconds)
+// This ensures new blog posts are automatically included in the sitemap
+export const revalidate = 172800;
+
 export default async function sitemap() {
   const baseUrl = "https://www.trygvestudio.com";
 
