@@ -35,6 +35,7 @@ export const metadata = {
         url: "https://www.trygvestudio.com/og-image.jpg",
         width: 1200,
         height: 630,
+        alt: "Trygve Studio - Premium Architecture & Interior Design",
       },
     ],
     locale: "en_US",
@@ -45,7 +46,12 @@ export const metadata = {
     title: "Trygve Studio - Premium Architecture & Interior Design",
     description:
       "Transform your space with Trygve Studio. Professional architecture and interior design services.",
-    images: ["https://www.trygvestudio.com/twitter-image.jpg"],
+    images: [
+      {
+        url: "https://www.trygvestudio.com/twitter-image.jpg",
+        alt: "Trygve Studio - Premium Architecture & Interior Design",
+      },
+    ],
   },
 };
 
@@ -107,18 +113,21 @@ export default function RootLayout({ children }) {
         </Script>
         <noscript>
           <img
+            alt="Facebook Pixel Tracking - 1510015907088015"
             height="1"
             width="1"
             style={{ display: "none" }}
             src="https://www.facebook.com/tr?id=1510015907088015&ev=PageView&noscript=1"
           />
           <img
+            alt="Facebook Pixel Tracking - 779698648292728"
             height="1"
             width="1"
             style={{ display: "none" }}
             src="https://www.facebook.com/tr?id=779698648292728&ev=PageView&noscript=1"
           />
           <img
+            alt="Facebook Pixel Tracking - 1526099745243779"
             height="1"
             width="1"
             style={{ display: "none" }}
@@ -158,6 +167,7 @@ export default function RootLayout({ children }) {
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-TVF6BFPQ"
+            title="Google Tag Manager"
             height="0"
             width="0"
             style={{ display: "none", visibility: "hidden" }}

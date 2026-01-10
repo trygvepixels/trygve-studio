@@ -10,12 +10,14 @@ const services = [
     description:
       'Innovative, sustainable architectural solutions tailored to your vision and context. We blend creativity with precision to craft iconic spaces.',
     image: 'https://images.unsplash.com/photo-1694787590597-ba49c7cdc2cc?q=80&w=947&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    href: '/services/architects-in-lucknow'
   },
   {
     title: 'Interior Design',
     description:
       'Transforming interiors with a focus on functionality, elegance, and user experience. We curate inspiring atmospheres for living and working.',
     image: 'https://images.unsplash.com/photo-1564078516393-cf04bd966897?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    href: '/services/interior-design-lucknow'
   },
   {
     title: 'Retail Experience Design',
@@ -248,27 +250,50 @@ function ServicesPage() {
                       </p>
 
                       <div className={`${isEven ? 'justify-start' : 'justify-start'} flex`}>
-                        <button
-                          type="button"
-                          onClick={() => openModal(service)}
-                          className="mt-7 inline-flex items-center gap-2 rounded-full border border-gray-900/90 px-5 py-2.5 text-gray-900 transition-all
-                                     hover:bg-[#244D7E] hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-900/30"
-                        >
-                          <span className="text-sm md:text-sm">Explore more</span>
-                          <svg
-                            className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            aria-hidden="true"
+                        {service.href ? (
+                          <Link
+                            href={service.href}
+                            className="mt-7 inline-flex items-center gap-2 rounded-full border border-gray-900/90 px-5 py-2.5 text-gray-900 transition-all
+                                       hover:bg-[#244D7E] hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-900/30"
                           >
-                            <path d="M5 12h14" />
-                            <path d="M12 5l7 7-7 7" />
-                          </svg>
-                        </button>
+                            <span className="text-sm md:text-sm">Explore more</span>
+                            <svg
+                              className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              aria-hidden="true"
+                            >
+                              <path d="M5 12h14" />
+                              <path d="M12 5l7 7-7 7" />
+                            </svg>
+                          </Link>
+                        ) : (
+                          <button
+                            type="button"
+                            onClick={() => openModal(service)}
+                            className="mt-7 inline-flex items-center gap-2 rounded-full border border-gray-900/90 px-5 py-2.5 text-gray-900 transition-all
+                                       hover:bg-[#244D7E] hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-900/30"
+                          >
+                            <span className="text-sm md:text-sm">Explore more</span>
+                            <svg
+                              className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              aria-hidden="true"
+                            >
+                              <path d="M5 12h14" />
+                              <path d="M12 5l7 7-7 7" />
+                            </svg>
+                          </button>
+                        )}
                       </div>
                     </div>
                   </div>

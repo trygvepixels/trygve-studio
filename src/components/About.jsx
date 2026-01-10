@@ -1,11 +1,12 @@
 "use client";
 import { FiPhone, FiMail } from "react-icons/fi";
 import { FaWhatsapp } from "react-icons/fa";
+import Link from "next/link";
 
 export default function TrygveAnnouncement() {
   return (
     <section className="relative overflow-hidden">
-    
+
       {/* Background: soft gradient + grid */}
       <div
         aria-hidden
@@ -36,19 +37,29 @@ export default function TrygveAnnouncement() {
               <span className="bg-gradient-to-r from-indigo-600 to-emerald-600 bg-clip-text text-transparent">
                 Trygve Engineering Pvt. Ltd
               </span>
-              , is a full-fledged Architectural & allied Engineering service
-              company based in Lucknow, India.
+              , is a full-fledged{" "}
+              <Link href="/services/architects-in-lucknow" className="hover:underline decoration-indigo-500">
+                Architectural
+              </Link>{" "}
+              & allied Engineering service company based in{" "}
+              <Link href="/services/architects-in-lucknow" className="hover:underline decoration-emerald-500">
+                Lucknow, India
+              </Link>.
             </h1>
 
             {/* Subhead */}
-            <p className="mt-4 max-w-3xl text-base leading-relaxed text-zinc-600 md:text-lg">
+            <p className="mt-4 max-w-3xl text-zinc-600 md:text-lg leading-relaxed">
               We focus on delivering the best{" "}
-              <span className="font-semibold text-zinc-800">
+              <Link href="/services" className="font-semibold text-zinc-800 hover:underline">
                 3D Architectural Design Services
-              </span>{" "}
+              </Link>{" "}
               in the region. Our experienced team of{" "}
-              <span className="font-medium">Architects, Engineers & Visualisers</span>{" "}
-              crafts high-impact spaces, visuals, and documentation end-to-end.
+              <Link href="/services/architects-in-lucknow" className="font-medium hover:underline text-zinc-800">
+                Architects
+              </Link>,{" "}
+              <Link href="/services/interior-design-lucknow" className="font-medium hover:underline text-zinc-800">
+                Interior Designers
+              </Link> & Visualisers crafts high-impact spaces, visuals, and documentation end-to-end.
             </p>
 
             {/* CTA block */}
@@ -97,7 +108,7 @@ export default function TrygveAnnouncement() {
         </div>
 
 
-        
+
 
         {/* Decorative corner accents (Awwwards vibe) */}
         <div

@@ -94,7 +94,7 @@ export default function ContactPage() {
               </p>
             </div>
 
-            <Image src={contactImg} className="md:block hidden" />
+            <Image src={contactImg} alt="Contact Trygve Studio" className="md:block hidden" />
 
           </div>
 

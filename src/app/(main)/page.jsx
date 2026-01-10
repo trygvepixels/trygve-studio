@@ -10,6 +10,7 @@ import ClientsMarquee from "@/components/ClientsMarquee";
 import TestimonialsMarquee from "@/components/TestimonialsMarquee";
 import FeatureProjects from "@/components/FeatureProjects";
 import Stats from "@/components/Stats";
+import CoreCapabilities from "@/components/CoreCapabilities";
 import Popup from "@/components/Popup";
 import { useRouter } from "next/navigation";
 import { FaWhatsapp } from "react-icons/fa";
@@ -85,7 +86,7 @@ const Page = () => {
       let result = {};
       try {
         result = await res.json();
-      } catch {}
+      } catch { }
 
       if (!res.ok || !result?.success) {
         throw new Error(
@@ -259,12 +260,13 @@ const Page = () => {
         href="https://wa.me/919554440400"
         className="fixed bottom-20 right-8 bg-wh ite text-green-500 rounded-full text-4xl z-50 "
       >
-        <Image src={whatsapp} height={50} />
+        <Image src={whatsapp} alt="Chat on WhatsApp" height={50} />
       </a>
       <Hero />
       {/* <About /> */}
       <ClientsMarquee />
       <Stats />
+      {/* <CoreCapabilities /> */}
       <FeatureProjects />
       <Projects />
       <ProjectsGrid />
@@ -288,20 +290,18 @@ const Page = () => {
       {showPopup && (
         <div
           id="contact-popup"
-          className={`fixed inset-0 z-[1000000] flex items-center justify-center transition-opacity duration-200 ${
-            entered ? "opacity-100" : "opacity-0"
-          } bg-black/60 backdrop-blur-sm`}
+          className={`fixed inset-0 z-[1000000] flex items-center justify-center transition-opacity duration-200 ${entered ? "opacity-100" : "opacity-0"
+            } bg-black/60 backdrop-blur-sm`}
           role="dialog"
           aria-modal="true"
           aria-labelledby="popup-title"
           onClick={() => setShowPopup(false)} // click outside to close
         >
           <div
-            className={`relative w-full max-w-3xl transition-all duration-300 ease-out ${
-              entered
-                ? "opacity-100 translate-y-0 scale-100"
-                : "opacity-0 translate-y-1 scale-95"
-            }`}
+            className={`relative w-full max-w-3xl transition-all duration-300 ease-out ${entered
+              ? "opacity-100 translate-y-0 scale-100"
+              : "opacity-0 translate-y-1 scale-95"
+              }`}
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close */}
@@ -327,9 +327,8 @@ const Page = () => {
                     <div className="grid grid-cols-1">
                       <div
                         id="project-form"
-                        className={`rounded-2xl border border-black/10 bg-white p-5 md:p-6 ${
-                          submitting ? "opacity-90" : ""
-                        }`}
+                        className={`rounded-2xl border border-black/10 bg-white p-5 md:p-6 ${submitting ? "opacity-90" : ""
+                          }`}
                       >
                         <form
                           onSubmit={handleSubmit}

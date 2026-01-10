@@ -29,8 +29,8 @@ function Tile({ title, variant }) {
   const bg = isActive
     ? "bg-[#1b1b1b] border border-[#e5b657]"
     : isGold
-    ? "bg-[#f6c26b]"
-    : "bg-white";
+      ? "bg-[#f6c26b]"
+      : "bg-white";
 
   return (
     <article className={`${base} ${bg}`}>
@@ -43,9 +43,9 @@ function Tile({ title, variant }) {
         </div>
       ) : (
         <div className="flex h-full items-end">
-          <p className="m-0 text-[18px] md:text-[20px] font-semibold uppercase leading-tight tracking-tight text-black">
+          <h3 className="m-0 text-[18px] md:text-[20px] font-semibold uppercase leading-tight tracking-tight text-black">
             {title}
-          </p>
+          </h3>
         </div>
       )}
     </article>

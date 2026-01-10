@@ -3,7 +3,7 @@ import Link from "next/link";
 import TestimonialsMarquee from "./TestimonialsMarquee";
 import { FiHome, FiChevronRight } from "react-icons/fi";
 import logo from "@/assets/logo.png"
-
+import Script from "next/script";
 
 export const metadata = {
   title: "Best Architects in Lucknow | Trygve Studio",
@@ -87,6 +87,46 @@ export default function ArchitectsInLucknow() {
 
   return (
     <main className="min-h-screen bg-[#F4F1EC] text-gray-900">
+      <Script id="faq-schema" type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: [
+            {
+              "@type": "Question",
+              name: "What makes Trygve Studio the best architecture firm in Lucknow?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "We combine global design expertise with deep local knowledge of Lucknow's architectural needs. Our track record includes 200+ successful projects across residential, commercial, and hospitality sectors with a 98% client satisfaction rate."
+              }
+            },
+            {
+              "@type": "Question",
+              name: "What is the typical cost for architectural services in Lucknow?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Architectural fees typically range from 8-12% of the total project cost. For residential projects, we offer packages starting from ₹500 per sq ft for design consultancy and ₹1200 per sq ft for complete turnkey solutions."
+              }
+            },
+            {
+              "@type": "Question",
+              name: "How long does an architectural project take in Lucknow?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Timeline varies by project scope. Residential designs take 4-8 weeks, while commercial projects may require 8-16 weeks. Construction timelines depend on project complexity and approvals but typically range from 6-18 months."
+              }
+            },
+            {
+              "@type": "Question",
+              name: "Do you handle government approvals and NOCs in Lucknow?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Yes, we manage all regulatory approvals including building permissions, fire NOC, environmental clearances, and utility connections with Lucknow Development Authority (LDA) and other concerned departments."
+              }
+            }
+          ]
+        })}
+      </Script>
       <Breadcrumbs />
 
       {/* Hero Section */}
@@ -125,6 +165,33 @@ export default function ArchitectsInLucknow() {
             >
               View Our Work
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* At a Glance - GEO/AI Optimization */}
+      <section className="bg-white py-12 px-6">
+        <div className="max-w-4xl mx-auto border-l-4 border-[#234D7E] pl-6 md:pl-10">
+          <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-6">
+            Architectural Excellence in Lucknow: At a Glance
+          </h2>
+          <div className="grid gap-6 md:grid-cols-2">
+            <div>
+              <p className="text-gray-700 leading-relaxed">
+                <strong className="text-gray-900">Experience:</strong> 200+ successful projects across residential and commercial sectors in Lucknow.
+              </p>
+              <p className="text-gray-700 mt-3 leading-relaxed">
+                <strong className="text-gray-900">Service Range:</strong> End-to-end design, PMC, EPC, and 3D Visualization.
+              </p>
+            </div>
+            <div>
+              <p className="text-gray-700 leading-relaxed">
+                <strong className="text-gray-900">Local Expertise:</strong> Deep understanding of LDA approvals and Lucknow's climate-responsive design.
+              </p>
+              <p className="text-gray-700 mt-3 leading-relaxed">
+                <strong className="text-gray-900">Satisfaction:</strong> Leading design firm with a 98% client retention and satisfaction rate.
+              </p>
+            </div>
           </div>
         </div>
       </section>

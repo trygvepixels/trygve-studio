@@ -7,6 +7,7 @@ import BlogSidebarContactForm from "./BlogSidebarContactForm";
 import { FiHome, FiChevronRight } from "react-icons/fi";
 import Link from "next/link";
 import { sanitizeBlogContent } from "@/lib/contentSanitizer";
+import Script from "next/script";
 
 // Reusable text cleaner
 function cleanText(input = "") {
@@ -63,6 +64,54 @@ export default function BlogsClientUI({ blog }) {
 
   return (
     <div className="min-h-screen bg-[#F4F1EC]">
+      {/* Article Schema */}
+      <Script id="article-schema" type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Article",
+          headline: blog?.title,
+          description: blog?.metaDescription || blog?.summary,
+          image: [blog?.featuredImage || blog?.imageUrl || blog?.image].filter(Boolean),
+          datePublished: blog?.createdAt,
+          dateModified: blog?.updatedAt || blog?.createdAt,
+          author: {
+            "@type": "Person",
+            name: blog?.author || "Trygve Studio Team",
+            url: "https://www.trygvestudio.com/about-us",
+          },
+          publisher: {
+            "@type": "Organization",
+            name: "Trygve Studio",
+            logo: {
+              "@type": "ImageObject",
+              url: "https://www.trygvestudio.com/logo.png",
+            },
+          },
+          mainEntityOfPage: {
+            "@type": "WebPage",
+            "@id": `https://www.trygvestudio.com/blogs/${blog?.urlSlug}`,
+          },
+        })}
+      </Script>
+
+      {/* FAQ Schema */}
+      {blog?.faqs?.length > 0 && (
+        <Script id="faq-schema" type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: blog.faqs.map((f) => ({
+              "@type": "Question",
+              name: f.question,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: f.answer,
+              },
+            })),
+          })}
+        </Script>
+      )}
+
       <Breadcrumbs title={blog?.title} />
       {/* Hero Section */}
       <section className="relative w-full h-[60vh]  overflow-hidden">
@@ -115,31 +164,82 @@ export default function BlogsClientUI({ blog }) {
               )}
             </div>
           )}
+
+          {/* About Author Section (EEAT) */}
+          <div className="mt-16 p-8 border border-gray-200 rounded-2xl bg-white shadow-sm flex flex-col md:flex-row items-center gap-6">
+            <div className="w-24 h-24 rounded-full bg-gray-100 flex items-center justify-center overflow-hidden shrink-0 border-2 border-gray-50">
+              <img src="/logo.webp" alt="Trygve Studio Team" className="w-full h-full object-contain p-2" />
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">About the Author: {blog?.author || "Trygve Studio Team"}</h3>
+              <p className="text-gray-600 leading-relaxed text-[15px]">
+                The editorial team at <span className="font-medium text-black">Trygve Studio</span> consists of experienced architects and interior designers dedicated to sharing insights on modern architecture, luxury interiors, and sustainable design practices. With a portfolio spanning global projects, we aim to inspire and educate through expert-backed content.
+              </p>
+              <div className="mt-4 flex gap-4">
+                <Link href="/about-us" className="text-sm font-medium text-blue-600 hover:underline">Learn more about our team →</Link>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Sidebar */}
       </div>
 
       {/* Connected Services */}
-      {blog.connectedServices?.length > 0 && (
-        <section className="max-w-7xl mx-auto py-10 md:px-0 px-4">
-          <h2 className="text-2xl font-medium mb-4">Connected Services</h2>
-          <ul className="list-disc list-inside">
-            {blog.connectedServices.map((service, index) => (
-              <li key={index}>
-                <a
+      <section className="max-w-7xl mx-auto py-10 md:px-0 px-4">
+        <h2 className="text-2xl font-medium mb-4">
+          {blog.connectedServices?.length > 0 ? "Connected Services" : "Our Core Services"}
+        </h2>
+        <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          {blog.connectedServices?.length > 0 ? (
+            blog.connectedServices.map((service, index) => (
+              <li key={index} className="list-none">
+                <Link
                   href={service.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-600 underline"
+                  className="block p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors text-blue-600 font-medium"
                 >
-                  {service.name}
-                </a>
+                  {service.name} →
+                </Link>
               </li>
-            ))}
-          </ul>
-        </section>
-      )}
+            ))
+          ) : (
+            <>
+              <li className="list-none">
+                <Link
+                  href="/services/architects-in-lucknow"
+                  className="block p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors text-blue-600 font-medium"
+                >
+                  Architects in Lucknow →
+                </Link>
+              </li>
+              <li className="list-none">
+                <Link
+                  href="/services/interior-design-lucknow"
+                  className="block p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors text-blue-600 font-medium"
+                >
+                  Interior Design Lucknow →
+                </Link>
+              </li>
+              <li className="list-none">
+                <Link
+                  href="/services"
+                  className="block p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors text-blue-600 font-medium"
+                >
+                  3D Visualization Services →
+                </Link>
+              </li>
+              <li className="list-none">
+                <Link
+                  href="/projects"
+                  className="block p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors text-blue-600 font-medium"
+                >
+                  Our Project Gallery →
+                </Link>
+              </li>
+            </>
+          )}
+        </ul>
+      </section>
 
       {/* FAQs */}
       {blog.faqs?.length > 0 && (
@@ -203,27 +303,38 @@ export default function BlogsClientUI({ blog }) {
           </div>
 
           <div className="pt-2 border-t border-gray-200">
-            <p className="text-gray-600 font-medium mb-3">
-              Trygve Studio — Best Interior Designers in Lucknow
+            <p className="text-gray-800 font-semibold mb-3">
+              Explore Our Expertise:
             </p>
-            
-            <div className="flex flex-wrap gap-4">
-              <a 
-                href="https://www.trygvestudio.com/projects" 
-                className="text-blue-600 hover:underline font-medium"
-                target="_blank"
-                rel="noopener noreferrer"
+
+            <div className="flex flex-col gap-3">
+              <Link
+                href="/services/interior-design-lucknow"
+                className="text-blue-600 hover:underline font-medium text-lg"
+              >
+                Best Interior Designers in Lucknow →
+              </Link>
+              <Link
+                href="/services/architects-in-lucknow"
+                className="text-blue-600 hover:underline font-medium text-lg"
+              >
+                Best Architects in Lucknow →
+              </Link>
+            </div>
+
+            <div className="flex flex-wrap gap-4 mt-6">
+              <Link
+                href="/projects"
+                className="text-gray-700 hover:text-black hover:underline font-medium"
               >
                 View Our Projects
-              </a>
-              <a 
-                href="https://www.trygvestudio.com/about-us" 
-                className="text-blue-600 hover:underline font-medium"
-                target="_blank"
-                rel="noopener noreferrer"
+              </Link>
+              <Link
+                href="/about-us"
+                className="text-gray-700 hover:text-black hover:underline font-medium"
               >
                 About Us
-              </a>
+              </Link>
             </div>
           </div>
         </div>

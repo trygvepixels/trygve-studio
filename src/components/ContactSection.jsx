@@ -7,7 +7,7 @@ import contact from "@/assets/hero/contact.png"
 export default function ContactSection() {
   return (
     <section className="bg-[#1f1f1f] text-white">
-      <div className="max-w-7xl/Users/harsh/Developer/Personal Projects/StruAxis Faisal/my-app/src/components/CapabilityForm.jsx mx-auto px-4 sm:px-6 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12">
         {/* Heading */}
         <h2 className="text-[28px] sm:text-[40px] font-light leading-snug mb-10">
           Do you have questions?

@@ -62,7 +62,7 @@ export default function FeatureProjects() {
           <h2 className="text-3xl md:text-4xl font-semibold">Featured Projects</h2>
           <p className="mt-2 text-black/60">A selection of recent work — crafted with care.</p>
         </div>
-        <Link href="/work" className="hidden md:inline-block rounded-lg border px-4 py-2 text-sm hover:bg-black/5">
+        <Link href="/projects" className="hidden md:inline-block rounded-lg border px-4 py-2 text-sm hover:bg-black/5">
           View all
         </Link>
       </div>
@@ -248,13 +248,13 @@ function Lightbox({ project, index, onChangeIndex, onClose }) {
           <div className="flex items-center gap-3">
             <span className="inline-flex h-2 w-2 rounded-full" style={{ background: project.accentColor || "#7C5CFF" }} />
             <h3 className="text-lg font-medium">{project.title}</h3>
-           
+
           </div>
           <button
             onClick={onClose}
             className="rounded-md border border-white/20 px-3 py-1.5 text-sm text-white hover:bg-white/10"
           >
-             ×
+            ×
           </button>
         </div>
 
@@ -287,7 +287,7 @@ function Lightbox({ project, index, onChangeIndex, onClose }) {
           )}
 
           {/* index pill */}
-        
+
         </div>
 
         {/* thumbnails */}

@@ -140,8 +140,32 @@ export default function FooterPremium({ variant = "bronze" }) {
             </div>
           </div>
 
+          {/* Services */}
+          <div className="md:col-span-2">
+            <h5 className="text-sm font-semibold uppercase tracking-wide opacity-80">
+              Expertise
+            </h5>
+            <ul className="mt-3 space-y-2 text-[15px]">
+              {[
+                { label: "Architects in Lucknow", href: "/services/architects-in-lucknow" },
+                { label: "Interior Design Lucknow", href: "/services/interior-design-lucknow" },
+                { label: "3D Visualization", href: "/services" },
+                { label: "PMC & EPC", href: "/services" },
+              ].map((link) => (
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
+                    className="group inline-flex items-center gap-2 hover:underline"
+                  >
+                    <span>{link.label}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
           {/* Explore */}
-          <div className="md:col-span-3">
+          <div className="md:col-span-2">
             <h5 className="text-sm font-semibold uppercase tracking-wide opacity-80">
               Explore
             </h5>
@@ -151,8 +175,6 @@ export default function FooterPremium({ variant = "bronze" }) {
                 { label: "Projects Gallery", href: "/projects" },
                 { label: "Services", href: "/services" },
                 { label: "Contact", href: "/contact-us" },
-                { label: "Privacy Policy", href: "/privacy" },
-                { label: "Terms & Conditions", href: "/terms" },
               ].map((link) => (
                 <li key={link.href}>
                   <Link
@@ -160,7 +182,6 @@ export default function FooterPremium({ variant = "bronze" }) {
                     className="group inline-flex items-center gap-2 hover:underline"
                   >
                     <span>{link.label}</span>
-                    <FiArrowRight className="h-4 w-4 translate-x-0 transition-transform group-hover:translate-x-0.5" />
                   </Link>
                 </li>
               ))}

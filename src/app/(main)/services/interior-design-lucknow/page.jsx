@@ -164,6 +164,33 @@ export default function InteriorDesignInLucknow() {
         </div>
       </section>
 
+      {/* At a Glance - GEO/AI Optimization */}
+      <section className="bg-white py-12 px-6">
+        <div className="max-w-4xl mx-auto border-l-4 border-[#234D7E] pl-6 md:pl-10">
+          <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-6">
+            Luxury Interior Design in Lucknow: At a Glance
+          </h2>
+          <div className="grid gap-6 md:grid-cols-2">
+            <div>
+              <p className="text-gray-700 leading-relaxed">
+                <strong className="text-gray-900">Expertise:</strong> Premiere interior designers for luxury villas, modern apartments, and corporate offices.
+              </p>
+              <p className="text-gray-700 mt-3 leading-relaxed">
+                <strong className="text-gray-900">Customization:</strong> 100% personalized design concepts with advanced 3D visualization.
+              </p>
+            </div>
+            <div>
+              <p className="text-gray-700 leading-relaxed">
+                <strong className="text-gray-900">Timelines:</strong> Efficient 45-day design-to-delivery transformation for standard projects.
+              </p>
+              <p className="text-gray-700 mt-3 leading-relaxed">
+                <strong className="text-gray-900">Full Service:</strong> From moodboards and material selection to turnkey site execution.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Services Overview */}
       <section className="py-20 px-6 bg-gray-50">
         <div className="max-w-7xl mx-auto">
