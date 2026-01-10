@@ -12,6 +12,17 @@ function corsHeaders() {
   };
 }
 
+// Sanitize URL slug to remove unsafe characters
+function sanitizeSlug(slug) {
+  if (!slug) return slug;
+  return slug
+    .toLowerCase()
+    .replace(/[?!@#$%^&*()+=[\]{}|\\;:'",.<>]/g, "") // Remove special chars
+    .replace(/\s+/g, "-") // Replace spaces with hyphens
+    .replace(/-+/g, "-") // Replace multiple hyphens with single
+    .replace(/^-|-$/g, ""); // Remove leading/trailing hyphens
+}
+
 // OPTIONS handler for preflight requests
 export async function OPTIONS() {
   return NextResponse.json({}, { status: 200, headers: corsHeaders() });
@@ -56,11 +67,14 @@ export async function POST(req) {
       ? sanitizeBlogContent(data.content)
       : data.content;
 
+    // Sanitize the URL slug to remove unsafe characters
+    const sanitizedSlug = sanitizeSlug(data.urlSlug);
+
     // Map incoming data to your Schema with all new fields
     const newBlog = new Blog({
       title: data.title,
       content: sanitizedContent, // Use sanitized content
-      urlSlug: data.urlSlug,
+      urlSlug: sanitizedSlug, // Use sanitized slug
       metaTitle: data.metaTitle,
       metaDescription: data.metaDescription,
       focusKeyword: data.focusKeyword, // Array

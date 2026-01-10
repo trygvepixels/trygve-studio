@@ -125,7 +125,9 @@ export default function BlogListPage() {
     const prev = blogs;
     setBlogs((arr) => arr.filter((b) => b.urlSlug !== slug));
     try {
-      const res = await fetch(`/api/blogs/${slug}`, { method: "DELETE" });
+      // URL-encode the slug to handle special characters like ?
+      const encodedSlug = encodeURIComponent(slug);
+      const res = await fetch(`/api/blogs/${encodedSlug}`, { method: "DELETE" });
       if (!res.ok) {
         const error = await res.json().catch(() => ({}));
         alert("Error deleting: " + (error?.error || "Unknown error"));
@@ -191,7 +193,7 @@ export default function BlogListPage() {
       <header className=" -b bg-[#F4F1EC]/80 backdrop-blur sticky top-0 z-20">
         <div className="max-w-7xl mx-auto px-5 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            
+
           </div>
           <Link
             href="/admin/dashboard/blogs/new"
@@ -276,7 +278,7 @@ export default function BlogListPage() {
               ))}
             </div>
           ) : filtered.length === 0 ? (
-            <EmptyState onCreate={() => {}} onRefresh={fetchBlogs} />
+            <EmptyState onCreate={() => { }} onRefresh={fetchBlogs} />
           ) : (
             <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {filtered.map((blog) => (
@@ -312,7 +314,7 @@ export default function BlogListPage() {
                             ? new Date(blog.updatedAt).toLocaleDateString()
                             : "—"}
                         </span>
-                        
+
                       </div>
                     </div>
 

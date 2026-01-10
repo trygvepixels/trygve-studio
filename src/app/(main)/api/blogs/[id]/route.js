@@ -4,9 +4,11 @@ import Blog from "@/models/Blog";
 export async function GET(req, context) {
   try {
     const { id } = await context.params;
+    // Decode URL-encoded slug to handle special characters
+    const decodedId = decodeURIComponent(id);
     await connectDB();
 
-    const blog = await Blog.findOne({ urlSlug: id });
+    const blog = await Blog.findOne({ urlSlug: decodedId });
     if (!blog) {
       return Response.json({ error: "Blog not found" }, { status: 404 });
     }
@@ -22,10 +24,12 @@ export async function GET(req, context) {
 export async function PUT(req, context) {
   try {
     const { id } = await context.params;
+    // Decode URL-encoded slug to handle special characters
+    const decodedId = decodeURIComponent(id);
     await connectDB();
     const body = await req.json();
 
-    const blog = await Blog.findOne({ urlSlug: id });
+    const blog = await Blog.findOne({ urlSlug: decodedId });
     if (!blog) {
       return Response.json({ error: "Blog not found" }, { status: 404 });
     }
@@ -65,9 +69,11 @@ export async function PUT(req, context) {
 export async function DELETE(req, context) {
   try {
     const { id } = await context.params;
+    // Decode URL-encoded slug to handle special characters
+    const decodedId = decodeURIComponent(id);
     await connectDB();
 
-    const deleted = await Blog.findOneAndDelete({ urlSlug: id });
+    const deleted = await Blog.findOneAndDelete({ urlSlug: decodedId });
 
     if (!deleted) {
       return Response.json({ error: "Blog not found" }, { status: 404 });
