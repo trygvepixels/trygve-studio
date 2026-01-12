@@ -171,7 +171,7 @@ export default function BlogsClientUI({ blog }) {
               <img src="/logo.webp" alt="Trygve Studio Team" className="w-full h-full object-contain p-2" />
             </div>
             <div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">About the Author: {blog?.author || "Trygve Studio Team"}</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">About the Author: {"Trygve Studio Team"}</h3>
               <p className="text-gray-600 leading-relaxed text-[15px]">
                 The editorial team at <span className="font-medium text-black">Trygve Studio</span> consists of experienced architects and interior designers dedicated to sharing insights on modern architecture, luxury interiors, and sustainable design practices. With a portfolio spanning global projects, we aim to inspire and educate through expert-backed content.
               </p>
@@ -303,26 +303,7 @@ export default function BlogsClientUI({ blog }) {
           </div>
 
           <div className="pt-2 border-t border-gray-200">
-            <p className="text-gray-800 font-semibold mb-3">
-              Explore Our Expertise:
-            </p>
-
-            <div className="flex flex-col gap-3">
-              <Link
-                href="/services/interior-design-lucknow"
-                className="text-blue-600 hover:underline font-medium text-lg"
-              >
-                Best Interior Designers in Lucknow →
-              </Link>
-              <Link
-                href="/services/architects-in-lucknow"
-                className="text-blue-600 hover:underline font-medium text-lg"
-              >
-                Best Architects in Lucknow →
-              </Link>
-            </div>
-
-            <div className="flex flex-wrap gap-4 mt-6">
+            <div className="flex flex-wrap gap-4 mt-4">
               <Link
                 href="/projects"
                 className="text-gray-700 hover:text-black hover:underline font-medium"
