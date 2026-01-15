@@ -52,6 +52,7 @@ const blogSchema = new mongoose.Schema(
     lastUpdated: { type: Date, default: Date.now },
     // Source tracking
     source: String, // e.g., "Antigravity-SEO-CMS"
+    external_id: String, // Track external CMS blog ID for sync operations
   },
   { timestamps: true }
 );

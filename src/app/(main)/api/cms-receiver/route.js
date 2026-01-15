@@ -145,7 +145,7 @@ export async function POST(request) {
       faqs: data.faqs,
       schemaMarkup: data.schemaMarkup,
       category: data.category,
-      author: data.author || "GenForge Studio Team", // Updated default author
+      author: data.author || "Team Trygve Studio", // Updated default author
       // Image fields from external CMS
       image: data.featuredImage || data.imageUrl || data.image,
       featuredImage: data.featuredImage,
@@ -171,7 +171,7 @@ export async function POST(request) {
         success: true,
         id: saved._id,
         slug: saved.urlSlug,
-        url: `https://genforgestudio.com/blogs/${saved.urlSlug}`,
+        url: `https://trygvestudio.com/blogs/${saved.urlSlug}`,
         message: "Blog created successfully",
       },
       { headers: corsHeaders() }
@@ -218,8 +218,57 @@ export async function PUT(request) {
 
     if (!blog) {
       console.log("[CMS Receiver] Blog not found, creating new one");
-      // If blog doesn't exist, create it instead
-      return POST(request);
+      
+      // Create new blog since request body is already consumed
+      const sanitizedContent = data.content
+        ? sanitizeBlogContent(data.content)
+        : data.content;
+
+      const sanitizedSlug = data.urlSlug 
+        ? sanitizeSlug(data.urlSlug, sanitizeSlug(data.title, 'untitled'))
+        : sanitizeSlug(data.title, 'untitled');
+
+      console.log(`[CMS Receiver] Sanitized slug: "${data.urlSlug}" → "${sanitizedSlug}"`);
+
+      const newBlog = new Blog({
+        title: data.title,
+        content: sanitizedContent,
+        urlSlug: sanitizedSlug,
+        metaTitle: data.metaTitle,
+        metaDescription: data.metaDescription,
+        focusKeyword: data.focusKeyword,
+        faqs: data.faqs,
+        schemaMarkup: data.schemaMarkup,
+        category: data.category,
+        author: data.author || "Team Trygve Studio ",
+        image: data.featuredImage || data.imageUrl || data.image,
+        featuredImage: data.featuredImage,
+        imageUrl: data.imageUrl,
+        imageAlt: data.imageAlt,
+        imageAttribution: data.imageAttribution,
+        imagePhotographer: data.imagePhotographer,
+        imagePhotographerUrl: data.imagePhotographerUrl,
+        imageSource: data.imageSource,
+        external_id: data.external_id || data._id?.toString(),
+        source: data.source || "external-cms",
+        status: "visible",
+        lastUpdated: new Date(),
+      });
+
+      const saved = await newBlog.save();
+
+      console.log("[CMS Receiver] ✅ Blog created via PUT:", saved.urlSlug);
+
+      return NextResponse.json(
+        {
+          success: true,
+          id: saved._id,
+          slug: saved.urlSlug,
+          url: `https://trygvestudio.com/blogs/${saved.urlSlug}`,
+          message: "Blog created successfully",
+        },
+        { headers: corsHeaders() }
+      );
     }
 
     // Update fields
@@ -277,7 +326,7 @@ export async function PUT(request) {
         success: true,
         id: blog._id,
         slug: blog.urlSlug,
-        url: `https://genforgestudio.com/blogs/${blog.urlSlug}`,
+        url: `https://trygvestudio.com/blogs/${blog.urlSlug}`,
         message: "Blog updated successfully",
       },
       { headers: corsHeaders() }

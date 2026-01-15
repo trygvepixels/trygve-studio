@@ -231,7 +231,7 @@ function Hero({ searchTerm, setSearchTerm, onSearch }) {
               <div className="rounded-2xl border border-zinc-100 bg-white/80 p-6 backdrop-blur shadow-[0_14px_40px_rgba(35,77,126,0.12)]">
                 <Image
                   src={bloghero}
-                  alt="GenForge mark"
+                  alt="Trygve Studio mark"
                   className="  object-contain opacity-90"
                 />
                 <div className="mt-4 text-sm text-zinc-600">
