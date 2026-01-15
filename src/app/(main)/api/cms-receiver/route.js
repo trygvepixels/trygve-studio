@@ -2,7 +2,7 @@
  * CMS Receiver Endpoint - FULL CRUD Support
  * Receives blog posts from your CMS Automate system
  * Place this file in your Next.js client at: src/app/api/cms-receiver/route.js
- * 
+ *
  * Supports:
  * - POST: Create new blog posts
  * - PUT: Update existing blog posts
@@ -12,7 +12,7 @@
 
 import { NextResponse } from "next/server";
 import dbConnect from "@/lib/db"; // Your DB connect utility
-import Blog from "@/app/models/Blog"; // Your Blog model
+import Blog from "@/models/Blog"; // Your Blog model
 import { sanitizeBlogContent } from "@/lib/contentSanitizer";
 import slugify from "slugify"; // Robust URL slug generation
 
@@ -28,7 +28,7 @@ function corsHeaders() {
 /**
  * Enhanced Slug Sanitization
  * Converts any string into a clean, SEO-friendly URL slug
- * 
+ *
  * Features:
  * - Removes special characters
  * - Converts to lowercase
@@ -36,24 +36,24 @@ function corsHeaders() {
  * - Removes consecutive hyphens
  * - Trims leading/trailing hyphens
  * - Handles unicode characters
- * 
+ *
  * @param {string} slug - The slug to sanitize
  * @param {string} fallback - Fallback value if slug is empty
  * @returns {string} Clean, valid URL slug
  */
-function sanitizeSlug(slug, fallback = 'untitled') {
-  if (!slug || typeof slug !== 'string') {
+function sanitizeSlug(slug, fallback = "untitled") {
+  if (!slug || typeof slug !== "string") {
     return fallback;
   }
-  
+
   const cleanSlug = slugify(slug, {
-    lower: true,              // Convert to lowercase
-    strict: true,             // Strip special characters
+    lower: true, // Convert to lowercase
+    strict: true, // Strip special characters
     remove: /[*+~.()'"!:@]/g, // Remove specific characters
-    replacement: '-',         // Replace spaces with hyphens
-    trim: true               // Trim leading/trailing replacement chars
+    replacement: "-", // Replace spaces with hyphens
+    trim: true, // Trim leading/trailing replacement chars
   });
-  
+
   // Return cleaned slug or fallback if empty
   return cleanSlug || fallback;
 }
@@ -68,14 +68,16 @@ export async function GET() {
   return NextResponse.json(
     {
       message: "CMS Receiver Endpoint - Full CRUD Support",
-      description: "This endpoint accepts POST, PUT, and DELETE requests from your CMS.",
+      description:
+        "This endpoint accepts POST, PUT, and DELETE requests from your CMS.",
       methods: {
         POST: "Create new blog post",
         PUT: "Update existing blog post (requires external_id)",
         DELETE: "Delete blog post (requires external_id query param)",
       },
       headers: {
-        "X-CMS-AUTH-KEY": "Required - Your secret key from environment variables",
+        "X-CMS-AUTH-KEY":
+          "Required - Your secret key from environment variables",
       },
     },
     { status: 200, headers: corsHeaders() }
@@ -124,11 +126,13 @@ export async function POST(request) {
 
     // Enhanced slug sanitization with fallback to title
     // This prevents malformed URLs like "blog-title-" with trailing hyphens
-    const sanitizedSlug = data.urlSlug 
-      ? sanitizeSlug(data.urlSlug, sanitizeSlug(data.title, 'untitled'))
-      : sanitizeSlug(data.title, 'untitled');
+    const sanitizedSlug = data.urlSlug
+      ? sanitizeSlug(data.urlSlug, sanitizeSlug(data.title, "untitled"))
+      : sanitizeSlug(data.title, "untitled");
 
-    console.log(`[CMS Receiver] Sanitized slug: "${data.urlSlug}" → "${sanitizedSlug}"`);
+    console.log(
+      `[CMS Receiver] Sanitized slug: "${data.urlSlug}" → "${sanitizedSlug}"`
+    );
 
     // Map incoming data to your Schema with all fields
     const newBlog = new Blog({
@@ -185,7 +189,7 @@ export async function POST(request) {
 export async function PUT(request) {
   try {
     const authHeader = request.headers.get("X-CMS-AUTH-KEY");
-    const expectedKey =  "auto-publish-key-2026";
+    const expectedKey = "auto-publish-key-2026";
 
     if (authHeader !== expectedKey) {
       return NextResponse.json(
@@ -197,7 +201,10 @@ export async function PUT(request) {
     await dbConnect();
     const data = await request.json();
 
-    console.log("[CMS Receiver] Updating blog with external_id:", data.external_id);
+    console.log(
+      "[CMS Receiver] Updating blog with external_id:",
+      data.external_id
+    );
 
     if (!data.external_id) {
       return NextResponse.json(
@@ -222,12 +229,17 @@ export async function PUT(request) {
 
     // Enhanced slug sanitization for updates
     // Only update slug if provided, otherwise keep existing
-    const sanitizedSlug = data.urlSlug 
-      ? sanitizeSlug(data.urlSlug, blog.urlSlug || sanitizeSlug(data.title || blog.title, 'untitled'))
+    const sanitizedSlug = data.urlSlug
+      ? sanitizeSlug(
+          data.urlSlug,
+          blog.urlSlug || sanitizeSlug(data.title || blog.title, "untitled")
+        )
       : blog.urlSlug;
 
     if (data.urlSlug && sanitizedSlug !== data.urlSlug) {
-      console.log(`[CMS Receiver] Sanitized slug on update: "${data.urlSlug}" → "${sanitizedSlug}"`);
+      console.log(
+        `[CMS Receiver] Sanitized slug on update: "${data.urlSlug}" → "${sanitizedSlug}"`
+      );
     }
 
     blog.title = data.title || blog.title;
@@ -240,16 +252,20 @@ export async function PUT(request) {
     blog.schemaMarkup = data.schemaMarkup || blog.schemaMarkup;
     blog.category = data.category || blog.category;
     blog.author = data.author || blog.author;
-    
+
     // Update image fields
-    if (data.featuredImage !== undefined) blog.featuredImage = data.featuredImage;
+    if (data.featuredImage !== undefined)
+      blog.featuredImage = data.featuredImage;
     if (data.imageUrl !== undefined) blog.imageUrl = data.imageUrl;
     if (data.imageAlt !== undefined) blog.imageAlt = data.imageAlt;
-    if (data.imageAttribution !== undefined) blog.imageAttribution = data.imageAttribution;
-    if (data.imagePhotographer !== undefined) blog.imagePhotographer = data.imagePhotographer;
-    if (data.imagePhotographerUrl !== undefined) blog.imagePhotographerUrl = data.imagePhotographerUrl;
+    if (data.imageAttribution !== undefined)
+      blog.imageAttribution = data.imageAttribution;
+    if (data.imagePhotographer !== undefined)
+      blog.imagePhotographer = data.imagePhotographer;
+    if (data.imagePhotographerUrl !== undefined)
+      blog.imagePhotographerUrl = data.imagePhotographerUrl;
     if (data.imageSource !== undefined) blog.imageSource = data.imageSource;
-    
+
     blog.lastUpdated = new Date();
 
     await blog.save();
@@ -279,7 +295,7 @@ export async function PUT(request) {
 export async function DELETE(request) {
   try {
     const authHeader = request.headers.get("X-CMS-AUTH-KEY");
-    const expectedKey =  "auto-publish-key-2026";
+    const expectedKey = "auto-publish-key-2026";
 
     if (authHeader !== expectedKey) {
       return NextResponse.json(
