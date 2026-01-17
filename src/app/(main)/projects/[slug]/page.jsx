@@ -2,8 +2,8 @@ import { headers } from "next/headers";
 import ProjectDetailClient from "./ProjectDetailClient";
 
 /** Build absolute base URL for SSR (works on localhost and prod) */
-function getBaseUrl() {
-  const h = headers();
+async function getBaseUrl() {
+  const h = await headers();
   const host = h.get("x-forwarded-host") || h.get("host");
   const proto = h.get("x-forwarded-proto") || "http";
   return `${proto}://${host}`;
@@ -49,7 +49,7 @@ async function fetchJson(url, init) {
 }
 
 async function getProject(slug) {
-  const base = getBaseUrl();
+  const base = await getBaseUrl();
   const slugLc = String(slug).toLowerCase();
 
   // 1) Try the feature-project detail endpoint (you configured this to return featured:true by slug)
@@ -69,18 +69,18 @@ async function getProject(slug) {
   const listA = Array.isArray(nonFeatured.data?.items)
     ? nonFeatured.data.items
     : Array.isArray(nonFeatured.data?.data)
-    ? nonFeatured.data.data
-    : Array.isArray(nonFeatured.data)
-    ? nonFeatured.data
-    : [];
+      ? nonFeatured.data.data
+      : Array.isArray(nonFeatured.data)
+        ? nonFeatured.data
+        : [];
 
   const listB = Array.isArray(other.data?.items)
     ? other.data.items
     : Array.isArray(other.data?.data)
-    ? other.data.data
-    : Array.isArray(other.data)
-    ? other.data
-    : [];
+      ? other.data.data
+      : Array.isArray(other.data)
+        ? other.data
+        : [];
 
   const hit =
     listA.find((p) => String(p.slug || "").toLowerCase() === slugLc) ||
@@ -90,7 +90,8 @@ async function getProject(slug) {
 }
 
 export default async function ProjectPage({ params }) {
-  const project = await getProject(params.slug);
+  const resolvedParams = await params;
+  const project = await getProject(resolvedParams.slug);
 
   if (!project) {
     return <div className="p-12">Project not found</div>;
