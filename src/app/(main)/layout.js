@@ -21,6 +21,10 @@ export const metadata = {
     "Transform your space with Trygve Studio. We offer premium architecture and interior design services worldwide.",
   keyword:
     "Trygve studio, Faisal Saif, Faisal saif architetct, Architects in Lucknow, best architects in lucknow, best interior designer in lucknow, interior designers in lucknow, architecture firms in lucknow, commercial architects in lucknow, residential architects in lucknow, luxury home designers lucknow, budget architects lucknow, building contractors in lucknow, hospitality architects lucknow, retail store designers lucknow, house design services lucknow, office interior designers lucknow, farmhouse architects lucknow",
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/logo.png",
+  },
   alternates: {
     canonical: "https://www.trygvestudio.com/",
   },
@@ -63,7 +67,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/favicon.ico" />
         <meta
           name="facebook-domain-verification"
           content="dv4u9r79rw2om8h9acntau6pjitnsy"
