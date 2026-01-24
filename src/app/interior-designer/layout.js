@@ -2,9 +2,11 @@ import "./globals.css";
 import Script from "next/script";
 
 export const metadata = {
+  metadataBase: new URL("https://trygvestudio.com"),
   title: "Trygve Studio - Premium Interior Design Services",
   description:
     "Transform your home with stunning interior designs. Get free consultation today!",
+  alternates: { canonical: "/interior-designer" },
 };
 
 export default function InteriorDesignerLayout({ children }) {

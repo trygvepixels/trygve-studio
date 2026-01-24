@@ -52,7 +52,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <>
       <head>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=AW-10884548494"
@@ -80,121 +80,112 @@ export default function RootLayout({ children }) {
             width="1"
             style={{ display: "none" }}
             src="https://www.facebook.com/tr?id=1510015907088015&ev=PageView&noscript=1"
+            alt=""
           />
           <img
             height="1"
             width="1"
             style={{ display: "none" }}
             src="https://www.facebook.com/tr?id=779698648292728&ev=PageView&noscript=1"
+            alt=""
           />
           <img
             height="1"
             width="1"
             style={{ display: "none" }}
             src="https://www.facebook.com/tr?id=1526099745243779&ev=PageView&noscript=1"
+            alt=""
           />
         </noscript>
       </head>
-      <body>
-        <>
-          {/* Your Careers UI */}
 
-          {/* JSON-LD: "Open Application" JobPosting + Breadcrumbs */}
-          <Script id="ld-job-open-application" type="application/ld+json">
-            {JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "JobPosting",
-              title:
-                "Open Application — Architecture, Interiors, PMC, EPC & 3D",
-              description:
-                "We’re hiring! Join a product-obsessed team crafting elegant, performant experiences. Remote-first with IST core overlap. Perks from day one: medical cover, mental-wellness stipend, premium gear, growth budget (courses & conferences), flexible PTO, performance bonus, and a high-trust culture.",
-              datePosted: new Date().toISOString().slice(0, 10),
-              employmentType: ["FULL_TIME", "PART_TIME", "CONTRACT"],
-              hiringOrganization: {
-                "@type": ["Organization", "ProfessionalService"],
-                name: "TRYGVE STUDIO PRIVATE LIMITED",
-                sameAs: ["https://trygvestudio.com/"],
-                url: "https://trygvestudio.com/",
-                telephone: "+91-9554440400",
-                email: "faisal.saif@trygvestudio.com",
-                address: {
-                  "@type": "PostalAddress",
-                  streetAddress:
-                    "Plot No. 728, Khasra No. 21, Eden Enclave, Phase 2, Kursi Road, Gudamba, BKT",
-                  addressLocality: "Lucknow",
-                  addressRegion: "Uttar Pradesh",
-                  postalCode: "226026",
-                  addressCountry: "IN",
-                },
-              },
-              validThrough: new Date(
-                Date.now() + 1000 * 60 * 60 * 24 * 90,
-              ).toISOString(), // ~90 days
-              industry: "Architecture & Interior Design",
-              jobLocationType: "TELECOMMUTE",
-              applicantLocationRequirements: {
-                "@type": "Country",
-                name: "India",
-              },
-              directApply: true,
-              hiringOrganizationType: "ProfessionalService",
-              // Process & values (as identifiers for clarity in SERP features)
-              identifier: [
-                {
-                  "@type": "PropertyValue",
-                  name: "Hiring Process",
-                  value:
-                    "Intro chat → Deep-dive → Practical task (paid for select roles) → Offer",
-                },
-                {
-                  "@type": "PropertyValue",
-                  name: "Values",
-                  value:
-                    "Craft over noise; Ship, learn, repeat; Bias for clarity; Own the outcome",
-                },
-                {
-                  "@type": "PropertyValue",
-                  name: "Work Mode",
-                  value: "Remote-first with IST core overlap",
-                },
-                {
-                  "@type": "PropertyValue",
-                  name: "Perks",
-                  value:
-                    "Medical + mental wellness, premium gear, growth budget, performance bonus, flexible PTO",
-                },
-              ],
-              applicantLocationRequirementsDescription:
-                "Remote-first; collaborate during India Standard Time core hours.",
-              // Use either a mailto or your on-page CTA anchor if present
-              employmentUnit: "Global",
-              url: "https://trygvestudio.com/career",
-            })}
-          </Script>
+      <Script id="ld-job-open-application" type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "JobPosting",
+          title: "Open Application — Architecture, Interiors, PMC, EPC & 3D",
+          description:
+            "We’re hiring! Join a product-obsessed team crafting elegant, performant experiences. Remote-first with IST core overlap. Perks from day one: medical cover, mental-wellness stipend, premium gear, growth budget (courses & conferences), flexible PTO, performance bonus, and a high-trust culture.",
+          datePosted: new Date().toISOString().slice(0, 10),
+          employmentType: ["FULL_TIME", "PART_TIME", "CONTRACT"],
+          hiringOrganization: {
+            "@type": ["Organization", "ProfessionalService"],
+            name: "TRYGVE STUDIO PRIVATE LIMITED",
+            sameAs: ["https://trygvestudio.com/"],
+            url: "https://trygvestudio.com/",
+            telephone: "+91-9554440400",
+            email: "faisal.saif@trygvestudio.com",
+            address: {
+              "@type": "PostalAddress",
+              streetAddress:
+                "Plot No. 728, Khasra No. 21, Eden Enclave, Phase 2, Kursi Road, Gudamba, BKT",
+              addressLocality: "Lucknow",
+              addressRegion: "Uttar Pradesh",
+              postalCode: "226026",
+              addressCountry: "IN",
+            },
+          },
+          validThrough: new Date(
+            Date.now() + 1000 * 60 * 60 * 24 * 90,
+          ).toISOString(),
+          industry: "Architecture & Interior Design",
+          jobLocationType: "TELECOMMUTE",
+          applicantLocationRequirements: {
+            "@type": "Country",
+            name: "India",
+          },
+          directApply: true,
+          hiringOrganizationType: "ProfessionalService",
+          identifier: [
+            {
+              "@type": "PropertyValue",
+              "name": "Hiring Process",
+              "value": "Intro chat → Deep-dive → Practical task (paid for select roles) → Offer",
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "Values",
+              "value": "Craft over noise; Ship, learn, repeat; Bias for clarity; Own the outcome",
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "Work Mode",
+              "value": "Remote-first with IST core overlap",
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "Perks",
+              "value": "Medical + mental wellness, premium gear, growth budget, performance bonus, flexible PTO",
+            },
+          ],
+          "applicantLocationRequirementsDescription": "Remote-first; collaborate during India Standard Time core hours.",
+          "employmentUnit": "Global",
+          url: "https://trygvestudio.com/career",
+        })}
+      </Script>
 
-          <Script id="ld-breadcrumbs" type="application/ld+json">
-            {JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "BreadcrumbList",
-              itemListElement: [
-                {
-                  "@type": "ListItem",
-                  position: 1,
-                  name: "Home",
-                  item: "https://trygvestudio.com/",
-                },
-                {
-                  "@type": "ListItem",
-                  position: 2,
-                  name: "Career",
-                  item: "https://trygvestudio.com/career",
-                },
-              ],
-            })}
-          </Script>
-        </>
-        {children}
-      </body>
-    </html>
+      <Script id="ld-breadcrumbs" type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "Home",
+              item: "https://trygvestudio.com/",
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: "Career",
+              item: "https://trygvestudio.com/career",
+            },
+          ],
+        })}
+      </Script>
+
+      {children}
+    </>
   );
 }

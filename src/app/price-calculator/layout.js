@@ -5,9 +5,11 @@ import Script from "next/script";
 import Header from "./Header";
 
 export const metadata = {
-  title: "Trygve Studio - Premium Interior Design Services",
+  metadataBase: new URL("https://trygvestudio.com"),
+  title: "Trygve Studio - Interior Design Price Calculator",
   description:
-    "Transform your home with stunning interior designs. Get free consultation today!",
+    "Calculate the estimated cost of your interior design project with Trygve Studio's price calculator.",
+  alternates: { canonical: "/price-calculator" },
 };
 
 export default function InteriorDesignerLayout({ children }) {

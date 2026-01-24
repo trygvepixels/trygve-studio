@@ -10,7 +10,7 @@ export const metadata = {
   description:
     "Hire the best interior designers in Lucknow. Trygve Studio specializes in modern, functional, and timeless interior design solutions for homes, offices, and commercial spaces.",
   alternates: {
-    canonical: "https://trygvestudio.com/services/interior-design-lucknow",
+    canonical: "/services/interior-design-lucknow",
   },
   openGraph: {
     title: "Best Interior Designers in Lucknow | Trygve Studio",

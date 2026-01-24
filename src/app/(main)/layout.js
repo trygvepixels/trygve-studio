@@ -16,6 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
+  metadataBase: new URL("https://trygvestudio.com"),
   title: "Trygve Studio - Premium Architecture & Interior Design",
   description:
     "Transform your space with Trygve Studio. We offer premium architecture and interior design services worldwide.",
@@ -167,22 +168,38 @@ export default function RootLayout({ children }) {
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Organization",
-            name: "TRYGVE STUDIO PRIVATE LIMITED",
-            url: "https://trygvestudio.com/",
-            logo: "https://trygvestudio.com/logo.png",
-            sameAs: [
+            "name": "Trygve Studio",
+            "legalName": "TRYGVE STUDIO PRIVATE LIMITED",
+            "url": "https://trygvestudio.com/",
+            "logo": "https://trygvestudio.com/logo.png",
+            "brand": { "@type": "Brand", "name": "Trygve Studio" },
+            "areaServed": [
+              { "@type": "Place", "name": "APAC" },
+              { "@type": "Place", "name": "EMEA" },
+              { "@type": "Place", "name": "North America" },
+              { "@type": "Country", "name": "India" }
+            ],
+            "sameAs": [
               "https://www.instagram.com/trygvestudio/",
               "https://in.linkedin.com/company/trygvestudio",
               "https://www.behance.net/trygvestudio",
-              "https://wa.me/919554440400",
+              "https://wa.me/919554440400"
             ],
-            contactPoint: {
+            "contactPoint": {
               "@type": "ContactPoint",
-              telephone: "+91-9554440400",
-              contactType: "customer support",
-              email: "faisal.saif@trygvestudio.com",
-              availableLanguage: ["en", "hi"],
+              "telephone": "+91-9554440400",
+              "contactType": "customer support",
+              "email": "faisal.saif@trygvestudio.com",
+              "availableLanguage": ["en", "hi"]
             },
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Plot No. 728, Khasra No. 21, Eden Enclave, Phase 2, Kursi Road, Gudamba, BKT",
+              "addressLocality": "Lucknow",
+              "addressRegion": "Uttar Pradesh",
+              "postalCode": "226026",
+              "addressCountry": "IN"
+            }
           })}
         </Script>
       </head>

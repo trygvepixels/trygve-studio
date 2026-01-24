@@ -138,6 +138,9 @@ const Page = () => {
             "@type": "ProfessionalService",
             "name": "Trygve Studio",
             "url": "https://trygvestudio.com/",
+            "telephone": "+91-9554440400",
+            "email": "faisal.saif@trygvestudio.com",
+            "sameAs": ["https://wa.me/919554440400"],
             "address": {
               "@type": "PostalAddress",
               "streetAddress": "Plot No. 728, Khasra No. 21, Eden Enclave, Phase 2, Kursi Road, Gudamba, BKT",
@@ -184,45 +187,45 @@ const Page = () => {
                 },
               },
             ],
-            hasOfferCatalog: {
+            "hasOfferCatalog": {
               "@type": "OfferCatalog",
-              name: "Architecture & Allied Engineering Services",
-              itemListElement: [
+              "name": "Architecture & Allied Engineering Services",
+              "itemListElement": [
                 {
                   "@type": "Offer",
-                  itemOffered: {
+                  "itemOffered": {
                     "@type": "Service",
-                    name: "Architecture",
-                    areaServed: "Worldwide",
+                    "name": "Architecture",
+                    "areaServed": "Worldwide",
                   },
                 },
                 {
                   "@type": "Offer",
-                  itemOffered: {
+                  "itemOffered": {
                     "@type": "Service",
-                    name: "Interior Design",
-                    areaServed: "Worldwide",
+                    "name": "Interior Design",
+                    "areaServed": "Worldwide",
                   },
                 },
                 {
                   "@type": "Offer",
-                  itemOffered: {
+                  "itemOffered": {
                     "@type": "Service",
-                    name: "Project Management Consultancy (PMC)",
+                    "name": "Project Management Consultancy (PMC)",
                   },
                 },
                 {
                   "@type": "Offer",
-                  itemOffered: {
+                  "itemOffered": {
                     "@type": "Service",
-                    name: "Engineering, Procurement & Construction (EPC)",
+                    "name": "Engineering, Procurement & Construction (EPC)",
                   },
                 },
                 {
                   "@type": "Offer",
-                  itemOffered: {
+                  "itemOffered": {
                     "@type": "Service",
-                    name: "3D Visualisation",
+                    "name": "3D Visualisation",
                   },
                 },
               ],

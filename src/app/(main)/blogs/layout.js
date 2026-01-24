@@ -52,7 +52,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <>
       <head>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=AW-10884548494"
@@ -95,78 +95,60 @@ export default function RootLayout({ children }) {
           />
         </noscript>
       </head>
-      <body>
-        <>
-          {/* Your Blogs UI (list/grid, search, filters) */}
 
-          {/* JSON-LD: Blog (listing) + Breadcrumbs + optional site search */}
-          <Script id="ld-blogs" type="application/ld+json">
-            {JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Blog",
-              name: "Strategies, Stories & Solutions — Trygve Studio Blogs",
-              description:
-                "Insights, playbooks, and stories on Architecture, Interiors, PMC, EPC & 3D Visualisation — curated weekly.",
-              url: "https://trygvestudio.com/blogs",
-              inLanguage: "en",
-              publisher: {
-                "@type": ["Organization", "ProfessionalService"],
-                name: "TRYGVE STUDIO PRIVATE LIMITED",
-                url: "https://trygvestudio.com/",
-                telephone: "+91-9554440400",
-                email: "faisal.saif@trygvestudio.com",
-                address: {
-                  "@type": "PostalAddress",
-                  streetAddress:
-                    "Plot No. 728, Khasra No. 21, Eden Enclave, Phase 2, Kursi Road, Gudamba, BKT",
-                  addressLocality: "Lucknow",
-                  addressRegion: "Uttar Pradesh",
-                  postalCode: "226026",
-                  addressCountry: "IN",
-                },
-              },
-            })}
-          </Script>
+      <Script id="ld-blogs" type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Blog",
+          name: "Strategies, Stories & Solutions — Trygve Studio Blogs",
+          description:
+            "Insights, playbooks, and stories on Architecture, Interiors, PMC, EPC & 3D Visualisation — curated weekly.",
+          url: "https://trygvestudio.com/blogs",
+          inLanguage: "en",
+          publisher: {
+            "@type": ["Organization", "ProfessionalService"],
+            name: "TRYGVE STUDIO PRIVATE LIMITED",
+            url: "https://trygvestudio.com/",
+            telephone: "+91-9554440400",
+            email: "faisal.saif@trygvestudio.com",
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: "Plot No. 728, Khasra No. 21, Eden Enclave, Phase 2, Kursi Road, Gudamba, BKT",
+              addressLocality: "Lucknow",
+              addressRegion: "Uttar Pradesh",
+              postalCode: "226026",
+              addressCountry: "IN",
+            },
+          },
+        })}
+      </Script>
 
-          <Script id="ld-breadcrumbs" type="application/ld+json">
-            {JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "BreadcrumbList",
-              itemListElement: [
-                {
-                  "@type": "ListItem",
-                  position: 1,
-                  name: "Home",
-                  item: "https://trygvestudio.com/",
-                },
-                {
-                  "@type": "ListItem",
-                  position: 2,
-                  name: "Blogs",
-                  item: "https://trygvestudio.com/blogs",
-                },
-              ],
-            })}
-          </Script>
+      <Script id="ld-breadcrumbs" type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://trygvestudio.com/" },
+            { "@type": "ListItem", position: 2, name: "Blogs", item: "https://trygvestudio.com/blogs" },
+          ],
+        })}
+      </Script>
 
-          {/* Optional: enable SERP sitelinks search box pointing to your blog search */}
-          <Script id="ld-website-search" type="application/ld+json">
-            {JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "WebSite",
-              name: "Trygve Studio",
-              url: "https://trygvestudio.com/",
-              potentialAction: {
-                "@type": "SearchAction",
-                target:
-                  "https://trygvestudio.com/blogs?query={search_term_string}",
-                "query-input": "required name=search_term_string",
-              },
-            })}
-          </Script>
-        </>
-        {children}
-      </body>
-    </html>
+      <Script id="ld-website-search" type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "Trygve Studio",
+          "url": "https://trygvestudio.com/",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://trygvestudio.com/blogs?query={search_term_string}",
+            "query-input": "required name=search_term_string",
+          },
+        })}
+      </Script>
+
+      {children}
+    </>
   );
 }

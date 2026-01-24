@@ -4,9 +4,11 @@ import Script from "next/script";
 import Header from "./Header";
 
 export const metadata = {
-  title: "Trygve Studio - Premium Interior Design Services",
+  metadataBase: new URL("https://trygvestudio.com"),
+  title: "Thank You | Trygve Studio",
   description:
-    "Transform your home with stunning interior designs. Get free consultation today!",
+    "Thank you for contacting Trygve Studio. We will get back to you shortly.",
+  alternates: { canonical: "/thank-you" },
 };
 
 export default function InteriorDesignerLayout({ children }) {

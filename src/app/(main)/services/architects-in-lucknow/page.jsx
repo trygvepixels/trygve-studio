@@ -10,8 +10,7 @@ export const metadata = {
   description:
     "Hire the best architects in Lucknow. Trygve Studio offers modern architecture, interior design, project management consultancy (PMC), EPC services, and 3D visualization.",
   alternates: {
-    canonical:
-      "https://trygvestudio.com/services/architects-in-lucknow",
+    canonical: "/services/architects-in-lucknow",
   },
   openGraph: {
     title: "Best Architects in Lucknow | Trygve Studio",
