@@ -2,6 +2,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Link from "next/link";
+import { FaCalculator } from "react-icons/fa6";
 // app/page.jsx (or app/(site)/page.jsx)
 import Script from "next/script";
 
@@ -168,38 +170,39 @@ export default function RootLayout({ children }) {
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Organization",
-            "name": "Trygve Studio",
-            "legalName": "TRYGVE STUDIO PRIVATE LIMITED",
-            "url": "https://trygvestudio.com/",
-            "logo": "https://trygvestudio.com/logo.png",
-            "brand": { "@type": "Brand", "name": "Trygve Studio" },
-            "areaServed": [
-              { "@type": "Place", "name": "APAC" },
-              { "@type": "Place", "name": "EMEA" },
-              { "@type": "Place", "name": "North America" },
-              { "@type": "Country", "name": "India" }
+            name: "Trygve Studio",
+            legalName: "TRYGVE STUDIO PRIVATE LIMITED",
+            url: "https://trygvestudio.com/",
+            logo: "https://trygvestudio.com/logo.png",
+            brand: { "@type": "Brand", name: "Trygve Studio" },
+            areaServed: [
+              { "@type": "Place", name: "APAC" },
+              { "@type": "Place", name: "EMEA" },
+              { "@type": "Place", name: "North America" },
+              { "@type": "Country", name: "India" },
             ],
-            "sameAs": [
+            sameAs: [
               "https://www.instagram.com/trygvestudio/",
               "https://in.linkedin.com/company/trygvestudio",
               "https://www.behance.net/trygvestudio",
-              "https://wa.me/919554440400"
+              "https://wa.me/919554440400",
             ],
-            "contactPoint": {
+            contactPoint: {
               "@type": "ContactPoint",
-              "telephone": "+91-9554440400",
-              "contactType": "customer support",
-              "email": "faisal.saif@trygvestudio.com",
-              "availableLanguage": ["en", "hi"]
+              telephone: "+91-9554440400",
+              contactType: "customer support",
+              email: "faisal.saif@trygvestudio.com",
+              availableLanguage: ["en", "hi"],
             },
-            "address": {
+            address: {
               "@type": "PostalAddress",
-              "streetAddress": "Plot No. 728, Khasra No. 21, Eden Enclave, Phase 2, Kursi Road, Gudamba, BKT",
-              "addressLocality": "Lucknow",
-              "addressRegion": "Uttar Pradesh",
-              "postalCode": "226026",
-              "addressCountry": "IN"
-            }
+              streetAddress:
+                "Plot No. 728, Khasra No. 21, Eden Enclave, Phase 2, Kursi Road, Gudamba, BKT",
+              addressLocality: "Lucknow",
+              addressRegion: "Uttar Pradesh",
+              postalCode: "226026",
+              addressCountry: "IN",
+            },
           })}
         </Script>
       </head>
@@ -218,6 +221,19 @@ export default function RootLayout({ children }) {
         {!isInteriorPage && <Header />}
 
         <div className={isInteriorPage ? "" : "md:pt-24 pt-32"}>{children}</div>
+
+        {!isInteriorPage && (
+          <Link
+            href="/price-calculator"
+            className="fixed bottom-6 left-6 z-[999] flex items-center gap-2 rounded-full bg-[#234D7E] text-white px-5 py-3 shadow-lg hover:bg-[#1a3a5f] hover:scale-105 active:scale-95 transition-all duration-300 group"
+            aria-label="Price Calculator"
+          >
+            <FaCalculator className="text-xl group-hover:rotate-12 transition-transform" />
+            <span className="text-sm font-medium tracking-wide">
+              Price Calculator
+            </span>
+          </Link>
+        )}
 
         {!isInteriorPage && <Footer variant="oxblood" />}
       </body>

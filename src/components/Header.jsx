@@ -128,6 +128,9 @@ export default function Header() {
             <Link href="/blogs" className="text-[15px] md:text-[16px] text-ink underline-offset-4 hover:underline">
               Blogs
             </Link>
+            <Link href="/resources" className="text-[15px] md:text-[16px] text-ink underline-offset-4 hover:underline">
+              Resources
+            </Link>
             <Link href="/services" className="text-[15px] md:text-[16px] text-ink underline-offset-4 hover:underline">
               Services
             </Link>
@@ -235,6 +238,16 @@ export default function Header() {
                 >
                   <span>Blogs</span>
                   <span className="text-xs text-neutral-500">Know industry insights</span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/resources"
+                  onClick={closeMenu}
+                  className="block  rounded-xl px-4 py-3 text-[16px] text-ink hover:bg-[#F4F1EC] transition flex items-center justify-between"
+                >
+                  <span>Resources</span>
+                  <span className="text-xs text-neutral-500">Authority guides</span>
                 </Link>
               </li>
               <li>
