@@ -94,23 +94,6 @@ export default function BlogsClientUI({ blog }) {
         })}
       </Script>
 
-      {/* FAQ Schema */}
-      {blog?.faqs?.length > 0 && (
-        <Script id="faq-schema" type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            mainEntity: blog.faqs.map((f) => ({
-              "@type": "Question",
-              name: f.question,
-              acceptedAnswer: {
-                "@type": "Answer",
-                text: f.answer,
-              },
-            })),
-          })}
-        </Script>
-      )}
 
       <Breadcrumbs title={blog?.title} />
       {/* Hero Section */}

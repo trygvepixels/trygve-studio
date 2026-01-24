@@ -2,6 +2,7 @@ export const dynamic = 'force-dynamic';
 // optionally:
 export const revalidate = 0; import { notFound } from "next/navigation";
 import BlogsClientUI from "@/components/BlogsClientUI";
+import Script from "next/script";
 
 const API_BASE = "https://trygvestudio.com";
 
@@ -69,6 +70,23 @@ export default async function BlogDetails({ params }) {
 
   return (
     <div>
+      {/* FAQ Schema */}
+      {blog.faqs && blog.faqs.length > 0 && (
+        <Script id="faq-schema-server" type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: blog.faqs.map((f) => ({
+              "@type": "Question",
+              name: f.question,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: f.answer,
+              },
+            })),
+          })}
+        </Script>
+      )}
       <BlogsClientUI key={blog._id} blog={blog} />
     </div>
   );
