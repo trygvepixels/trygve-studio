@@ -135,78 +135,52 @@ const Page = () => {
         <Script id="ld-org" type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
-            "@type": ["Organization", "ProfessionalService"],
-            name: "TRYGVE STUDIO PRIVATE LIMITED",
-            url: "https://trygvestudio.com/",
-            email: "faisal.saif@trygvestudio.com",
-            telephone: "+91-9554440400",
-            brand: {
-              "@type": "Brand",
-              name: "Trygve Studio",
-            },
-            sameAs: ["https://wa.me/919554440400"],
-            areaServed: [
-              { "@type": "Place", name: "APAC" },
-              { "@type": "Place", name: "EMEA" },
-              { "@type": "Place", name: "North America" },
-            ],
-            contactPoint: [
-              {
-                "@type": "ContactPoint",
-                contactType: "customer support",
-                telephone: "+91-9554440400",
-                email: "faisal.saif@trygvestudio.com",
-                availableLanguage: ["en", "hi"],
-                areaServed: "Worldwide",
-              },
-            ],
-            address: {
+            "@type": "ProfessionalService",
+            "name": "Trygve Studio",
+            "url": "https://trygvestudio.com/",
+            "address": {
               "@type": "PostalAddress",
-              streetAddress:
-                "Plot No. 728, Khasra No. 21, Eden Enclave, Phase 2, Kursi Road, Gudamba, BKT",
-              addressLocality: "Lucknow",
-              addressRegion: "Uttar Pradesh",
-              postalCode: "226026",
-              addressCountry: "IN",
+              "streetAddress": "Plot No. 728, Khasra No. 21, Eden Enclave, Phase 2, Kursi Road, Gudamba, BKT",
+              "addressLocality": "Lucknow",
+              "addressRegion": "Uttar Pradesh",
+              "postalCode": "226026",
+              "addressCountry": "IN",
             },
-            location: [
+            "location": [
               {
                 "@type": "Place",
-                name: "Branch Office — Vikas Nagar",
-                address: {
+                "name": "Branch Office — Vikas Nagar",
+                "address": {
                   "@type": "PostalAddress",
-                  streetAddress:
-                    "Honey Lite, 1st Floor, 5/72, Sector 5, Vikas Nagar",
-                  addressLocality: "Lucknow",
-                  addressRegion: "Uttar Pradesh",
-                  postalCode: "226022",
-                  addressCountry: "IN",
+                  "streetAddress": "Honey Lite, 1st Floor, 5/72, Sector 5, Vikas Nagar",
+                  "addressLocality": "Lucknow",
+                  "addressRegion": "Uttar Pradesh",
+                  "postalCode": "226022",
+                  "addressCountry": "IN",
                 },
               },
               {
                 "@type": "Place",
-                name: "Branch Office — Kursi Road (Near Integral University Hospital Gate)",
-                address: {
+                "name": "Branch Office — Kursi Road (Near Integral University Hospital Gate)",
+                "address": {
                   "@type": "PostalAddress",
-                  streetAddress:
-                    "UGF, Rukshan Complex, Gata No. 112, Dasauli, Kursi Road, Near Integral University Hospital Gate",
-                  addressLocality: "Lucknow",
-                  addressRegion: "Uttar Pradesh",
-                  postalCode: "226021",
-                  addressCountry: "IN",
+                  "streetAddress": "UGF, Rukshan Complex, Gata No. 112, Dasauli, Kursi Road, Near Integral University Hospital Gate",
+                  "addressLocality": "Lucknow",
+                  "addressRegion": "Uttar Pradesh",
+                  "postalCode": "226021",
+                  "addressCountry": "IN",
                 },
               },
               {
                 "@type": "Place",
-                name: "Corporate Meeting Space — Levana Cyber Heights (Regus)",
-                address: {
+                "name": "Corporate Meeting Space — Levana Cyber Heights (Regus)",
+                "address": {
                   "@type": "PostalAddress",
-                  streetAddress:
-                    "Levana Cyber Heights, 10th Floor – Regus, Vibhuti Khand, Gomti Nagar",
-                  addressLocality: "Lucknow",
-                  addressRegion: "Uttar Pradesh",
-                  postalCode: "226010",
-                  addressCountry: "IN",
+                  "streetAddress": "Levana Cyber Heights, 10th Floor – Regus, Vibhuti Khand, Gomti Nagar",
+                  "addressLocality": "Lucknow",
+                  "addressRegion": "Uttar Pradesh",
+                  "postalCode": "226010",
+                  "addressCountry": "IN",
                 },
               },
             ],

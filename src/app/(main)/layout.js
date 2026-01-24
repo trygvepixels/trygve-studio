@@ -163,6 +163,28 @@ export default function RootLayout({ children }) {
             },
           })}
         </Script>
+        <Script id="ld-org" type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            name: "TRYGVE STUDIO PRIVATE LIMITED",
+            url: "https://trygvestudio.com/",
+            logo: "https://trygvestudio.com/logo.png",
+            sameAs: [
+              "https://www.instagram.com/trygvestudio/",
+              "https://in.linkedin.com/company/trygvestudio",
+              "https://www.behance.net/trygvestudio",
+              "https://wa.me/919554440400",
+            ],
+            contactPoint: {
+              "@type": "ContactPoint",
+              telephone: "+91-9554440400",
+              contactType: "customer support",
+              email: "faisal.saif@trygvestudio.com",
+              availableLanguage: ["en", "hi"],
+            },
+          })}
+        </Script>
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
