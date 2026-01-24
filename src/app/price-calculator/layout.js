@@ -14,7 +14,6 @@ export default function InteriorDesignerLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/favicon.ico" />
         <meta
           name="facebook-domain-verification"
           content="dv4u9r79rw2om8h9acntau6pjitnsy"

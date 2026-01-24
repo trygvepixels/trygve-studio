@@ -6,7 +6,7 @@ import Script from "next/script";
 // app/services/page.jsx
 
 export const metadata = {
-  metadataBase: new URL("https://www.trygvestudio.com"),
+  metadataBase: new URL("https://trygvestudio.com"),
   title: {
     default:
       "Services — Architecture, Interiors, PMC, EPC & 3D Visualisation | Trygve Studio",

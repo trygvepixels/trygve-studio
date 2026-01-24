@@ -145,7 +145,7 @@ function ServicesPage() {
             provider: {
               '@type': ['Organization', 'ProfessionalService'],
               name: 'TRYGVE STUDIO PRIVATE LIMITED',
-              url: 'https://www.trygvestudio.com/',
+              url: 'https://trygvestudio.com/',
               telephone: '+91-9554440400',
               email: 'faisal.saif@trygvestudio.com',
               address: {
@@ -177,13 +177,13 @@ function ServicesPage() {
                 '@type': 'ListItem',
                 position: 1,
                 name: 'Home',
-                item: 'https://www.trygvestudio.com/',
+                item: 'https://trygvestudio.com/',
               },
               {
                 '@type': 'ListItem',
                 position: 2,
                 name: 'Services',
-                item: 'https://www.trygvestudio.com/services',
+                item: 'https://trygvestudio.com/services',
               },
             ],
           })}

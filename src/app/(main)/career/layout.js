@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 import Script from "next/script";
 
 export const metadata = {
-  metadataBase: new URL("https://www.trygvestudio.com"),
+  metadataBase: new URL("https://trygvestudio.com"),
   title: {
     default: "Careers — Build the Future with Trygve Studio",
     template: "%s | Trygve Studio",
@@ -28,7 +28,7 @@ export const metadata = {
   alternates: { canonical: "/career" },
   openGraph: {
     type: "website",
-    url: "https://www.trygvestudio.com/career",
+    url: "https://trygvestudio.com/career",
     siteName: "Trygve Studio",
     title: "Careers at Trygve Studio",
     description:
@@ -54,7 +54,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/favicon.ico" />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=AW-10884548494"
           strategy="afterInteractive"
@@ -114,8 +113,8 @@ export default function RootLayout({ children }) {
               hiringOrganization: {
                 "@type": ["Organization", "ProfessionalService"],
                 name: "TRYGVE STUDIO PRIVATE LIMITED",
-                sameAs: ["https://www.trygvestudio.com/"],
-                url: "https://www.trygvestudio.com/",
+                sameAs: ["https://trygvestudio.com/"],
+                url: "https://trygvestudio.com/",
                 telephone: "+91-9554440400",
                 email: "faisal.saif@trygvestudio.com",
                 address: {
@@ -129,7 +128,7 @@ export default function RootLayout({ children }) {
                 },
               },
               validThrough: new Date(
-                Date.now() + 1000 * 60 * 60 * 24 * 90
+                Date.now() + 1000 * 60 * 60 * 24 * 90,
               ).toISOString(), // ~90 days
               industry: "Architecture & Interior Design",
               jobLocationType: "TELECOMMUTE",
@@ -169,7 +168,7 @@ export default function RootLayout({ children }) {
                 "Remote-first; collaborate during India Standard Time core hours.",
               // Use either a mailto or your on-page CTA anchor if present
               employmentUnit: "Global",
-              url: "https://www.trygvestudio.com/career",
+              url: "https://trygvestudio.com/career",
             })}
           </Script>
 
@@ -182,13 +181,13 @@ export default function RootLayout({ children }) {
                   "@type": "ListItem",
                   position: 1,
                   name: "Home",
-                  item: "https://www.trygvestudio.com/",
+                  item: "https://trygvestudio.com/",
                 },
                 {
                   "@type": "ListItem",
                   position: 2,
                   name: "Career",
-                  item: "https://www.trygvestudio.com/career",
+                  item: "https://trygvestudio.com/career",
                 },
               ],
             })}

@@ -5,7 +5,7 @@ import { getBlogs, getProjects, getServices } from "../../lib/api";
 export const revalidate = 172800;
 
 export default async function sitemap() {
-  const baseUrl = "https://www.trygvestudio.com";
+  const baseUrl = "https://trygvestudio.com";
 
   // 1. Static Pages
   const staticPages = [
@@ -91,7 +91,7 @@ export default async function sitemap() {
     ? blogs.map((blog) => ({
         url: `${baseUrl}/blogs/${blog.urlSlug || blog.slug}`,
         lastModified: new Date(
-          blog.lastUpdated || blog.updatedAt || blog.createdAt || new Date()
+          blog.lastUpdated || blog.updatedAt || blog.createdAt || new Date(),
         ),
         changeFrequency: "daily",
         priority: 0.7,
@@ -104,7 +104,7 @@ export default async function sitemap() {
     ? projects.map((project) => ({
         url: `${baseUrl}/projects/${project.slug}`,
         lastModified: new Date(
-          project.updatedAt || project.createdAt || new Date()
+          project.updatedAt || project.createdAt || new Date(),
         ),
         changeFrequency: "weekly",
         priority: 0.6,
@@ -119,7 +119,7 @@ export default async function sitemap() {
         .map((service) => ({
           url: `${baseUrl}/services/${service.slug}`,
           lastModified: new Date(
-            service.updatedAt || service.createdAt || new Date()
+            service.updatedAt || service.createdAt || new Date(),
           ),
           changeFrequency: "monthly",
           priority: 0.7,

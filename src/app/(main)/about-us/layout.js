@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import Script from "next/script";
 
 export const metadata = {
-  metadataBase: new URL("https://www.trygvestudio.com"),
+  metadataBase: new URL("https://trygvestudio.com"),
   title: {
     default: "About Us — Trygve Studio Private Limited",
     template: "%s | Trygve Studio",
@@ -25,7 +25,7 @@ export const metadata = {
   alternates: { canonical: "/about-us" },
   openGraph: {
     type: "profile",
-    url: "https://www.trygvestudio.com/about-us",
+    url: "https://trygvestudio.com/about-us",
     siteName: "Trygve Studio",
     title: "About Trygve Studio — Architecture, Interiors, PMC, EPC & 3D",
     description:

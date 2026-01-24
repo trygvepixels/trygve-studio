@@ -20,21 +20,21 @@ import TeamSection from "@/components/TeamSection";
 import LocationsList from "@/components/LocationsList";
 
 
- import Script from 'next/script';
+import Script from 'next/script';
 
 
- 
+
 
 export default function AboutUs() {
   const directors = [
- 
+
     {
       name: "AR. FAISAL SAIF",
       role: "Founder & Director ",
       img: faisal,
       para: "AR. Faisal Saif is the Founder and Director of Trygve Studio. With a passion for design and a keen eye for detail, he leads the team in delivering exceptional architectural and interior solutions. His vision drives the studio's commitment to excellence and innovation in every project.",
     },
-  
+
   ];
 
   const specialties = [
@@ -84,148 +84,148 @@ export default function AboutUs() {
     <section className="bg-[#F4F1EC] text-[#101010]">
 
       <>
-      {/* Your actual About Us page content */}
+        {/* Your actual About Us page content */}
 
-      {/* JSON-LD: AboutPage + Organization + Person + Breadcrumbs */}
-      <Script id="ld-about" type="application/ld+json">
-        {JSON.stringify({
-          '@context': 'https://schema.org',
-          '@type': 'AboutPage',
-          name: 'About Us — Trygve Studio',
-          url: 'https://www.trygvestudio.com/about-us',
-          mainEntity: {
-            '@type': ['Organization', 'ProfessionalService'],
-            name: 'TRYGVE STUDIO PRIVATE LIMITED',
-            url: 'https://www.trygvestudio.com/',
-            email: 'faisal.saif@trygvestudio.com',
-            telephone: '+91-9554440400',
-            foundingDate: '2017',
-            legalName: 'Trygve Studio Private Limited',
-            foundingLocation: {
-              '@type': 'Place',
-              name: 'Lucknow, Uttar Pradesh, India',
-            },
-            numberOfEmployees: {
-              '@type': 'QuantitativeValue',
-              minValue: 11,
-              maxValue: 50,
-            },
-            naics: '7414',
-            areaServed: [
-              { '@type': 'Place', name: 'APAC' },
-              { '@type': 'Place', name: 'EMEA' },
-              { '@type': 'Place', name: 'North America' },
-              { '@type': 'Country', name: 'India' },
-            ],
-            brand: { '@type': 'Brand', name: 'Trygve Studio' },
-            sameAs: ['https://wa.me/919554440400'],
-            contactPoint: [
-              {
-                '@type': 'ContactPoint',
-                contactType: 'customer support',
-                telephone: '+91-9554440400',
-                email: 'faisal.saif@trygvestudio.com',
-                availableLanguage: ['en', 'hi'],
-                areaServed: 'Worldwide',
-              },
-            ],
-            address: {
-              '@type': 'PostalAddress',
-              streetAddress:
-                'Plot No. 728, Khasra No. 21, Eden Enclave, Phase 2, Kursi Road, Gudamba, BKT',
-              addressLocality: 'Lucknow',
-              addressRegion: 'Uttar Pradesh',
-              postalCode: '226026',
-              addressCountry: 'IN',
-            },
-            location: [
-              {
+        {/* JSON-LD: AboutPage + Organization + Person + Breadcrumbs */}
+        <Script id="ld-about" type="application/ld+json">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'AboutPage',
+            name: 'About Us — Trygve Studio',
+            url: 'https://trygvestudio.com/about-us',
+            mainEntity: {
+              '@type': ['Organization', 'ProfessionalService'],
+              name: 'TRYGVE STUDIO PRIVATE LIMITED',
+              url: 'https://trygvestudio.com/',
+              email: 'faisal.saif@trygvestudio.com',
+              telephone: '+91-9554440400',
+              foundingDate: '2017',
+              legalName: 'Trygve Studio Private Limited',
+              foundingLocation: {
                 '@type': 'Place',
-                name: 'Branch Office — Vikas Nagar',
-                address: {
-                  '@type': 'PostalAddress',
-                  streetAddress: 'Honey Lite, 1st Floor, 5/72, Sector 5, Vikas Nagar',
-                  addressLocality: 'Lucknow',
-                  addressRegion: 'Uttar Pradesh',
-                  postalCode: '226022',
-                  addressCountry: 'IN',
-                },
+                name: 'Lucknow, Uttar Pradesh, India',
               },
-              {
-                '@type': 'Place',
-                name:
-                  'Branch Office — Kursi Road (Near Integral University Hospital Gate)',
-                address: {
-                  '@type': 'PostalAddress',
-                  streetAddress:
-                    'UGF, Rukshan Complex, Gata No. 112, Dasauli, Kursi Road, Near Integral University Hospital Gate',
-                  addressLocality: 'Lucknow',
-                  addressRegion: 'Uttar Pradesh',
-                  postalCode: '226021',
-                  addressCountry: 'IN',
-                },
+              numberOfEmployees: {
+                '@type': 'QuantitativeValue',
+                minValue: 11,
+                maxValue: 50,
               },
-              {
-                '@type': 'Place',
-                name: 'Corporate Meeting Space — Levana Cyber Heights (Regus)',
-                address: {
-                  '@type': 'PostalAddress',
-                  streetAddress:
-                    'Levana Cyber Heights, 10th Floor – Regus, Vibhuti Khand, Gomti Nagar',
-                  addressLocality: 'Lucknow',
-                  addressRegion: 'Uttar Pradesh',
-                  postalCode: '226010',
-                  addressCountry: 'IN',
+              naics: '7414',
+              areaServed: [
+                { '@type': 'Place', name: 'APAC' },
+                { '@type': 'Place', name: 'EMEA' },
+                { '@type': 'Place', name: 'North America' },
+                { '@type': 'Country', name: 'India' },
+              ],
+              brand: { '@type': 'Brand', name: 'Trygve Studio' },
+              sameAs: ['https://wa.me/919554440400'],
+              contactPoint: [
+                {
+                  '@type': 'ContactPoint',
+                  contactType: 'customer support',
+                  telephone: '+91-9554440400',
+                  email: 'faisal.saif@trygvestudio.com',
+                  availableLanguage: ['en', 'hi'],
+                  areaServed: 'Worldwide',
                 },
+              ],
+              address: {
+                '@type': 'PostalAddress',
+                streetAddress:
+                  'Plot No. 728, Khasra No. 21, Eden Enclave, Phase 2, Kursi Road, Gudamba, BKT',
+                addressLocality: 'Lucknow',
+                addressRegion: 'Uttar Pradesh',
+                postalCode: '226026',
+                addressCountry: 'IN',
               },
-            ],
-            hasOfferCatalog: {
-              '@type': 'OfferCatalog',
-              name: 'Architecture & Allied Engineering Services',
+              location: [
+                {
+                  '@type': 'Place',
+                  name: 'Branch Office — Vikas Nagar',
+                  address: {
+                    '@type': 'PostalAddress',
+                    streetAddress: 'Honey Lite, 1st Floor, 5/72, Sector 5, Vikas Nagar',
+                    addressLocality: 'Lucknow',
+                    addressRegion: 'Uttar Pradesh',
+                    postalCode: '226022',
+                    addressCountry: 'IN',
+                  },
+                },
+                {
+                  '@type': 'Place',
+                  name:
+                    'Branch Office — Kursi Road (Near Integral University Hospital Gate)',
+                  address: {
+                    '@type': 'PostalAddress',
+                    streetAddress:
+                      'UGF, Rukshan Complex, Gata No. 112, Dasauli, Kursi Road, Near Integral University Hospital Gate',
+                    addressLocality: 'Lucknow',
+                    addressRegion: 'Uttar Pradesh',
+                    postalCode: '226021',
+                    addressCountry: 'IN',
+                  },
+                },
+                {
+                  '@type': 'Place',
+                  name: 'Corporate Meeting Space — Levana Cyber Heights (Regus)',
+                  address: {
+                    '@type': 'PostalAddress',
+                    streetAddress:
+                      'Levana Cyber Heights, 10th Floor – Regus, Vibhuti Khand, Gomti Nagar',
+                    addressLocality: 'Lucknow',
+                    addressRegion: 'Uttar Pradesh',
+                    postalCode: '226010',
+                    addressCountry: 'IN',
+                  },
+                },
+              ],
+              hasOfferCatalog: {
+                '@type': 'OfferCatalog',
+                name: 'Architecture & Allied Engineering Services',
+                itemListElement: [
+                  { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Architecture' } },
+                  { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Interior Design' } },
+                  { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Project Management Consultancy (PMC)' } },
+                  { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Engineering, Procurement & Construction (EPC)' } },
+                  { '@type': 'Offer', itemOffered: { '@type': 'Service', name: '3D Visualisation' } },
+                ],
+              },
+            },
+            breadcrumb: {
+              '@type': 'BreadcrumbList',
               itemListElement: [
-                { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Architecture' } },
-                { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Interior Design' } },
-                { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Project Management Consultancy (PMC)' } },
-                { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Engineering, Procurement & Construction (EPC)' } },
-                { '@type': 'Offer', itemOffered: { '@type': 'Service', name: '3D Visualisation' } },
+                {
+                  '@type': 'ListItem',
+                  position: 1,
+                  name: 'Home',
+                  item: 'https://trygvestudio.com/',
+                },
+                {
+                  '@type': 'ListItem',
+                  position: 2,
+                  name: 'About Us',
+                  item: 'https://trygvestudio.com/about-us',
+                },
               ],
             },
-          },
-          breadcrumb: {
-            '@type': 'BreadcrumbList',
-            itemListElement: [
-              {
-                '@type': 'ListItem',
-                position: 1,
-                name: 'Home',
-                item: 'https://www.trygvestudio.com/',
-              },
-              {
-                '@type': 'ListItem',
-                position: 2,
-                name: 'About Us',
-                item: 'https://www.trygvestudio.com/about-us',
-              },
-            ],
-          },
-        })}
-      </Script>
+          })}
+        </Script>
 
-      <Script id="ld-founder" type="application/ld+json">
-        {JSON.stringify({
-          '@context': 'https://schema.org',
-          '@type': 'Person',
-          name: 'Ar. Faisal Saif',
-          jobTitle: 'Founder & Director',
-          worksFor: {
-            '@type': 'Organization',
-            name: 'Trygve Studio Private Limited',
-            url: 'https://www.trygvestudio.com/',
-          },
-          email: 'faisal.saif@trygvestudio.com',
-        })}
-      </Script>
-    </>
+        <Script id="ld-founder" type="application/ld+json">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Person',
+            name: 'Ar. Faisal Saif',
+            jobTitle: 'Founder & Director',
+            worksFor: {
+              '@type': 'Organization',
+              name: 'Trygve Studio Private Limited',
+              url: 'https://trygvestudio.com/',
+            },
+            email: 'faisal.saif@trygvestudio.com',
+          })}
+        </Script>
+      </>
       <Breadcrumbs />
 
       {/* ===== Hero ===== */}
@@ -333,47 +333,47 @@ export default function AboutUs() {
           </p>
           <div className="mt-5  ">
             {directors.map((d) => (
-             <div className=" grid grid-cols-1 md:grid-cols-2 gap-6 items-start" key={d.name}>
-               <div
-                key={d.name}
-                className=" "
-              >
-                <figure className="relative flex aspect-[3/2]">
-                  {/* Photo */}
-                  <Image
-                    src={d.img}
-                    alt={`${d.name} portrait`}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                    sizes="(min-width: 768px) 25vw, 50vw"
-                    priority={false}
-                  />
+              <div className=" grid grid-cols-1 md:grid-cols-2 gap-6 items-start" key={d.name}>
+                <div
+                  key={d.name}
+                  className=" "
+                >
+                  <figure className="relative flex aspect-[3/2]">
+                    {/* Photo */}
+                    <Image
+                      src={d.img}
+                      alt={`${d.name} portrait`}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                      sizes="(min-width: 768px) 25vw, 50vw"
+                      priority={false}
+                    />
 
-                  {/* Readability gradient */}
-                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+                    {/* Readability gradient */}
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
 
-                  {/* Name + Role */}
-                  <figcaption className="absolute bottom-3 left-3 right-3">
-                    <div className="text-white/95 font-semibold leading-tight text-sm md:text-[15px]">
-                      {d.name}
-                    </div>
-                    <div className="mt-0.5 text-white/80 text-[11px] md:text-xs">
-                      {d.role}
-                    </div>
-                  </figcaption>
+                    {/* Name + Role */}
+                    <figcaption className="absolute bottom-3 left-3 right-3">
+                      <div className="text-white/95 font-semibold leading-tight text-sm md:text-[15px]">
+                        {d.name}
+                      </div>
+                      <div className="mt-0.5 text-white/80 text-[11px] md:text-xs">
+                        {d.role}
+                      </div>
+                    </figcaption>
 
 
-                      
-                     
-                </figure>
-               
+
+
+                  </figure>
+
+                </div>
+
+                <div className=" ">
+                  <p className="text-  text-neutral-700">{d.para}</p>
+
+                </div>
               </div>
-
-              <div className=" ">
-                <p className="text-  text-neutral-700">{d.para}</p>
-
-             </div>
-             </div>
             ))}
           </div>
           <p className="mt-4 text-sm text-neutral-600">
@@ -402,9 +402,9 @@ export default function AboutUs() {
           <div className="mt-4 grid gap-3 md:grid-cols-3">
             <InfoRow icon={<FiMapPin />} title="Head Office">
               Plot No. 728, Khasra No. 21
-Eden Enclave, Phase 2, Kursi Road
-Gudamba, BKT, Lucknow
-Uttar Pradesh – 226026, India
+              Eden Enclave, Phase 2, Kursi Road
+              Gudamba, BKT, Lucknow
+              Uttar Pradesh – 226026, India
             </InfoRow>
             <InfoRow icon={<FiPhone />} title="Phone">
               <a className="underline" href="tel:+919554440400">
@@ -419,33 +419,33 @@ Uttar Pradesh – 226026, India
           </div>
         </div>
       </div>
-<TeamSection />
+      <TeamSection />
 
       {/* Location / Office Pin */}
-<section id="location" className="relative bg-[#F3F1EB] py-4">
-  <div className="mx-auto max-w-7xl px-6">
-    <div className="mx-auto max-w-2xl text-center">
-      <h2 className="text-3xl font-semibold md:text-4xl">Our Location</h2>
-      <p className="mt-2 text-black/60">
-        Visit our studio or find us easily on the map below.
-      </p>
-    </div>
+      <section id="location" className="relative bg-[#F3F1EB] py-4">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 className="text-3xl font-semibold md:text-4xl">Our Location</h2>
+            <p className="mt-2 text-black/60">
+              Visit our studio or find us easily on the map below.
+            </p>
+          </div>
 
-    <div className="mt-4 overflow-hidden rounded-2xl border border-black/10 shadow-lg">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3557.0843091250363!2d80.9687785762818!3d26.93254157663538!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399a25e439709cd1%3A0x28927eb890a78697!2sTrygve%20Studio%20Private%20Limited%20%7C%20Best%20Architecture%20Company%20%7C%20Best%20Construction%20Company%20%7C%20Best%20Interior%20Designer!5e0!3m2!1sen!2sin!4v1756397068097!5m2!1sen!2sin"
-        width="100%"
-        height="450"
-        style={{ border: 0 }}
-        allowFullScreen=""
-        loading="lazy"
-        referrerPolicy="no-referrer-when-downgrade"
-      ></iframe>
-    </div>
+          <div className="mt-4 overflow-hidden rounded-2xl border border-black/10 shadow-lg">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3557.0843091250363!2d80.9687785762818!3d26.93254157663538!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399a25e439709cd1%3A0x28927eb890a78697!2sTrygve%20Studio%20Private%20Limited%20%7C%20Best%20Architecture%20Company%20%7C%20Best%20Construction%20Company%20%7C%20Best%20Interior%20Designer!5e0!3m2!1sen!2sin!4v1756397068097!5m2!1sen!2sin"
+              width="100%"
+              height="450"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
 
-    
-  </div>
-</section>
+
+        </div>
+      </section>
 
       {/* ===== Gallery / Proof ===== */}
       {/* <div className="max-w-7xl mx-auto px-5 pb-16">

@@ -137,7 +137,7 @@ const Page = () => {
             "@context": "https://schema.org",
             "@type": ["Organization", "ProfessionalService"],
             name: "TRYGVE STUDIO PRIVATE LIMITED",
-            url: "https://www.trygvestudio.com/",
+            url: "https://trygvestudio.com/",
             email: "faisal.saif@trygvestudio.com",
             telephone: "+91-9554440400",
             brand: {

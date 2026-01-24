@@ -3,7 +3,7 @@ export const dynamic = 'force-dynamic';
 export const revalidate = 0; import { notFound } from "next/navigation";
 import BlogsClientUI from "@/components/BlogsClientUI";
 
-const API_BASE = "https://www.trygvestudio.com";
+const API_BASE = "https://trygvestudio.com";
 
 // --- data ---
 async function getBlog(slug) {

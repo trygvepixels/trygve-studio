@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 import Script from "next/script";
 
 export const metadata = {
-  metadataBase: new URL("https://www.trygvestudio.com"),
+  metadataBase: new URL("https://trygvestudio.com"),
   title: {
     default: "Contact Us — Trygve Studio Private Limited",
     template: "%s | Trygve Studio",
@@ -28,7 +28,7 @@ export const metadata = {
   alternates: { canonical: "/contact-us" },
   openGraph: {
     type: "website",
-    url: "https://www.trygvestudio.com/contact-us",
+    url: "https://trygvestudio.com/contact-us",
     siteName: "Trygve Studio",
     title: "Contact Trygve Studio",
     description:
@@ -54,7 +54,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/favicon.ico" />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=AW-10884548494"
           strategy="afterInteractive"
@@ -109,11 +108,11 @@ export default function RootLayout({ children }) {
               "@context": "https://schema.org",
               "@type": "ContactPage",
               name: "Contact Us — Trygve Studio",
-              url: "https://www.trygvestudio.com/contact-us",
+              url: "https://trygvestudio.com/contact-us",
               mainEntity: {
                 "@type": ["Organization", "ProfessionalService"],
                 name: "TRYGVE STUDIO PRIVATE LIMITED",
-                url: "https://www.trygvestudio.com/",
+                url: "https://trygvestudio.com/",
                 telephone: "+91-9554440400",
                 email: "faisal.saif@trygvestudio.com",
                 sameAs: [
@@ -133,7 +132,7 @@ export default function RootLayout({ children }) {
                     email: "faisal.saif@trygvestudio.com",
                     availableLanguage: ["en", "hi"],
                     areaServed: "Worldwide",
-                    url: "https://www.trygvestudio.com/contact-us",
+                    url: "https://trygvestudio.com/contact-us",
                   },
                   {
                     "@type": "ContactPoint",
@@ -238,13 +237,13 @@ export default function RootLayout({ children }) {
                     "@type": "ListItem",
                     position: 1,
                     name: "Home",
-                    item: "https://www.trygvestudio.com/",
+                    item: "https://trygvestudio.com/",
                   },
                   {
                     "@type": "ListItem",
                     position: 2,
                     name: "Contact",
-                    item: "https://www.trygvestudio.com/contact-us",
+                    item: "https://trygvestudio.com/contact-us",
                   },
                 ],
               },

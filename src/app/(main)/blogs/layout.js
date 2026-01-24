@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import Script from "next/script";
 
 export const metadata = {
-  metadataBase: new URL("https://www.trygvestudio.com"),
+  metadataBase: new URL("https://trygvestudio.com"),
   title: {
     default: "Strategies, Stories & Solutions — Blogs | Trygve Studio",
     template: "%s | Trygve Studio",
@@ -28,7 +28,7 @@ export const metadata = {
   alternates: { canonical: "/blogs" },
   openGraph: {
     type: "website",
-    url: "https://www.trygvestudio.com/blogs",
+    url: "https://trygvestudio.com/blogs",
     siteName: "Trygve Studio",
     title: "Strategies, Stories & Solutions — Blogs",
     description:
@@ -54,7 +54,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/favicon.ico" />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=AW-10884548494"
           strategy="afterInteractive"
@@ -108,12 +107,12 @@ export default function RootLayout({ children }) {
               name: "Strategies, Stories & Solutions — Trygve Studio Blogs",
               description:
                 "Insights, playbooks, and stories on Architecture, Interiors, PMC, EPC & 3D Visualisation — curated weekly.",
-              url: "https://www.trygvestudio.com/blogs",
+              url: "https://trygvestudio.com/blogs",
               inLanguage: "en",
               publisher: {
                 "@type": ["Organization", "ProfessionalService"],
                 name: "TRYGVE STUDIO PRIVATE LIMITED",
-                url: "https://www.trygvestudio.com/",
+                url: "https://trygvestudio.com/",
                 telephone: "+91-9554440400",
                 email: "faisal.saif@trygvestudio.com",
                 address: {
@@ -138,13 +137,13 @@ export default function RootLayout({ children }) {
                   "@type": "ListItem",
                   position: 1,
                   name: "Home",
-                  item: "https://www.trygvestudio.com/",
+                  item: "https://trygvestudio.com/",
                 },
                 {
                   "@type": "ListItem",
                   position: 2,
                   name: "Blogs",
-                  item: "https://www.trygvestudio.com/blogs",
+                  item: "https://trygvestudio.com/blogs",
                 },
               ],
             })}
@@ -156,11 +155,11 @@ export default function RootLayout({ children }) {
               "@context": "https://schema.org",
               "@type": "WebSite",
               name: "Trygve Studio",
-              url: "https://www.trygvestudio.com/",
+              url: "https://trygvestudio.com/",
               potentialAction: {
                 "@type": "SearchAction",
                 target:
-                  "https://www.trygvestudio.com/blogs?query={search_term_string}",
+                  "https://trygvestudio.com/blogs?query={search_term_string}",
                 "query-input": "required name=search_term_string",
               },
             })}

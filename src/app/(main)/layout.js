@@ -26,17 +26,17 @@ export const metadata = {
     apple: "/logo.png",
   },
   alternates: {
-    canonical: "https://www.trygvestudio.com/",
+    canonical: "https://trygvestudio.com/",
   },
   openGraph: {
     title: "Trygve Studio - Premium Architecture & Interior Design",
     description:
       "Transform your space with Trygve Studio. Professional architecture and interior design services.",
-    url: "https://www.trygvestudio.com/",
+    url: "https://trygvestudio.com/",
     siteName: "Trygve Studio",
     images: [
       {
-        url: "https://www.trygvestudio.com/og-image.jpg",
+        url: "https://trygvestudio.com/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Trygve Studio - Premium Architecture & Interior Design",
@@ -52,7 +52,7 @@ export const metadata = {
       "Transform your space with Trygve Studio. Professional architecture and interior design services.",
     images: [
       {
-        url: "https://www.trygvestudio.com/twitter-image.jpg",
+        url: "https://trygvestudio.com/twitter-image.jpg",
         alt: "Trygve Studio - Premium Architecture & Interior Design",
       },
     ],
@@ -155,7 +155,7 @@ export default function RootLayout({ children }) {
             "@context": "https://schema.org",
             "@type": "WebSite",
             name: "Trygve Studio",
-            url: "https://www.trygvestudio.com/",
+            url: "https://trygvestudio.com/",
             potentialAction: {
               "@type": "SearchAction",
               target: "{search_term_string}",

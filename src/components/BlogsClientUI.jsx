@@ -77,19 +77,19 @@ export default function BlogsClientUI({ blog }) {
           author: {
             "@type": "Person",
             name: blog?.author || "Trygve Studio Team",
-            url: "https://www.trygvestudio.com/about-us",
+            url: "https://trygvestudio.com/about-us",
           },
           publisher: {
             "@type": "Organization",
             name: "Trygve Studio",
             logo: {
               "@type": "ImageObject",
-              url: "https://www.trygvestudio.com/logo.png",
+              url: "https://trygvestudio.com/logo.png",
             },
           },
           mainEntityOfPage: {
             "@type": "WebPage",
-            "@id": `https://www.trygvestudio.com/blogs/${blog?.urlSlug}`,
+            "@id": `https://trygvestudio.com/blogs/${blog?.urlSlug}`,
           },
         })}
       </Script>
