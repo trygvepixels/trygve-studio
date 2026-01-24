@@ -8,7 +8,7 @@ export const metadata = {
   title: "Thank You | Trygve Studio",
   description:
     "Thank you for contacting Trygve Studio. We will get back to you shortly.",
-  alternates: { canonical: "/thank-you" },
+  alternates: { canonical: "https://trygvestudio.com/thank-you" },
 };
 
 export default function InteriorDesignerLayout({ children }) {

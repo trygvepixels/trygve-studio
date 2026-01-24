@@ -6,7 +6,7 @@ export const metadata = {
   title: "Trygve Studio - Premium Interior Design Services",
   description:
     "Transform your home with stunning interior designs. Get free consultation today!",
-  alternates: { canonical: "/interior-designer" },
+  alternates: { canonical: "https://trygvestudio.com/interior-designer" },
 };
 
 export default function InteriorDesignerLayout({ children }) {

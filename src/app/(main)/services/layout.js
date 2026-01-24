@@ -25,7 +25,7 @@ export const metadata = {
     "project management consultancy",
     "engineering procurement construction",
   ],
-  alternates: { canonical: "/services" },
+  alternates: { canonical: "https://trygvestudio.com/services" },
 
   twitter: {
     card: "summary_large_image",

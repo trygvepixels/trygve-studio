@@ -25,7 +25,7 @@ export const metadata = {
     "architect job openings",
     "design studio hiring",
   ],
-  alternates: { canonical: "/career" },
+  alternates: { canonical: "https://trygvestudio.com/career" },
   openGraph: {
     type: "website",
     url: "https://trygvestudio.com/career",
@@ -139,27 +139,31 @@ export default function RootLayout({ children }) {
           identifier: [
             {
               "@type": "PropertyValue",
-              "name": "Hiring Process",
-              "value": "Intro chat → Deep-dive → Practical task (paid for select roles) → Offer",
+              name: "Hiring Process",
+              value:
+                "Intro chat → Deep-dive → Practical task (paid for select roles) → Offer",
             },
             {
               "@type": "PropertyValue",
-              "name": "Values",
-              "value": "Craft over noise; Ship, learn, repeat; Bias for clarity; Own the outcome",
+              name: "Values",
+              value:
+                "Craft over noise; Ship, learn, repeat; Bias for clarity; Own the outcome",
             },
             {
               "@type": "PropertyValue",
-              "name": "Work Mode",
-              "value": "Remote-first with IST core overlap",
+              name: "Work Mode",
+              value: "Remote-first with IST core overlap",
             },
             {
               "@type": "PropertyValue",
-              "name": "Perks",
-              "value": "Medical + mental wellness, premium gear, growth budget, performance bonus, flexible PTO",
+              name: "Perks",
+              value:
+                "Medical + mental wellness, premium gear, growth budget, performance bonus, flexible PTO",
             },
           ],
-          "applicantLocationRequirementsDescription": "Remote-first; collaborate during India Standard Time core hours.",
-          "employmentUnit": "Global",
+          applicantLocationRequirementsDescription:
+            "Remote-first; collaborate during India Standard Time core hours.",
+          employmentUnit: "Global",
           url: "https://trygvestudio.com/career",
         })}
       </Script>

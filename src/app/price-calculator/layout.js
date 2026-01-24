@@ -9,7 +9,7 @@ export const metadata = {
   title: "Trygve Studio - Interior Design Price Calculator",
   description:
     "Calculate the estimated cost of your interior design project with Trygve Studio's price calculator.",
-  alternates: { canonical: "/price-calculator" },
+  alternates: { canonical: "https://trygvestudio.com/price-calculator" },
 };
 
 export default function InteriorDesignerLayout({ children }) {

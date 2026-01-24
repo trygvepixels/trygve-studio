@@ -25,7 +25,7 @@ export const metadata = {
     "case studies",
     "playbooks",
   ],
-  alternates: { canonical: "/blogs" },
+  alternates: { canonical: "https://trygvestudio.com/blogs" },
   openGraph: {
     type: "website",
     url: "https://trygvestudio.com/blogs",
@@ -113,7 +113,8 @@ export default function RootLayout({ children }) {
             email: "faisal.saif@trygvestudio.com",
             address: {
               "@type": "PostalAddress",
-              streetAddress: "Plot No. 728, Khasra No. 21, Eden Enclave, Phase 2, Kursi Road, Gudamba, BKT",
+              streetAddress:
+                "Plot No. 728, Khasra No. 21, Eden Enclave, Phase 2, Kursi Road, Gudamba, BKT",
               addressLocality: "Lucknow",
               addressRegion: "Uttar Pradesh",
               postalCode: "226026",
@@ -128,8 +129,18 @@ export default function RootLayout({ children }) {
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
           itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Home", item: "https://trygvestudio.com/" },
-            { "@type": "ListItem", position: 2, name: "Blogs", item: "https://trygvestudio.com/blogs" },
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "Home",
+              item: "https://trygvestudio.com/",
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: "Blogs",
+              item: "https://trygvestudio.com/blogs",
+            },
           ],
         })}
       </Script>
@@ -138,11 +149,11 @@ export default function RootLayout({ children }) {
         {JSON.stringify({
           "@context": "https://schema.org",
           "@type": "WebSite",
-          "name": "Trygve Studio",
-          "url": "https://trygvestudio.com/",
-          "potentialAction": {
+          name: "Trygve Studio",
+          url: "https://trygvestudio.com/",
+          potentialAction: {
             "@type": "SearchAction",
-            "target": "https://trygvestudio.com/blogs?query={search_term_string}",
+            target: "https://trygvestudio.com/blogs?query={search_term_string}",
             "query-input": "required name=search_term_string",
           },
         })}

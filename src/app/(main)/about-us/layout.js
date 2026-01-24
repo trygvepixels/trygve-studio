@@ -22,7 +22,7 @@ export const metadata = {
     "architecture team",
     "engineering consultancy 7414",
   ],
-  alternates: { canonical: "/about-us" },
+  alternates: { canonical: "https://trygvestudio.com/about-us" },
   openGraph: {
     type: "profile",
     url: "https://trygvestudio.com/about-us",
