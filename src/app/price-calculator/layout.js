@@ -6,10 +6,16 @@ import Header from "./Header";
 
 export const metadata = {
   metadataBase: new URL("https://trygvestudio.com"),
-  title: "Trygve Studio - Interior Design Price Calculator",
+  title: "Construction & Interior Cost Calculator Lucknow 2026 | Trygve Studio",
   description:
-    "Calculate the estimated cost of your interior design project with Trygve Studio's price calculator.",
+    "Calculate your home construction and interior design cost in Lucknow (2026 rates). Get instant estimates for Turnkey projects in Gomti Nagar, Aliganj & more.",
   alternates: { canonical: "https://trygvestudio.com/price-calculator" },
+  keywords: [
+    "Construction cost calculator Lucknow",
+    "Interior design price calculator",
+    "House construction rate 2026 Lucknow",
+    "Turnkey construction cost",
+  ],
 };
 
 export default function InteriorDesignerLayout({ children }) {

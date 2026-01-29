@@ -2,9 +2,9 @@
 import ProjectsClient from "@/components/ProjectsClient";
 
 export const metadata = {
-  title: "Projects — StruAxis",
+  title: "Projects in Lucknow | Trygve Studio",
   description:
-    "Hospitality & residential environments crafted with precision and a builder’s eye for detail.",
+    "Explore our latest Architecture & Interior Design projects in Lucknow (Gomti Nagar, Hazratganj). Hospitality, Residential & Commercial spaces crafted with precision.",
 };
 
 export default function Page() {
