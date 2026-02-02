@@ -37,12 +37,19 @@ const services = [
   //     'From concept to prototype, we create products that balance form, function, and desirability. Premium design for everyday impact.',
   //   image: '/images/services/product.jpg',
   // },
-  // {
-  //   title: 'Turnkey Solution',
-  //   description:
-  //     'Comprehensive project delivery—from ideation to execution. We handle every detail for seamless, stress-free results.',
-  //   image: '/images/services/turnkey.jpg',
-  // },
+  {
+    title: '3D Visualisation & VR',
+    description:
+      'Immersive 3D renderings and Virtual Reality walkthroughs that allow you to experience your space before it is built. High-fidelity architectural storytelling.',
+    image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  },
+  {
+    title: 'Turnkey Solution',
+    description:
+      'From map approvals with LDA to final move-in. We handle the design, material procurement, and site execution for a stress-free experience.',
+    image: 'https://images.unsplash.com/photo-1541888941255-081d746dfbac?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    href: '/price-calculator'
+  },
 ];
 
 /**

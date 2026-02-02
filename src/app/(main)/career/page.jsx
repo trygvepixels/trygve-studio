@@ -50,8 +50,8 @@ export default function Careers() {
     },
     {
       icon: <HiGlobeAlt className="h-6 w-6" />,
-      title: "Remote-friendly",
-      desc: "Work from anywhere, sync in IST core hours.",
+      title: "Global Collaboration",
+      desc: "Work with our worldwide team, synced in IST core hours.",
     },
     {
       icon: <HiBolt className="h-6 w-6" />,
@@ -85,7 +85,7 @@ export default function Careers() {
   const faqs = [
     {
       q: "Do I need to be in India?",
-      a: "We’re remote-first with an India hub. Roles note location expectations; we work async with a few IST core hours.",
+      a: "We’re a global studio with an India Headquarters. Roles note location expectations; we work async with a few IST core hours.",
     },
     {
       q: "What does the hiring process look like?",
@@ -141,7 +141,7 @@ export default function Careers() {
       <section className="border-y border-white/10 bg-white/[0.02]">
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-6 px-6 py-6 text-xs text-black/60 md:justify-between">
           <p>Fast hiring • Clear feedback • Fair offers</p>
-          <p>Remote-first • IST core overlap</p>
+          <p>Global Studio • IST core overlap</p>
           <p>Growth budget • Premium gear</p>
         </div>
       </section>
