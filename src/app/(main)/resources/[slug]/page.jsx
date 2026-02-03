@@ -18,6 +18,9 @@ export async function generateMetadata({ params }) {
   return {
     title: `${pillar.title} | Trygve Studio Resources`,
     description: pillar.description,
+    alternates: {
+      canonical: `https://trygvestudio.com/resources/${slug}`,
+    },
   };
 }
 

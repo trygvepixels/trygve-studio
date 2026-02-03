@@ -59,7 +59,7 @@ export const metadata = {
     apple: "/logo.png",
   },
   alternates: {
-    canonical: "https://trygvestudio.com/",
+    canonical: "/",
   },
   openGraph: {
     title: "Trygve Studio - Premium Architecture & Interior Design",
@@ -191,7 +191,8 @@ export default function RootLayout({ children }) {
             url: "https://trygvestudio.com/",
             potentialAction: {
               "@type": "SearchAction",
-              target: "{search_term_string}",
+              target:
+                "https://trygvestudio.com/blogs?query={search_term_string}",
               "query-input": "required name=search_term_string",
             },
           })}

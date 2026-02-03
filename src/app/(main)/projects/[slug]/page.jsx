@@ -89,6 +89,31 @@ async function getProject(slug) {
   return hit ? normalizeOne(hit) : null;
 }
 
+export async function generateMetadata({ params }) {
+  const resolvedParams = await params;
+  const project = await getProject(resolvedParams.slug);
+
+  if (!project) return {};
+
+  const title = `${project.title} | Projects | Trygve Studio`;
+  const description = project.description || `Explore our architecture and interior design work: ${project.title}. Crafted with precision in Lucknow and beyond.`;
+  const canonical = `https://trygvestudio.com/projects/${project.slug}`;
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical,
+    },
+    openGraph: {
+      title,
+      description,
+      url: canonical,
+      images: project.coverImage ? [{ url: project.coverImage }] : [],
+    },
+  };
+}
+
 export default async function ProjectPage({ params }) {
   const resolvedParams = await params;
   const project = await getProject(resolvedParams.slug);

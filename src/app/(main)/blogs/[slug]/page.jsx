@@ -29,7 +29,7 @@ export async function generateMetadata({ params }) {
     return {
       title: blog.metaTitle || blog.title,
       description: blog.metaDescription || "",
-      alternates: { canonical: blog.canonicalUrl || "" },
+      alternates: { canonical: blog.canonicalUrl || `https://trygvestudio.com/blogs/${slug}` },
       openGraph: {
         title: blog.metaTitle || blog.title,
         description: blog.metaDescription || "",

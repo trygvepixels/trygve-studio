@@ -3,8 +3,11 @@ import { FiHome, FiChevronRight } from "react-icons/fi";
 import Link from "next/link";
 
 export const metadata = {
-    title: "Privacy Policy",
+    title: "Privacy Policy | Trygve Studio",
     description: "Privacy Policy for Trygve Studio - Understanding how we handle your data.",
+    alternates: {
+        canonical: "https://trygvestudio.com/privacy",
+    },
 };
 
 const PrivacyPolicy = () => {

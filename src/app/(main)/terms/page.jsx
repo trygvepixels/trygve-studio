@@ -3,8 +3,11 @@ import { FiHome, FiChevronRight } from "react-icons/fi";
 import Link from "next/link";
 
 export const metadata = {
-    title: "Terms and Conditions",
+    title: "Terms and Conditions | Trygve Studio",
     description: "Terms and Conditions for Trygve Studio - Understanding our service agreements.",
+    alternates: {
+        canonical: "https://trygvestudio.com/terms",
+    },
 };
 
 const TermsAndConditions = () => {
