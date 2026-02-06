@@ -3,6 +3,12 @@ const nextConfig = {
   reactStrictMode: false,
   async redirects() {
     return [
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.trygvestudio.com" }],
+        destination: "https://trygvestudio.com/:path*",
+        permanent: true,
+      },
       // 301 Permanent Redirects for SEO Cleanup
       {
         source: "/work",

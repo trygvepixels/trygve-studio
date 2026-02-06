@@ -78,6 +78,16 @@ export default function BlogsClientUI({ blog }) {
             "@type": "Person",
             name: blog?.author || "Trygve Studio Team",
             url: "https://trygvestudio.com/about-us",
+            jobTitle: "Architectural Editorial Team",
+            description: "Expert architects and designers at Trygve Studio sharing insights on modern architecture and interiors.",
+            sameAs: [
+              "https://www.instagram.com/trygvestudio/",
+              "https://in.linkedin.com/company/trygvestudio"
+            ],
+            worksFor: {
+              "@type": "Organization",
+              name: "Trygve Studio"
+            }
           },
           publisher: {
             "@type": "Organization",

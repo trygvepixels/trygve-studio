@@ -228,15 +228,15 @@ export default function FooterPremium({ variant = "bronze" }) {
             <h6 className="text-xs font-semibold uppercase opacity-80">
               Head Office
             </h6>
-            <p className="mt-1 text-[14px] leading-relaxed">
+            <address className="mt-1 text-[14px] leading-relaxed not-italic">
               Plot No. 728, Khasra No. 21
-
+              <br />
               Eden Enclave, Phase 2, Kursi Road
-
+              <br />
               Gudamba, BKT, Lucknow
-
+              <br />
               Uttar Pradesh – 226026, India
-            </p>
+            </address>
           </div>
           <div
             className="  rounded-xl border p-4"
@@ -245,20 +245,20 @@ export default function FooterPremium({ variant = "bronze" }) {
             <h6 className="text-xs font-semibold uppercase opacity-80">
               Branch Offices
             </h6>
-            <p className="mt-1 text-[14px] leading-relaxed">
+            <address className="mt-1 text-[14px] leading-relaxed not-italic">
               1. Honey Lite, 1st Floor
-
+              <br />
               5/72, Sector 5, Vikas Nagar
-
+              <br />
               Lucknow, Uttar Pradesh – 226022
-            </p>
-            <p className="mt-3 text-[14px] leading-relaxed">
+            </address>
+            <address className="mt-3 text-[14px] leading-relaxed not-italic">
               2. UGF, Rukshan Complex, Gata No. 112, Dasauli, Kursi Road
-
+              <br />
               Near Integral University Hospital Gate
-
+              <br />
               Lucknow, Uttar Pradesh – 226021
-            </p>
+            </address>
           </div>
 
           <div
@@ -268,13 +268,13 @@ export default function FooterPremium({ variant = "bronze" }) {
             <h6 className="text-xs font-semibold uppercase opacity-80">
               Corporate Meeting Space
             </h6>
-            <p className="mt-1 text-[14px] leading-relaxed">
+            <address className="mt-1 text-[14px] leading-relaxed not-italic">
               Levana Cyber Heights, 10th Floor – Regus
-
+              <br />
               Vibhuti Khand, Gomti Nagar
-
+              <br />
               Lucknow, Uttar Pradesh – 226010, India
-            </p>
+            </address>
           </div>
 
 

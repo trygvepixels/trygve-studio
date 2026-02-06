@@ -122,5 +122,39 @@ export default async function ProjectPage({ params }) {
     return <div className="p-12">Project not found</div>;
   }
 
-  return <ProjectDetailClient project={project} />;
+  return (
+    <>
+      {/* Breadcrumb Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://trygvestudio.com"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Projects",
+                "item": "https://trygvestudio.com/projects"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": project.title,
+                "item": `https://trygvestudio.com/projects/${project.slug}`
+              }
+            ]
+          })
+        }}
+      />
+      <ProjectDetailClient project={project} />
+    </>
+  );
 }

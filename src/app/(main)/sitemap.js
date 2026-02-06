@@ -1,4 +1,5 @@
 import { getBlogs, getProjects, getServices } from "../../lib/api";
+import { pillars } from "../../data/pillars";
 
 // Revalidate sitemap every 2 days (48 hours = 172800 seconds)
 // This ensures new blog posts are automatically included in the sitemap
@@ -121,11 +122,20 @@ export default async function sitemap() {
         }))
     : [];
 
+  // 6. Resource Pillars
+  const pillarPages = pillars.map((pillar) => ({
+    url: `${baseUrl}/resources/${pillar.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly",
+    priority: 0.8,
+  }));
+
   return [
     ...staticPages,
     ...serviceLandingPages,
     ...blogPostPages,
     ...projectPages,
     ...dynamicServicePages,
+    ...pillarPages,
   ];
 }

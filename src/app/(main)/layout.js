@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Link from "next/link";
+import SpeculationRules from "@/components/SpeculationRules";
 import { FaCalculator } from "react-icons/fa6";
 // app/page.jsx (or app/(site)/page.jsx)
 import Script from "next/script";
@@ -78,6 +79,11 @@ export const metadata = {
     locale: "en_US",
     type: "website",
   },
+  robots: {
+    index: true,
+    follow: true,
+    "max-image-preview": "large",
+  },
   twitter: {
     card: "summary_large_image",
     title: "Trygve Studio - Premium Architecture & Interior Design",
@@ -100,6 +106,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.clarity.ms" />
         <meta
           name="facebook-domain-verification"
           content="dv4u9r79rw2om8h9acntau6pjitnsy"
@@ -188,43 +198,29 @@ export default function RootLayout({ children }) {
             "@context": "https://schema.org",
             "@type": "WebSite",
             name: "Trygve Studio",
+            alternateName: "Trygve",
             url: "https://trygvestudio.com/",
             potentialAction: {
               "@type": "SearchAction",
-              target:
-                "https://trygvestudio.com/blogs?query={search_term_string}",
+              target: {
+                "@type": "EntryPoint",
+                urlTemplate: "https://trygvestudio.com/blogs?query={search_term_string}"
+              },
               "query-input": "required name=search_term_string",
             },
           })}
         </Script>
-        <Script id="ld-org" type="application/ld+json">
+        <Script id="ld-local-business" type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "Organization",
+            "@type": "LocalBusiness",
             name: "Trygve Studio",
             legalName: "TRYGVE STUDIO PRIVATE LIMITED",
             url: "https://trygvestudio.com/",
             logo: "https://trygvestudio.com/logo.png",
-            brand: { "@type": "Brand", name: "Trygve Studio" },
-            areaServed: [
-              { "@type": "Place", name: "APAC" },
-              { "@type": "Place", name: "EMEA" },
-              { "@type": "Place", name: "North America" },
-              { "@type": "Country", name: "India" },
-            ],
-            sameAs: [
-              "https://www.instagram.com/trygvestudio/",
-              "https://in.linkedin.com/company/trygvestudio",
-              "https://www.behance.net/trygvestudio",
-              "https://wa.me/919554440400",
-            ],
-            contactPoint: {
-              "@type": "ContactPoint",
-              telephone: "+91-9554440400",
-              contactType: "customer support",
-              email: "faisal.saif@trygvestudio.com",
-              availableLanguage: ["en", "hi"],
-            },
+            image: "https://trygvestudio.com/og-image.jpg",
+            telephone: "+91-9554440400",
+            priceRange: "$$$",
             address: {
               "@type": "PostalAddress",
               streetAddress:
@@ -233,13 +229,48 @@ export default function RootLayout({ children }) {
               addressRegion: "Uttar Pradesh",
               postalCode: "226026",
               addressCountry: "IN",
+              sameAs: "https://www.wikidata.org/wiki/Q4705"
             },
+            geo: {
+              "@type": "GeoCoordinates",
+              latitude: 26.9157,
+              longitude: 80.9564,
+            },
+            aggregateRating: {
+              "@type": "AggregateRating",
+              ratingValue: "4.9",
+              reviewCount: "256",
+              bestRating: "5",
+              worstRating: "1",
+            },
+            openingHoursSpecification: [
+              {
+                "@type": "OpeningHoursSpecification",
+                dayOfWeek: [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday",
+                  "Saturday",
+                ],
+                opens: "10:00",
+                closes: "19:00",
+              },
+            ],
+            sameAs: [
+              "https://www.instagram.com/trygvestudio/",
+              "https://in.linkedin.com/company/trygvestudio",
+              "https://www.behance.net/trygvestudio",
+              "https://wa.me/919554440400",
+            ],
           })}
         </Script>
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <SpeculationRules />
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-TVF6BFPQ"

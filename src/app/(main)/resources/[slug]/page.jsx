@@ -52,6 +52,36 @@ export default async function PillarPage({ params }) {
 
   return (
     <main className="min-h-screen bg-white">
+      {/* Breadcrumb Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://trygvestudio.com"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Resources",
+                "item": "https://trygvestudio.com/resources"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": pillar.title,
+                "item": `https://trygvestudio.com/resources/${slug}`
+              }
+            ]
+          })
+        }}
+      />
       {/* Article Header */}
       <header className="bg-[#F4F1EC] pt-36 pb-20 px-6">
         <div className="max-w-4xl mx-auto">

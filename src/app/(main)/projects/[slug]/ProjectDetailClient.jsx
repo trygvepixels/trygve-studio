@@ -21,6 +21,32 @@ export default function ProjectDetailClient({ project }) {
 
   return (
     <div className="min-h-screen bg-[#F4F1EC] px- py-0 lg:px-24 lg:py-0">
+      {/* Video Schema for Rich Snippets */}
+      {project.mediaType === "video" && project.mediaUrl && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "VideoObject",
+              "name": project.title,
+              "description": project.description || `Architectural showcase of ${project.title} by Trygve Studio.`,
+              "thumbnailUrl": [project.coverImage].filter(Boolean),
+              "uploadDate": project.createdAt || new Date().toISOString(),
+              "contentUrl": project.mediaUrl,
+              "embedUrl": project.mediaUrl,
+              "publisher": {
+                "@type": "Organization",
+                "name": "Trygve Studio",
+                "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://trygvestudio.com/logo.png"
+                }
+              }
+            })
+          }}
+        />
+      )}
       <Breadcrumbs projectTitle={project.title} />
       {/* Hero Section with Background */}
       <div

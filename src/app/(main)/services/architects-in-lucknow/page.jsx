@@ -126,6 +126,30 @@ export default function ArchitectsInLucknow() {
           ]
         })}
       </Script>
+      <Script id="service-schema" type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "serviceType": "Architectural and Interior Design Services",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Trygve Studio",
+            "image": "https://trygvestudio.com/logo.png",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Lucknow",
+              "addressRegion": "Uttar Pradesh",
+              "addressCountry": "IN"
+            }
+          },
+          "areaServed": {
+            "@type": "City",
+            "name": "Lucknow",
+            "sameAs": "https://www.wikidata.org/wiki/Q4705"
+          },
+          "description": "Premium architectural and interior design services in Lucknow, specializing in luxury residential and commercial spaces."
+        })}
+      </Script>
       <Breadcrumbs />
 
       {/* Hero Section */}
