@@ -34,10 +34,13 @@ export default function ContactPage() {
       // Convert to plain object
       const data = Object.fromEntries(formData);
 
-      const res = await fetch("/api/submitContact", {
+      const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        body: JSON.stringify({
+          ...data,
+          page: window.location.pathname
+        }),
       });
 
       // Safely parse JSON
@@ -48,13 +51,13 @@ export default function ContactPage() {
         // ignore; will fall back to generic errors below
       }
 
-      if (!res.ok || !result?.success) {
+      if (!res.ok) {
         const msg = result?.error || `Failed to submit (HTTP ${res.status})`;
         throw new Error(msg);
       }
 
       form.reset();
-      setStatus({ state: "success", message: "Thanks! Your enquiry has been saved." });
+      setStatus({ state: "success", message: "Thanks! We’ll reply within 24 hours." });
 
       // Navigate to thank-you. Use SPA replace, then hard fallback just in case.
       try {
@@ -90,9 +93,8 @@ export default function ContactPage() {
             {/* Form */}
             <div
               id="project-form"
-              className={`rounded-2xl max-w-5xl border border-black/10 bg-white p-6 md:p-8 ${
-                submitting ? "opacity-90" : ""
-              }`}
+              className={`rounded-2xl max-w-5xl border border-black/10 bg-white p-6 md:p-8 ${submitting ? "opacity-90" : ""
+                }`}
             >
               <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-5" noValidate>
                 {/* Honeypot */}
@@ -106,7 +108,7 @@ export default function ContactPage() {
                 />
 
                 <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
-                  <Field label="Full name" name="name" required disabled={submitting} />
+                  <Field label="Full name" name="fullName" required disabled={submitting} />
                   <Field label="Email" name="email" type="email" required disabled={submitting} />
                 </div>
 

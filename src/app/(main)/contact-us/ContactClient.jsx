@@ -27,20 +27,23 @@ export default function ContactPage() {
       const formData = new FormData(form);
       const data = Object.fromEntries(formData);
 
-      const res = await fetch("/api/submitContact", {
+      const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        body: JSON.stringify({
+          ...data,
+          page: window.location.pathname
+        }),
       });
 
       const result = await res.json();
-      if (!res.ok || !result.success) {
+      if (!res.ok) {
         throw new Error(result.error || "Failed to submit");
       }
 
       setSubmitting(false);
       form?.reset();
-      setStatus({ state: "success", message: "Thanks! Your enquiry has been saved." });
+      setStatus({ state: "success", message: "Thanks! We'll reply within 24 hours." });
       // Navigate to thank-you. Use SPA replace, then hard fallback just in case.
       try {
         window.location.href = `/thank-you`;
@@ -242,7 +245,7 @@ export default function ContactPage() {
               <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-5">
                 <input type="text" name="_honey" tabIndex="-1" autoComplete="off" className="hidden" aria-hidden="true" />
                 <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
-                  <Field label="Full name" name="name" required />
+                  <Field label="Full name" name="fullName" required />
                   <Field label="Email" name="email" type="email" required />
                 </div>
 

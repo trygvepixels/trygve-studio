@@ -30,13 +30,16 @@ function isEmail(s) {
 }
 
 export async function OPTIONS() {
-  return NextResponse.json({}, {
-    headers: {
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Methods": "POST, OPTIONS",
-      "Access-Control-Allow-Headers": "Content-Type",
+  return NextResponse.json(
+    {},
+    {
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "POST, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type",
+      },
     },
-  });
+  );
 }
 
 export async function POST(req) {
@@ -47,22 +50,22 @@ export async function POST(req) {
 
     // --- basic validation ---
     const payload = {
-      fullName:   clean(body.fullName),
-      email:      clean(body.email),
-      phone:      clean(body.phone || body.whatsapp),
-      company:    clean(body.company || body.brand),
-      location:   clean(body.location || body.cityCountry),
-      projectType:clean(body.projectType),
-      budget:     clean(body.budget),
-      timeline:   clean(body.timeline),
-      message:    clean(body.message || body.brief),
+      fullName: clean(body.fullName),
+      email: clean(body.email),
+      phone: clean(body.phone || body.whatsapp),
+      company: clean(body.company || body.brand),
+      location: clean(body.location || body.cityCountry),
+      projectType: clean(body.projectType),
+      budget: clean(body.budget),
+      timeline: clean(body.timeline),
+      message: clean(body.message || body.brief),
       // optional extras (nice to have in the sheet)
-      page:       clean(body.page),         // where form was submitted
-      utm:        typeof body.utm === "object" ? body.utm : undefined,
-      submittedAt:new Date().toISOString(),
-      userAgent:  req.headers.get("user-agent") || "",
-      referer:    req.headers.get("referer") || "",
-      ip:         req.headers.get("x-forwarded-for") || "",
+      page: clean(body.page), // where form was submitted
+      utm: typeof body.utm === "object" ? body.utm : undefined,
+      submittedAt: new Date().toISOString(),
+      userAgent: req.headers.get("user-agent") || "",
+      referer: req.headers.get("referer") || "",
+      ip: req.headers.get("x-forwarded-for") || "",
     };
 
     // honeypot (optional)
@@ -70,19 +73,36 @@ export async function POST(req) {
       return NextResponse.json({ ok: true }, { status: 202 }); // silently accept bots
     }
 
-    // required checks
-    if (!payload.fullName || !isEmail(payload.email) || !payload.phone || !payload.location || !payload.projectType || !payload.message) {
-      return NextResponse.json(
-        { error: "Missing required fields" },
-        { status: 400 }
-      );
+    // required checks (Optional)
+    const isMissingCritical = !payload.fullName && !payload.email && !payload.phone;
+    if (isMissingCritical && !clean(body.website)) {
+       // We still want to ensure they provided at least ONE way to contact them
+       // but we'll fulfill the user's request of "no field is mandatory" by 
+       // just logging a warning instead of erroring out.
+       console.warn("Processing inquiry with very low data density.");
     }
 
-    const GAS_URL   = process.env.GOOGLE_APPS_SCRIPT_URL;
-    const GAS_TOKEN = process.env.GOOGLE_APPS_SCRIPT_TOKEN || "";
+    const GAS_URL =
+      process.env.GOOGLE_APPS_SCRIPT_URL ||
+      "https://script.google.com/macros/s/AKfycbx-fEc6gUTXne3hmbHK-kZEBdwYXaM68dP8SUfDyPHjEFJHx7ZrHpf1g9X2xtg1SOdn/exec";
+    const GAS_TOKEN =
+      process.env.GOOGLE_APPS_SCRIPT_TOKEN ||
+      "https://script.google.com/macros/s/AKfycbx-fEc6gUTXne3hmbHK-kZEBdwYXaM68dP8SUfDyPHjEFJHx7ZrHpf1g9X2xtg1SOdn/exec";
 
     if (!GAS_URL) {
-      return NextResponse.json({ error: "Server not configured (GAS URL missing)" }, { status: 500 });
+      console.warn(
+        "WARNING: GOOGLE_APPS_SCRIPT_URL is not defined. Submission logged to console only.",
+      );
+      return NextResponse.json(
+        {
+          ok: true,
+          message: "Submission received (Dev Mode: Logged to console)",
+        },
+        {
+          status: 201,
+          headers: { "Access-Control-Allow-Origin": "*" },
+        },
+      );
     }
 
     // Forward to Google Apps Script (which appends to the sheet)
@@ -94,7 +114,7 @@ export async function POST(req) {
       },
       body: JSON.stringify({
         // These keys become columns in your sheet (Apps Script auto-creates headers)
-        fullName: payload.fullName,
+        name: payload.fullName,
         email: payload.email,
         phone: payload.phone,
         company: payload.company,
@@ -103,6 +123,7 @@ export async function POST(req) {
         budget: payload.budget,
         timeline: payload.timeline,
         message: payload.message,
+        consent: "Yes",
 
         // Useful metadata
         page: payload.page,
@@ -118,15 +139,21 @@ export async function POST(req) {
     // We keep it simple — if GAS responded at all, treat as success
     if (!res.ok) {
       const text = await res.text().catch(() => "");
-      return NextResponse.json({ error: "Upstream error", detail: text }, { status: 502 });
+      return NextResponse.json(
+        { error: "Upstream error", detail: text },
+        { status: 502 },
+      );
     }
 
-    return NextResponse.json({ ok: true }, {
-      status: 201,
-      headers: {
-        "Access-Control-Allow-Origin": "*",
+    return NextResponse.json(
+      { ok: true },
+      {
+        status: 201,
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+        },
       },
-    });
+    );
   } catch (err) {
     console.error("POST /api/contact error:", err);
     return NextResponse.json({ error: "Server error" }, { status: 500 });

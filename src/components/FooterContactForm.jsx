@@ -11,28 +11,37 @@ export default function FooterProjectForm() {
 
   async function handleSubmit(e) {
     e.preventDefault();
+    const form = e.currentTarget;
     setSubmitting(true);
+    setStatus({ state: "idle", message: "" });
 
     try {
-      const formData = new FormData(e.currentTarget);
+      const formData = new FormData(form);
       const data = Object.fromEntries(formData);
 
-      const res = await fetch("/api/submitContact", {
+      const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        body: JSON.stringify({
+          ...data,
+          page: window.location.pathname
+        }),
       });
 
       const result = await res.json();
-      if (!res.ok || !result.success) {
-        throw new Error(result.error || "Failed to submit");
+      
+      if (!res.ok) {
+        throw new Error(result.error || result.detail || "Failed to submit inquiry");
       }
 
-      setStatus({ state: "success", message: "Thanks! We’ll reply soon." });
-      e.currentTarget.reset();
+      setStatus({ state: "success", message: "Thanks! We’ll reply within 24 hours." });
+      form.reset();
     } catch (err) {
-      console.error(err);
-      setStatus({ state: "error", message: "Something went wrong." });
+      console.error("Form submission error:", err);
+      setStatus({ 
+        state: "error", 
+        message: err instanceof Error ? err.message : "Something went wrong. Please try again." 
+      });
     } finally {
       setSubmitting(false);
     }
@@ -58,10 +67,10 @@ export default function FooterProjectForm() {
           <div className="flex flex-col gap-2 px-5 pt-5 md:flex-row md:items-end md:justify-between">
             <div>
               <p className="text-xs tracking-wide uppercase text-neutral-600">
-              
+
               </p>
               <h3 className="text-xl md:text-2xl font-semibold tracking-tight">
-  Start a project              </h3>
+                Start a project              </h3>
             </div>
             <div className="hidden md:block text-sm text-neutral-600 pr-1">
               Avg. response: <span className="font-medium">within 24 hours</span>
@@ -74,60 +83,32 @@ export default function FooterProjectForm() {
             className="w-full grid grid-cols-1 gap-4 px-5 pb-5 pt-4 md:grid-cols-2 lg:grid-cols-3"
           >
             {/* Row 1 */}
-            <Input icon={<FiUser className="text-zinc-800" />} name="name" placeholder="Full name *" required />
+            <Input icon={<FiUser className="text-zinc-800" />} name="fullName" placeholder="Full name *" required />
             <Input icon={<FiMail className="text-zinc-800" />} name="email" type="email" placeholder="Email *" required />
-            <Input icon={<FiPhone className="text-zinc-800" />} name="phone" placeholder="Phone / WhatsApp" />
+            <Input icon={<FiPhone className="text-zinc-800" />} name="phone" placeholder="Phone / WhatsApp *" required />
 
             {/* Row 2 */}
-            {/* <Input icon={<FiBriefcase />} name="company" placeholder="Company / Brand (optional)" />
             <Select
               icon={<FiBriefcase />}
               name="projectType"
               required
               options={[
-                "Residential",
-                "Commercial / Office",
-                "Retail / F&B",
-                "Hospitality",
-                "Landscape",
-                "Interior Renovation",
-                "Concept / Feasibility",
-                "Others",
+                "Residential Architecture",
+                "Commercial Architecture",
+                "Interior Design",
+                "Renovation",
+                "Consultation",
+                "Other",
               ]}
               placeholder="Project type *"
             />
-            <Input icon={<FiMapPin />} name="location" placeholder="City & Country *" required /> */}
-
-            {/* Row 3 */}
-            {/* <Select
-              icon={<FiDollarSign />}
-              name="budget"
-              options={[
-                "To be discussed",
-                "$25k – $50k",
-                "$50k – $100k",
-                "$100k – $250k",
-                "$250k+",
-              ]}
-              placeholder="Estimated budget"
-            />
-            <Select
-              icon={<FiCalendar />}
-              name="timeline"
-              options={[
-                "Immediate (0–1 month)",
-                "Soon (1–3 months)",
-                "Planning (3–6 months)",
-                "Exploring options",
-              ]}
-              placeholder="Timeline"
-            />
+            <Input icon={<FiMapPin />} name="location" placeholder="City & Country *" required />
             <Textarea
               icon={<FiMessageCircle />}
               name="message"
               placeholder="Tell us about your project *"
               required
-            /> */}
+            />
 
             {/* Honeypot (spam trap) */}
             <input type="text" name="_honey" tabIndex="-1" autoComplete="off" className="hidden" aria-hidden="true" />
@@ -151,11 +132,10 @@ export default function FooterProjectForm() {
               {status.state !== "idle" && (
                 <p
                   aria-live="polite"
-                  className={`text-sm ${
-                    status.state === "success" ? "text-green-700" : "text-red-700"
-                  }`}
+                  className={`text-sm ${status.state === "success" ? "text-green-700 font-medium" : "text-red-700 font-medium"
+                    }`}
                 >
-                  {status.message}
+                  {status.state === "success" ? "✓ " : "✗ "}{status.message}
                 </p>
               )}
             </div>

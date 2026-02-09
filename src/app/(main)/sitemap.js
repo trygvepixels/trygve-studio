@@ -72,6 +72,8 @@ export default async function sitemap() {
   const serviceLandingSlugs = [
     "architects-in-lucknow",
     "interior-design-lucknow",
+    "architecture-firms-lucknow",
+    "luxury-architecture-design-lucknow",
   ];
 
   const serviceLandingPages = serviceLandingSlugs.map((slug) => ({

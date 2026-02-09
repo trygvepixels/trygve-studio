@@ -4,7 +4,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 import SpeculationRules from "@/components/SpeculationRules";
-import { FaCalculator } from "react-icons/fa6";
+import ContactPopupWrapper from "@/components/ContactPopupWrapper";
+import ContactButton from "@/components/ContactButton";
 // app/page.jsx (or app/(site)/page.jsx)
 import Script from "next/script";
 
@@ -107,7 +108,11 @@ export default function RootLayout({ children }) {
     <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.clarity.ms" />
         <meta
@@ -204,7 +209,8 @@ export default function RootLayout({ children }) {
               "@type": "SearchAction",
               target: {
                 "@type": "EntryPoint",
-                urlTemplate: "https://trygvestudio.com/blogs?query={search_term_string}"
+                urlTemplate:
+                  "https://trygvestudio.com/blogs?query={search_term_string}",
               },
               "query-input": "required name=search_term_string",
             },
@@ -229,7 +235,7 @@ export default function RootLayout({ children }) {
               addressRegion: "Uttar Pradesh",
               postalCode: "226026",
               addressCountry: "IN",
-              sameAs: "https://www.wikidata.org/wiki/Q4705"
+              sameAs: "https://www.wikidata.org/wiki/Q4705",
             },
             geo: {
               "@type": "GeoCoordinates",
@@ -271,6 +277,7 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <SpeculationRules />
+        <ContactPopupWrapper />
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-TVF6BFPQ"
@@ -284,18 +291,7 @@ export default function RootLayout({ children }) {
 
         <div className={isInteriorPage ? "" : "md:pt-24 pt-32"}>{children}</div>
 
-        {!isInteriorPage && (
-          <Link
-            href="/price-calculator"
-            className="fixed bottom-6 left-6 z-[999] flex items-center gap-2 rounded-full bg-[#234D7E] text-white px-5 py-3 shadow-lg hover:bg-[#1a3a5f] hover:scale-105 active:scale-95 transition-all duration-300 group"
-            aria-label="Price Calculator"
-          >
-            <FaCalculator className="text-xl group-hover:rotate-12 transition-transform" />
-            <span className="text-sm font-medium tracking-wide">
-              Price Calculator
-            </span>
-          </Link>
-        )}
+        {!isInteriorPage && <ContactButton />}
 
         {!isInteriorPage && <Footer variant="oxblood" />}
       </body>

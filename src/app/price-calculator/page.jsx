@@ -182,7 +182,7 @@ export default function PriceCalculator() {
   console.log("Sending payload:", payload); // Debug log
   
   try {
-    const response = await fetch("https://script.google.com/macros/s/AKfycbwqLLkkiJUIN3VuDHGhzimgY7WEQfohFq00qzFwEDBtxHA1xdD1QVYp4ozB56K4nGw/exec", {
+    const response = await fetch("https://script.google.com/macros/s/AKfycbx-fEc6gUTXne3hmbHK-kZEBdwYXaM68dP8SUfDyPHjEFJHx7ZrHpf1g9X2xtg1SOdn/exec", {
       method: "POST",
       mode: "no-cors", // Add this temporarily to bypass CORS
       headers: { 

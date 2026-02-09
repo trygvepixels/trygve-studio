@@ -26,11 +26,7 @@ const Page = () => {
   const [status, setStatus] = useState({ state: "idle", message: "" });
   const router = useRouter();
 
-  // open after 30s (optional)
-  useEffect(() => {
-    const timer = setTimeout(() => setShowPopup(true), 30000);
-    return () => clearTimeout(timer);
-  }, []);
+
 
   // animate in + scroll lock when open
   useEffect(() => {
@@ -77,10 +73,14 @@ const Page = () => {
 
     try {
       const data = Object.fromEntries(formData);
-      const res = await fetch("/api/submitContact", {
+      const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        body: JSON.stringify({
+          ...data,
+          fullName: data.name, // compatibility
+          page: window.location.pathname
+        }),
       });
 
       let result = {};
@@ -88,7 +88,7 @@ const Page = () => {
         result = await res.json();
       } catch { }
 
-      if (!res.ok || !result?.success) {
+      if (!res.ok) {
         throw new Error(
           result?.error || `Failed to submit (HTTP ${res.status})`
         );
@@ -97,7 +97,7 @@ const Page = () => {
       form.reset();
       setStatus({
         state: "success",
-        message: "Thanks! Your enquiry has been saved.",
+        message: "Thanks! We’ll reply within 24 hours.",
       });
 
       // SPA replace + hard fallback
@@ -324,7 +324,7 @@ const Page = () => {
                           <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
                             <Field
                               label="Full name"
-                              name="name"
+                              name="fullName"
                               required
                               disabled={submitting}
                             />
