@@ -1,10 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useParams } from "next/navigation";
 import TeamForm from "@/components/TeamForm";
 
-export default function EditTeamMemberPage({ params }) {
-  const { slug } = params;
+export default function EditTeamMemberPage() {
+  const params = useParams();
+  const slug = params?.slug;
   const [initial, setInitial] = useState(null);
   const [loading, setLoading] = useState(true);
   const [err, setErr] = useState("");

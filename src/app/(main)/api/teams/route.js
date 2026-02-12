@@ -51,6 +51,12 @@ export async function POST(req) {
     if (err?.code === 11000) {
       return NextResponse.json({ error: "Duplicate slug" }, { status: 409 });
     }
+    if (err?.errors?.description?.kind === "maxlength") {
+      return NextResponse.json({ error: "Description is too long (max 2000 characters)" }, { status: 400 });
+    }
+    if (err?.message?.includes("validation failed")) {
+      return NextResponse.json({ error: err.message }, { status: 400 });
+    }
     return NextResponse.json({ error: "Failed to create team member" }, { status: 500 });
   }
 }

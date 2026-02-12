@@ -45,6 +45,12 @@ export async function PATCH(req, { params }) {
     return NextResponse.json(updated);
   } catch (err) {
     console.error("PATCH /teams/:slug error:", err);
+    if (err?.errors?.description?.kind === "maxlength") {
+      return NextResponse.json({ error: "Description is too long (max 2000 characters)" }, { status: 400 });
+    }
+    if (err?.message?.includes("validation failed")) {
+      return NextResponse.json({ error: err.message }, { status: 400 });
+    }
     return NextResponse.json(
       { error: "Failed to update team member" },
       { status: 500 }

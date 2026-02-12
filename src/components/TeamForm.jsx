@@ -88,7 +88,13 @@ export default function TeamForm({ mode = "create", initial = {}, onSubmit }) {
 
         <label className="block">
           <div className="mb-1 text-sm font-medium">Description</div>
-          <textarea className="input w-full min-h-[120px]" value={f.description} onChange={(e) => onChange("description", e.target.value)} />
+          <textarea className="input w-full min-h-[120px]" value={f.description} onChange={(e) => onChange("description", e.target.value)} maxLength={2000} />
+          <div className="mt-1 text-xs text-zinc-500">{f.description.length}/2000 characters</div>
+        </label>
+
+        <label className="block">
+          <div className="mb-1 text-sm font-medium">Order</div>
+          <input className="input w-full" type="number" value={f.order} onChange={(e) => onChange("order", parseInt(e.target.value) || 0)} />
         </label>
       </section>
 
