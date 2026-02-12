@@ -28,7 +28,10 @@ export async function GET(req) {
     return NextResponse.json({ items });
   } catch (err) {
     console.error("GET /teams error:", err);
-    return NextResponse.json({ error: "Failed to fetch teams" }, { status: 500 });
+    return NextResponse.json(
+      { error: "Failed to fetch teams" },
+      { status: 500 },
+    );
   }
 }
 
@@ -39,7 +42,10 @@ export async function POST(req) {
     const body = await req.json();
 
     if (!body?.name || !body?.slug || !body?.position) {
-      return NextResponse.json({ error: "name, slug, and position are required" }, { status: 400 });
+      return NextResponse.json(
+        { error: "name, slug, and position are required" },
+        { status: 400 },
+      );
     }
 
     body.slug = body.slug.trim().toLowerCase().replace(/\s+/g, "-");
@@ -49,14 +55,23 @@ export async function POST(req) {
   } catch (err) {
     console.error("POST /teams error:", err);
     if (err?.code === 11000) {
-      return NextResponse.json({ error: "Duplicate slug" }, { status: 409 });
+      return NextResponse.json(
+        { error: "Duplicate slug detected. Please use a unique name." },
+        { status: 409 },
+      );
     }
     if (err?.errors?.description?.kind === "maxlength") {
-      return NextResponse.json({ error: "Description is too long (max 2000 characters)" }, { status: 400 });
+      return NextResponse.json(
+        { error: "Description is too long (max 2000 characters)" },
+        { status: 400 },
+      );
     }
     if (err?.message?.includes("validation failed")) {
       return NextResponse.json({ error: err.message }, { status: 400 });
     }
-    return NextResponse.json({ error: "Failed to create team member" }, { status: 500 });
+    return NextResponse.json(
+      { error: "Failed to create team member" },
+      { status: 500 },
+    );
   }
 }

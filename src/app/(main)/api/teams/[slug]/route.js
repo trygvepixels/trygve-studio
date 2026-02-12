@@ -18,7 +18,7 @@ export async function GET(_req, { params }) {
     console.error("GET /teams/:slug error:", err);
     return NextResponse.json(
       { error: "Failed to fetch team member" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
@@ -37,7 +37,7 @@ export async function PATCH(req, { params }) {
     const updated = await Team.findOneAndUpdate(
       { slug },
       { $set: body },
-      { new: true, runValidators: true }
+      { new: true, runValidators: true },
     ).lean();
 
     if (!updated)
@@ -46,14 +46,17 @@ export async function PATCH(req, { params }) {
   } catch (err) {
     console.error("PATCH /teams/:slug error:", err);
     if (err?.errors?.description?.kind === "maxlength") {
-      return NextResponse.json({ error: "Description is too long (max 2000 characters)" }, { status: 400 });
+      return NextResponse.json(
+        { error: "Description is too long (max 2000 characters)" },
+        { status: 400 },
+      );
     }
     if (err?.message?.includes("validation failed")) {
       return NextResponse.json({ error: err.message }, { status: 400 });
     }
     return NextResponse.json(
       { error: "Failed to update team member" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
@@ -70,7 +73,7 @@ export async function DELETE(_req, { params }) {
     console.error("DELETE /teams/:slug error:", err);
     return NextResponse.json(
       { error: "Failed to delete team member" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
