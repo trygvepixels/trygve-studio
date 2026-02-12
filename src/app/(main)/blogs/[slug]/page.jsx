@@ -29,18 +29,25 @@ export async function generateMetadata({ params }) {
     return {
       title: blog.metaTitle || blog.title,
       description: blog.metaDescription || "",
+      keywords: blog.focusKeyword?.join(", ") || "",
       alternates: { canonical: blog.canonicalUrl || `https://trygvestudio.com/blogs/${slug}` },
       openGraph: {
+        type: "article",
         title: blog.metaTitle || blog.title,
         description: blog.metaDescription || "",
-        url: blog.canonicalUrl || "",
-        images: blog.image ? [{ url: blog.image }] : [],
+        url: blog.canonicalUrl || `https://trygvestudio.com/blogs/${slug}`,
+        images: blog.image ? [{ url: blog.image, width: 1200, height: 630 }] : [],
+        publishedTime: blog.createdAt,
+        modifiedTime: blog.lastUpdated || blog.updatedAt || blog.createdAt,
+        authors: [blog.author || "Trygve Studio Team"],
+        section: blog.category || "Architecture & Design",
       },
       twitter: {
         card: "summary_large_image",
         title: blog.metaTitle || blog.title,
         description: blog.metaDescription || "",
         images: blog.image ? [blog.image] : [],
+        creator: "@trygvestudio",
       },
     };
   } catch (err) {
@@ -70,6 +77,47 @@ export default async function BlogDetails({ params }) {
 
   return (
     <div>
+      {/* Article Schema - CRITICAL FOR RANKING */}
+      <Script id="article-schema" type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "headline": blog.title,
+          "image": blog.image ? {
+            "@type": "ImageObject",
+            "url": blog.image,
+            "width": 1200,
+            "height": 630
+          } : undefined,
+          "datePublished": blog.createdAt,
+          "dateModified": blog.lastUpdated || blog.updatedAt || blog.createdAt,
+          "author": {
+            "@type": "Person",
+            "name": blog.author || "Trygve Studio Team",
+            "url": "https://trygvestudio.com/about-us"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Trygve Studio",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://trygvestudio.com/logo.png",
+              "width": 200,
+              "height": 60
+            },
+            "url": "https://trygvestudio.com"
+          },
+          "description": blog.metaDescription,
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": `https://trygvestudio.com/blogs/${slug}`
+          },
+          "keywords": blog.focusKeyword?.join(", ") || "",
+          "articleSection": blog.category || "Architecture & Design",
+          "inLanguage": "en-IN"
+        })}
+      </Script>
+
       {/* FAQ Schema */}
       {blog.faqs && blog.faqs.length > 0 && (
         <Script id="faq-schema-server" type="application/ld+json">

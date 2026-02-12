@@ -43,8 +43,6 @@ function FaqItem({ faq }) {
 export default function BlogsClientUI({ blog }) {
   const [mounted, setMounted] = useState(false);
 
-  console.log(blog);
-
   // Safely parse Editor.js content
   const contentData = (() => {
     const raw = blog?.content;
@@ -59,52 +57,25 @@ export default function BlogsClientUI({ blog }) {
     }
   })();
 
+  // Calculate read time from content
+  const readTime = (() => {
+    if (!contentData?.blocks) return 5; // default
+    const wordCount = contentData.blocks.reduce((acc, block) => {
+      if (block.type === "paragraph" || block.type === "header") {
+        const text = block.data?.text || "";
+        return acc + text.split(/\s+/).filter(w => w.length > 0).length;
+      }
+      return acc;
+    }, 0);
+    return Math.max(1, Math.ceil(wordCount / 200)); // 200 words per minute
+  })();
+
   useEffect(() => setMounted(true), []);
   if (!mounted) return null;
 
   return (
     <div className="min-h-screen bg-[#F4F1EC]">
-      {/* Article Schema */}
-      <Script id="article-schema" type="application/ld+json">
-        {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Article",
-          headline: blog?.title,
-          description: blog?.metaDescription || blog?.summary,
-          image: [blog?.featuredImage || blog?.imageUrl || blog?.image].filter(Boolean),
-          datePublished: blog?.createdAt,
-          dateModified: blog?.updatedAt || blog?.createdAt,
-          author: {
-            "@type": "Person",
-            name: blog?.author || "Trygve Studio Team",
-            url: "https://trygvestudio.com/about-us",
-            jobTitle: "Architectural Editorial Team",
-            description: "Expert architects and designers at Trygve Studio sharing insights on modern architecture and interiors.",
-            sameAs: [
-              "https://www.instagram.com/trygvestudio/",
-              "https://in.linkedin.com/company/trygvestudio"
-            ],
-            worksFor: {
-              "@type": "Organization",
-              name: "Trygve Studio"
-            }
-          },
-          publisher: {
-            "@type": "Organization",
-            name: "Trygve Studio",
-            logo: {
-              "@type": "ImageObject",
-              url: "https://trygvestudio.com/logo.png",
-            },
-          },
-          mainEntityOfPage: {
-            "@type": "WebPage",
-            "@id": `https://trygvestudio.com/blogs/${blog?.urlSlug}`,
-          },
-        })}
-      </Script>
-
-
+      {/* Article Schema already added in server component - no duplication needed */}
       <Breadcrumbs title={blog?.title} />
       {/* Hero Section */}
       <section className="relative w-full h-[60vh]  overflow-hidden">
@@ -134,7 +105,7 @@ export default function BlogsClientUI({ blog }) {
               day: "2-digit",
               month: "short",
               year: "numeric",
-            }) : ""}
+            }) : ""} • {readTime} min read
           </p>
         </div>
       </section>
