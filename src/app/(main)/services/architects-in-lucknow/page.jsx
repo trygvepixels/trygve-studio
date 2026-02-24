@@ -6,9 +6,9 @@ import logo from "@/assets/logo.png"
 import Script from "next/script";
 
 export const metadata = {
-  title: "Hire Top Architects in Lucknow - 200+ Projects Delivered | Trygve Studio",
+  title: "Best Architects in Lucknow | 200+ Projects | Trygve Studio",
   description:
-    "Award-winning architects in Lucknow with 98% client satisfaction. Expert in residential, commercial & hospitality design. LDA approvals handled. Get free consultation today!",
+    "Looking for the best architecture firm in Lucknow? Trygve Studio offers 200+ delivered projects, expert design, and LDA approval assistance. Get a free consultation today!",
   alternates: {
     canonical: "/services/architects-in-lucknow",
   },
@@ -155,7 +155,7 @@ export default function ArchitectsInLucknow() {
       {/* Hero Section */}
       <section className="relative w-full h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img
+          <Image
             src="https://images.unsplash.com/photo-1505691938895-1758d7feb511"
             alt="Best Architects in Lucknow - Trygve Studio"
             fill
@@ -236,7 +236,7 @@ export default function ArchitectsInLucknow() {
             {services.map((service, index) => (
               <div key={index} className="group">
                 <div className="relative h-80 mb-6 overflow-hidden bg-gray-200">
-                  <img
+                  <Image
                     src={service.image}
                     alt={`${service.title} - Architects in Lucknow`}
                     fill
@@ -352,7 +352,7 @@ export default function ArchitectsInLucknow() {
 
                 {/* Image */}
                 <div className={`relative h-96 bg-gray-200 ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
-                  <img
+                  <Image
                     src={project.image}
                     alt={`${project.title} - ${project.category}`}
                     fill
@@ -444,7 +444,7 @@ export default function ArchitectsInLucknow() {
             {/* Before/After Images */}
             <div className="space-y-6">
               <div className="relative h-64 bg-gray-200">
-                <img
+                <Image
                   src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914"
                   alt="Before - 2BHK Apartment in Indira Nagar, Lucknow"
                   fill
@@ -456,7 +456,7 @@ export default function ArchitectsInLucknow() {
               </div>
 
               <div className="relative h-64 bg-gray-200">
-                <img
+                <Image
                   src="https://images.unsplash.com/photo-1600585154154-1c1b8a1e2c3e"
                   alt="After - 2BHK Transformation by Best Architects in Lucknow"
                   fill

@@ -60,10 +60,12 @@ export default function LuxuryArchitectureLucknow() {
             {/* Hero Section */}
             <section className="relative w-full h-screen flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 z-0">
-                    <img
+                    <Image
                         src="https://images.unsplash.com/photo-1613490493576-7fde63acd811"
                         alt="Luxury Architecture Design in Lucknow"
-                        className="object-cover w-full h-full brightness-[0.4]"
+                        fill
+                        className="object-cover brightness-[0.4]"
+                        priority
                     />
                 </div>
 

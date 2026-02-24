@@ -110,17 +110,17 @@ export default function Careers() {
           aria-hidden
           style={{
             background:
-              "radial-gradient(60% 50% at 50% 0%, rgba(124,92,255,0.35) 0%, rgba(124,92,255,0.08) 35%, rgba(11,11,15,0) 70%), radial-gradient(40% 35% at 80% 10%, rgba(255,77,141,0.35) 0%, rgba(11,11,15,0) 70%)",
+              "radial-gradient(60% 50% at 50% 0%, rgba(35,77,126,0.15) 0%, rgba(35,77,126,0.05) 35%, rgba(255,255,255,0) 70%)",
             filter: "blur(20px)",
           }}
         />
         <div className="relative mx-auto max-w-7xl px-6 pt-28 pb-20">
           <div className="mx-auto max-w-3xl text-center">
-            <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs tracking-wide uppercase">
-              <span className="inline-block h-2 w-2 rounded-full bg-[#FF4D8D]" /> We’re hiring
+            <span className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-black/5 px-3 py-1 text-xs tracking-wide uppercase">
+              <span className="inline-block h-2 w-2 rounded-full bg-green-500 animate-pulse" /> We’re hiring
             </span>
-            <h1 className="mt-6 text-4xl font-semibold leading-tight md:text-6xl">
-              Build the future with <span className="bg-gradient-to-r from-[#FF4D8D] via-[#E14C93] to-[#7C5CFF] bg-clip-text text-transparent">Trygve Studio</span>
+            <h1 className="mt-6 text-4xl font-semibold leading-tight md:text-6xl text-black">
+              Build the future with <span className="text-[#234D7E]">Trygve Studio</span>
             </h1>
             <p className="mt-6 text-base text-black/70 md:text-lg">
               Join a product-obsessed team crafting elegant, performant digital experiences.
@@ -261,7 +261,7 @@ export default function Careers() {
           className="pointer-events-none absolute inset-0 -z-10 opacity-70"
           style={{
             background:
-              "radial-gradient(40% 40% at 15% 10%, rgba(124,92,255,0.20) 0%, rgba(11,11,15,0) 70%), radial-gradient(30% 30% at 85% 20%, rgba(255,77,141,0.20) 0%, rgba(11,11,15,0) 70%)",
+              "radial-gradient(40% 40% at 15% 10%, rgba(35,77,126,0.10) 0%, rgba(255,255,255,0) 70%)",
             filter: "blur(24px)",
           }}
         />
@@ -361,7 +361,7 @@ export default function Careers() {
       {/* CTA */}
       <section className="relative py-2 ">
         <div className="absolute inset-0 -z-10 opacity-50" aria-hidden style={{
-          background: "radial-gradient(40% 40% at 50% 50%, rgba(124,92,255,0.25) 0%, rgba(11,11,15,0) 70%)"
+          background: "radial-gradient(40% 40% at 50% 50%, rgba(35,77,126,0.15) 0%, rgba(255,255,255,0) 70%)"
         }} />
         <div className="mx-auto max-w-3xl rounded-3xl border border-white/10 bg-white/[0.03] px-8 py-12 text-center">
           <h2 className="text-3xl font-semibold">Ready to make an impact?</h2>
@@ -383,14 +383,14 @@ function Breadcrumbs() {
     <nav aria-label="Breadcrumb" className="max-w-7xl mx-auto px-6 pt-8 -mb-4 relative z-20">
       <ol className="flex items-center space-x-2 text-[14px] text-zinc-500">
         <li className="flex items-center">
-          <Link href="/" className="flex items-center hover:text-[#7C5CFF] transition-colors">
+          <Link href="/" className="flex items-center hover:text-black transition-colors">
             <FiHome className="mr-1.5" />
             <span>Home</span>
           </Link>
         </li>
         <li className="flex items-center gap-2">
           <FiChevronRight className="text-zinc-300" />
-          <span className="font-semibold text-[#7C5CFF]">Career</span>
+          <span className="font-semibold text-black">Career</span>
         </li>
       </ol>
     </nav>

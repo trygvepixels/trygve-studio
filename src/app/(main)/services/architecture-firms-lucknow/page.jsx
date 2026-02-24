@@ -59,10 +59,12 @@ export default function ArchitectureFirmsLucknow() {
             {/* Hero Section */}
             <section className="relative w-full h-screen flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 z-0">
-                    <img
+                    <Image
                         src="https://images.unsplash.com/photo-1503387762-592deb58ef4e"
                         alt="Architecture Firms in Lucknow - Trygve Studio"
-                        className="object-cover w-full h-full brightness-50"
+                        fill
+                        className="object-cover brightness-50"
+                        priority
                     />
                 </div>
 

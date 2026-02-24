@@ -130,11 +130,12 @@ export default function InteriorDesignInLucknow() {
       {/* Hero Section */}
       <section className="relative w-full h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img
+          <Image
             src="https://images.unsplash.com/photo-1615874959474-d609969a20ed"
             alt="Best Interior Designers in Lucknow - Trygve Studio"
             fill
             className="object-cover md:h-auto h-full brightness-50"
+            priority
           />
         </div>
         <div className="relative z-10 text-center max-w-6xl px-6">
@@ -207,7 +208,7 @@ export default function InteriorDesignInLucknow() {
             {services.map((service, index) => (
               <div key={index} className="group">
                 <div className="relative h-80 mb-6 overflow-hidden bg-gray-200">
-                  <img
+                  <Image
                     src={service.image}
                     alt={`${service.title} - Interior Design Lucknow`}
                     fill
@@ -279,7 +280,7 @@ export default function InteriorDesignInLucknow() {
                   className={`relative h-96 bg-gray-200 ${index % 2 === 1 ? "lg:col-start-2" : ""
                     }`}
                 >
-                  <img
+                  <Image
                     src={project.image}
                     alt={`${project.title} - ${project.category}`}
                     fill
@@ -336,7 +337,7 @@ export default function InteriorDesignInLucknow() {
           </div>
           <div className="space-y-6">
             <div className="relative h-64">
-              <img
+              <Image
                 src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914"
                 alt="Before Interior Design - Lucknow"
                 fill
@@ -347,7 +348,7 @@ export default function InteriorDesignInLucknow() {
               </div>
             </div>
             <div className="relative h-64">
-              <img
+              <Image
                 src="https://images.unsplash.com/photo-1600585154154-1c1b8a1e2c3e"
                 alt="After Interior Design - Lucknow"
                 fill

@@ -238,6 +238,20 @@ export default function ContactPage() {
                   <span className="block mt-1 text-neutral-600">— Hospitality Group, London</span>
                 </blockquote>
               </div>
+
+              {/* Location Map */}
+              <div className="mt-8 rounded-xl overflow-hidden h-48 border border-black/10">
+                <iframe
+                  src="https://maps.google.com/maps?q=Trygve%20Studio,%20Lucknow&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Trygve Studio Lucknow Map"
+                ></iframe>
+              </div>
             </aside>
 
             {/* Form */}

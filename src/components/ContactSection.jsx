@@ -17,15 +17,18 @@ export default function ContactSection() {
 
         {/* Content Row */}
         <div className="grid gap-8 md:grid-cols-[1fr_auto]">
-          {/* Image */}
-          <div className="relative w-full h-[260px] sm:h-[320px] md:h-[360px]">
-            <Image
-              src={contact}
-              alt="People meeting"
-              fill
-              className="object-cover"
-              priority
-            />
+          {/* Map */}
+          <div className="relative w-full h-[260px] sm:h-[320px] md:h-[360px] rounded-lg overflow-hidden border border-gray-800">
+            <iframe
+              src="https://maps.google.com/maps?q=Trygve%20Studio,%20Lucknow&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Trygve Studio Location Map"
+            ></iframe>
           </div>
 
           {/* Contact Info */}

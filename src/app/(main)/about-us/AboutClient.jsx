@@ -274,9 +274,9 @@ export default function AboutUs() {
 
       {/* ===== Stats / Registry ===== */}
       <div className="max-w-7xl mx-auto px-5 pb-12 mt-10">
-        <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-4">
+        <ul className="grid gap-4 sm:grid-cols-2 md:grid-cols-4">
           {stats.map((s) => (
-            <div
+            <li
               key={s.label}
               className="rounded-2xl border border-black/10 bg-white p-5 flex items-start gap-3"
             >
@@ -287,9 +287,9 @@ export default function AboutUs() {
                 </div>
                 <div className="mt-1 font-semibold">{s.value}</div>
               </div>
-            </div>
+            </li>
           ))}
-        </div>
+        </ul>
 
         {/* Legal / Registry line */}
       </div>

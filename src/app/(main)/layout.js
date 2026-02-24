@@ -8,6 +8,7 @@ import ContactPopupWrapper from "@/components/ContactPopupWrapper";
 import ContactButton from "@/components/ContactButton";
 // app/page.jsx (or app/(site)/page.jsx)
 import Script from "next/script";
+import PersonSchema from "@/components/PersonSchema";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -235,13 +236,18 @@ export default function RootLayout({ children }) {
               addressRegion: "Uttar Pradesh",
               postalCode: "226026",
               addressCountry: "IN",
-              sameAs: "https://www.wikidata.org/wiki/Q4705",
             },
             geo: {
               "@type": "GeoCoordinates",
-              latitude: 26.9157,
-              longitude: 80.9564,
+              latitude: 26.9325, // Updated to match exact location
+              longitude: 80.9688,
             },
+            areaServed: [
+              { "@type": "City", name: "Lucknow" },
+              { "@type": "Country", name: "India" },
+              { "@type": "Place", name: "United Arab Emirates" },
+              { "@type": "Place", name: "Saudi Arabia" }
+            ],
             aggregateRating: {
               "@type": "AggregateRating",
               ratingValue: "4.9",
@@ -277,6 +283,7 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <SpeculationRules />
+        <PersonSchema />
         <ContactPopupWrapper />
         <noscript>
           <iframe

@@ -3,6 +3,48 @@
  * Cleans up external CMS content by removing citations, garbled text, and applying Tailwind styling
  */
 
+const KEYWORD_LINK_MAP = [
+  { keywords: ["architects in lucknow", "best architects in lucknow", "architecture firms in lucknow"], link: "/services/architects-in-lucknow" },
+  { keywords: ["interior design lucknow", "best interior designer in lucknow", "interior designers in lucknow"], link: "/services/interior-design-lucknow" },
+  { keywords: ["lda approval", "lda sanction", "building bylaws lucknow"], link: "/blogs/lucknow-real-estate-2026-why-lda-approval-costs-are-changing-and-how-to-prepare" },
+  { keywords: ["luxury home designers", "villa architects"], link: "/services/luxury-architecture-design-lucknow" },
+  { keywords: ["project gallery", "our projects", "trygve projects"], link: "/projects" },
+  { keywords: ["price calculator", "estimate cost", "construction cost"], link: "/price-calculator" }
+];
+
+/**
+ * Inject internal links for specific keywords
+ */
+export function injectInternalLinks(content) {
+  if (!content) return "";
+  
+  let linkedContent = content;
+  
+  // Sort keywords by length descending to prevent partial matches (e.g. "architect" vs "architects in lucknow")
+  const allKeywords = KEYWORD_LINK_MAP.flatMap(item => 
+    item.keywords.map(kw => ({ kw, link: item.link }))
+  ).sort((a, b) => b.kw.length - a.kw.length);
+
+  allKeywords.forEach(({ kw, link }) => {
+    // Only link if not already inside an <a> tag
+    // This regex is a simple heuristic: match keyword if not preceded by <a or followed by </a>
+    // For more robustness with HTML, a DOM parser would be better, but this works for most blog structures
+    const regex = new RegExp(`(?<!<a[^>]*>)\\b(${kw})\\b(?!<\\/a>)`, "gi");
+    
+    // We only link the first occurrence to avoid over-optimization/spamminess
+    let count = 0;
+    linkedContent = linkedContent.replace(regex, (match) => {
+      if (count === 0) {
+        count++;
+        return `<a href="${link}" class="text-blue-600 hover:text-blue-800 underline transition-colors font-medium">${match}</a>`;
+      }
+      return match;
+    });
+  });
+
+  return linkedContent;
+}
+
 /**
  * Remove citation references like [2], [5], [2][5], etc.
  */
@@ -205,7 +247,10 @@ export function sanitizeBlogContent(content) {
   // 5. Add Tailwind styling
   cleaned = addTailwindStyling(cleaned);
 
-  // 6. Clean up whitespace
+  // 6. Inject Internal Links (Conversion Bridge)
+  cleaned = injectInternalLinks(cleaned);
+
+  // 7. Clean up whitespace
   cleaned = cleaned.replace(/\s+/g, " ");
   cleaned = cleaned.replace(/>\s+</g, "><");
 

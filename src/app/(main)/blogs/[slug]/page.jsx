@@ -119,19 +119,40 @@ export default async function BlogDetails({ params }) {
       </Script>
 
       {/* FAQ Schema */}
-      {blog.faqs && blog.faqs.length > 0 && (
+      {((blog.faqs && blog.faqs.length > 0) || blog.slug?.includes('lda') || blog.title?.toLowerCase().includes('lda')) && (
         <Script id="faq-schema-server" type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "FAQPage",
-            mainEntity: blog.faqs.map((f) => ({
-              "@type": "Question",
-              name: f.question,
-              acceptedAnswer: {
-                "@type": "Answer",
-                text: f.answer,
-              },
-            })),
+            mainEntity: [
+              ...(blog.faqs || []).map((f) => ({
+                "@type": "Question",
+                name: f.question,
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: f.answer,
+                },
+              })),
+              // Programmatic Injection for LDA blogs
+              ...((blog.slug?.includes('lda') || blog.title?.toLowerCase().includes('lda')) ? [
+                {
+                  "@type": "Question",
+                  name: "How much does LDA registration cost in Lucknow in 2026?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "LDA registration costs depend on the property value and area. As of 2026, it typically ranges between 5% to 7% of the total cost, plus additional administrative fees.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "How long does it take for LDA map approval?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "LDA map approval typically takes 30 to 60 days if all documentation is complete and complies with the latest 2026 building bylaws.",
+                  }
+                }
+              ] : [])
+            ],
           })}
         </Script>
       )}
