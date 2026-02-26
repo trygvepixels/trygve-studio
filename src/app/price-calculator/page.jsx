@@ -24,18 +24,18 @@ const PRICING_CONFIG = {
   },
   packages: {
     turnkey: {
-      standard: { name: "Standard", pricePerSqft: 1550, desc: "Reliable quality, vitrified tiles, standard electricals." },
-      premium: { name: "Premium", pricePerSqft: 1950, desc: "High-quality finishes, modular kitchen, premium fixtures." },
-      luxury: { name: "Luxury", pricePerSqft: 2650, desc: "Italian marble, smart home integration, signature facade." }
+      standard: { name: "Standard", pricePerSqft: 1650, desc: "Reliable quality, vitrified tiles, standard electricals." },
+      premium: { name: "Premium", pricePerSqft: 2150, desc: "High-quality finishes, modular kitchen, premium fixtures." },
+      luxury: { name: "Luxury", pricePerSqft: 2850, desc: "Italian marble, smart home integration, signature facade." }
     },
     architecture: {
       standard: { name: "Essential Design", pricePerSqft: 45, desc: "Floor plans, 2D elevations, and basic structural drawings." },
       premium: { name: "Comprehensive 3D + MEP", pricePerSqft: 85, desc: "Detailed 3D renders, VR walk-through, complete MEP drawings." }
     },
     interior: {
-      standard: { name: "Standard", pricePerSqft: 1250, desc: "Premium laminate finish, standard hardware, basic lighting." },
-      premium: { name: "Premium", pricePerSqft: 1650, desc: "Acrylic/PU finish, Hettich/Hafele hardware, designer lighting." },
-      luxury: { name: "Luxury", pricePerSqft: 2350, desc: "Veneer, imported hardware, smart automation, dedicated designer." }
+      standard: { name: "Standard", pricePerSqft: 1450, desc: "Premium laminate finish, standard hardware, basic lighting." },
+      premium: { name: "Premium", pricePerSqft: 1850, desc: "Acrylic/PU finish, Hettich/Hafele hardware, designer lighting." },
+      luxury: { name: "Luxury", pricePerSqft: 2650, desc: "Veneer, imported hardware, smart automation, dedicated designer." }
     }
   },
   regions: {
@@ -45,8 +45,8 @@ const PRICING_CONFIG = {
     other: { name: "Other Lucknow Areas", multiplier: 1.0 },
   },
   addons: {
-    lda: { name: "LDA Map Approval Assistance", price: 25000, desc: "Navigate the complex 2026 bylaws smoothly." },
-    soil: { name: "Soil Testing & Topography", price: 8500, desc: "Essential for robust structural design." },
+    lda: { name: "LDA Map Approval Assistance", price: 35000, desc: "Navigate the complex 2026 bylaws smoothly." },
+    soil: { name: "Soil Testing & Topography", price: 1200, desc: "Essential for robust structural design." },
     walkthrough: { name: "Premium VR 3D Walkthrough", price: 15000, desc: "Experience your unbuilt home in VR." },
   }
 };
