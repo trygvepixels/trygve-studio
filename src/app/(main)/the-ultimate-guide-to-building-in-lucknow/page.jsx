@@ -84,7 +84,7 @@ export default function PillarPageLucknowBuilding() {
                     <div className="bg-[#F4F1EC] p-6 rounded-xl my-6 not-prose border-l-4 border-[#234D7E]">
                         <h4 className="font-semibold text-lg flex items-center gap-2 mb-2"><FiCheckCircle className="text-[#234D7E]" /> Deep Dive</h4>
                         <p className="text-gray-700 mb-4">Want the exact breakdown per square foot for standard vs. premium finishes in 2026?</p>
-                        <Link href="/blogs/house-construction-cost-lucknow-2026" className="text-[#234D7E] font-medium hover:underline flex items-center gap-1">
+                        <Link href="/blogs/beyond-blueprints-how-bim-saves-homeowners-20percent-on-hidden-construction-costs" className="text-[#234D7E] font-medium hover:underline flex items-center gap-1">
                             Read: Current House Construction Costs in Lucknow <FiChevronRight />
                         </Link>
                     </div>
@@ -100,7 +100,7 @@ export default function PillarPageLucknowBuilding() {
                     <div className="bg-[#F4F1EC] p-6 rounded-xl my-6 not-prose border-l-4 border-yellow-600">
                         <h4 className="font-semibold text-lg flex items-center gap-2 mb-2"><FiFileText className="text-yellow-700" /> Essential Reading</h4>
                         <p className="text-gray-700 mb-4">Need a step-by-step checklist of documents required for LDA Maps?</p>
-                        <Link href="/blogs/lda-map-approval" className="text-yellow-800 font-medium hover:underline flex items-center gap-1">
+                        <Link href="/blogs/lucknow-real-estate-2026-why-lda-approval-costs-are-changing-and-how-to-prepare" className="text-yellow-800 font-medium hover:underline flex items-center gap-1">
                             Read: The Complete Checklist for LDA Map Approvals <FiChevronRight />
                         </Link>
                     </div>
@@ -113,7 +113,7 @@ export default function PillarPageLucknowBuilding() {
                     <div className="bg-[#F4F1EC] p-6 rounded-xl my-6 not-prose border-l-4 border-green-600">
                         <h4 className="font-semibold text-lg flex items-center gap-2 mb-2"><FiDollarSign className="text-green-700" /> Compare Rates</h4>
                         <p className="text-gray-700 mb-4">Are you being overcharged by your architect?</p>
-                        <Link href="/blogs/how-much-do-architects-charge-in-lucknow" className="text-green-800 font-medium hover:underline flex items-center gap-1">
+                        <Link href="/blogs/dream-home-blueprint-7-secrets-to-finding-the-best-residential-architects-in-lucknow-for-your-2024-build" className="text-green-800 font-medium hover:underline flex items-center gap-1">
                             Read: How Much Do Architects Charge in Lucknow? <FiChevronRight />
                         </Link>
                     </div>

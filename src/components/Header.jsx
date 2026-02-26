@@ -128,15 +128,8 @@ export default function Header() {
             <Link href="/blogs" className="text-[15px] md:text-[16px] text-ink underline-offset-4 hover:underline">
               Blogs
             </Link>
-            <Link href="/resources" className="text-[15px] md:text-[16px] text-ink underline-offset-4 hover:underline">
-              Resources
-            </Link>
             <Link href="/services" className="text-[15px] md:text-[16px] text-ink underline-offset-4 hover:underline">
               Services
-            </Link>
-
-            <Link href="/career" className="text-[15px] md:text-[16px] text-ink underline-offset-4 hover:underline">
-              Career
             </Link>
 
             <Link href="/the-ultimate-guide-to-building-in-lucknow" className="text-[15px] md:text-[16px] text-[#234D7E] font-medium underline-offset-4 hover:underline">
@@ -246,31 +239,11 @@ export default function Header() {
               </li>
               <li>
                 <Link
-                  href="/resources"
-                  onClick={closeMenu}
-                  className="block  rounded-xl px-4 py-3 text-[16px] text-ink hover:bg-[#F4F1EC] transition flex items-center justify-between"
-                >
-                  <span>Resources</span>
-                  <span className="text-xs text-neutral-500">Authority guides</span>
-                </Link>
-              </li>
-              <li>
-                <Link
                   href="/services"
                   onClick={closeMenu}
                   className="block  rounded-xl px-4 py-3 text-[16px] text-ink hover:bg-[#F4F1EC] transition flex items-center justify-between"
                 >
                   <span>Services</span>
-                  <span className="text-xs text-neutral-500">Work with us</span>
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/career"
-                  onClick={closeMenu}
-                  className="block  rounded-xl px-4 py-3 text-[16px] text-ink hover:bg-[#F4F1EC] transition flex items-center justify-between"
-                >
-                  <span>Career</span>
                   <span className="text-xs text-neutral-500">Work with us</span>
                 </Link>
               </li>

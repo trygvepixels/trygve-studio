@@ -1,7 +1,7 @@
 import BlogListClient from "./BlogListClient";
 
 export const metadata = {
-    title: "Blog & Insights | Architecture & Design Trends | Trygve Studio",
+    title: "Architecture & Design Blog | Trygve Studio",
     description:
         "Insights on architecture design, interior trends, construction costs in Lucknow, and project management from the experts at Trygve Studio.",
     alternates: {

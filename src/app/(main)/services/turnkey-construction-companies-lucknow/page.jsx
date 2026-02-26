@@ -5,36 +5,36 @@ import logo from "@/assets/logo.png";
 import Script from "next/script";
 
 export const metadata = {
-    title: "Top Architecture Firms in Lucknow | 200+ Projects",
+    title: "Best Turnkey Construction Companies in Lucknow | Trygve Studio",
     description:
-        "Leading architecture firm in Lucknow for residential & commercial projects. ISO certified, 200+ completed designs. Sustainable architecture, modern interiors. Call now!",
+        "Top-rated turnkey construction company in Lucknow. Specializing in residential builds, luxury villas, and commercial projects. ISO certified, end-to-end execution. Call now!",
     alternates: {
-        canonical: "/services/architecture-firms-lucknow",
+        canonical: "/services/turnkey-construction-companies-lucknow",
     },
     openGraph: {
-        title: "Top Architecture Firms in Lucknow | Trygve Studio",
+        title: "Best Turnkey Construction Companies in Lucknow",
         description:
-            "ISO certified architecture firm with 200+ successful projects. Expert in sustainable design, modern aesthetics & timely delivery.",
-        url: "https://trygvestudio.com/services/architecture-firms-lucknow",
+            "ISO certified turnkey construction firm delivering end-to-end building solutions. From maps to handover, we manage it all without the headache of daily contractors.",
+        url: "https://trygvestudio.com/services/turnkey-construction-companies-lucknow",
         images: [
             {
                 url: "https://trygvestudio.com/images/architecture-firms-lucknow.jpg",
                 width: 1200,
                 height: 630,
-                alt: "Architecture Firms in Lucknow - Trygve Studio",
+                alt: "Turnkey Construction in Lucknow - Trygve Studio",
             },
         ],
     },
 };
 
-export default function ArchitectureFirmsLucknow() {
+export default function TurnkeyConstructionLucknow() {
     return (
         <main className="min-h-screen bg-[#F4F1EC] text-gray-900">
             <Script id="service-schema" type="application/ld+json">
                 {JSON.stringify({
                     "@context": "https://schema.org",
                     "@type": "Service",
-                    "serviceType": "Architecture Firm Services",
+                    "serviceType": "Turnkey Construction Services",
                     "provider": {
                         "@type": "LocalBusiness",
                         "name": "Trygve Studio",
@@ -51,7 +51,7 @@ export default function ArchitectureFirmsLucknow() {
                         "name": "Lucknow",
                         "sameAs": "https://www.wikidata.org/wiki/Q4705"
                     },
-                    "description": "Full-service architecture firm in Lucknow specializing in residential, commercial, and institutional projects with sustainable design principles."
+                    "description": "Premium turnkey residential and commercial construction company in Lucknow. We handle PMC, EPC, architecture, and complete execution."
                 })}
             </Script>
             <Breadcrumbs />
@@ -60,8 +60,8 @@ export default function ArchitectureFirmsLucknow() {
             <section className="relative w-full h-screen flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 z-0">
                     <Image
-                        src="https://images.unsplash.com/photo-1503387762-592deb58ef4e"
-                        alt="Architecture Firms in Lucknow - Trygve Studio"
+                        src="https://images.unsplash.com/photo-1541888081622-14dc74c760ee?auto=format&fit=crop&w=2800&q=80"
+                        alt="Turnkey Construction Companies in Lucknow - Trygve Studio"
                         fill
                         className="object-cover brightness-50"
                         priority
@@ -70,35 +70,35 @@ export default function ArchitectureFirmsLucknow() {
 
                 <div className="relative z-10 text-center max-w-6xl px-6">
                     <h1 className="text-6xl md:text-8xl font-light text-white mb-6 tracking-tight">
-                        Architecture Firms in
+                        Turnkey Construction
                         <br />
-                        <span className="font-normal">Lucknow</span>
+                        <span className="font-normal text-white">Companies in Lucknow</span>
                     </h1>
 
                     {/* CRO Trust Badges */}
                     <div className="flex flex-wrap justify-center gap-3 mb-8">
                         <span className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-4 py-1.5 rounded-full text-sm font-medium tracking-wide">✓ ISO 9001:2015</span>
+                        <span className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-4 py-1.5 rounded-full text-sm font-medium tracking-wide">✓ Zero Cost Overruns</span>
                         <span className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-4 py-1.5 rounded-full text-sm font-medium tracking-wide">✓ 200+ Projects</span>
-                        <span className="bg-white/10 backdrop-blur-md border border-white/20 text-#white px-4 py-1.5 rounded-full text-sm font-medium tracking-wide">✓ Verified Experts</span>
                     </div>
 
                     <p className="text-xl md:text-2xl text-gray-200 font-light max-w-3xl mx-auto leading-relaxed">
-                        ISO-certified full-service architecture firm delivering exceptional design solutions
-                        across residential, commercial, and institutional sectors since 2019.
+                        Say goodbye to contractor disputes and stolen materials. We offer true end-to-end
+                        turnkey construction and project management in Lucknow. We design it, we build it.
                     </p>
 
                     <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
                         <Link
-                            href="/contact-us#project-form"
-                            className="bg-[#F4F1EC] text-gray-900 px-8 py-4 text-lg font-medium hover:bg-gray-100 transition-all duration-300"
+                            href="/price-calculator"
+                            className="bg-[#234D7E] text-white px-8 py-4 text-lg font-medium hover:bg-[#1a3a60] transition-all duration-300 shadow-lg"
                         >
-                            Get Free Consultation
+                            Calculate Construction Cost
                         </Link>
                         <Link
-                            href="/projects"
-                            className="border border-white text-white px-8 py-4 text-lg font-medium hover:bg-[#F4F1EC] hover:text-gray-900 transition-all duration-300"
+                            href="/contact-us#project-form"
+                            className="bg-[#F4F1EC] text-gray-900 border border-transparent px-8 py-4 text-lg font-medium hover:bg-gray-100 transition-all duration-300"
                         >
-                            View Portfolio
+                            Book Site Visit
                         </Link>
                     </div>
                 </div>
@@ -110,12 +110,12 @@ export default function ArchitectureFirmsLucknow() {
                     <div className="grid lg:grid-cols-2 gap-16 items-center">
                         <div>
                             <h2 className="text-4xl md:text-5xl font-light mb-6">
-                                Why Choose Our Architecture Firm?
+                                Why Choose Our Turnkey Construction Company?
                             </h2>
                             <p className="text-xl text-gray-600 font-light leading-relaxed mb-8">
-                                Trygve Studio stands among Lucknow's premier architecture firms, combining
-                                technical excellence with innovative design thinking. Our multidisciplinary
-                                team delivers comprehensive architectural solutions tailored to your vision.
+                                Trygve Studio stands among Lucknow's premier construction companies, combining
+                                technical excellence with transparent project management. Our multidisciplinary
+                                team delivers comprehensive building solutions from empty plot to key handover.
                             </p>
 
                             <div className="space-y-4">
@@ -125,15 +125,15 @@ export default function ArchitectureFirmsLucknow() {
                                 </div>
                                 <div className="flex items-start gap-3">
                                     <span className="text-2xl">✓</span>
-                                    <p className="text-gray-700"><strong>Licensed & Insured:</strong> Full regulatory compliance</p>
+                                    <p className="text-gray-700"><strong>Single Point of Contact:</strong> No contractor managing</p>
                                 </div>
                                 <div className="flex items-start gap-3">
                                     <span className="text-2xl">✓</span>
-                                    <p className="text-gray-700"><strong>Sustainable Design:</strong> Energy-efficient, eco-conscious solutions</p>
+                                    <p className="text-gray-700"><strong>Material Honesty:</strong> Exact specifications followed rigidly</p>
                                 </div>
                                 <div className="flex items-start gap-3">
                                     <span className="text-2xl">✓</span>
-                                    <p className="text-gray-700"><strong>Timely Delivery:</strong> 98% on-time project completion rate</p>
+                                    <p className="text-gray-700"><strong>Zero Cost Overruns:</strong> Fixed budgets guaranteed</p>
                                 </div>
                             </div>
                         </div>
@@ -141,7 +141,7 @@ export default function ArchitectureFirmsLucknow() {
                         <div className="relative h-[600px]">
                             <Image
                                 src={logo}
-                                alt="Trygve Studio - Leading Architecture Firm in Lucknow"
+                                alt="Trygve Studio - Leading Construction Company in Lucknow"
                                 fill
                                 className="object-cover rounded-lg"
                             />
@@ -155,10 +155,10 @@ export default function ArchitectureFirmsLucknow() {
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-16">
                         <h2 className="text-4xl md:text-5xl font-light mb-6">
-                            Our Architecture Services
+                            Our Turnkey Services
                         </h2>
                         <p className="text-xl text-gray-600 max-w-3xl mx-auto font-light">
-                            End-to-end architectural solutions from concept to completion
+                            End-to-end building solutions from concept to key handover
                         </p>
                     </div>
 
@@ -209,10 +209,10 @@ export default function ArchitectureFirmsLucknow() {
             <section className="py-20 px-6 bg-[#234D7E] text-white">
                 <div className="max-w-4xl mx-auto text-center">
                     <h2 className="text-4xl md:text-5xl font-light mb-6">
-                        Ready to Start Your Project?
+                        Ready to Start Building?
                     </h2>
                     <p className="text-xl font-light mb-10">
-                        Schedule a free consultation with Lucknow's top architecture firm today.
+                        Schedule a free consultation with Lucknow's premier construction company today.
                     </p>
                     <Link
                         href="/contact-us"
@@ -226,10 +226,10 @@ export default function ArchitectureFirmsLucknow() {
             {/* Honest Comparison Section */}
             <section className="py-20 px-6 bg-white">
                 <div className="max-w-5xl mx-auto">
-                    <h2 className="text-4xl font-light mb-8 text-center">How We Compare to Other Firms</h2>
+                    <h2 className="text-4xl font-light mb-8 text-center">How We Compare to Traditional Thekedars</h2>
 
                     <p className="text-lg text-gray-700 mb-8 text-center max-w-3xl mx-auto">
-                        We get this question a lot: "What makes you different from the other 50+ architecture firms in Lucknow?"
+                        We get this question a lot: "Why should I hire a turnkey company instead of managing labor myself?"
                         Here's an honest comparison:
                     </p>
 
@@ -470,29 +470,29 @@ export default function ArchitectureFirmsLucknow() {
             {/* FAQ Section */}
             <section className="py-20 px-6 bg-white">
                 <div className="max-w-4xl mx-auto">
-                    <h2 className="text-4xl font-light mb-12 text-center">Common Questions About Architecture Firms</h2>
+                    <h2 className="text-4xl font-light mb-12 text-center">Common Questions About Turnkey Construction</h2>
 
                     <div className="space-y-8">
                         {[
                             {
-                                q: "How do architecture firms in Lucknow charge for their services?",
-                                a: "Most firms use one of three models: (1) Percentage of construction cost (8-12% is standard), (2) Per square foot rate (₹200-500/sq ft for design), or (3) Fixed project fee. We typically work on percentage basis because it aligns our incentives with keeping your costs reasonable."
+                                q: "What does 'Turnkey Construction' actually mean?",
+                                a: "Turnkey construction means you sign one contract with one company (us), and we deliver a finished, ready-to-move-in building. From soil testing and architecture to civil construction and interior finishes, we handle everything without you needing to manage separate contractors."
                             },
                             {
-                                q: "What's the difference between a small firm and a large architecture firm?",
-                                a: "Large firms have more bandwidth and specialist departments but you might work with junior architects. Small firms give you partner attention but have limited capacity. Mid-size firms like ours (12 people) offer the sweet spot — specialist expertise with partner involvement on every project."
+                                q: "How much does turnkey construction cost in Lucknow?",
+                                a: "In 2026, standard premium construction in Lucknow ranges from ₹1,800 to ₹2,500 per sq ft. Luxury builds generally start at ₹2,800/sq ft. Our turnkey packages guarantee these rates upfront, protecting you from mid-project material price hikes."
                             },
                             {
-                                q: "Do I need an architecture firm for a renovation project?",
-                                a: "For basic renovations (paint, flooring), probably not. But if you're changing layouts, adding floors, or modifying structure, absolutely yes. You need structural drawings for LDA approval and safety. We've rescued too many DIY renovations that compromised structural integrity."
+                                q: "Why shouldn't I just hire a local thekedar for cheaper?",
+                                a: "Local contractors often quote low initially, but hit you with 'hidden costs' later. They rarely provide structural drawings, leading to safety issues, and material theft is common. A professional turnkey company offers legal contracts, warranty, and zero cost overruns."
                             },
                             {
-                                q: "How long does it take from first meeting to construction start?",
-                                a: "Realistically? 4-5 months minimum. Design consultations (1 month), detailed drawings (1 month), LDA approvals (2-3 months). Anyone promising faster is either cutting corners or hasn't actually done this before. The timeline is what it is."
+                                q: "How long does a typical turnkey residential project take?",
+                                a: "A standard 2000-3000 sq ft house takes 9-12 months for complete turnkey delivery, assuming LDA approvals are in place. We provide a guaranteed handover date in our contract."
                             },
                             {
-                                q: "Can I use my own contractor or do you require specific ones?",
-                                a: "You can absolutely use your own contractor. We provide detailed drawings and specifications that any competent contractor can execute. That said, we have relationships with 4-5 excellent contractors we can recommend if you're starting from scratch."
+                                q: "Do you also do the interior design in the turnkey package?",
+                                a: "Yes. Our EPC (Engineering, Procurement, and Construction) model includes full interior design and execution. You choose the tiles, laminates, and fixtures from our catalog, and we install them."
                             }
                         ].map((faq, index) => (
                             <div key={index} className="border-b border-gray-200 pb-6">
@@ -525,26 +525,26 @@ export default function ArchitectureFirmsLucknow() {
                     "mainEntity": [
                         {
                             "@type": "Question",
-                            "name": "How do architecture firms in Lucknow charge for their services?",
+                            "name": "What does 'Turnkey Construction' actually mean?",
                             "acceptedAnswer": {
                                 "@type": "Answer",
-                                "text": "Most firms use one of three models: (1) Percentage of construction cost (8-12% is standard), (2) Per square foot rate (₹200-500/sq ft for design), or (3) Fixed project fee. We typically work on percentage basis because it aligns our incentives with keeping your costs reasonable."
+                                "text": "Turnkey construction means you sign one contract with one company (us), and we deliver a finished, ready-to-move-in building. From soil testing and architecture to civil construction and interior finishes, we handle everything without you needing to manage separate contractors."
                             }
                         },
                         {
                             "@type": "Question",
-                            "name": "What's the difference between a small firm and a large architecture firm?",
+                            "name": "How much does turnkey construction cost in Lucknow?",
                             "acceptedAnswer": {
                                 "@type": "Answer",
-                                "text": "Large firms have more bandwidth and specialist departments but you might work with junior architects. Small firms give you partner attention but have limited capacity. Mid-size firms like ours (12 people) offer the sweet spot — specialist expertise with partner involvement on every project."
+                                "text": "In 2026, standard premium construction in Lucknow ranges from ₹1,800 to ₹2,500 per sq ft. Luxury builds generally start at ₹2,800/sq ft. Our turnkey packages guarantee these rates upfront."
                             }
                         },
                         {
                             "@type": "Question",
-                            "name": "Do I need an architecture firm for a renovation project?",
+                            "name": "Why shouldn't I just hire a local thekedar for cheaper?",
                             "acceptedAnswer": {
                                 "@type": "Answer",
-                                "text": "For basic renovations (paint, flooring), probably not. But if you're changing layouts, adding floors, or modifying structure, absolutely yes. You need structural drawings for LDA approval and safety."
+                                "text": "Local contractors often quote low initially, but hit you with 'hidden costs' later. They rarely provide structural drawings, leading to safety issues, and material theft is common. A professional turnkey company offers legal contracts, warranty, and zero cost overruns."
                             }
                         }
                     ]
@@ -593,7 +593,7 @@ function Breadcrumbs() {
                 </li>
                 <li className="flex items-center gap-2">
                     <FiChevronRight className="text-gray-300" />
-                    <span className="font-semibold text-black">Architecture Firms in Lucknow</span>
+                    <span className="font-semibold text-black">Turnkey Construction Companies in Lucknow</span>
                 </li>
             </ol>
         </nav>

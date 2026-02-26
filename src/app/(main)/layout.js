@@ -22,9 +22,9 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   metadataBase: new URL("https://trygvestudio.com"),
-  title: "Trygve Studio - Premium Architecture & Interior Design",
+  title: "Best Architects in Lucknow | Trygve Studio (ISO)",
   description:
-    "Transform your space with Trygve Studio. We offer premium architecture and interior design services worldwide.",
+    "Ranked among the best architects in Lucknow. ISO 9001:2015 certified design firm with 200+ luxury residential and commercial projects delivered.",
   keywords: [
     "Trygve studio",
     "Faisal Saif",
