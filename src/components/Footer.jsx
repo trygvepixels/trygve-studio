@@ -175,6 +175,7 @@ export default function FooterPremium({ variant = "bronze" }) {
                 { label: "Projects Gallery", href: "/projects" },
                 { label: "Services", href: "/services" },
                 { label: "Contact", href: "/contact-us" },
+                { label: "Building Guide", href: "/the-ultimate-guide-to-building-in-lucknow" },
               ].map((link) => (
                 <li key={link.href}>
                   <Link

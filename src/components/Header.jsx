@@ -139,6 +139,10 @@ export default function Header() {
               Career
             </Link>
 
+            <Link href="/the-ultimate-guide-to-building-in-lucknow" className="text-[15px] md:text-[16px] text-[#234D7E] font-medium underline-offset-4 hover:underline">
+              Building Guide
+            </Link>
+
 
             <Link href="/contact-us" className="text-[15px] text-white md:text-[16px] text-ink underline-offset-4 hover:underline bg-[#234D7E] px-3 py-1 rounded-[4px]">
               Contact Us
@@ -171,8 +175,8 @@ export default function Header() {
             aria-label="Close menu"
             onClick={closeMenu}
             className={`fixed inset-0 top-0 z-[1000000] h-screen md:hidden ${isClosing
-                ? "animate-[fade-out_220ms_ease-in_forwards]"
-                : "animate-[fade-in_240ms_ease-out_forwards]"
+              ? "animate-[fade-out_220ms_ease-in_forwards]"
+              : "animate-[fade-in_240ms_ease-out_forwards]"
               } bg-black/70 backdrop-blur-sm`}
             onAnimationEnd={handleBackdropAnimEnd}
           />
@@ -183,8 +187,8 @@ export default function Header() {
             role="dialog"
             aria-modal="true"
             className={`fixed top-6 right-4 z-[100000000] md:hidden w-[84%] max-w-sm rounded-2xl border border-black/10 bg-white shadow-[0_30px_80px_rgba(0,0,0,0.28)] overflow-hidden origin-top-right ${isClosing
-                ? "animate-[sheet-elastic-out_460ms_cubic-bezier(0.2,0.8,0.25,1.2)_forwards]"
-                : "animate-[sheet-elastic-in_520ms_cubic-bezier(0.2,0.8,0.25,1.2)_forwards]"
+              ? "animate-[sheet-elastic-out_460ms_cubic-bezier(0.2,0.8,0.25,1.2)_forwards]"
+              : "animate-[sheet-elastic-in_520ms_cubic-bezier(0.2,0.8,0.25,1.2)_forwards]"
               }`}
             onAnimationEnd={handleSheetAnimEnd}
           >
@@ -268,6 +272,17 @@ export default function Header() {
                 >
                   <span>Career</span>
                   <span className="text-xs text-neutral-500">Work with us</span>
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  href="/the-ultimate-guide-to-building-in-lucknow"
+                  onClick={closeMenu}
+                  className="block rounded-xl px-4 py-3 text-[16px] text-[#234D7E] font-medium hover:bg-[#234D7E]/5 transition flex items-center justify-between"
+                >
+                  <span>Building Guide</span>
+                  <span className="text-xs text-[#234D7E]/80">Ultimate 2026 Manual</span>
                 </Link>
               </li>
 

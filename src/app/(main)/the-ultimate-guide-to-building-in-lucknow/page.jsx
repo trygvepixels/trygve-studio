@@ -56,7 +56,7 @@ export default function PillarPageLucknowBuilding() {
             {/* Hero Section */}
             <section className="relative max-w-5xl mx-auto px-6 pt-16 pb-12 text-center">
                 <div className="inline-block px-4 py-2 bg-[#234D7E]/10 text-[#234D7E] rounded-full text-sm font-semibold mb-6 uppercase tracking-wider">
-                    Comprehensive SEO Hub
+                    Comprehensive Details
                 </div>
                 <h1 className="text-5xl md:text-7xl font-semibold tracking-tight text-gray-900 mb-6 leading-tight">
                     The Ultimate Guide to <br className="hidden md:block" /> Building a Home in Lucknow

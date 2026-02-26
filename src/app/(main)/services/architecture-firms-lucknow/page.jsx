@@ -74,6 +74,14 @@ export default function ArchitectureFirmsLucknow() {
                         <br />
                         <span className="font-normal">Lucknow</span>
                     </h1>
+
+                    {/* CRO Trust Badges */}
+                    <div className="flex flex-wrap justify-center gap-3 mb-8">
+                        <span className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-4 py-1.5 rounded-full text-sm font-medium tracking-wide">✓ ISO 9001:2015</span>
+                        <span className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-4 py-1.5 rounded-full text-sm font-medium tracking-wide">✓ 200+ Projects</span>
+                        <span className="bg-white/10 backdrop-blur-md border border-white/20 text-#white px-4 py-1.5 rounded-full text-sm font-medium tracking-wide">✓ Verified Experts</span>
+                    </div>
+
                     <p className="text-xl md:text-2xl text-gray-200 font-light max-w-3xl mx-auto leading-relaxed">
                         ISO-certified full-service architecture firm delivering exceptional design solutions
                         across residential, commercial, and institutional sectors since 2019.
@@ -542,6 +550,27 @@ export default function ArchitectureFirmsLucknow() {
                     ]
                 })}
             </Script>
+
+            {/* Sticky Mobile/Desktop CTA (CRO Element) */}
+            <div className="fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 p-4 z-50 shadow-[0_-10px_30px_rgba(0,0,0,0.08)] flex justify-between items-center sm:hidden pb-safe">
+                <div className="flex flex-col">
+                    <span className="text-[10px] text-gray-500 font-bold uppercase tracking-wider">Start Your Project</span>
+                    <span className="text-sm font-bold text-gray-900 leading-tight">Book Free Setup</span>
+                </div>
+                <Link href="/contact-us#project-form" className="bg-[#234D7E] text-white px-5 py-3 rounded-lg font-medium shadow-md active:scale-95 transition-transform flex items-center gap-1 text-sm">
+                    Consult Expert <FiChevronRight />
+                </Link>
+            </div>
+
+            <Link href="/contact-us#project-form" className="hidden sm:flex fixed bottom-8 right-8 z-50 bg-[#234D7E] text-white px-6 py-4 rounded-full font-medium shadow-[0_8px_30px_rgba(35,77,126,0.3)] hover:scale-105 transition-all items-center gap-2 group">
+                <span className="flex h-3 w-3 relative">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-300 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-3 w-3 bg-blue-100"></span>
+                </span>
+                Book Your Free Consultation
+                <FiChevronRight className="group-hover:translate-x-1 transition-transform" />
+            </Link>
+
         </main>
     );
 }
