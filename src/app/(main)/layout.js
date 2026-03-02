@@ -9,6 +9,7 @@ import ContactButton from "@/components/ContactButton";
 // app/page.jsx (or app/(site)/page.jsx)
 import Script from "next/script";
 import PersonSchema from "@/components/PersonSchema";
+import LeadMagnetModal from "@/components/LeadMagnetModal";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,7 +23,7 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   metadataBase: new URL("https://trygvestudio.com"),
-  title: "Best Architects in Lucknow | Trygve Studio (ISO)",
+  title: "Trygve Studio | Award-Winning Architects in Lucknow (ISO Certified)",
   description:
     "Ranked among the best architects in Lucknow. ISO 9001:2015 certified design firm with 200+ luxury residential and commercial projects delivered.",
   keywords: [
@@ -246,7 +247,7 @@ export default function RootLayout({ children }) {
               { "@type": "City", name: "Lucknow" },
               { "@type": "Country", name: "India" },
               { "@type": "Place", name: "United Arab Emirates" },
-              { "@type": "Place", name: "Saudi Arabia" }
+              { "@type": "Place", name: "Saudi Arabia" },
             ],
             aggregateRating: {
               "@type": "AggregateRating",
@@ -284,6 +285,7 @@ export default function RootLayout({ children }) {
       >
         <SpeculationRules />
         <PersonSchema />
+        <LeadMagnetModal />
         <ContactPopupWrapper />
         <noscript>
           <iframe

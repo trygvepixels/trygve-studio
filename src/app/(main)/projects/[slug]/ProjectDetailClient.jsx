@@ -47,6 +47,26 @@ export default function ProjectDetailClient({ project }) {
           }}
         />
       )}
+      {/* CreativeWork Schema for Architecture Portfolio SEO */}
+      <Script id="project-schema" type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "CreativeWork",
+          "name": project.title,
+          "description": project.description,
+          "image": project.coverImage,
+          "author": {
+            "@type": "Organization",
+            "name": "Trygve Studio"
+          },
+          "locationCreated": {
+            "@type": "Place",
+            "name": project.location || "Lucknow, India"
+          },
+          "genre": project.category || "Architecture"
+        })}
+      </Script>
+
       <Breadcrumbs projectTitle={project.title} />
       {/* Hero Section with Background */}
       <div
@@ -56,7 +76,7 @@ export default function ProjectDetailClient({ project }) {
           <Image
             loader={cloudinaryLoader}
             src={project.coverImage}
-            alt={project.title}
+            alt={`${project.title} - Luxury Architecture Project by Trygve Studio`}
             fill
             className="object-cover"
             priority
@@ -65,6 +85,9 @@ export default function ProjectDetailClient({ project }) {
           <div className="w-full h-full bg-[#F4F1EC]" />
         )}
         <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center px-6">
+          <h2 className="text-sm font-bold text-blue-400 uppercase tracking-widest mb-2">
+            {project.category || "Architecture & Design"}
+          </h2>
           <h1 className="text-5xl font-semibold tracking-tight text-white mb-4 leading-tight">
             {project.title}
           </h1>
@@ -80,9 +103,9 @@ export default function ProjectDetailClient({ project }) {
 
       {/* Info Section */}
       {project.description && (
-        <div className="mt-16 max-w-7xl px-4 mx-auto text">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">About the Project</h2>
-          <p className="text-lg text-gray-700 leading-8 whitespace-pre-line">
+        <div className="mt-16 max-w-7xl px-4 mx-auto">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">About this {project.category || "Project"}</h2>
+          <p className="text-lg text-gray-700 leading-8 whitespace-pre-line font-light">
             {project.description}
           </p>
         </div>
@@ -90,16 +113,16 @@ export default function ProjectDetailClient({ project }) {
 
       {/* Gallery Masonry Grid */}
       {images.length > 0 && (
-        <div className="mt-16 bg-[#F4F1EC] px-4 max-w-7xl mx-auto  columns-1 sm:columns-2 md:columns-3 gap-6 space-y-6">
+        <div className="mt-16 bg-[#F4F1EC] px-4 max-w-7xl mx-auto columns-1 sm:columns-2 md:columns-3 gap-6 space-y-6">
           {images.map((img, i) => (
             <div
               key={i}
               onClick={() => openLightbox(i)}
-              className="break-inside-avoid rounded-xl overflow-hidden shadow-lg cursor-pointer transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl bg-white/70 backdrop-blur-md"
+              className="break-inside-avoid rounded-xl overflow-hidden shadow-lg cursor-pointer transform transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl bg-white/70 backdrop-blur-md"
             >
               <img
                 src={img}
-                alt={`${project.title} image ${i + 1}`}
+                alt={`${project.title} Interior/Exterior Design - Photograph ${i + 1} | Trygve Studio Luckow`}
                 loading="lazy"
                 className="w-full h-auto rounded-xl object-cover"
               />
