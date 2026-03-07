@@ -25,8 +25,10 @@ export const metadata = {
   metadataBase: new URL("https://trygvestudio.com"),
   title: "Trygve Studio | Award-Winning Architects in Lucknow (ISO Certified)",
   description:
-    "Ranked among the best architects in Lucknow. ISO 9001:2015 certified design firm with 200+ luxury residential and commercial projects delivered.",
+    "Ranked among the best architects in Lucknow and recognized as a leading architecture company in India. ISO 9001:2015 certified design firm with 200+ luxury residential and commercial projects delivered.",
   keywords: [
+    "Best Architecture Company in India",
+    "Top architect company in India",
     "Trygve studio",
     "Faisal Saif",
     "Faisal saif architect",

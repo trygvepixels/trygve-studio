@@ -348,6 +348,50 @@ export default function PriceCalculator() {
           </p>
         </section>
 
+        {/* SEO Injection: Construction Cost Guide */}
+        <div className="mt-20 pt-16 border-t border-gray-200">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-light text-gray-900 mb-6">Construction Cost per sq ft in Lucknow (2026 Guide)</h2>
+            <p className="text-gray-600 mb-8 leading-relaxed">
+              If you are researching the <strong>construction rate in Lucknow</strong>, it's important to understand that costs vary significantly based on material quality and geographical challenges (e.g., Gomti Nagar's soil requirements). For a complete turnkey project in 2026, the average construction cost in Lucknow ranges from ₹1,650 to ₹2,850 per sq. ft.
+            </p>
+
+            <div className="overflow-x-auto mb-8">
+              <table className="w-full text-left border-collapse">
+                <thead>
+                  <tr>
+                    <th className="border-b-2 border-gray-200 p-4 font-medium text-gray-900">Construction Class</th>
+                    <th className="border-b-2 border-gray-200 p-4 font-medium text-gray-900">Cost per Sq. Ft.</th>
+                    <th className="border-b-2 border-gray-200 p-4 font-medium text-gray-900">Best For</th>
+                  </tr>
+                </thead>
+                <tbody className="text-gray-600">
+                  <tr className="border-b border-gray-100">
+                    <td className="p-4">C-Class (Standard)</td>
+                    <td className="p-4 font-medium">₹1,650 - ₹1,850</td>
+                    <td className="p-4">Investment properties, basic rentals</td>
+                  </tr>
+                  <tr className="border-b border-gray-100">
+                    <td className="p-4">B-Class (Premium)</td>
+                    <td className="p-4 font-medium">₹2,150 - ₹2,350</td>
+                    <td className="p-4">Personal homes, modern apartments</td>
+                  </tr>
+                  <tr className="border-b border-gray-100">
+                    <td className="p-4">A-Class (Luxury)</td>
+                    <td className="p-4 font-medium">₹2,850+</td>
+                    <td className="p-4">High-end villas, smart homes in Ansal/Gomti Nagar</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3 className="text-xl font-medium text-gray-900 mb-4">Why use our House Construction Cost Calculator?</h3>
+            <p className="text-gray-600 leading-relaxed mb-6">
+              Unlike generic online estimators, our <strong>building construction cost calculator</strong> is calibrated specifically for the Lucknow market. It factors in current (2026) raw material rates in Uttar Pradesh—including cement, steel, and LDA approval margins—giving you the most precise <strong>home construction cost in Lucknow</strong> before you even speak to an architect.
+            </p>
+          </div>
+        </div>
+
       </div>
     </div>
   );

@@ -22,6 +22,16 @@ export default function ArchitectsSushantGolfCity() {
                     "@type": "LocalBusiness",
                     "name": "Trygve Studio - architects in Sushant Golf City",
                     "url": "https://trygvestudio.com/services/architects-in-sushant-golf-city",
+                    "aggregateRating": {
+                        "@type": "AggregateRating",
+                        "ratingValue": "5.0",
+                        "reviewCount": "218"
+                    },
+                    "geo": {
+                        "@type": "GeoCoordinates",
+                        "latitude": "26.7865",
+                        "longitude": "81.0116"
+                    },
                     "address": {
                         "@type": "PostalAddress",
                         "streetAddress": "Sushant Golf City",

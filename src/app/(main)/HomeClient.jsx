@@ -149,6 +149,16 @@ const Page = () => {
               "postalCode": "226026",
               "addressCountry": "IN",
             },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": "26.9015",
+              "longitude": "80.9620"
+            },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "5.0",
+              "reviewCount": "218"
+            },
             "location": [
               {
                 "@type": "Place",

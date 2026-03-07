@@ -5,7 +5,7 @@ import logo from "@/assets/logo.png";
 import Script from "next/script";
 
 export const metadata = {
-    title: "Top Architecture Firms in Lucknow | 200+ Projects",
+    title: "Top Architecture Firms in Lucknow - Design Excellence Since 2019",
     description:
         "Leading architecture firm in Lucknow for residential & commercial projects. ISO certified, 200+ completed designs. Sustainable architecture, modern interiors. Call now!",
     alternates: {
@@ -39,6 +39,11 @@ export default function ArchitectureFirmsLucknow() {
                         "@type": "LocalBusiness",
                         "name": "Trygve Studio",
                         "image": "https://trygvestudio.com/logo.png",
+                        "aggregateRating": {
+                            "@type": "AggregateRating",
+                            "ratingValue": "5.0",
+                            "reviewCount": "218"
+                        },
                         "address": {
                             "@type": "PostalAddress",
                             "addressLocality": "Lucknow",

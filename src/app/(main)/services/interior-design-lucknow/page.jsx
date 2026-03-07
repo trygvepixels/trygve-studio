@@ -100,31 +100,54 @@ export default function InteriorDesignInLucknow() {
     <main className="min-h-screen bg-[#F4F1EC] text-gray-900">
       <Breadcrumbs />
       <Script
-        id="faq-schema"
+        id="page-schemas"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": [
-              {
-                "@type": "Question",
-                "name": "Why is Trygve Studio the best interior design firm in Lucknow?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "We combine creativity with functionality, delivering 200+ successful interior projects across Lucknow, with a 98% client satisfaction rate."
+          __html: JSON.stringify([
+            {
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "Why is Trygve Studio the best interior design firm in Lucknow?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "We combine creativity with functionality, delivering 200+ successful interior projects across Lucknow, with a 98% client satisfaction rate."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What is the typical cost of interior design in Lucknow?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Interior design packages start at ₹500 per sq ft for consultancy and ₹1200 per sq ft for turnkey projects."
+                  }
                 }
+              ]
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              "name": "Trygve Studio - Interior Designers",
+              "image": "https://trygvestudio.com/images/interior-design-lucknow.jpg",
+              "@id": "https://trygvestudio.com/services/interior-design-lucknow",
+              "url": "https://trygvestudio.com/services/interior-design-lucknow",
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "5.0",
+                "reviewCount": "194"
               },
-              {
-                "@type": "Question",
-                "name": "What is the typical cost of interior design in Lucknow?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Interior design packages start at ₹500 per sq ft for consultancy and ₹1200 per sq ft for turnkey projects."
-                }
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Plot No. 728, Khasra No. 21, Eden Enclave, Phase 2, Kursi Road, Gudamba, BKT",
+                "addressLocality": "Lucknow",
+                "addressRegion": "Uttar Pradesh",
+                "postalCode": "226026",
+                "addressCountry": "IN"
               }
-            ]
-          }),
+            }
+          ]),
         }}
       />
       {/* Hero Section */}
@@ -205,7 +228,7 @@ export default function InteriorDesignInLucknow() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-light mb-6 text-gray-900">
-              Interior Design Services in Lucknow
+              Luxury Interior Design Services in Lucknow
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto font-light">
               From residential to commercial interiors, our design solutions are
