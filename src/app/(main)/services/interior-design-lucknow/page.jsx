@@ -157,6 +157,8 @@ export default function InteriorDesignInLucknow() {
             src="https://images.unsplash.com/photo-1615874959474-d609969a20ed"
             alt="Best Interior Designers in Lucknow - Trygve Studio"
             fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1200px"
+            quality={85}
             className="object-cover md:h-auto h-full brightness-50"
             priority
           />

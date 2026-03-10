@@ -9,10 +9,10 @@ export default function Hero() {
         <h1 className="
           md:text-5xl text-2xl text-right font-semibold leading-tight
          
-        "> 
-          we are <span className="bg-[#234D7E] text-white px-2 rounded-md"> 
+        ">
+          we are <span className="bg-[#234D7E] text-white px-2 rounded-md">
             architects
-            </span>  & <span className="bg-[#234D7E] text-white px-2 rounded-md">interior designers</span><br className="" />
+          </span>  & <span className="bg-[#234D7E] text-white px-2 rounded-md">interior designers</span><br className="" />
           we create timeless spaces,<br className="hidden sm:block" />
           integrating form, function, and detail,<br className="hidden sm:block" />
           to craft places people remember.
@@ -26,7 +26,8 @@ export default function Hero() {
             src={herobg}
             alt="Modern home exterior"
             fill
-            sizes="(min-width: 1024px) 1200px, 100vw"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1200px"
+            quality={85}
             className="object-cover rounded-none"
             priority
           />
