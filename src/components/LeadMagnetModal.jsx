@@ -74,7 +74,7 @@ export default function LeadMagnetModal() {
 
             <div className="relative bg-white max-w-4xl w-full rounded-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row animate-in fade-in zoom-in duration-300">
                 {/* Left Side - Visual */}
-                <div className="md:w-1/2 bg-[#234D7E] text-white p-10 flex flex-col justify-center relative overflow-hidden">
+                <div className="md:w-1/2 bg-[#234D7E] md:block hidden text-white p-10 flex flex-col justify-center relative overflow-hidden">
                     <div className="absolute top-0 left-0 w-full h-full opacity-10">
                         <div className="absolute -top-10 -left-10 w-40 h-40 border-4 border-white rounded-full"></div>
                         <div className="absolute top-40 right-10 w-60 h-60 border-2 border-white rounded-full"></div>
