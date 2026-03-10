@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
+import Script from "next/script";
 import { FiHome, FiChevronRight } from "react-icons/fi";
 import Link from "next/link";
 

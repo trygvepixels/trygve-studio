@@ -245,7 +245,7 @@ const Page = () => {
       </>
       <a
         href="https://wa.me/919554440400"
-        className="fixed bottom-20 right-8 bg-wh ite text-green-500 rounded-full text-4xl z-50 "
+        className="fixed bottom-5 right-8 bg-wh ite text-green-500 rounded-full text-4xl z-50 "
       >
         <Image src={whatsapp} alt="Chat on WhatsApp" height={50} />
       </a>
@@ -262,17 +262,7 @@ const Page = () => {
       {/* <Footer /> */}
 
       {/* ---------- Floating trigger button (fixed) ---------- */}
-      <button
-        type="button"
-        onClick={() => setShowPopup(true)}
-        className="fixed bottom-6 right-6 z-[10] rounded-full bg-[#101010] text-white shadow-lg px-6 py-3 text-sm md:text-base hover:opacity-90 active:scale-[0.98] transition"
-        aria-haspopup="dialog"
-        aria-expanded={showPopup ? "true" : "false"}
-        aria-controls="contact-popup"
-      >
-        Start Your Project
-      </button>
-
+      
       {/* ---------- Popup ---------- */}
       {showPopup && (
         <div
