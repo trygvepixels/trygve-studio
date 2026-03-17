@@ -12,6 +12,7 @@ import FeatureProjects from "@/components/FeatureProjects";
 import Stats from "@/components/Stats";
 import CoreCapabilities from "@/components/CoreCapabilities";
 import Popup from "@/components/Popup";
+import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { useRouter } from "next/navigation";
 import { FaWhatsapp } from "react-icons/fa";
 import Script from "next/script";

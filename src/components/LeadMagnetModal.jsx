@@ -15,6 +15,15 @@ export default function LeadMagnetModal() {
     });
 
     useEffect(() => {
+        const handleExitIntent = (e) => {
+            if (e.clientY <= 0) {
+                const hasSeenModal = localStorage.getItem("hasSeenLeadMagnet");
+                if (!hasSeenModal) {
+                    setIsOpen(true);
+                }
+            }
+        };
+
         // Trigger after 20 seconds
         const timer = setTimeout(() => {
             const hasSeenModal = localStorage.getItem("hasSeenLeadMagnet");
@@ -23,7 +32,12 @@ export default function LeadMagnetModal() {
             }
         }, 20000);
 
-        return () => clearTimeout(timer);
+        document.addEventListener("mouseleave", handleExitIntent);
+
+        return () => {
+            clearTimeout(timer);
+            document.removeEventListener("mouseleave", handleExitIntent);
+        };
     }, []);
 
     const handleChange = (e) => {

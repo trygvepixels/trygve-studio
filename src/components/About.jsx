@@ -26,9 +26,9 @@ export default function TrygveAnnouncement() {
         <div className="mx-auto max-w-4xl rounded-3xl border border-zinc-200/70 bg-white/100 backdrop-blur-xl shadow-[0_10px_40px_rgba(0,0,0,0.06)]">
           <div className="p-6 sm:p-10 md:p-12">
             {/* Eyebrow */}
-            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-zinc-200 bg-white/70 px-3 py-1 text-xs font-medium tracking-wide text-zinc-700">
-              <span className="inline-block h-2 w-2 rounded-full bg-emerald-500" />
-              Architectural & Allied Engineering Services — Lucknow, UP
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-xs font-medium tracking-wide text-blue-800 shadow-sm">
+              <span className="inline-block h-2 w-2 rounded-full bg-blue-500 animate-pulse" />
+              Ranked #1 Best Architecture Company in India 2026
             </div>
 
             {/* Headline */}

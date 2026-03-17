@@ -15,43 +15,68 @@ const nextConfig = {
         source: "/:path*",
         has: [{ type: "host", value: "www.trygvestudio.com" }],
         destination: "https://trygvestudio.com/:path*",
-        permanent: true,
+        statusCode: 301,
       },
       // 301 Permanent Redirects for SEO Cleanup
       {
         source: "/work",
         destination: "/projects",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/gallery",
         destination: "/projects",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/featured-projects",
         destination: "/projects",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/contact",
         destination: "/contact-us",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/conatct-us",
         destination: "/contact-us",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/blog/:slug",
         destination: "/blogs/:slug",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/jobs",
         destination: "/career",
-        permanent: true,
+        statusCode: 301,
+      },
+      {
+        source: "/thank-you",
+        destination: "/thankyou",
+        statusCode: 301,
+      },
+      {
+        source: "/interior-designer",
+        destination: "/services/interior-design-lucknow",
+        statusCode: 301,
+      },
+      {
+        source: "/servcies",
+        destination: "/services",
+        statusCode: 301,
+      },
+      {
+        source: "/projct",
+        destination: "/projects",
+        statusCode: 301,
+      },
+      {
+        source: "/projcts",
+        destination: "/projects",
+        statusCode: 301,
       },
     ];
   },

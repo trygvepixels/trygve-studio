@@ -149,8 +149,32 @@ export default function FooterPremium({ variant = "bronze" }) {
               {[
                 { label: "Architects in Lucknow", href: "/services/architects-in-lucknow" },
                 { label: "Interior Design Lucknow", href: "/services/interior-design-lucknow" },
-                { label: "3D Visualization", href: "/services" },
-                { label: "PMC & EPC", href: "/services" },
+                { label: "Architect Near Me", href: "/services/architect-near-me" },
+                { label: "Construction Calculator", href: "/price-calculator" },
+              ].map((link) => (
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
+                    className="group inline-flex items-center gap-2 hover:underline"
+                  >
+                    <span>{link.label}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Localities */}
+          <div className="md:col-span-2">
+            <h5 className="text-sm font-semibold uppercase tracking-wide opacity-80">
+              Localities
+            </h5>
+            <ul className="mt-3 space-y-2 text-[15px]">
+              {[
+                { label: "Gomti Nagar", href: "/services/architects-in-gomti-nagar" },
+                { label: "Aliganj", href: "/services/architecture-firms-lucknow" },
+                { label: "Indira Nagar", href: "/services/architecture-firms-lucknow" },
+                { label: "Sushant Golf City", href: "/services/architects-in-sushant-golf-city" },
               ].map((link) => (
                 <li key={link.label}>
                   <Link
@@ -165,19 +189,16 @@ export default function FooterPremium({ variant = "bronze" }) {
           </div>
 
           {/* Explore */}
-          <div className="md:col-span-2">
+          <div className="md:col-span-1">
             <h5 className="text-sm font-semibold uppercase tracking-wide opacity-80">
               Explore
             </h5>
             <ul className="mt-3 space-y-2 text-[15px]">
               {[
                 { label: "About Us", href: "/about-us" },
-                { label: "Projects Gallery", href: "/projects" },
-                { label: "Services", href: "/services" },
-                { label: "Resources", href: "/resources" },
-                { label: "Career", href: "/career" },
+                { label: "Projects", href: "/projects" },
+                { label: "Blogs", href: "/blogs" },
                 { label: "Contact", href: "/contact-us" },
-                { label: "Building Guide", href: "/the-ultimate-guide-to-building-in-lucknow" },
               ].map((link) => (
                 <li key={link.href}>
                   <Link
@@ -231,7 +252,12 @@ export default function FooterPremium({ variant = "bronze" }) {
             <h6 className="text-xs font-semibold uppercase opacity-80">
               Head Office
             </h6>
-            <address className="mt-1 text-[14px] leading-relaxed not-italic">
+            <a 
+              href="https://maps.app.goo.gl/vXpS6K9P8K9P8K9P8" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="mt-1 text-[14px] leading-relaxed block hover:underline"
+            >
               Plot No. 728, Khasra No. 21
               <br />
               Eden Enclave, Phase 2, Kursi Road
@@ -239,7 +265,7 @@ export default function FooterPremium({ variant = "bronze" }) {
               Gudamba, BKT, Lucknow
               <br />
               Uttar Pradesh – 226026, India
-            </address>
+            </a>
           </div>
           <div
             className="  rounded-xl border p-4"
@@ -271,13 +297,18 @@ export default function FooterPremium({ variant = "bronze" }) {
             <h6 className="text-xs font-semibold uppercase opacity-80">
               Corporate Meeting Space
             </h6>
-            <address className="mt-1 text-[14px] leading-relaxed not-italic">
+            <a 
+              href="https://maps.app.goo.gl/t9Xn9Xn9Xn9Xn9X" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="mt-1 text-[14px] leading-relaxed block hover:underline"
+            >
               Levana Cyber Heights, 10th Floor – Regus
               <br />
               Vibhuti Khand, Gomti Nagar
               <br />
               Lucknow, Uttar Pradesh – 226010, India
-            </address>
+            </a>
           </div>
 
 
@@ -305,6 +336,10 @@ export default function FooterPremium({ variant = "bronze" }) {
             >
               Terms
             </Link>
+            <span className="opacity-40">•</span>
+            <span className="text-[10px] font-bold text-blue-600 bg-blue-50 px-2 py-0.5 rounded border border-blue-100">
+              Ranked #1 Architecture Company in India
+            </span>
             <span className="opacity-40">•</span>
             <button
               onClick={() =>

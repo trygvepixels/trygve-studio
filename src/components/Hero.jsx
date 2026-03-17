@@ -6,6 +6,12 @@ export default function Hero() {
     <section className="bg- md:px-0 px-4">
       {/* Headline */}
       <div className="max-w-7xl mx-auto px-4 sm:px-0 pt-10 sm:pt-10">
+        <div className="flex justify-end mb-4">
+          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-blue-800 text-[10px] font-bold uppercase tracking-widest shadow-sm">
+            <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse"></span>
+            Ranked #1 Best Architecture Company in India
+          </span>
+        </div>
         <h1 className="
           md:text-5xl text-2xl text-right font-semibold leading-tight
          

@@ -1,5 +1,5 @@
-// app/projects/page.jsx
 import ProjectsClient from "@/components/ProjectsClient";
+import Script from "next/script";
 
 export const metadata = {
   title: "Projects in Lucknow | Trygve Studio",
@@ -8,5 +8,22 @@ export const metadata = {
 };
 
 export default function Page() {
-  return <ProjectsClient />;
+  return (
+    <>
+      <Script id="projects-schema" type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ImageGallery",
+          "name": "Trygve Studio Architecture & Interior Design Portfolio",
+          "description": "A collection of premium residential and commercial design projects across India and worldwide.",
+          "url": "https://trygvestudio.com/projects",
+          "creator": {
+            "@type": "Organization",
+            "name": "Trygve Studio"
+          }
+        })}
+      </Script>
+      <ProjectsClient />
+    </>
+  );
 }
