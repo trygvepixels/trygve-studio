@@ -150,7 +150,7 @@ export default function RootLayout({ children }) {
         </Script>
 
         {/* --- Meta Pixel Code --- */}
-        <Script id="meta-pixel" strategy="afterInteractive">
+        <Script id="meta-pixel" strategy="lazyOnload">
           {`
             !function(f,b,e,v,n,t,s)
             {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -191,7 +191,7 @@ export default function RootLayout({ children }) {
         </noscript>
 
         {/* --- Clarity Tracking Code --- */}
-        <Script id="clarity-script" strategy="afterInteractive">
+        <Script id="clarity-script" strategy="lazyOnload">
           {`
             (function(c,l,a,r,i,t,y){
               c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
