@@ -247,9 +247,22 @@ export default function RootLayout({ children }) {
             },
             areaServed: [
               { "@type": "City", name: "Lucknow" },
+              { "@type": "City", name: "Patna" },
               { "@type": "Country", name: "India" },
               { "@type": "Place", name: "United Arab Emirates" },
               { "@type": "Place", name: "Saudi Arabia" },
+              { "@type": "Place", name: "United Kingdom" },
+              { "@type": "Place", name: "United States" },
+            ],
+            knowsAbout: [
+              "Turnkey Architecture",
+              "LDA Sanction",
+              "Luxury Residential Design",
+              "Interior Design",
+              "Commercial Architecture",
+              "RERA Compliance",
+              "BIM Outsourcing",
+              "NRI Home Projects"
             ],
             aggregateRating: {
               "@type": "AggregateRating",

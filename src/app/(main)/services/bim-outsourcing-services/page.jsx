@@ -1,12 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FiCheck, FiGlobe, FiClock, FiShield } from "react-icons/fi";
-import Script from "next/script";
 
 export const metadata = {
-    title: "BIM Outsourcing & Architectural Drafting Services | Trygve Studio",
+    title: "BIM Outsourcing & Architectural Drafting Services for NRI & Global Firms | Trygve Studio",
     description:
-        "High-quality BIM outsourcing and architectural drafting for international firms. Remote Revit modeling, CAD documentation, and VDC services for US & UK developers.",
+        "High-quality BIM outsourcing and architectural drafting for international firms and NRI clients. Remote Revit modeling, CAD documentation, VDC services, and full NRI home-build management for US, UK & UAE.",
     alternates: {
         canonical: "/services/bim-outsourcing-services",
     },
@@ -78,45 +77,45 @@ export default function BIMOutsourcingServices() {
                         <div className="bg-white p-10 rounded-2xl">
                             <h3 className="text-2xl font-bold mb-6 text-blue-600 border-b pb-4">Architectural BIM (LOD 100-500)</h3>
                             <ul className="space-y-4">
-                                <li className="flex gap-3">
-                                    <FiCheck className="text-green-500 mt-1" />
-                                    <span>Schematic Design to Design Development (SD/DD)</span>
-                                </li>
-                                <li className="flex gap-3">
-                                    <FiCheck className="text-green-500 mt-1" />
-                                    <span>Construction Documentation (CD) Production</span>
-                                </li>
-                                <li className="flex gap-3">
-                                    <FiCheck className="text-green-500 mt-1" />
-                                    <span>BIM Content & Family Creation (Revit)</span>
-                                </li>
-                                <li className="flex gap-3">
-                                    <FiCheck className="text-green-500 mt-1" />
-                                    <span>Clash Detection & BIM Coordination</span>
-                                </li>
+                                <li className="flex gap-3"><FiCheck className="text-green-500 mt-1" /><span>Schematic Design to Design Development (SD/DD)</span></li>
+                                <li className="flex gap-3"><FiCheck className="text-green-500 mt-1" /><span>Construction Documentation (CD) Production</span></li>
+                                <li className="flex gap-3"><FiCheck className="text-green-500 mt-1" /><span>BIM Content & Family Creation (Revit)</span></li>
+                                <li className="flex gap-3"><FiCheck className="text-green-500 mt-1" /><span>Clash Detection & BIM Coordination</span></li>
                             </ul>
                         </div>
                         <div className="bg-white p-10 rounded-2xl">
                             <h3 className="text-2xl font-bold mb-6 text-blue-600 border-b pb-4">Drafting & Asset Management</h3>
                             <ul className="space-y-4">
-                                <li className="flex gap-3">
-                                    <FiCheck className="text-green-500 mt-1" />
-                                    <span>As-Built Drawing Generation from Point Clouds</span>
-                                </li>
-                                <li className="flex gap-3">
-                                    <FiCheck className="text-green-500 mt-1" />
-                                    <span>Millwork and Joinery Detailing</span>
-                                </li>
-                                <li className="flex gap-3">
-                                    <FiCheck className="text-green-500 mt-1" />
-                                    <span>Landscape Architecture Drafting</span>
-                                </li>
-                                <li className="flex gap-3">
-                                    <FiCheck className="text-green-500 mt-1" />
-                                    <span>Floor Plan Conversions (PDF to CAD/BIM)</span>
-                                </li>
+                                <li className="flex gap-3"><FiCheck className="text-green-500 mt-1" /><span>As-Built Drawing Generation from Point Clouds</span></li>
+                                <li className="flex gap-3"><FiCheck className="text-green-500 mt-1" /><span>Millwork and Joinery Detailing</span></li>
+                                <li className="flex gap-3"><FiCheck className="text-green-500 mt-1" /><span>Landscape Architecture Drafting</span></li>
+                                <li className="flex gap-3"><FiCheck className="text-green-500 mt-1" /><span>Floor Plan Conversions (PDF to CAD/BIM)</span></li>
                             </ul>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* NRI Home Build Section */}
+            <section className="py-24 px-6 bg-[#234D7E] text-white">
+                <div className="max-w-5xl mx-auto text-center">
+                    <div className="inline-block px-4 py-1.5 rounded-full bg-white/10 text-blue-200 text-xs font-black uppercase tracking-widest mb-6">
+                        For NRIs in USA · UAE · UK
+                    </div>
+                    <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+                        Building Your Dream Home in Lucknow <br />
+                        <span className="text-blue-300">While Living Abroad?</span>
+                    </h2>
+                    <p className="text-blue-100 text-xl mb-10 max-w-3xl mx-auto font-light leading-relaxed">
+                        We manage your entire Lucknow project remotely — from LDA sanctions and RERA compliance to construction supervision and furnished handover. Regular video updates, digital approvals, and zero-stress execution.
+                    </p>
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                        <Link href="/blogs/building-home-in-lucknow-nri-guide-2026" className="bg-white text-[#234D7E] px-8 py-4 text-base font-bold rounded-lg hover:bg-blue-50 transition-colors">
+                            Read the NRI Home Guide 2026 →
+                        </Link>
+                        <Link href="/contact-us" className="border border-white/30 text-white px-8 py-4 text-base font-bold rounded-lg hover:bg-white/10 transition-colors">
+                            Book a Free Remote Consultation
+                        </Link>
                     </div>
                 </div>
             </section>
@@ -135,3 +134,4 @@ export default function BIMOutsourcingServices() {
         </main>
     );
 }
+

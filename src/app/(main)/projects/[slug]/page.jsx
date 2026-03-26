@@ -95,8 +95,10 @@ export async function generateMetadata({ params }) {
 
   if (!project) return {};
 
-  const title = `${project.title} | Projects | Trygve Studio`;
-  const description = project.description || `Explore our architecture and interior design work: ${project.title}. Crafted with precision in Lucknow and beyond.`;
+  const title = `${project.title} | Architecture & Interior Design Project | Trygve Studio Lucknow`;
+  const description = project.description
+    ? `${project.description.slice(0, 150)}... See the full project by Trygve Studio, Lucknow's top architecture firm.`
+    : `Explore the ${project.title} project by Trygve Studio — Lucknow's leading architecture firm. Premium design, ISO certified, LDA approved.`;
   const canonical = `https://trygvestudio.com/projects/${project.slug}`;
 
   return {
@@ -109,7 +111,17 @@ export async function generateMetadata({ params }) {
       title,
       description,
       url: canonical,
-      images: project.coverImage ? [{ url: project.coverImage }] : [],
+      siteName: "Trygve Studio",
+      type: "article",
+      images: project.coverImage
+        ? [{ url: project.coverImage, width: 1200, height: 630, alt: `${project.title} - Trygve Studio` }]
+        : [{ url: "https://trygvestudio.com/og-image.jpg", width: 1200, height: 630 }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: project.coverImage ? [project.coverImage] : ["https://trygvestudio.com/og-image.jpg"],
     },
   };
 }
@@ -132,25 +144,38 @@ export default async function ProjectPage({ params }) {
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             "itemListElement": [
-              {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://trygvestudio.com"
-              },
-              {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Projects",
-                "item": "https://trygvestudio.com/projects"
-              },
-              {
-                "@type": "ListItem",
-                "position": 3,
-                "name": project.title,
-                "item": `https://trygvestudio.com/projects/${project.slug}`
-              }
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://trygvestudio.com" },
+              { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://trygvestudio.com/projects" },
+              { "@type": "ListItem", "position": 3, "name": project.title, "item": `https://trygvestudio.com/projects/${project.slug}` }
             ]
+          })
+        }}
+      />
+      {/* CreativeWork Schema — helps Google understand this as a portfolio piece */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "CreativeWork",
+            "name": project.title,
+            "description": project.description || `A premium architecture and interior design project by Trygve Studio in Lucknow, India.`,
+            "url": `https://trygvestudio.com/projects/${project.slug}`,
+            "image": project.coverImage || "https://trygvestudio.com/og-image.jpg",
+            "dateCreated": project.year || "2025",
+            "creator": {
+              "@type": "Organization",
+              "name": "Trygve Studio",
+              "url": "https://trygvestudio.com",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Lucknow",
+                "addressRegion": "Uttar Pradesh",
+                "addressCountry": "IN"
+              }
+            },
+            "genre": project.tags?.join(", ") || "Architecture, Interior Design",
+            "keywords": `${project.title}, architecture Lucknow, interior design Lucknow, Trygve Studio`
           })
         }}
       />

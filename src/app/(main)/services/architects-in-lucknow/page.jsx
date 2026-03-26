@@ -122,6 +122,38 @@ export default function ArchitectsInLucknow() {
                 "@type": "Answer",
                 text: "Yes, we manage all regulatory approvals including building permissions, fire NOC, environmental clearances, and utility connections with Lucknow Development Authority (LDA) and other concerned departments."
               }
+            },
+            {
+              "@type": "Question",
+              name: "Lucknow mein ghar banane ka kitna kharcha aata hai?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Lucknow mein ghar construction ka kharcha 2026 mein approximately ₹1,650 se ₹2,850 per sq ft ke beech hota hai, depending on the finish level. Standard finish ₹1,650/sqft, premium ₹2,150/sqft, aur luxury ₹2,850/sqft se shuru hoti hai. Accurate estimate ke liye hamara free construction calculator use karein."
+              }
+            },
+            {
+              "@type": "Question",
+              name: "How do I get LDA approval for my house in Lucknow?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "LDA (Lucknow Development Authority) approval requires architectural drawings, structural calculations, site plan, ownership documents, and prescribed fees. The process typically takes 45-90 days. Trygve Studio handles the complete LDA approval process for all residential and commercial projects, including document preparation, submission, and follow-up."
+              }
+            },
+            {
+              "@type": "Question",
+              name: "Can I build my house in Lucknow if I am an NRI living abroad?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Yes, NRIs can build homes in Lucknow with the help of a Power of Attorney (POA) for local representation. Trygve Studio has managed complete turnkey projects for NRI clients in the US, UAE, and UK — handling everything from LDA approval and RERA compliance to construction and interior fit-out, with regular video updates and digital approval workflows."
+              }
+            },
+            {
+              "@type": "Question",
+              name: "Which is the best area to build a house in Lucknow in 2026?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "The best residential areas in Lucknow for 2026 are Gomti Nagar Extension (high appreciation, planned infrastructure), Sushant Golf City (premium gated community), Shaheed Path Corridor (upcoming IT hub), and Sultanpur Road (affordable with growth potential). We have completed projects in all these localities and can advise on plot selection, bylaws, and construction feasibility."
+              }
             }
           ]
         })}
@@ -272,7 +304,11 @@ export default function ArchitectsInLucknow() {
                 <p className="text-xl text-gray-600 font-light leading-relaxed">
                   At Trygve Studio, we provide comprehensive architectural and interior design solutions
                   across Lucknow, Gomti Nagar, Hazratganj, and beyond. From concept to execution,
-                  we ensure every project reflects your vision.
+                  we ensure every project reflects your vision. Use our{' '}
+                  <Link href="/price-calculator" className="text-[#234D7E] font-semibold underline underline-offset-2 hover:opacity-80 transition-opacity">
+                    free construction cost calculator
+                  </Link>{' '}
+                  to check live 2026 rates before starting your project.
                 </p>
               </div>
 
@@ -622,8 +658,18 @@ export default function ArchitectsInLucknow() {
               wood, we like color, we design for actual living—not Instagram posts.
             </p>
             <p className="text-gray-700">
-              Also, if you need something done in 2 weeks, we can't help. Quality architecture takes time.
+                Also, if you need something done in 2 weeks, we can't help. Quality architecture takes time.
             </p>
+
+            <div className="mt-10 p-6 bg-[#234D7E] text-white rounded-xl">
+              <h3 className="text-xl font-semibold mb-2">Know Your Budget Before You Start</h3>
+              <p className="text-blue-100 mb-4 text-sm leading-relaxed">
+                Every great Lucknow home starts with an honest budget. Use our free calculator to get 2026 material-rate estimates for your plot size and finish level.
+              </p>
+              <Link href="/price-calculator" className="inline-block bg-white text-[#234D7E] font-bold px-6 py-3 rounded-lg hover:bg-blue-50 transition-colors text-sm">
+                Try Free Cost Calculator →
+              </Link>
+            </div>
           </div>
         </div>
       </section>
