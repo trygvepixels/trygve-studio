@@ -1,5 +1,6 @@
 import { getBlogs, getProjects, getServices } from "../../lib/api";
 import { pillars } from "../../data/pillars";
+import { interiorDesignCities } from "../../data/interiorDesignCities";
 
 // Revalidate sitemap every 2 days (48 hours = 172800 seconds)
 // This ensures new blog posts are automatically included in the sitemap
@@ -48,6 +49,30 @@ export default async function sitemap() {
     },
 
     {
+      url: `${baseUrl}/price-calculator`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 1.0,
+    },
+    {
+      url: `${baseUrl}/services/architect-near-me`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/services/bim-outsourcing-services`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/blogs/building-home-in-lucknow-nri-guide-2026`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/privacy`,
       lastModified: new Date(),
       changeFrequency: "monthly",
@@ -71,7 +96,6 @@ export default async function sitemap() {
   // We define these separately to avoid duplication with dynamic service data
   const serviceLandingSlugs = [
     "architects-in-lucknow",
-    "interior-design-lucknow",
     "architecture-firms-lucknow",
     "luxury-architecture-design-lucknow",
   ];
@@ -81,6 +105,14 @@ export default async function sitemap() {
     lastModified: new Date(),
     changeFrequency: "monthly",
     priority: 0.8,
+  }));
+
+  // 2a. Interior Design City Pages
+  const interiorDesignCityPages = interiorDesignCities.map((city) => ({
+    url: `${baseUrl}/services/interior-design/${city.citySlug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly",
+    priority: 0.7,
   }));
 
   // 3. Dynamic Blogs
@@ -135,6 +167,7 @@ export default async function sitemap() {
   return [
     ...staticPages,
     ...serviceLandingPages,
+    ...interiorDesignCityPages,
     ...blogPostPages,
     ...projectPages,
     ...dynamicServicePages,

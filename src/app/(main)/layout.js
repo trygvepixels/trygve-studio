@@ -104,10 +104,6 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  const isInteriorPage =
-    typeof window !== "undefined" &&
-    window.location.pathname === "/interior-designer";
-
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
@@ -311,13 +307,13 @@ export default function RootLayout({ children }) {
             style={{ display: "none", visibility: "hidden" }}
           ></iframe>
         </noscript>
-        {!isInteriorPage && <Header />}
+        <Header />
 
-        <div className={isInteriorPage ? "" : "md:pt-24 pt-32"}>{children}</div>
+        <div className="md:pt-24 pt-32">{children}</div>
 
-        {!isInteriorPage && <ContactButton />}
+        <ContactButton />
 
-        {!isInteriorPage && <Footer variant="oxblood" />}
+        <Footer variant="oxblood" />
       </body>
     </html>
   );

@@ -6,9 +6,9 @@ import Header from "./Header";
 
 export const metadata = {
   metadataBase: new URL("https://trygvestudio.com"),
-  title: "Lucknow Home Construction Cost 2026 — Instant Budget Calculator",
+  title: "Real-time 2026 House Construction Cost Calculator — Lucknow Special",
   description:
-    "Confused about construction costs in Lucknow? Get an instant, accurate estimate for your home, villa or interior project — with real 2026 material rates for Gomti Nagar, Aliganj & beyond.",
+    "Zero Sign-up Required! Get an instant, accurate estimate for your home or interior project in Lucknow. Calculate based on 2026 building material rates for Gomti Nagar, Aliganj & Kursi Road.",
   alternates: { canonical: "https://trygvestudio.com/price-calculator" },
   keywords: [
     "Construction cost calculator Lucknow",

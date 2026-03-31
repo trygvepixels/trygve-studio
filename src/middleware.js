@@ -32,6 +32,15 @@ export async function middleware(request) {
     }
   }
 
+  const cityServiceMatch = url.pathname.match(
+    /^\/services\/interior-design-([a-z0-9-]+)\/?$/
+  );
+  if (cityServiceMatch) {
+    const citySlug = cityServiceMatch[1];
+    const targetUrl = new URL(`/services/interior-design/${citySlug}`, request.url);
+    return NextResponse.redirect(targetUrl, 301);
+  }
+
   // --- 2. Admin Authentication Logic ---
 
   if (url.pathname.startsWith("/admin")) {
