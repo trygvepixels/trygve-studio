@@ -167,14 +167,15 @@ export default function FooterPremium({ variant = "bronze" }) {
           {/* Localities */}
           <div className="md:col-span-2">
             <h5 className="text-sm font-semibold uppercase tracking-wide opacity-80">
-              Localities
+              Top Service Cities
             </h5>
             <ul className="mt-3 space-y-2 text-[15px]">
               {[
-                { label: "Gomti Nagar", href: "/services/architects-in-gomti-nagar" },
-                { label: "Aliganj", href: "/services/architecture-firms-lucknow" },
-                { label: "Indira Nagar", href: "/services/architecture-firms-lucknow" },
-                { label: "Sushant Golf City", href: "/services/architects-in-sushant-golf-city" },
+                { label: "Interior Design Delhi", href: "/services/interior-design/delhi" },
+                { label: "Interior Design Kanpur", href: "/services/interior-design/kanpur" },
+                { label: "Interior Design Lucknow", href: "/services/interior-design/lucknow" },
+                { label: "Interior Design Indore", href: "/services/interior-design/indore" },
+                { label: "Architects in Lucknow", href: "/services/architects-in-lucknow" },
               ].map((link) => (
                 <li key={link.label}>
                   <Link

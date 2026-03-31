@@ -62,7 +62,7 @@ export default function Page() {
         ],
         connectedServices: [
             { name: "Architects in Lucknow", link: "/services/architects-in-lucknow" },
-            { name: "Interior Design Lucknow", link: "/services/interior-design-lucknow" }
+            { name: "Interior Design Lucknow", link: "/services/interior-design/lucknow" }
         ]
     };
 

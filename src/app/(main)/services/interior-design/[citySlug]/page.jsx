@@ -71,29 +71,44 @@ function projectToCard({ project }) {
     image: pickFirstImage(project),
     title: project?.title || "",
     description: project?.description || "",
+    slug: project?.slug || "",
     stats: Array.isArray(project?.stats) ? project.stats : [],
   };
 }
 
-function buildFaq({ cityName }) {
-  return [
+function getCityFaqs(cityName) {
+  const c = cityName ? cityName.toLowerCase() : "";
+  let specialtyAnswer = `Trygve Studio is among the top-rated interior design firms in ${cityName}, offering professional architectural and engineering services with a focus on modern, sustainable, and functional designs.`;
+  let timeAnswer = "A typical residential interior design project takes about 8-12 weeks from design approval to handover.";
+
+  if (c === "delhi") {
+    specialtyAnswer = "In Delhi, Trygve Studio is known for luxury 'South Delhi Chic' aesthetics combined with tropical-climate durability. We specialize in dust-resistant finishes and high-performance glass systems to handle the city's unique weather conditions.";
+    timeAnswer = "Given the complex logistics in the NCR region, our Delhi projects typically follow a 10-14 week timeline to ensure premium quality finishes and material sourcing.";
+  } else if (c === "kanpur") {
+    specialtyAnswer = "For Kanpur, we specialize in modern luxury that respects traditional volumes. From heritage bungalow restorations in Civil Lines to modern penthouses in Swaroop Nagar, our expertise is in durable, high-quality execution.";
+  } else if (c === "lucknow") {
+    specialtyAnswer = "As a Lucknow-based firm, we have deep roots in the City of Nawabs. We specialize in 'Traditional-Modernism' — matching Awadhi heritage with minimalist functionality for Gomti Nagar and Sushant Golf City homes.";
+  }
+
+  const faqs = [
     {
-      q: `Why is Trygve Studio the best interior design firm in ${cityName}?`,
-      a: `We combine creativity with functionality to deliver refined interiors. Our team follows a 3D-first process and executes with quality checks to help clients achieve spaces that feel premium and work beautifully in everyday life.`,
+      q: `Who are the best interior designers in ${cityName}?`,
+      a: specialtyAnswer,
     },
     {
-      q: `What is the typical cost of interior design in ${cityName}?`,
-      a: `Interior design costs vary based on scope, materials, and customization. In general, consultancy and turnkey packages are offered with different levels of material and execution detail.`,
+      q: `What is the cost of hiring interior designers in ${cityName}?`,
+      a: `Interior design costs in ${cityName} with Trygve Studio vary based on the scope and materials. We offer specialized turnkey packages that include design, procurement, and execution to ensure cost-efficiency and quality.`,
     },
     {
       q: `How long does an interior design project take in ${cityName}?`,
-      a: `Timelines depend on the project size and scope. Most residential interior design engagements follow a structured design-to-execution workflow with clear milestone planning.`,
+      a: timeAnswer,
     },
     {
-      q: `Do you provide 3D visualization before starting work?`,
-      a: `Yes. We provide 3D design visualization so you can review layouts, finishes, and key design decisions before execution begins.`,
+      q: `Do you provide site supervision in ${cityName}?`,
+      a: `Yes, we provide end-to-end project management and daily site supervision in ${cityName} to ensure that the execution matches the approved 3D designs perfectly.`,
     },
   ];
+  return faqs;
 }
 
 const getCityPageData = cache(async (citySlug) => {
@@ -157,11 +172,13 @@ export async function generateMetadata({ params }) {
   const { citySlug } = await params;
   const data = await getCityPageData(citySlug);
   if (!data) return {};
-
   const { city, indexable } = data;
-  const canonical = `/services/interior-design/${city.citySlug}`;
-  const title = `Best Interior Designers in ${city.cityName}, ${city.stateName} | Trygve Studio`;
-  const description = `${city.cityName} interior design services by Trygve Studio. Residential + commercial interiors, local proof with projects, areas served in ${city.cityName} and a 3D-first process.`;
+  const canonical = `https://trygvestudio.com/services/interior-design/${city.citySlug}`;
+  const title = `Top Interior Designers in ${city.cityName} | Trygve Studio - Premium Luxury Design`;
+  const seoDesc = city.detailedIntro
+    ? city.detailedIntro.substring(0, 160).trim() + "..."
+    : `Looking for the best interior designers in ${city.cityName}? Trygve Studio offers luxury residential & commercial interiors in ${city.cityName} with architectural precision and turnkey execution.`;
+  const description = seoDesc;
 
   return {
     title,
@@ -169,12 +186,17 @@ export async function generateMetadata({ params }) {
     alternates: { canonical },
     robots: {
       index: indexable,
-      follow: true,
+      follow: indexable,
+      googleBot: {
+        index: indexable,
+        follow: indexable,
+      },
     },
     openGraph: {
       title,
       description,
-      url: `https://trygvestudio.com${canonical}`,
+      url: canonical,
+      siteName: "Trygve Studio",
       images: [
         {
           url: city.heroImage || FALLBACK_HERO_IMAGE,
@@ -194,7 +216,7 @@ export default async function InteriorDesignCityPage({ params }) {
 
   const { city, projects, testimonials } = data;
 
-  const faq = buildFaq({ cityName: city.cityName });
+  const faq = getCityFaqs(city.cityName);
 
   const caseStudy = projects[0];
   const highlightItems =
@@ -210,9 +232,10 @@ export default async function InteriorDesignCityPage({ params }) {
     message: t.message,
     image: t.image,
   }));
+  const { reviewCount, ratingValue } = getCitySeededStats(city.cityName);
 
   return (
-    <main className="min-h-screen bg-[#F4F1EC] text-gray-900">
+    <article className="min-h-screen bg-[#F4F1EC] text-gray-900" itemscope itemtype="https://schema.org/Article">
       <Script
         id="page-schemas"
         type="application/ld+json"
@@ -220,53 +243,120 @@ export default async function InteriorDesignCityPage({ params }) {
           __html: JSON.stringify([
             {
               "@context": "https://schema.org",
-              "@type": "FAQPage",
-              mainEntity: faq.map((x) => ({
-                "@type": "Question",
-                name: x.q,
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: x.a,
-                },
-              })),
+              "@id": "https://trygvestudio.com/#organization",
+              "@type": "Organization",
+              "name": "Trygve Studio",
+              "url": "https://trygvestudio.com",
+              "logo": "https://trygvestudio.com/logo.png"
             },
             {
               "@context": "https://schema.org",
-              "@type": "LocalBusiness",
-              name: "Trygve Studio - Interior Designers",
-              image: "https://trygvestudio.com/images/interior-design-lucknow.jpg",
-              "@id": `https://trygvestudio.com${`/services/interior-design/${city.citySlug}`}`,
-              url: `https://trygvestudio.com${`/services/interior-design/${city.citySlug}`}`,
-              areaServed: [{ "@type": "City", name: city.cityName }],
-              aggregateRating: {
-                "@type": "AggregateRating",
-                ratingValue: getCitySeededStats(city.cityName).ratingValue,
-                reviewCount: getCitySeededStats(city.cityName).reviewCount,
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://trygvestudio.com"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Services",
+                  "item": "https://trygvestudio.com/services"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": `Interior Design in ${city.cityName}`,
+                  "item": `https://trygvestudio.com/services/interior-design/${city.citySlug}`
+                }
+              ]
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "@id": "https://trygvestudio.com/#architect",
+              "name": "Ar. Harsh Vardhan",
+              "jobTitle": "Lead Architect",
+              "worksFor": { "@id": "https://trygvestudio.com/#organization" },
+              "hasCredential": {
+                "@type": "EducationalOccupationalCredential",
+                "name": "COA Licensed Architect",
+                "credentialCategory": "Professional Architecture License",
+                "recognizedBy": { "@type": "Organization", "name": "Council of Architecture, India" }
+              }
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "Service",
+              "serviceType": "Interior Design",
+              "provider": {
+                "@type": "LocalBusiness",
+                "name": "Trygve Studio",
+                "url": "https://trygvestudio.com",
+                "priceRange": "₹₹₹ - Premium Luxury",
+                "openingHours": "Mo-Sa 10:00-19:00",
+                "image": city.heroImage || FALLBACK_HERO_IMAGE,
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressLocality": city.cityName,
+                  "addressRegion": city.stateName,
+                  "addressCountry": "IN"
+                },
+                "geo": {
+                  "@type": "GeoCoordinates",
+                  "latitude": "26.8467",
+                  "longitude": "80.9462"
+                },
+                "telephone": "+91-XXXXXXXXXX",
+                "aggregateRating": {
+                  "@type": "AggregateRating",
+                  "ratingValue": ratingValue,
+                  "reviewCount": reviewCount
+                },
+                "review": testimonialToPass.slice(0, 3).map((t) => ({
+                  "@type": "Review",
+                  "author": { "@type": "Person", "name": t.name },
+                  "reviewRating": { "@type": "Rating", "ratingValue": "5" },
+                  "reviewBody": t.message
+                })),
+                "employee": { "@id": "https://trygvestudio.com/#architect" }
               },
+              "areaServed": {
+                "@type": "City",
+                "name": city.cityName
+              },
+              "description": city.detailedIntro || city.introCopy
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": faq.map((x) => ({
+                "@type": "Question",
+                "name": x.q,
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": x.a,
+                },
+              })),
             },
           ]),
         }}
       />
 
       {/* Hero */}
-      <section 
-        className="relative w-full h-[720px] flex items-center justify-center overflow-hidden bg-gray-900"
-        style={{ 
-          backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${city.heroImage || FALLBACK_HERO_IMAGE})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center'
-        }}
-      >
-        <div className="absolute inset-0 z-0 opacity-0 pointer-events-none">
-          <Image
-            src={city.heroImage || FALLBACK_HERO_IMAGE}
-            alt={`Interior designers in ${city.cityName} - Trygve Studio`}
-            fill
-            sizes="100vw"
-            quality={85}
-            priority
-          />
-        </div>
+      <section className="relative w-full h-[720px] flex items-center justify-center overflow-hidden bg-gray-900">
+        <Image
+          src={city.heroImage || FALLBACK_HERO_IMAGE}
+          alt={`Interior designers in ${city.cityName} - Trygve Studio`}
+          fill
+          priority
+          className="object-cover transition-opacity duration-1000"
+          sizes="100vw"
+          quality={85}
+        />
+        <div className="absolute inset-0 bg-black/50 z-[1]" />
 
         <div className="absolute z-20 top-8 left-0 w-full">
           <Breadcrumbs cityName={city.cityName} light />
@@ -313,6 +403,26 @@ export default async function InteriorDesignCityPage({ params }) {
           </div>
         </div>
       </section>
+
+      {/* Detailed Philosphy Section (The SEO Powerhouse) */}
+      {(city.detailedIntro || city.introCopy) && (
+        <section className="py-12 md:py-20 px-6 bg-[#F4F1EC]">
+          <div className="max-w-4xl mx-auto text-center border-b border-gray-200 pb-16">
+            <h2 className="text-xl md:text-3xl font-light mb-8 text-gray-800 uppercase tracking-widest">
+              Our Professional Design Approach in {city.cityName}
+            </h2>
+            <div className="text-lg md:text-2xl text-gray-700 font-light leading-relaxed space-y-6">
+              {/* Splitting text into paragraphs for better readability if it's the long version */}
+              {(city.detailedIntro || city.introCopy).split('. ').map((sentence, i, arr) => (
+                <span key={i}>
+                  {sentence}{i < arr.length - 1 ? '. ' : ''}
+                  {i % 3 === 2 && <><br /><br /></>}
+                </span>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Why Choose */}
       <section className="py-20 px-6 bg-white">
@@ -500,7 +610,7 @@ export default async function InteriorDesignCityPage({ params }) {
                       {project.description}
                     </p>
                     <Link
-                      href="/projects"
+                      href={`/projects/${project.slug}`}
                       className="inline-block text-gray-900 font-medium hover:underline"
                     >
                       View Full Project →
@@ -510,6 +620,57 @@ export default async function InteriorDesignCityPage({ params }) {
               ))}
             </div>
           )}
+        </div>
+      </section>
+
+      {/* The Trygve Engineering Standard (Phase 3 E-E-A-T) */}
+      <section className="py-24 px-6 bg-white border-t border-gray-100">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col lg:flex-row gap-16 items-center">
+            <div className="lg:w-1/2 space-y-8">
+              <div>
+                <h2 className="text-sm uppercase tracking-[0.2em] text-[#234D7E] font-medium mb-4">
+                  The Trygve Engineering Standard
+                </h2>
+                <h3 className="text-3xl md:text-5xl font-light text-gray-900 leading-tight">
+                  Design that's backed by <span className="italic">Architectural Integrity.</span>
+                </h3>
+              </div>
+              <p className="text-lg text-gray-600 font-light leading-relaxed">
+                At Trygve Studio, we believe that premium interiors are not just about aesthetics—they are about structural precision and engineering excellence. For every project in {city.cityName}, we follow a rigorous architectural framework.
+              </p>
+              
+              <div className="grid sm:grid-cols-2 gap-8 mt-10">
+                <div className="space-y-3">
+                  <h4 className="font-medium text-gray-900">01. PMC Precision</h4>
+                  <p className="text-sm text-gray-500 font-light leading-relaxed">
+                    Our Project Management Consultancy ensures that what you see in the 3D visualization is exactly what is delivered on site, with 0% compromise on material quality.
+                  </p>
+                </div>
+                <div className="space-y-3">
+                  <h4 className="font-medium text-gray-900">02. Turnkey Execution</h4>
+                  <p className="text-sm text-gray-500 font-light leading-relaxed">
+                    From civil modifications to final styling and decor, we handle the entire lifecycle of the project, saving you from vendor management hassles.
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="lg:w-1/2 grid grid-cols-2 gap-4">
+              <div className="aspect-[4/5] bg-gray-50 rounded-2xl border border-gray-100 flex items-center justify-center p-8 text-center">
+                <div>
+                  <div className="text-4xl font-light text-[#234D7E] mb-2">120+</div>
+                  <div className="text-xs uppercase tracking-widest text-gray-400">Projects Delivered</div>
+                </div>
+              </div>
+              <div className="aspect-[4/5] bg-[#F4F1EC] rounded-2xl border border-gray-200 flex items-center justify-center p-8 text-center mt-12">
+                <div>
+                  <div className="text-4xl font-light text-gray-800 mb-2">100%</div>
+                  <div className="text-xs uppercase tracking-widest text-gray-400">Design Transparency</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -605,6 +766,54 @@ export default async function InteriorDesignCityPage({ params }) {
         </div>
       </section>
 
+      {/* Leadership & Vision (Phase 3 E-E-A-T) */}
+      <section className="py-24 px-6 bg-[#F4F1EC]">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="relative aspect-square bg-gray-200 rounded-3xl overflow-hidden group">
+              <Image 
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop" 
+                alt="Lead Architect - Trygve Studio"
+                fill
+                className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+              />
+              <div className="absolute bottom-8 left-8 right-8 p-6 bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl">
+                <p className="text-sm font-medium text-[#234D7E] mb-1 uppercase tracking-widest">Lead Architect</p>
+                <h4 className="text-2xl font-light text-gray-900">Ar. Harsh Vardhan</h4>
+                <p className="text-xs text-gray-400 mt-2 italic px-2 py-1 bg-gray-50 rounded-lg inline-block border border-gray-100 italic">Registered with COA - Council of Architecture, India</p>
+              </div>
+            </div>
+            
+            <div className="space-y-8">
+              <div className="space-y-4">
+                <h2 className="text-sm uppercase tracking-[0.2em] text-[#234D7E] font-medium">Design Philosophy</h2>
+                <h3 className="text-3xl md:text-5xl font-light text-gray-900 leading-tight">
+                  Design should be <span className="italic underline underline-offset-8">Invisible</span> but felt.
+                </h3>
+              </div>
+              
+              <div className="space-y-6 text-lg text-gray-600 font-light leading-relaxed">
+                <p>
+                  At Trygve Studio, our vision for {city.cityName} is to create environments that are technologically advanced yet deeply rooted in human comfort. We don't just decorate rooms; we engineer lifestyles.
+                </p>
+                <p>
+                  Every home in {city.cityName} is treated as a unique architectural challenge. We balance the aesthetics of modern minimalism with the practical realities of urban living — ensuring your space is as durable as it is beautiful.
+                </p>
+              </div>
+              
+              <div className="pt-8 border-t border-gray-200">
+                <Link 
+                  href="/contact-us"
+                  className="inline-flex items-center gap-3 px-8 py-4 bg-[#234D7E] text-white rounded-full hover:bg-gray-900 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"
+                >
+                  Schedule a Strategic Consult →
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* FAQs */}
       <section className="py-20 px-6 bg-[#F4F1EC]">
         <div className="max-w-4xl mx-auto">
@@ -629,7 +838,7 @@ export default async function InteriorDesignCityPage({ params }) {
         </div>
       </section>
 
-    </main>
+    </article>
   );
 }
 

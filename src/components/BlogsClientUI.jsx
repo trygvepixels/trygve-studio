@@ -178,7 +178,7 @@ export default function BlogsClientUI({ blog }) {
               </li>
               <li className="list-none">
                 <Link
-                  href="/services/interior-design-lucknow"
+                  href="/services/interior-design/lucknow"
                   className="block p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors text-blue-600 font-medium"
                 >
                   Interior Design Lucknow →
