@@ -6,16 +6,16 @@ import logo from "@/assets/logo.png"
 import Script from "next/script";
 
 export const metadata = {
-  title: "Best Architects in Lucknow | 200+ Projects | Trygve Studio",
+  title: "Best Architects in Lucknow | Residential, Commercial & Turnkey Design",
   description:
-    "Looking for the best architecture firm in Lucknow? Trygve Studio offers 200+ delivered projects, expert design, and LDA approval assistance. Get a free consultation today!",
+    "Looking for architects in Lucknow? Explore Trygve Studio's residential, commercial and turnkey design services, project examples and consultation options.",
   alternates: {
     canonical: "/services/architects-in-lucknow",
   },
   openGraph: {
-    title: "Hire Top Architects in Lucknow - 200+ Projects | Trygve Studio",
+    title: "Best Architects in Lucknow | Residential, Commercial & Turnkey Design",
     description:
-      "Award-winning architects with 98% satisfaction rate. Residential, commercial & hospitality design experts. LDA approvals handled. Free consultation!",
+      "Work with Trygve Studio for residential, commercial and turnkey architecture in Lucknow, including design, approvals, interiors and execution support.",
     url: "https://trygvestudio.com/services/architects-in-lucknow",
     images: [
       {
@@ -203,8 +203,7 @@ export default function ArchitectsInLucknow() {
             <span className="font-normal">Lucknow</span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-200 font-light max-w-3xl mx-auto leading-relaxed">
-            Crafting spaces with care — from concept to completion.
-            We serve brands, startups, and enterprises across Lucknow with timeless, functional designs.
+            Residential, commercial and turnkey design for clients who need clear process, strong local execution, and timeless spaces in Lucknow. Since 2019, we've helped 200+ clients in Gomti Nagar, Hazratganj and beyond build their dreams with clinical precision.
           </p>
 
           <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
@@ -747,4 +746,3 @@ function Breadcrumbs() {
     </nav>
   );
 }
-

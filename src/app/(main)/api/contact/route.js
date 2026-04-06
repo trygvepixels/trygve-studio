@@ -28,6 +28,22 @@ function clean(s) {
 function isEmail(s) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s || "");
 }
+function digitsOnly(s) {
+  return (s || "").replace(/\D/g, "");
+}
+function hasEnoughLetters(s, min = 2) {
+  const matches = (s || "").match(/[A-Za-z]/g);
+  return (matches || []).length >= min;
+}
+function stringifyMeta(value) {
+  if (!value) return "";
+  if (typeof value === "string") return clean(value);
+  try {
+    return JSON.stringify(value);
+  } catch {
+    return "";
+  }
+}
 
 export async function OPTIONS() {
   return NextResponse.json(
@@ -50,18 +66,19 @@ export async function POST(req) {
 
     // --- basic validation ---
     const payload = {
-      fullName: clean(body.fullName),
+      fullName: clean(body.fullName || body.name),
       email: clean(body.email),
-      phone: clean(body.phone || body.whatsapp),
+      phone: clean(body.phone || body.whatsapp || body.contact),
       company: clean(body.company || body.brand),
-      location: clean(body.location || body.cityCountry),
-      projectType: clean(body.projectType),
+      location: clean(body.location || body.cityCountry || body.regionName),
+      projectType: clean(body.projectType || body.service || body.serviceName),
       budget: clean(body.budget),
       timeline: clean(body.timeline),
       message: clean(body.message || body.brief),
+      submissionType: clean(body.submissionType || body.source || "contact"),
       // optional extras (nice to have in the sheet)
       page: clean(body.page), // where form was submitted
-      utm: typeof body.utm === "object" ? body.utm : undefined,
+      utm: stringifyMeta(body.utm),
       submittedAt: new Date().toISOString(),
       userAgent: req.headers.get("user-agent") || "",
       referer: req.headers.get("referer") || "",
@@ -71,6 +88,33 @@ export async function POST(req) {
     // honeypot (optional)
     if (clean(body.website)) {
       return NextResponse.json({ ok: true }, { status: 202 }); // silently accept bots
+    }
+
+    const phoneDigits = digitsOnly(payload.phone);
+    const isLeadMagnet = payload.submissionType === "lead-magnet";
+    const hasValidPhone = !payload.phone || phoneDigits.length >= 10;
+
+    if (payload.email && !isEmail(payload.email)) {
+      return NextResponse.json({ error: "Please enter a valid email." }, { status: 400 });
+    }
+
+    if (!hasValidPhone) {
+      return NextResponse.json(
+        { error: "Please enter a valid phone or WhatsApp number." },
+        { status: 400 },
+      );
+    }
+
+    if (isLeadMagnet) {
+      const leadMagnetNameOk =
+        payload.fullName.length >= 2 &&
+        payload.fullName.length <= 80 &&
+        hasEnoughLetters(payload.fullName, 2);
+      const leadMagnetMessageOk = payload.message.length >= 10;
+
+      if (!leadMagnetNameOk || !payload.email || phoneDigits.length < 10 || !leadMagnetMessageOk) {
+        return NextResponse.json({ ok: true }, { status: 202 });
+      }
     }
 
     // required checks (Optional)
@@ -85,9 +129,7 @@ export async function POST(req) {
     const GAS_URL =
       process.env.GOOGLE_APPS_SCRIPT_URL ||
       "https://script.google.com/macros/s/AKfycbx-fEc6gUTXne3hmbHK-kZEBdwYXaM68dP8SUfDyPHjEFJHx7ZrHpf1g9X2xtg1SOdn/exec";
-    const GAS_TOKEN =
-      process.env.GOOGLE_APPS_SCRIPT_TOKEN ||
-      "https://script.google.com/macros/s/AKfycbx-fEc6gUTXne3hmbHK-kZEBdwYXaM68dP8SUfDyPHjEFJHx7ZrHpf1g9X2xtg1SOdn/exec";
+    const GAS_TOKEN = process.env.GOOGLE_APPS_SCRIPT_TOKEN;
 
     if (!GAS_URL) {
       console.warn(
@@ -124,6 +166,7 @@ export async function POST(req) {
         timeline: payload.timeline,
         message: payload.message,
         consent: "Yes",
+        submissionType: payload.submissionType,
 
         // Useful metadata
         page: payload.page,
@@ -132,6 +175,7 @@ export async function POST(req) {
         userAgent: payload.userAgent,
         referer: payload.referer,
         ip: payload.ip,
+        estimatedPrice: clean(body.estimatedPrice ? String(body.estimatedPrice) : ""),
       }),
       // You can optionally set a timeout with AbortController if needed.
     });

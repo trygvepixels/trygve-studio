@@ -168,7 +168,7 @@ export default function PillarPageLucknowBuilding() {
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/services/interior-design-lucknow" className="block p-4 rounded-xl bg-gray-50 hover:bg-[#234D7E]/5 hover:text-[#234D7E] transition-colors border border-transparent hover:border-[#234D7E]/20">
+                                <Link href="/services/interior-design/lucknow" className="block p-4 rounded-xl bg-gray-50 hover:bg-[#234D7E]/5 hover:text-[#234D7E] transition-colors border border-transparent hover:border-[#234D7E]/20">
                                     <div className="font-medium mb-1">Interior Design</div>
                                     <div className="text-sm text-gray-500">Turnkey interior solutions</div>
                                 </Link>

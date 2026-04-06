@@ -12,6 +12,7 @@ export default function LeadMagnetModal() {
         name: "",
         email: "",
         phone: "",
+        website: "",
     });
 
     useEffect(() => {
@@ -65,6 +66,8 @@ export default function LeadMagnetModal() {
                     projectType: "Checklist Download",
                     message: "User requested the 2026 Construction Checklist",
                     page: window.location.pathname,
+                    website: formData.website,
+                    submissionType: "lead-magnet",
                 }),
             });
 
@@ -139,6 +142,16 @@ export default function LeadMagnetModal() {
                             </p>
 
                             <form onSubmit={handleSubmit} className="space-y-5">
+                                <input
+                                    type="text"
+                                    name="website"
+                                    tabIndex="-1"
+                                    autoComplete="off"
+                                    value={formData.website}
+                                    onChange={handleChange}
+                                    className="hidden"
+                                    aria-hidden="true"
+                                />
                                 <div>
                                     <label className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
                                     <input

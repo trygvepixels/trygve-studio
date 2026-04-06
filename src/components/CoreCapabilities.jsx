@@ -13,7 +13,7 @@ const capabilities = [
   {
     title: "Interior Design",
     description: "Premiere interior designers in Lucknow specializing in luxury residential and functional commercial spaces.",
-    href: "/services/interior-design-lucknow",
+    href: "/services/interior-design/lucknow",
     tag: "Luxury Interiors"
   },
   {

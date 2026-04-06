@@ -5,16 +5,16 @@ import logo from "@/assets/logo.png";
 import Script from "next/script";
 
 export const metadata = {
-    title: "Top Architecture Firms in Lucknow - Design Excellence Since 2019",
+    title: "Top Architecture Companies in Lucknow | Award-Winning Design & Build Services",
     description:
-        "Leading architecture firm in Lucknow for residential & commercial projects. ISO certified, 200+ completed designs. Sustainable architecture, modern interiors. Call now!",
+        "Discover Trygve Studio — a leading architecture company in Lucknow specializing in luxury residential, commercial, and sustainable design. ISO 9001:2015 certified. Book a free consultation!",
     alternates: {
         canonical: "/services/architecture-firms-lucknow",
     },
     openGraph: {
         title: "Top Architecture Firms in Lucknow | Trygve Studio",
         description:
-            "ISO certified architecture firm with 200+ successful projects. Expert in sustainable design, modern aesthetics & timely delivery.",
+            "Award-winning architecture firm in Lucknow with 200+ successful projects. Expert in sustainable design, modern aesthetics & timely delivery.",
         url: "https://trygvestudio.com/services/architecture-firms-lucknow",
         images: [
             {
@@ -74,10 +74,10 @@ export default function ArchitectureFirmsLucknow() {
                 </div>
 
                 <div className="relative z-10 text-center max-w-6xl px-6">
-                    <h1 className="text-6xl md:text-8xl font-light text-white mb-6 tracking-tight">
-                        Architecture Firms in
+                    <h1 className="text-6xl md:text-8xl font-light text-white mb-6 tracking-tight text-center sm:text-left">
+                        Award-Winning Architecture Firm in
                         <br />
-                        <span className="font-normal">Lucknow</span>
+                        <span className="font-normal text-white">Lucknow</span>
                     </h1>
 
                     {/* CRO Trust Badges */}

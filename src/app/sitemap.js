@@ -1,94 +1,120 @@
-import { getBlogs, getProjects, getServices } from "../../lib/api";
-import { pillars } from "../../data/pillars";
-import { interiorDesignCities } from "../../data/interiorDesignCities";
+import { getBlogs, getProjects, getServices } from "../lib/api";
+import { pillars } from "../data/pillars";
+import { interiorDesignCities } from "../data/interiorDesignCities";
 
 // Revalidate sitemap every 2 days (48 hours = 172800 seconds)
 // This ensures new blog posts are automatically included in the sitemap
 export const revalidate = 172800;
 
+// Blog slugs that are 301-redirected to service pages — exclude from sitemap
+const redirectedBlogSlugs = [
+  "how-much-do-architects-charge-in-india-a-city-wise-breakdown-2026-guide",
+  "from-permit-to-plinth-budgeting-for-lda-sanction-fees-in-lucknows-2026-market",
+  "why-hiring-the-best-residential-architects-in-lucknow-saves-you-20percent-on-long-term-construction-costs",
+  "lucknow-real-estate-2026-why-lda-approval-costs-are-changing-and-how-to-prepare",
+  "false-ceiling-cost-per-sq-ft-in-lucknow-2026-pricing-guide",
+  "marble-vs-marble-finish-tiles-best-budget-luxury-choice-for-homes-in-2026",
+  "modern-bedroom-design-trends-in-india-for-2026-or-trygve-studio",
+  "dream-home-blueprint-7-secrets-to-finding-the-best-residential-architects-in-lucknow-for-your-2024-build",
+  "affordable-luxury-interior-trends-for-indian-homes-in-2026",
+  "beyond-blueprints-how-bim-saves-homeowners-20percent-on-hidden-construction-costs",
+  "the-ultimate-checklist-for-choosing-the-best-architect-in-lucknow",
+  "best-architects-and-interior-designers-in-lucknow-or-trygve-studio",
+  "how-to-find-the-best-residential-architects-in-lucknow-for-a-turnkey-project",
+];
+
 export default async function sitemap() {
   const baseUrl = "https://trygvestudio.com";
 
-  // 1. Static Pages
+  // Fixed date for static pages — update this when you actually change static pages
+  const staticLastModified = new Date("2026-04-06");
+
+  // 1. Static Pages (removed duplicate blog entries — they're already in dynamic section)
   const staticPages = [
     {
       url: `${baseUrl}/`,
-      lastModified: new Date(),
+      lastModified: staticLastModified,
       changeFrequency: "weekly",
       priority: 1,
     },
     {
       url: `${baseUrl}/about-us`,
-      lastModified: new Date(),
+      lastModified: staticLastModified,
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
       url: `${baseUrl}/projects`,
-      lastModified: new Date(),
+      lastModified: staticLastModified,
       changeFrequency: "weekly",
       priority: 0.9,
     },
     {
       url: `${baseUrl}/services`,
-      lastModified: new Date(),
+      lastModified: staticLastModified,
       changeFrequency: "weekly",
       priority: 0.9,
     },
     {
       url: `${baseUrl}/blogs`,
-      lastModified: new Date(),
+      lastModified: staticLastModified,
       changeFrequency: "weekly",
       priority: 0.9,
     },
     {
       url: `${baseUrl}/contact-us`,
-      lastModified: new Date(),
+      lastModified: staticLastModified,
       changeFrequency: "weekly",
       priority: 0.9,
     },
-
     {
       url: `${baseUrl}/price-calculator`,
-      lastModified: new Date(),
+      lastModified: staticLastModified,
       changeFrequency: "weekly",
       priority: 1.0,
     },
     {
       url: `${baseUrl}/services/architect-near-me`,
-      lastModified: new Date(),
+      lastModified: staticLastModified,
       changeFrequency: "weekly",
       priority: 0.9,
     },
     {
       url: `${baseUrl}/services/bim-outsourcing-services`,
-      lastModified: new Date(),
+      lastModified: staticLastModified,
       changeFrequency: "weekly",
       priority: 0.8,
     },
+    // Static city-specific blog posts (file-based, not in DB)
     {
-      url: `${baseUrl}/blogs/building-home-in-lucknow-nri-guide-2026`,
-      lastModified: new Date(),
+      url: `${baseUrl}/blogs/designing-luxury-homes-in-south-delhi-2026-trends`,
+      lastModified: staticLastModified,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/blogs/best-architects-in-gomti-nagar-lucknow-guide`,
+      lastModified: staticLastModified,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/blogs/modern-interior-design-kanpur-civil-lines-guide`,
+      lastModified: staticLastModified,
       changeFrequency: "weekly",
       priority: 0.9,
     },
     {
       url: `${baseUrl}/privacy`,
-      lastModified: new Date(),
+      lastModified: staticLastModified,
       changeFrequency: "monthly",
       priority: 0.3,
     },
     {
       url: `${baseUrl}/terms`,
-      lastModified: new Date(),
+      lastModified: staticLastModified,
       changeFrequency: "monthly",
       priority: 0.3,
-    },
-    {
-      url: `${baseUrl}/lp`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.6,
     },
   ];
 
@@ -98,11 +124,15 @@ export default async function sitemap() {
     "architects-in-lucknow",
     "architecture-firms-lucknow",
     "luxury-architecture-design-lucknow",
+    "turnkey-construction-companies-lucknow",
+    "architects-in-gomti-nagar",
+    "architects-in-sushant-golf-city",
+    "3d-walkthrough-company-lucknow",
   ];
 
   const serviceLandingPages = serviceLandingSlugs.map((slug) => ({
     url: `${baseUrl}/services/${slug}`,
-    lastModified: new Date(),
+    lastModified: staticLastModified,
     changeFrequency: "monthly",
     priority: 0.8,
   }));
@@ -110,22 +140,27 @@ export default async function sitemap() {
   // 2a. Interior Design City Pages
   const interiorDesignCityPages = interiorDesignCities.map((city) => ({
     url: `${baseUrl}/services/interior-design/${city.citySlug}`,
-    lastModified: new Date(),
+    lastModified: staticLastModified,
     changeFrequency: "monthly",
     priority: 0.7,
   }));
 
-  // 3. Dynamic Blogs
+  // 3. Dynamic Blogs — filter out 301-redirected slugs to save crawl budget
   const blogs = await getBlogs();
   const blogPostPages = Array.isArray(blogs)
-    ? blogs.map((blog) => ({
-        url: `${baseUrl}/blogs/${blog.urlSlug || blog.slug}`,
-        lastModified: new Date(
-          blog.lastUpdated || blog.updatedAt || blog.createdAt || new Date(),
-        ),
-        changeFrequency: "daily",
-        priority: 0.7,
-      }))
+    ? blogs
+        .filter((blog) => {
+          const slug = blog.urlSlug || blog.slug;
+          return !redirectedBlogSlugs.includes(slug);
+        })
+        .map((blog) => ({
+          url: `${baseUrl}/blogs/${blog.urlSlug || blog.slug}`,
+          lastModified: new Date(
+            blog.lastUpdated || blog.updatedAt || blog.createdAt || new Date(),
+          ),
+          changeFrequency: "daily",
+          priority: 0.7,
+        }))
     : [];
 
   // 4. Dynamic Projects
@@ -159,7 +194,7 @@ export default async function sitemap() {
   // 6. Resource Pillars
   const pillarPages = pillars.map((pillar) => ({
     url: `${baseUrl}/resources/${pillar.slug}`,
-    lastModified: new Date(),
+    lastModified: staticLastModified,
     changeFrequency: "monthly",
     priority: 0.8,
   }));

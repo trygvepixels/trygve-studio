@@ -11,6 +11,7 @@ export default function ContactPopup({ isOpen, onClose }) {
         location: "",
         projectType: "",
         message: "",
+        website: "",
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitStatus, setSubmitStatus] = useState(null);
@@ -36,12 +37,13 @@ export default function ContactPopup({ isOpen, onClose }) {
                 body: JSON.stringify({
                     ...formData,
                     page: window.location.pathname,
+                    submissionType: "contact-popup",
                 }),
             });
 
             if (response.ok) {
                 setSubmitStatus("success");
-                setFormData({ fullName: "", email: "", phone: "", location: "", projectType: "", message: "" });
+                setFormData({ fullName: "", email: "", phone: "", location: "", projectType: "", message: "", website: "" });
                 setTimeout(() => {
                     onClose();
                     setSubmitStatus(null);
@@ -87,6 +89,16 @@ export default function ContactPopup({ isOpen, onClose }) {
 
                 {/* Form */}
                 <form onSubmit={handleSubmit} className="p-6 space-y-4">
+                    <input
+                        type="text"
+                        name="website"
+                        tabIndex={-1}
+                        autoComplete="off"
+                        value={formData.website}
+                        onChange={handleChange}
+                        className="hidden"
+                        aria-hidden="true"
+                    />
                     {/* Name */}
                     <div>
                         <label className="flex items-center gap-2 text-sm font-medium text-gray-700 mb-1">

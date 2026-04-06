@@ -8,6 +8,7 @@ export default function SidebarContactForm({ service }) {
     email: "",
     contact: "",
     pageUrl: "",
+    website: "",
   });
 
   const [errors, setErrors] = useState({});
@@ -60,24 +61,27 @@ export default function SidebarContactForm({ service }) {
 
     setIsSubmitting(true);
 
-    const data = new URLSearchParams();
-    data.append("name", formData.name);
-    data.append("email", formData.email);
-    data.append("contact", formData.contact);
-    data.append("service", service || "");
-    data.append("pageUrl", formData.pageUrl);
-
     try {
-      const res = await fetch("/api/submit-contact", {
+      const res = await fetch("/api/contact", {
         method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: data,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          fullName: formData.name,
+          email: formData.email,
+          phone: formData.contact,
+          projectType: service || "Blog Inquiry",
+          location: "Blog Sidebar",
+          message: `Blog inquiry for service: ${service || "General"}`,
+          page: formData.pageUrl,
+          website: formData.website,
+          submissionType: "blog-sidebar",
+        }),
       });
 
       const result = await res.json();
 
       if (res.ok) {
-        setFormData({ name: "", email: "", contact: "", pageUrl: formData.pageUrl });
+        setFormData({ name: "", email: "", contact: "", pageUrl: formData.pageUrl, website: "" });
         router.push("/thankyou");
       } else {
         alert("❌ Failed: " + (result.error || "Unknown error"));
@@ -113,7 +117,7 @@ export default function SidebarContactForm({ service }) {
 
           <div>
             <input
-              type="email*"
+              type="email"
               name="email"
               placeholder="Email*"
               value={formData.email}
@@ -130,7 +134,7 @@ export default function SidebarContactForm({ service }) {
           <div>
             <input
               type="tel"
-              name="contact*"
+              name="contact"
               placeholder="Phone*"
               value={formData.contact}
               onChange={handleChange}
@@ -145,6 +149,7 @@ export default function SidebarContactForm({ service }) {
 
           <input type="hidden" name="service" value={service || ""} />
           <input type="hidden" name="pageUrl" value={formData.pageUrl} />
+          <input type="hidden" name="website" value={formData.website} />
 
           <button
             type="submit"

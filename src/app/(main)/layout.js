@@ -28,37 +28,15 @@ export const metadata = {
     "Ranked among the best architects in Lucknow and recognized as a leading architecture company in India. ISO 9001:2015 certified design firm with 200+ luxury residential and commercial projects delivered.",
   keywords: [
     "Best Architecture Company in India",
-    "Top architect company in India",
-    "Trygve studio",
-    "Faisal Saif",
-    "Faisal saif architect",
+    "Trygve Studio",
     "Architects in Lucknow",
     "best architects in lucknow",
-    "best interior designer in lucknow",
     "interior designers in lucknow",
     "architecture firms in lucknow",
-    "commercial architects in lucknow",
-    "residential architects in lucknow",
-    "luxury home designers lucknow",
-    "budget architects lucknow",
-    "building contractors in lucknow",
-    "hospitality architects lucknow",
-    "retail store designers lucknow",
-    "house design services lucknow",
-    "office interior designers lucknow",
-    "farmhouse architects lucknow",
-    // Hyper-local keywords
-    "Architects in Gomti Nagar",
-    "Architects in Hazratganj",
-    "Architects in Aliganj",
-    "Architects in Indira Nagar",
-    "Interior Designers in Gomti Nagar",
-    // Specific Services
     "Turnkey construction Lucknow",
-    "Villa architects Lucknow",
+    "Architects in Gomti Nagar",
+    "luxury home designers lucknow",
     "3D elevation design Lucknow",
-    "School architects Lucknow",
-    "Hospital design Lucknow",
   ],
   icons: {
     icon: "/favicon.ico",
@@ -68,9 +46,9 @@ export const metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Trygve Studio - Premium Architecture & Interior Design",
+    title: "Trygve Studio | Award-Winning Architects in Lucknow (ISO Certified)",
     description:
-      "Transform your space with Trygve Studio. Professional architecture and interior design services.",
+      "Lucknow's top-rated architecture firm specializing in luxury villas, premium interiors & turnkey construction. 200+ projects delivered. 2026 Edition.",
     url: "https://trygvestudio.com/",
     siteName: "Trygve Studio",
     images: [
@@ -91,9 +69,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Trygve Studio - Premium Architecture & Interior Design",
+    title: "Trygve Studio | Award-Winning Architects in Lucknow (ISO Certified)",
     description:
-      "Transform your space with Trygve Studio. Professional architecture and interior design services.",
+      "Lucknow's top-rated architecture firm specializing in luxury villas, premium interiors & turnkey construction. 200+ projects delivered. 2026 Edition.",
     images: [
       {
         url: "https://trygvestudio.com/twitter-image.jpg",
@@ -286,6 +264,8 @@ export default function RootLayout({ children }) {
               "https://www.instagram.com/trygvestudio/",
               "https://in.linkedin.com/company/trygvestudio",
               "https://www.behance.net/trygvestudio",
+              "https://www.youtube.com/@trygvestudio",
+              "https://www.facebook.com/trygvestudio/",
               "https://wa.me/919554440400",
             ],
           })}

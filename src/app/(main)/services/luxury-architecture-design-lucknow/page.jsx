@@ -5,16 +5,16 @@ import logo from "@/assets/logo.png";
 import Script from "next/script";
 
 export const metadata = {
-    title: "Luxury Architecture Design in Lucknow - Premium Villas & Residences",
+    title: "Exclusive Luxury Architecture Studio in Lucknow | Bespoke Estates",
     description:
-        "Bespoke luxury architecture in Lucknow. Designing ultra-premium villas, penthouses & mansions. Award-winning team, celebrity clientele. View our exclusive portfolio.",
+        "Lucknow's most exclusive architecture studio for ultra-premium villas & mansions. Award-winning designs, global material sourcing & 100% discretion. 2026 Edition.",
     alternates: {
         canonical: "/services/luxury-architecture-design-lucknow",
     },
     openGraph: {
-        title: "Luxury Architecture Design Lucknow | Trygve Studio",
+        title: "Exclusive Luxury Architecture Studio in Lucknow | Bespoke Estates",
         description:
-            "Ultra-premium architectural design for discerning clients. Bespoke villas, penthouses, and luxury estates.",
+            "Ultra-premium architectural design for discerning clients. Bespoke villas, penthouses, and luxury estates. 2026 Edition.",
         url: "https://trygvestudio.com/services/luxury-architecture-design-lucknow",
         images: [
             {

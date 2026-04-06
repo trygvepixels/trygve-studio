@@ -80,6 +80,7 @@ function getCityFaqs(cityName) {
   const c = cityName ? cityName.toLowerCase() : "";
   let specialtyAnswer = `Trygve Studio is among the top-rated interior design firms in ${cityName}, offering professional architectural and engineering services with a focus on modern, sustainable, and functional designs.`;
   let timeAnswer = "A typical residential interior design project takes about 8-12 weeks from design approval to handover.";
+  let costAnswer = `Interior design costs in ${cityName} with Trygve Studio vary based on the scope and materials. Our premium turnkey packages (design + execution) typically start from ₹1,200 per sq. ft., ensuring high-quality finishes and architectural rigor.`;
 
   if (c === "delhi") {
     specialtyAnswer = "In Delhi, Trygve Studio is known for luxury 'South Delhi Chic' aesthetics combined with tropical-climate durability. We specialize in dust-resistant finishes and high-performance glass systems to handle the city's unique weather conditions.";
@@ -87,7 +88,8 @@ function getCityFaqs(cityName) {
   } else if (c === "kanpur") {
     specialtyAnswer = "For Kanpur, we specialize in modern luxury that respects traditional volumes. From heritage bungalow restorations in Civil Lines to modern penthouses in Swaroop Nagar, our expertise is in durable, high-quality execution.";
   } else if (c === "lucknow") {
-    specialtyAnswer = "As a Lucknow-based firm, we have deep roots in the City of Nawabs. We specialize in 'Traditional-Modernism' — matching Awadhi heritage with minimalist functionality for Gomti Nagar and Sushant Golf City homes.";
+    specialtyAnswer = "As a Lucknow-based firm, we have deep roots in the City of Nawabs. We specialize in 'Traditional-Modernism' — matching Awadhi heritage with minimalist functionality for homes in Gomti Nagar, Hazratganj, and Sushant Golf City.";
+    costAnswer = `In Lucknow, our interior design services are competitively priced for the luxury segment. Turnkey projects in areas like Gomti Nagar Extension or Omaxe City usually range between ₹1,500 to ₹2,500 per sq. ft. depending on the customization and material selection.`;
   }
 
   const faqs = [
@@ -97,7 +99,7 @@ function getCityFaqs(cityName) {
     },
     {
       q: `What is the cost of hiring interior designers in ${cityName}?`,
-      a: `Interior design costs in ${cityName} with Trygve Studio vary based on the scope and materials. We offer specialized turnkey packages that include design, procurement, and execution to ensure cost-efficiency and quality.`,
+      a: costAnswer,
     },
     {
       q: `How long does an interior design project take in ${cityName}?`,
@@ -105,7 +107,7 @@ function getCityFaqs(cityName) {
     },
     {
       q: `Do you provide site supervision in ${cityName}?`,
-      a: `Yes, we provide end-to-end project management and daily site supervision in ${cityName} to ensure that the execution matches the approved 3D designs perfectly.`,
+      a: `Yes, we provide end-to-end project management and daily site supervision in ${cityName} — specifically in active hubs like ${c === 'lucknow' ? 'Gomti Nagar and Shaheed Path' : 'the main city'} — to ensure execution matches the 3D designs perfectly.`,
     },
   ];
   return faqs;
@@ -153,7 +155,29 @@ const getCityPageData = cache(async (citySlug) => {
     .lean();
 
   const projects = projectsRaw.map((p) => projectToCard({ project: p }));
-  const testimonials = testimonialsRaw;
+  
+  // Combine DB testimonials with static featured ones for better localized proof
+  const dbTestimonials = testimonialsRaw.map(t => ({
+    name: t.name,
+    role: t.role || "Client",
+    location: t.location,
+    message: t.message || t.text,
+    image: t.image,
+    rating: t.rating || 5
+  }));
+
+  const staticTestimonials = Array.isArray(city.featuredTestimonials) 
+    ? city.featuredTestimonials.map(t => ({
+        name: t.name,
+        role: t.projectType || "Property Owner",
+        location: t.location,
+        message: t.text,
+        image: "",
+        rating: t.rating || 5
+      }))
+    : [];
+
+  const testimonials = [...staticTestimonials, ...dbTestimonials].slice(0, 8);
 
   const introOK = typeof city.introCopy === "string" && city.introCopy.trim().length > 30;
   const areasCount = Array.isArray(city.areas) ? city.areas.length : 0;
@@ -406,12 +430,12 @@ export default async function InteriorDesignCityPage({ params }) {
 
       {/* Detailed Philosphy Section (The SEO Powerhouse) */}
       {(city.detailedIntro || city.introCopy) && (
-        <section className="py-12 md:py-20 px-6 bg-[#F4F1EC]">
-          <div className="max-w-4xl mx-auto text-center border-b border-gray-200 pb-16">
+        <section className="py-12  px-6 bg-[#F4F1EC]">
+          <div className="max-w-4xl mx-auto text-center border-b border-gray-200  ">
             <h2 className="text-xl md:text-3xl font-light mb-8 text-gray-800 uppercase tracking-widest">
               Our Professional Design Approach in {city.cityName}
             </h2>
-            <div className="text-lg md:text-2xl text-gray-700 font-light leading-relaxed space-y-6">
+            <div className="text-md md:text-xl text-gray-700 font-light leading-relaxed space-y-6">
               {/* Splitting text into paragraphs for better readability if it's the long version */}
               {(city.detailedIntro || city.introCopy).split('. ').map((sentence, i, arr) => (
                 <span key={i}>

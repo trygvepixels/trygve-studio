@@ -1,10 +1,39 @@
- 
+# Trygve Studio — robots.txt
+# https://trygvestudio.com
+
 User-agent: *
 Allow: /
-
-# Block admin and login pages from being indexed
 Disallow: /admin/
-Disallow: /login/
+Disallow: /api/
+Disallow: /lp
+Disallow: /thankyou
+Disallow: /thank-you
 
-# Sitemap location
+# AI Search Bots — explicitly allowed for citation visibility
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# Sitemap
 Sitemap: https://trygvestudio.com/sitemap.xml
+
+# AI-readable site summary
+# https://llmstxt.org/
+# Available at: https://trygvestudio.com/llms.txt

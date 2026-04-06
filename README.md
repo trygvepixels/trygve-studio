@@ -1,36 +1,96 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+**Top 10 Actions**
 
-## Getting Started
+1. `/price-calculator` ka title/meta immediately improve karo.
+Current signal: `1,149 impressions`, `4 clicks`, CTR `0.35%`, pos `5.74`.
+Ye sabse bada low-CTR opportunity hai.
 
-First, run the development server:
+Suggested title:
+`Lucknow Construction Cost Calculator 2026 | Instant Home Building Estimate`
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Suggested meta:
+`Estimate your 2026 home construction, architecture or interior project cost in Lucknow. Get a quick budget range based on area, scope and finish level.`
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. `architects charge in india` blog ko better commercial-intent snippet do.
+Current signal: `946 impressions`, `5 clicks`, CTR `0.53%`, pos `5.6`.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Suggested title:
+`Architect Fees in India (2026) | City-Wise Charges + Cost Calculator`
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Suggested meta:
+`See architect charges across Indian cities in 2026, compare fee models, and estimate your project budget with practical cost guidance.`
 
-## Learn More
+3. `services/architects-in-lucknow` ko homepage ke baad primary money page banao.
+Current signal: `80 impressions`, `0 clicks`, pos `9.24`.
+Ranking theek hai, but page ko stronger local-commercial packaging chahiye.
 
-To learn more about Next.js, take a look at the following resources:
+Suggested title:
+`Best Architects in Lucknow | Residential, Commercial & Turnkey Design`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Suggested meta:
+`Looking for architects in Lucknow? Explore Trygve Studio’s residential, commercial and turnkey design services, project examples and consultation options.`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+4. `lucknow-real-estate-2026...` blog CTR fix karo.
+Current signal: `241 impressions`, `0 clicks`, pos `5.1`.
 
-## Deploy on Vercel
+Suggested title:
+`LDA Approval Costs in Lucknow (2026) | What Homeowners Should Budget`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Suggested meta:
+`Understand how LDA approval costs are changing in Lucknow in 2026, what fees affect your budget, and how to plan before starting construction.`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+5. `false-ceiling-cost...` aur `marble-vs-marble-finish...` pages ko cost/decision-intent ke liye optimize karo.
+Ye pages page-1 range me hain but zero clicks la rahe hain. Inke titles me “cost”, “price”, “which is better”, “2026” jaisa clearer promise chahiye.
+
+6. interior page duplication resolve karo.
+Visible issue:
+- `/services/interior-design-lucknow`
+- `/services/interior-design/lucknow`
+
+Ek ko canonical winner banao, dusre ko 301/rel=canonical do. Warna interior keywords split honge, aur waise bhi interior queries abhi weak rank kar rahi hain.
+
+7. `best interior designer in lucknow` cluster ke liye dedicated SEO push chahiye.
+Abhi rankings weak hain:
+- `best interior designer in lucknow` pos `43.31`
+- `interior designer in lucknow` pos `38.92`
+
+Action:
+- page title stronger banao
+- testimonials, location proof, pricing angle add karo
+- FAQ section add karo
+- local business schema tighten karo
+- internal links from relevant blogs and homepage do
+
+8. zero-click high-rank queries ke liye title alignment karo.
+Best candidates:
+- `architect office near by me`
+- `architects in lucknow`
+- `best architects in lucknow`
+- `architect near me`
+
+In queries ke liye service page aur homepage titles me “Lucknow”, “architects”, “consultation”, “turnkey”, “residential/commercial” clearer hona chahiye.
+
+9. desktop CTR specifically improve karo.
+Mobile CTR `1.48%` hai, desktop `0.75%`.
+Matlab ranking same hote hue desktop par snippet kam compelling lag raha hai. Title tags ko cleaner aur sharper banao. Brand-first titles avoid karo unless brand query ho.
+
+10. top blogs se money pages ko internal link do.
+Link targets:
+- `/services/architects-in-lucknow`
+- `/services/interior-design-lucknow` or final canonical interior page
+- `/price-calculator`
+- `/contact-us`
+
+Anchor examples:
+- `architects in Lucknow`
+- `construction cost calculator`
+- `interior designers in Lucknow`
+- `book a consultation`
+
+**Fastest Wins**
+
+Agar sirf 3 cheezein karni hain, ye karo:
+1. `/price-calculator` title/meta rewrite
+2. `/services/architects-in-lucknow` title/meta + intro rewrite
+3. interior URL duplication fix
+
+Agar chaho, next message me main in top pages ke exact SEO title + meta description + H1 rewrite likh deta hoon.

@@ -62,6 +62,7 @@ export default function PriceCalculator() {
     name: "",
     email: "",
     phone: "",
+    website: "",
   });
 
   const updateFormData = (field, value) => {
@@ -127,21 +128,35 @@ export default function PriceCalculator() {
 
   const handleSubmit = async () => {
     const payload = {
-      ...formData,
-      serviceName: PRICING_CONFIG.services[formData.serviceType]?.name,
-      packageName: PRICING_CONFIG.packages[formData.serviceType]?.[formData.package]?.name,
-      regionName: PRICING_CONFIG.regions[formData.region]?.name,
+      fullName: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      location: PRICING_CONFIG.regions[formData.region]?.name || "Price Calculator",
+      projectType: PRICING_CONFIG.services[formData.serviceType]?.name || "Price Calculator Inquiry",
+      budget: totalPrice ? `Rs ${totalPrice.toLocaleString("en-IN")}` : "",
+      timeline: "Calculator Estimate Request",
+      message: [
+        `Package: ${PRICING_CONFIG.packages[formData.serviceType]?.[formData.package]?.name || "N/A"}`,
+        `Area: ${formData.area || "N/A"} sq.ft`,
+        `Add-ons: ${formData.addons.length ? formData.addons.map((addon) => PRICING_CONFIG.addons[addon]?.name || addon).join(", ") : "None"}`,
+      ].join(" | "),
       estimatedPrice: totalPrice,
-      timestamp: new Date().toISOString(),
+      page: typeof window !== "undefined" ? window.location.pathname : "/price-calculator",
+      website: formData.website,
+      submissionType: "price-calculator",
     };
 
     try {
-      const response = await fetch("https://script.google.com/macros/s/AKfycbx-fEc6gUTXne3hmbHK-kZEBdwYXaM68dP8SUfDyPHjEFJHx7ZrHpf1g9X2xtg1SOdn/exec", {
+      const response = await fetch("/api/contact", {
         method: "POST",
-        mode: "no-cors",
-        headers: { "Content-Type": "text/plain" },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
+
+      if (!response.ok) {
+        const result = await response.json().catch(() => ({}));
+        throw new Error(result.error || "Failed to submit");
+      }
 
       alert(`Thank you! Your estimated budget is ₹${totalPrice.toLocaleString('en-IN')}. A Trygve Studio architect will contact you shortly.`);
     } catch (error) {
@@ -164,11 +179,10 @@ export default function PriceCalculator() {
         {/* Header aligned with Trygve Studio brand */}
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-light tracking-tight mb-4">
-            Lucknow Construction & Architecture Calculator
+            Lucknow Construction Cost Calculator 2026
           </h1>
           <p className="text-gray-600 text-lg font-light max-w-2xl mx-auto">
-            Get an accurate, data-driven budget estimate for your 2026 project in Lucknow.
-            No hidden costs, just transparent numbers.
+            Estimate your home construction, architecture, or interior budget in Lucknow using current 2026 rates, finish levels, and project scope.
           </p>
         </div>
 
@@ -392,6 +406,67 @@ export default function PriceCalculator() {
           </div>
         </div>
 
+        {/* FAQ Section — Featured Snippet + AI Citation Bait */}
+        <section className="mt-20 max-w-4xl mx-auto">
+          <h2 className="text-3xl font-light text-gray-900 mb-8">Frequently Asked Questions</h2>
+          <div className="space-y-6">
+            <details className="group bg-white rounded-xl border border-gray-200 p-6 cursor-pointer">
+              <summary className="flex justify-between items-center font-medium text-gray-900">
+                What is the house construction cost per sq ft in Lucknow in 2026?
+                <span className="text-gray-400 group-open:rotate-45 transition-transform text-xl">+</span>
+              </summary>
+              <p className="mt-4 text-gray-600 leading-relaxed">
+                In 2026, the average house construction cost in Lucknow ranges from ₹1,650 to ₹2,850 per square foot for turnkey projects. Standard construction starts at ₹1,650/sq ft with vitrified tiles and basic fixtures. Premium construction with modular kitchens costs ₹2,150/sq ft. Luxury construction with Italian marble and smart home integration costs ₹2,850+ per sq ft. These rates include materials, labour, and basic approvals for the Lucknow market.
+              </p>
+            </details>
+
+            <details className="group bg-white rounded-xl border border-gray-200 p-6 cursor-pointer">
+              <summary className="flex justify-between items-center font-medium text-gray-900">
+                What is the average construction rate in Lucknow?
+                <span className="text-gray-400 group-open:rotate-45 transition-transform text-xl">+</span>
+              </summary>
+              <p className="mt-4 text-gray-600 leading-relaxed">
+                The average construction rate in Lucknow for a residential project in 2026 is approximately ₹2,150 per square foot (premium tier). This includes structural work, finishing, plumbing, electrical, and interior woodwork. Premium localities like Gomti Nagar and Hazratganj may cost 5% more due to logistics and soil conditions. For architecture-only services (design drawings without construction), rates start at ₹45/sq ft.
+              </p>
+            </details>
+
+            <details className="group bg-white rounded-xl border border-gray-200 p-6 cursor-pointer">
+              <summary className="flex justify-between items-center font-medium text-gray-900">
+                How much do architects charge in Lucknow?
+                <span className="text-gray-400 group-open:rotate-45 transition-transform text-xl">+</span>
+              </summary>
+              <p className="mt-4 text-gray-600 leading-relaxed">
+                Architects in Lucknow typically charge between ₹45 and ₹85 per square foot for design services. The Essential Design package (floor plans, 2D elevations, structural drawings) costs ₹45/sq ft. The Comprehensive 3D + MEP package (detailed 3D renders, VR walkthrough, complete MEP drawings) costs ₹85/sq ft. For a 2,000 sq ft home, architecture fees would range from ₹90,000 to ₹1,70,000. Many firms, including Trygve Studio, offer free initial consultations.
+              </p>
+            </details>
+
+            <details className="group bg-white rounded-xl border border-gray-200 p-6 cursor-pointer">
+              <summary className="flex justify-between items-center font-medium text-gray-900">
+                What is turnkey construction cost in Lucknow?
+                <span className="text-gray-400 group-open:rotate-45 transition-transform text-xl">+</span>
+              </summary>
+              <p className="mt-4 text-gray-600 leading-relaxed">
+                Turnkey construction in Lucknow costs between ₹1,650 and ₹2,850 per square foot in 2026. A turnkey project includes everything from architectural design and structural engineering to material procurement, construction, interior work, and LDA approvals — you get a ready-to-move-in home. For a 2,000 sq ft home, the total turnkey cost ranges from ₹33 lakhs (standard) to ₹57 lakhs (luxury).
+              </p>
+            </details>
+
+            <details className="group bg-white rounded-xl border border-gray-200 p-6 cursor-pointer">
+              <summary className="flex justify-between items-center font-medium text-gray-900">
+                Is construction cheaper in outer Lucknow areas?
+                <span className="text-gray-400 group-open:rotate-45 transition-transform text-xl">+</span>
+              </summary>
+              <p className="mt-4 text-gray-600 leading-relaxed">
+                Yes, construction costs in outer Lucknow areas like Amar Shaheed Path, Kursi Road, and Sultanpur Road are typically 5% lower than premium localities such as Gomti Nagar and Hazratganj. This difference is due to lower logistics costs, easier material access, and simpler soil conditions. However, the core material and labour rates remain similar across Lucknow, so the difference is modest — roughly ₹80-140 per sq ft on the base rate.
+              </p>
+            </details>
+          </div>
+
+          {/* Last Updated — Freshness Signal */}
+          <p className="mt-8 text-sm text-gray-400 text-center">
+            Last updated: April 2026 · Pricing data by Trygve Studio, Lucknow
+          </p>
+        </section>
+
       </div>
     </div>
   );
@@ -534,6 +609,15 @@ function Step4Contact({ formData, updateFormData }) {
       </p>
 
       <div>
+        <input
+          type="text"
+          value={formData.website}
+          onChange={(e) => updateFormData("website", e.target.value)}
+          tabIndex={-1}
+          autoComplete="off"
+          className="hidden"
+          aria-hidden="true"
+        />
         <label className="block text-sm font-medium text-gray-900 mb-2">Full Name</label>
         <input
           type="text"

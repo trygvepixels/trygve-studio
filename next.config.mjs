@@ -65,7 +65,12 @@ const nextConfig = {
       },
       {
         source: "/interior-designer",
-        destination: "/services/interior-design-lucknow",
+        destination: "/services/interior-design/lucknow",
+        statusCode: 301,
+      },
+      {
+        source: "/services/interior-design-lucknow",
+        destination: "/services/interior-design/lucknow",
         statusCode: 301,
       },
       {
@@ -81,6 +86,72 @@ const nextConfig = {
       {
         source: "/projcts",
         destination: "/projects",
+        statusCode: 301,
+      },
+      // Ranking Blogs 301 Redirects to Service Pages
+      {
+        source: "/blogs/how-much-do-architects-charge-in-india-a-city-wise-breakdown-2026-guide",
+        destination: "/services/architects-in-lucknow",
+        statusCode: 301,
+      },
+      {
+        source: "/blogs/from-permit-to-plinth-budgeting-for-lda-sanction-fees-in-lucknows-2026-market",
+        destination: "/services/turnkey-construction-companies-lucknow",
+        statusCode: 301,
+      },
+      {
+        source: "/blogs/why-hiring-the-best-residential-architects-in-lucknow-saves-you-20percent-on-long-term-construction-costs",
+        destination: "/services/architects-in-lucknow",
+        statusCode: 301,
+      },
+      {
+        source: "/blogs/lucknow-real-estate-2026-why-lda-approval-costs-are-changing-and-how-to-prepare",
+        destination: "/services/turnkey-construction-companies-lucknow",
+        statusCode: 301,
+      },
+      {
+        source: "/blogs/false-ceiling-cost-per-sq-ft-in-lucknow-2026-pricing-guide",
+        destination: "/services/interior-design/lucknow",
+        statusCode: 301,
+      },
+      {
+        source: "/blogs/marble-vs-marble-finish-tiles-best-budget-luxury-choice-for-homes-in-2026",
+        destination: "/services/interior-design/lucknow",
+        statusCode: 301,
+      },
+      {
+        source: "/blogs/modern-bedroom-design-trends-in-india-for-2026-or-trygve-studio",
+        destination: "/services/interior-design/lucknow",
+        statusCode: 301,
+      },
+      {
+        source: "/blogs/dream-home-blueprint-7-secrets-to-finding-the-best-residential-architects-in-lucknow-for-your-2024-build",
+        destination: "/services/architects-in-lucknow",
+        statusCode: 301,
+      },
+      {
+        source: "/blogs/affordable-luxury-interior-trends-for-indian-homes-in-2026",
+        destination: "/services/interior-design/lucknow",
+        statusCode: 301,
+      },
+      {
+        source: "/blogs/beyond-blueprints-how-bim-saves-homeowners-20percent-on-hidden-construction-costs",
+        destination: "/services/turnkey-construction-companies-lucknow",
+        statusCode: 301,
+      },
+      {
+        source: "/blogs/the-ultimate-checklist-for-choosing-the-best-architect-in-lucknow",
+        destination: "/services/architects-in-lucknow",
+        statusCode: 301,
+      },
+      {
+        source: "/blogs/best-architects-and-interior-designers-in-lucknow-or-trygve-studio",
+        destination: "/services/architects-in-lucknow",
+        statusCode: 301,
+      },
+      {
+        source: "/blogs/how-to-find-the-best-residential-architects-in-lucknow-for-a-turnkey-project",
+        destination: "/services/turnkey-construction-companies-lucknow",
         statusCode: 301,
       },
     ];

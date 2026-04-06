@@ -148,7 +148,7 @@ export default function FooterPremium({ variant = "bronze" }) {
             <ul className="mt-3 space-y-2 text-[15px]">
               {[
                 { label: "Architects in Lucknow", href: "/services/architects-in-lucknow" },
-                { label: "Interior Design Lucknow", href: "/services/interior-design-lucknow" },
+                { label: "Interior Design Lucknow", href: "/services/interior-design/lucknow" },
                 { label: "Architect Near Me", href: "/services/architect-near-me" },
                 { label: "Construction Calculator", href: "/price-calculator" },
               ].map((link) => (

@@ -57,7 +57,7 @@ export default function TrygveAnnouncement() {
               <Link href="/services/architects-in-lucknow" className="font-medium hover:underline text-zinc-800">
                 Architects
               </Link>,{" "}
-              <Link href="/services/interior-design-lucknow" className="font-medium hover:underline text-zinc-800">
+              <Link href="/services/interior-design/lucknow" className="font-medium hover:underline text-zinc-800">
                 Interior Designers
               </Link> & Visualisers crafts high-impact spaces, visuals, and documentation end-to-end.
             </p>

@@ -118,7 +118,14 @@ export default function AboutUs() {
                 { '@type': 'Country', name: 'India' },
               ],
               brand: { '@type': 'Brand', name: 'Trygve Studio' },
-              sameAs: ['https://wa.me/919554440400'],
+              sameAs: [
+                'https://www.instagram.com/trygvestudio/',
+                'https://in.linkedin.com/company/trygvestudio',
+                'https://www.behance.net/trygvestudio',
+                'https://www.youtube.com/@trygvestudio',
+                'https://www.facebook.com/trygvestudio/',
+                'https://wa.me/919554440400',
+              ],
               contactPoint: [
                 {
                   '@type': 'ContactPoint',
@@ -223,6 +230,18 @@ export default function AboutUs() {
               url: 'https://trygvestudio.com/',
             },
             email: 'faisal.saif@trygvestudio.com',
+            sameAs: [
+              'https://www.instagram.com/trygvestudio/',
+              'https://in.linkedin.com/company/trygvestudio',
+            ],
+            knowsAbout: [
+              'Architecture',
+              'Interior Design',
+              'Turnkey Construction',
+              'Luxury Residential Design',
+              'BIM Outsourcing',
+              'LDA Sanction Planning',
+            ],
           })}
         </Script>
       </>

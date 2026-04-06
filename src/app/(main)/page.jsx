@@ -1,9 +1,9 @@
 import HomeClient from "./HomeClient";
 
 export const metadata = {
-    title: "Trygve Studio - Premium Architecture & Interior Design in Lucknow",
+    title: "Trygve Studio | Award-Winning Architects in Lucknow (ISO Certified)",
     description:
-        "Transform your space with Trygve Studio. Leading architects and interior designers in Lucknow specializing in luxury residential, commercial, and turnkey projects.",
+        "Lucknow's top-rated architecture firm specializing in luxury villas, premium interiors & turnkey construction. 200+ projects delivered. 2026 Edition.",
     alternates: {
         canonical: "https://trygvestudio.com/",
     },

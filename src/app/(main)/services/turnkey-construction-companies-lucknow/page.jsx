@@ -5,16 +5,16 @@ import logo from "@/assets/logo.png";
 import Script from "next/script";
 
 export const metadata = {
-    title: "Best Turnkey Construction Companies in Lucknow | Trygve Studio",
+    title: "Top Turnkey Construction Company in Lucknow | 2026 Home Builds",
     description:
-        "Top-rated turnkey construction company in Lucknow. Specializing in residential builds, luxury villas, and commercial projects. ISO certified, end-to-end execution. Call now!",
+        "Experience hassle-free building with Lucknow's best turnkey construction company. ISO certified, zero cost overruns & end-to-end execution. 2026 Updated.",
     alternates: {
         canonical: "/services/turnkey-construction-companies-lucknow",
     },
     openGraph: {
-        title: "Best Turnkey Construction Companies in Lucknow",
+        title: "Top Turnkey Construction Company in Lucknow | 2026 Home Builds",
         description:
-            "ISO certified turnkey construction firm delivering end-to-end building solutions. From maps to handover, we manage it all without the headache of daily contractors.",
+            "ISO certified turnkey construction firm delivering end-to-end building solutions. From maps to handover, we manage it all without the headache of daily contractors. 2026 Edition.",
         url: "https://trygvestudio.com/services/turnkey-construction-companies-lucknow",
         images: [
             {

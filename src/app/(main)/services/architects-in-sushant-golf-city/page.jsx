@@ -5,9 +5,9 @@ import logo from "@/assets/logo.png";
 import Script from "next/script";
 
 export const metadata = {
-    title: "Eco-Friendly Architects in Sushant Golf City Lucknow | Trygve Studio",
+    title: "Best Architects in Sushant Golf City, Lucknow | Luxury Villa Design",
     description:
-        "Specialized eco-friendly architecture in Sushant Golf City (Ansal API), Lucknow. Sustainable villa designs, green energy integration, and landscape planning. ISO 9001 certified.",
+        "Looking for top architects in Sushant Golf City, Lucknow? Trygve Studio offers premium villa design, sustainable architecture, and turnkey construction services in Ansal API.",
     alternates: {
         canonical: "/services/architects-in-sushant-golf-city",
     },

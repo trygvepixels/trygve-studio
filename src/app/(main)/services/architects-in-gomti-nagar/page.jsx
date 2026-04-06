@@ -5,9 +5,9 @@ import logo from "@/assets/logo.png";
 import Script from "next/script";
 
 export const metadata = {
-    title: "Best Architects in Gomti Nagar Lucknow | Trygve Studio",
+    title: "Best Architects in Gomti Nagar Lucknow | Luxury Interior Design 2026",
     description:
-        "Top-rated architects in Gomti Nagar, Lucknow. Luxury residential design, commercial interiors, and LDA approvals for Gomti Nagar extension. 50+ local projects.",
+        "Top-rated architects in Gomti Nagar, Lucknow. Expert LDA map approvals for Gomti Nagar Extension, luxury villa designs & premium interior execution. 2026 Updated.",
     alternates: {
         canonical: "/services/architects-in-gomti-nagar",
     },

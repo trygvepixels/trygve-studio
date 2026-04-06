@@ -21,6 +21,7 @@ export default function ContactPage() {
   async function handleSubmit(e) {
     e.preventDefault();
     const form = e.currentTarget;
+    setStatus({ state: "idle", message: "" });
     setSubmitting(true);
 
     try {
@@ -58,6 +59,11 @@ export default function ContactPage() {
       }
     } catch (err) {
       console.error(err);
+      setStatus({
+        state: "error",
+        message:
+          err instanceof Error ? err.message : "Something went wrong. Please try again or WhatsApp us.",
+      });
       setSubmitting(false);
     }
   }

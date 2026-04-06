@@ -5,7 +5,7 @@
 
 const KEYWORD_LINK_MAP = [
   { keywords: ["architects in lucknow", "best architects in lucknow", "architecture firms in lucknow"], link: "/services/architects-in-lucknow" },
-  { keywords: ["interior design lucknow", "best interior designer in lucknow", "interior designers in lucknow"], link: "/services/interior-design-lucknow" },
+  { keywords: ["interior design lucknow", "best interior designer in lucknow", "interior designers in lucknow"], link: "/services/interior-design/lucknow" },
   { keywords: ["lda approval", "lda sanction", "building bylaws lucknow"], link: "/blogs/lucknow-real-estate-2026-why-lda-approval-costs-are-changing-and-how-to-prepare" },
   { keywords: ["luxury home designers", "villa architects"], link: "/services/luxury-architecture-design-lucknow" },
   { keywords: ["project gallery", "our projects", "trygve projects"], link: "/projects" },

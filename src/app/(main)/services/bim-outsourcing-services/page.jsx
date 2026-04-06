@@ -3,9 +3,9 @@ import Link from "next/link";
 import { FiCheck, FiGlobe, FiClock, FiShield } from "react-icons/fi";
 
 export const metadata = {
-    title: "BIM Outsourcing & Architectural Drafting Services for NRI & Global Firms | Trygve Studio",
+    title: "BIM Outsourcing Services | Global ISO-Certified Architectural Support",
     description:
-        "High-quality BIM outsourcing and architectural drafting for international firms and NRI clients. Remote Revit modeling, CAD documentation, VDC services, and full NRI home-build management for US, UK & UAE.",
+        "Scale your architecture firm with precision BIM outsourcing & drafting services. ISO-certified Revit modeling, CAD documentation, and VDC support for US, UK & UAE firms.",
     alternates: {
         canonical: "/services/bim-outsourcing-services",
     },
@@ -22,8 +22,8 @@ export default function BIMOutsourcingServices() {
                             <FiGlobe /> Global Architecture Partner
                         </div>
                         <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
-                            Scale Your Firm with Precision <br />
-                            <span className="text-blue-500 text-3xl md:text-5xl font-light">BIM & Drafting Support</span>
+                            BIM Outsourcing Services & <br />
+                            <span className="text-blue-500 text-3xl md:text-5xl font-light">Drafting Support</span>
                         </h1>
                         <p className="text-xl text-gray-400 font-light mb-10 max-w-xl">
                             We act as an extension of your design team. Delivering RevitDigital Twins and Construction Documentation with localized code compliance for US, UK, and Middle East.
