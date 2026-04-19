@@ -211,8 +211,8 @@ export async function generateMetadata({ params }) {
   // Description: use city's detailedIntro if available, otherwise use guide-aligned template
   const isLucknow = city.citySlug === "lucknow";
   const fallbackDesc = isLucknow
-    ? `Top-rated interior designers in Lucknow specialising in luxury residential & commercial interiors. Turnkey packages from ₹1,200/sq ft. Gomti Nagar, Hazratganj & PAN-Lucknow. Free consultation — +91-9554440400.`
-    : `Trygve Studio offers interior design support for clients in ${city.cityName} — structured planning, refined aesthetics, and smoother execution for homes, offices and commercial spaces. Free consultation.`;
+    ? `Interior designers in Lucknow for homes, offices and turnkey interiors. Trygve Studio supports planning, materials, detailing and execution across key localities in Lucknow.`
+    : `Trygve Studio offers interior design support for clients in ${city.cityName} with structured planning, refined aesthetics and smoother execution for homes, offices and commercial spaces.`;
 
   const description =
     city.detailedIntro && city.detailedIntro.trim().length > 80
@@ -226,8 +226,8 @@ export async function generateMetadata({ params }) {
     `home interior design ${city.cityName.toLowerCase()}`,
     `luxury interior design ${city.cityName.toLowerCase()}`,
     `turnkey interior ${city.cityName.toLowerCase()}`,
-    "interior design firm lucknow",
-    "modular kitchen lucknow",
+    `interior design firm ${city.cityName.toLowerCase()}`,
+    `modular kitchen ${city.cityName.toLowerCase()}`,
   ];
 
   return {
@@ -360,12 +360,7 @@ export default async function InteriorDesignCityPage({ params }) {
                   "latitude": "26.8467",
                   "longitude": "80.9462"
                 },
-                "telephone": "+91-XXXXXXXXXX",
-                "aggregateRating": {
-                  "@type": "AggregateRating",
-                  "ratingValue": ratingValue,
-                  "reviewCount": reviewCount
-                },
+                "telephone": "+91-9554440400",
                 "review": testimonialToPass.slice(0, 3).map((t) => ({
                   "@type": "Review",
                   "author": { "@type": "Person", "name": t.name },

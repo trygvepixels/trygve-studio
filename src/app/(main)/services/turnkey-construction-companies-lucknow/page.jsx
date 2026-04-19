@@ -7,7 +7,7 @@ import Script from "next/script";
 export const metadata = {
     title: "Turnkey Construction Company in Lucknow | Design to Handover | Trygve Studio",
     description:
-        "ISO-certified turnkey construction company in Lucknow. Complete home building — from LDA map to handover. ₹1,650–₹2,850 per sq ft. No hidden costs. 200+ projects delivered. Free estimate — +91-9554440400.",
+        "Turnkey construction company in Lucknow for design, approvals, project planning and coordinated execution. Explore how Trygve Studio supports projects from concept to handover.",
     keywords: [
         "turnkey construction company in lucknow",
         "turnkey construction lucknow",
@@ -23,7 +23,7 @@ export const metadata = {
     openGraph: {
         title: "Turnkey Construction Company in Lucknow | Design to Handover | Trygve Studio",
         description:
-            "ISO-certified turnkey construction in Lucknow. Architecture, LDA approvals, construction and interior fit-out under one contract. ₹1,650–₹2,850/sq ft. 200+ projects.",
+            "Turnkey construction in Lucknow with architecture, approvals, budgeting, construction coordination and interior fit-out support.",
         url: "https://trygvestudio.com/services/turnkey-construction-companies-lucknow",
         images: [
             {
@@ -87,13 +87,14 @@ export default function TurnkeyConstructionLucknow() {
                     {/* CRO Trust Badges */}
                     <div className="flex flex-wrap justify-center gap-3 mb-8">
                         <span className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-4 py-1.5 rounded-full text-sm font-medium tracking-wide">✓ ISO 9001:2015</span>
-                        <span className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-4 py-1.5 rounded-full text-sm font-medium tracking-wide">✓ Zero Cost Overruns</span>
-                        <span className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-4 py-1.5 rounded-full text-sm font-medium tracking-wide">✓ 200+ Projects</span>
+                        <span className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-4 py-1.5 rounded-full text-sm font-medium tracking-wide">✓ Structured Delivery</span>
+                        <span className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-4 py-1.5 rounded-full text-sm font-medium tracking-wide">✓ Design to Handover</span>
                     </div>
 
                     <p className="text-xl md:text-2xl text-gray-200 font-light max-w-3xl mx-auto leading-relaxed">
-                        Say goodbye to contractor disputes and stolen materials. We offer true end-to-end
-                        turnkey construction and project management in Lucknow. We design it, we build it.
+                        We support turnkey construction projects in Lucknow with design thinking,
+                        approval guidance, project planning and coordinated site execution so the
+                        process stays clearer from concept to handover.
                     </p>
 
                     <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
@@ -130,7 +131,7 @@ export default function TurnkeyConstructionLucknow() {
                             <div className="space-y-4">
                                 <div className="flex items-start gap-3">
                                     <span className="text-2xl">✓</span>
-                                    <p className="text-gray-700"><strong>200+ Projects:</strong> Successfully delivered across all categories</p>
+                                    <p className="text-gray-700"><strong>Integrated workflow:</strong> Design, planning and execution support under one team</p>
                                 </div>
                                 <div className="flex items-start gap-3">
                                     <span className="text-2xl">✓</span>
@@ -142,7 +143,7 @@ export default function TurnkeyConstructionLucknow() {
                                 </div>
                                 <div className="flex items-start gap-3">
                                     <span className="text-2xl">✓</span>
-                                    <p className="text-gray-700"><strong>Zero Cost Overruns:</strong> Fixed budgets guaranteed</p>
+                                    <p className="text-gray-700"><strong>Budget clarity:</strong> Better scope definition and planning before execution begins</p>
                                 </div>
                             </div>
                         </div>

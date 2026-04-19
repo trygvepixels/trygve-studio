@@ -5,16 +5,16 @@ import logo from "@/assets/logo.png";
 import Script from "next/script";
 
 export const metadata = {
-    title: "Award-Winning 3D Walkthrough Company in Lucknow | 2026 Visualization",
+    title: "3D Walkthrough Company in Lucknow | Architectural Visualization",
     description:
-        "Experience Lucknow's most advanced 3D walkthrough & architectural visualization studio. Professional 3D rendering, VR tours & cinematic 4K animations for developers. ISO certified.",
+        "3D walkthrough and architectural visualization services in Lucknow for developers, architects and project teams who need clearer design communication before execution.",
     alternates: {
         canonical: "/services/3d-walkthrough-company-lucknow",
     },
     openGraph: {
-        title: "Best 3D Walkthrough Company in Lucknow | High-End Visualization",
+        title: "3D Walkthrough Company in Lucknow | High-End Visualization",
         description:
-            "Cinematic 4K 3D walkthroughs and photorealistic renderings. Help your buyers visualize the dream before construction starts.",
+            "Photorealistic renderings and 3D walkthroughs to help clients and buyers understand spaces before construction starts.",
         url: "https://trygvestudio.com/services/3d-walkthrough-company-lucknow",
         images: [
             {

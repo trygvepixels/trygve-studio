@@ -245,13 +245,6 @@ export default function RootLayout({ children }) {
               "BIM Outsourcing",
               "NRI Home Projects"
             ],
-            aggregateRating: {
-              "@type": "AggregateRating",
-              ratingValue: "4.9",
-              reviewCount: "256",
-              bestRating: "5",
-              worstRating: "1",
-            },
             openingHoursSpecification: [
               {
                 "@type": "OpeningHoursSpecification",

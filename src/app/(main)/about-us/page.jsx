@@ -1,16 +1,16 @@
 import AboutClient from "./AboutClient";
 
 export const metadata = {
-  title: "About Trygve Studio | Leading Architecture & Design Firm in Lucknow",
+  title: "About Trygve Studio | Architecture & Interior Design Practice in Lucknow",
   description:
-    "Meet the team of award-winning architects and designers at Trygve Studio. Discover our journey of delivering 200+ luxury projects in Lucknow and PAN India.",
+    "Meet the team behind Trygve Studio, an architecture and interior design practice based in Lucknow. Learn about our process, project approach and design values.",
   alternates: {
     canonical: "https://trygvestudio.com/about-us",
   },
   openGraph: {
-    title: "About Trygve Studio | Award-Winning Architecture Firm",
+    title: "About Trygve Studio | Architecture & Interior Design Practice",
     description:
-      "200+ luxury projects delivered. Meet the ISO-certified team behind Lucknow's most trusted architecture studio.",
+      "Learn about the team, process and design approach behind Trygve Studio in Lucknow.",
     url: "https://trygvestudio.com/about-us",
     siteName: "Trygve Studio",
     images: [{ url: "https://trygvestudio.com/og-image.jpg", width: 1200, height: 630 }],
@@ -19,8 +19,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "About Trygve Studio | Leading Architects in Lucknow",
-    description: "Award-winning architects. 200+ luxury projects. ISO 9001:2015 certified.",
+    title: "About Trygve Studio | Architecture & Interior Design in Lucknow",
+    description: "Meet the team and design approach behind Trygve Studio in Lucknow.",
     images: ["https://trygvestudio.com/twitter-image.jpg"],
   },
 };

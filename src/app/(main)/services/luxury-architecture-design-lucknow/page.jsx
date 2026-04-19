@@ -210,10 +210,10 @@ export default function LuxuryArchitectureLucknow() {
                     <div className="grid md:grid-cols-2 gap-12">
                         <div className="space-y-8">
                             <div>
-                                <h3 className="text-2xl font-normal mb-3">Award-Winning Team</h3>
+                                <h3 className="text-2xl font-normal mb-3">Experienced Design Leadership</h3>
                                 <p className="text-gray-600 font-light leading-relaxed">
-                                    Our principal architect is a recipient of the National Architecture Excellence Award
-                                    and has trained at globally renowned design studios.
+                                    Our design leadership focuses on proportion, detailing, material quality
+                                    and buildable luxury for high-value residential projects.
                                 </p>
                             </div>
                             <div>

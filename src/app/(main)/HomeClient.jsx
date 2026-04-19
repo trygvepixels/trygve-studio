@@ -156,11 +156,6 @@ const Page = () => {
               "latitude": "26.9015",
               "longitude": "80.9620"
             },
-            "aggregateRating": {
-              "@type": "AggregateRating",
-              "ratingValue": "5.0",
-              "reviewCount": "218"
-            },
             "location": [
               {
                 "@type": "Place",

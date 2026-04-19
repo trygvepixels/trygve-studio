@@ -5,16 +5,16 @@ import logo from "@/assets/logo.png";
 import Script from "next/script";
 
 export const metadata = {
-    title: "Top Architecture Companies in Lucknow | Award-Winning Design & Build Services",
+    title: "Architecture Firms in Lucknow | Design & Build Services | Trygve Studio",
     description:
-        "Discover Trygve Studio — a leading architecture company in Lucknow specializing in luxury residential, commercial, and sustainable design. ISO 9001:2015 certified. Book a free consultation!",
+        "Explore Trygve Studio as an architecture firm in Lucknow for residential, commercial and design-build services with planning, detailing and execution support.",
     alternates: {
         canonical: "/services/architecture-firms-lucknow",
     },
     openGraph: {
-        title: "Top Architecture Firms in Lucknow | Trygve Studio",
+        title: "Architecture Firms in Lucknow | Trygve Studio",
         description:
-            "Award-winning architecture firm in Lucknow with 200+ successful projects. Expert in sustainable design, modern aesthetics & timely delivery.",
+            "Architecture, planning and design-build support in Lucknow for residential, commercial and hospitality projects.",
         url: "https://trygvestudio.com/services/architecture-firms-lucknow",
         images: [
             {
@@ -39,11 +39,6 @@ export default function ArchitectureFirmsLucknow() {
                         "@type": "LocalBusiness",
                         "name": "Trygve Studio",
                         "image": "https://trygvestudio.com/logo.png",
-                        "aggregateRating": {
-                            "@type": "AggregateRating",
-                            "ratingValue": "5.0",
-                            "reviewCount": "218"
-                        },
                         "address": {
                             "@type": "PostalAddress",
                             "addressLocality": "Lucknow",
@@ -75,7 +70,7 @@ export default function ArchitectureFirmsLucknow() {
 
                 <div className="relative z-10 text-center max-w-6xl px-6">
                     <h1 className="text-4xl md:text-6xl font-light text-white mb-6 tracking-tight text-center sm:text-left">
-                        Award-Winning Architecture Firm in
+                        Architecture Firm in
                         <br />
                         <span className="font-normal text-white">Lucknow</span>
                     </h1>

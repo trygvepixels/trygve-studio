@@ -339,7 +339,7 @@ export default function FooterPremium({ variant = "bronze" }) {
             </Link>
             <span className="opacity-40">•</span>
             <span className="text-[10px] font-bold text-blue-600 bg-blue-50 px-2 py-0.5 rounded border border-blue-100">
-              Ranked #1 Architecture Company in India
+              Architecture, Interiors & Turnkey Services
             </span>
             <span className="opacity-40">•</span>
             <button

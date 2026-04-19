@@ -22,11 +22,6 @@ export default function ArchitectsGomtiNagar() {
                     "@type": "LocalBusiness",
                     "name": "Trygve Studio - architects in Gomti Nagar",
                     "image": "https://trygvestudio.com/logo.png",
-                    "aggregateRating": {
-                        "@type": "AggregateRating",
-                        "ratingValue": "5.0",
-                        "reviewCount": "218"
-                    },
                     "address": {
                         "@type": "PostalAddress",
                         "streetAddress": "Gomti Nagar",

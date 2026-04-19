@@ -102,10 +102,10 @@ const TrustVault = dynamic(() => Promise.resolve(({ FiShield, FiAward, FiBriefca
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
                 {[
-                    { icon: FiShield, title: "15+ Years", text: "A collective decade and a half of navigating UP's local building codes." },
+                    { icon: FiShield, title: "Local Planning Knowledge", text: "Experience working through Lucknow planning conditions, site realities and approval-led documentation needs." },
                     { icon: FiAward, title: "CoA Registered", text: "Fully licensed by the Council of Architecture and registered with IIA." },
                     { icon: FiBriefcase, title: "Turnkey Flow", text: "From initial layout to final flooring, we manage every single vendor." },
-                    { icon: FiZap, title: "45-Day Sanction", text: "Optimized liaison team to minimize map approval waiting periods." },
+                    { icon: FiZap, title: "Approval Guidance", text: "Structured support for map sanction workflows, documentation and coordination with the relevant local process." },
                 ].map((item, idx) => (
                     <div key={idx} className="p-6 md:p-8 rounded-2xl md:rounded-[2rem] bg-white/5 border border-white/10 backdrop-blur hover:bg-white/10 transition-colors">
                         <item.icon className="text-2xl md:text-3xl text-blue-400 mb-4 md:mb-6" />
@@ -295,11 +295,6 @@ export default function ArchitectNearMe() {
                         "@type": "GeoCoordinates",
                         "latitude": "26.8467",
                         "longitude": "80.9462"
-                    },
-                    "aggregateRating": {
-                        "@type": "AggregateRating",
-                        "ratingValue": "5.0",
-                        "reviewCount": "342"
                     },
                     "areaServed": [
                         { "@type": "City", "name": "Lucknow" },
