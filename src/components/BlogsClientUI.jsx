@@ -42,6 +42,12 @@ function FaqItem({ faq }) {
 // ⬇ MAIN CLIENT COMPONENT ⬇
 export default function BlogsClientUI({ blog }) {
   const [mounted, setMounted] = useState(false);
+  const defaultServiceLinks = [
+    { name: "Architects in Lucknow", link: "/services/architects-in-lucknow" },
+    { name: "Interior Design Lucknow", link: "/services/interior-design/lucknow" },
+    { name: "Turnkey Construction Lucknow", link: "/services/turnkey-construction-companies-lucknow" },
+    { name: "Construction Cost Calculator", link: "/price-calculator" },
+  ];
 
   // Safely parse Editor.js content
   const contentData = (() => {
@@ -167,42 +173,52 @@ export default function BlogsClientUI({ blog }) {
               </li>
             ))
           ) : (
-            <>
-              <li className="list-none">
+            defaultServiceLinks.map((service) => (
+              <li key={service.link} className="list-none">
                 <Link
-                  href="/services/architects-in-lucknow"
+                  href={service.link}
                   className="block p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors text-blue-600 font-medium"
                 >
-                  Architects in Lucknow →
+                  {service.name} →
                 </Link>
               </li>
-              <li className="list-none">
-                <Link
-                  href="/services/interior-design/lucknow"
-                  className="block p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors text-blue-600 font-medium"
-                >
-                  Interior Design Lucknow →
-                </Link>
-              </li>
-              <li className="list-none">
-                <Link
-                  href="/services"
-                  className="block p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors text-blue-600 font-medium"
-                >
-                  3D Visualization Services →
-                </Link>
-              </li>
-              <li className="list-none">
-                <Link
-                  href="/projects"
-                  className="block p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors text-blue-600 font-medium"
-                >
-                  Our Project Gallery →
-                </Link>
-              </li>
-            </>
+            ))
           )}
         </ul>
+      </section>
+
+      <section className="max-w-7xl mx-auto py-4 md:px-0 px-4">
+        <div className="rounded-2xl bg-white border border-gray-200 p-8 md:p-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+          <div className="max-w-2xl">
+            <h2 className="text-2xl md:text-3xl font-medium text-gray-900 mb-3">
+              Planning a Similar Project in Lucknow?
+            </h2>
+            <p className="text-gray-600 leading-relaxed">
+              If this article matches the kind of home, renovation or construction project you are planning,
+              the next step is usually to review scope, budget and timelines with a local team.
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-3">
+            <Link
+              href="/contact-us#project-form"
+              className="inline-flex items-center justify-center px-5 py-3 rounded-lg bg-[#234D7E] text-white font-medium hover:bg-[#1d3f68] transition-colors"
+            >
+              Book a Consultation
+            </Link>
+            <Link
+              href="/price-calculator"
+              className="inline-flex items-center justify-center px-5 py-3 rounded-lg border border-gray-300 text-gray-800 font-medium hover:bg-gray-50 transition-colors"
+            >
+              Use Cost Calculator
+            </Link>
+            <Link
+              href="/projects"
+              className="inline-flex items-center justify-center px-5 py-3 rounded-lg border border-gray-300 text-gray-800 font-medium hover:bg-gray-50 transition-colors"
+            >
+              View Projects
+            </Link>
+          </div>
+        </div>
       </section>
 
       {/* FAQs */}
@@ -279,6 +295,18 @@ export default function BlogsClientUI({ blog }) {
                 className="text-gray-700 hover:text-black hover:underline font-medium"
               >
                 About Us
+              </Link>
+              <Link
+                href="/price-calculator"
+                className="text-gray-700 hover:text-black hover:underline font-medium"
+              >
+                Construction Cost Calculator
+              </Link>
+              <Link
+                href="/contact-us#project-form"
+                className="text-gray-700 hover:text-black hover:underline font-medium"
+              >
+                Book a Consultation
               </Link>
             </div>
           </div>

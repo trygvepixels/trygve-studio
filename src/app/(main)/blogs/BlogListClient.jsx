@@ -91,9 +91,17 @@ export default function Page() {
     if (filterType === "Most Viewed") {
       filtered.sort((a, b) => (b.views || 0) - (a.views || 0));
     } else if (sortBy === "Newest") {
-      filtered.sort((a, b) => b.timestamp - a.timestamp);
+      filtered.sort((a, b) => {
+        const timeDiff = (b.timestamp || 0) - (a.timestamp || 0);
+        if (timeDiff !== 0) return timeDiff;
+        return a.id < b.id ? 1 : -1;
+      });
     } else {
-      filtered.sort((a, b) => a.timestamp - b.timestamp);
+      filtered.sort((a, b) => {
+        const timeDiff = (a.timestamp || 0) - (b.timestamp || 0);
+        if (timeDiff !== 0) return timeDiff;
+        return a.id > b.id ? 1 : -1;
+      });
     }
 
     return filtered;

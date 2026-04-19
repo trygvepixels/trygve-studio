@@ -83,8 +83,8 @@ export default function WalkthroughCompanyLucknow() {
                     </div>
 
                     <p className="text-xl md:text-2xl text-gray-200 font-light max-w-3xl mx-auto leading-relaxed">
-                        Don't just show blueprints. Let your clients experience their future space with
-                        Lucknow's most advanced 3D walkthough and photorealistic rendering studio.
+                        3D walkthroughs and photorealistic renders in Lucknow that help clients, buyers
+                        and internal teams understand a project before construction begins.
                     </p>
 
                     <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
@@ -113,27 +113,26 @@ export default function WalkthroughCompanyLucknow() {
                                 Visualize Before You Build
                             </h2>
                             <p className="text-xl text-gray-600 font-light leading-relaxed mb-8">
-                                For real estate developers and architectural firms in Lucknow, high-quality
-                                visualization isn't a luxury—it's a sales tool. We bridge the gap between
-                                complex technical drawings and a buyer's emotional connection.
+                                We translate drawings, models and material intent into visual assets that are
+                                easier to review, present and approve across design, sales and execution teams.
                             </p>
 
                             <div className="space-y-4">
                                 <div className="flex items-start gap-3">
                                     <span className="text-2xl">✓</span>
-                                    <p className="text-gray-700"><strong>Hyper-Realistic Textures:</strong> Precision lighting and physics-based materials.</p>
+                                    <p className="text-gray-700"><strong>Material clarity:</strong> Lighting, finishes and scale are built to support better review.</p>
                                 </div>
                                 <div className="flex items-start gap-3">
                                     <span className="text-2xl">✓</span>
-                                    <p className="text-gray-700"><strong>Fast Turnaround:</strong> High-performance render farm for meeting developer deadlines.</p>
+                                    <p className="text-gray-700"><strong>Practical turnaround:</strong> Delivery timelines planned around developer and design milestones.</p>
                                 </div>
                                 <div className="flex items-start gap-3">
                                     <span className="text-2xl">✓</span>
-                                    <p className="text-gray-700"><strong>Marketing Ready:</strong> Cinematic 4K exports for social media and site offices.</p>
+                                    <p className="text-gray-700"><strong>Presentation ready:</strong> Assets prepared for websites, sales decks and site-office use.</p>
                                 </div>
                                 <div className="flex items-start gap-3">
                                     <span className="text-2xl">✓</span>
-                                    <p className="text-gray-700"><strong>VR Integration:</strong> Virtual Reality tours for an immersive "walk-in" experience.</p>
+                                    <p className="text-gray-700"><strong>Multi-format output:</strong> Walkthroughs, still renders and interactive views where needed.</p>
                                 </div>
                             </div>
                         </div>
@@ -212,31 +211,31 @@ export default function WalkthroughCompanyLucknow() {
             {/* Comparison Section */}
             <section className="py-20 px-6 bg-white">
                 <div className="max-w-5xl mx-auto">
-                    <h2 className="text-4xl font-light mb-8 text-center">Why Partner With Trygve Visualization?</h2>
+                    <h2 className="text-4xl font-light mb-8 text-center">How Our Visualization Process Helps</h2>
 
                     <p className="text-lg text-gray-700 mb-8 text-center max-w-3xl mx-auto">
-                        In an industry full of freelance '3D makers', Trygve Studio brings architectural
-                        rigor to every render.
+                        Our aim is to make renders easier to trust by keeping visualization aligned with the
+                        underlying design, materials and project intent.
                     </p>
 
                     <div className="grid md:grid-cols-2 gap-8 mb-12">
                         <div className="bg-gray-50 p-8 rounded-lg">
-                            <h3 className="text-xl font-semibold mb-4 text-gray-900">Freelance 3D Operators</h3>
+                            <h3 className="text-xl font-semibold mb-4 text-gray-900">Typical Visualization Gaps</h3>
                             <p className="text-gray-700 mb-4">
-                                <strong>The Reality:</strong> They often lack structural understanding. They put pillars where they shouldn't be, use inaccurate scale, and struggle with complex lighting like the Lucknow humidity/sun path.
+                                <strong>Common issue:</strong> Visuals can look impressive but still drift from the actual design when scale, structure, materials or light are not reviewed carefully.
                             </p>
                             <p className="text-gray-700">
-                                <strong>The Result:</strong> Buyers get confused when the real building looks different from the render.
+                                <strong>The result:</strong> Teams spend more time correcting misunderstandings later in design reviews or sales conversations.
                             </p>
                         </div>
 
                         <div className="bg-gray-200 p-8 rounded-lg border-2 border-gray-900">
-                            <h3 className="text-xl font-semibold mb-4 text-gray-900">Trygve B2B Studio</h3>
+                            <h3 className="text-xl font-semibold mb-4 text-gray-900">Trygve Studio Workflow</h3>
                             <p className="text-gray-700 mb-4">
-                                <strong>Our Approach:</strong> Every walkthrough is supervised by a licensed architect. We ensure the scale is 1:1, the materials are actually sourceable in Lucknow (Kajari, Italian Marble), and the lighting is physically accurate.
+                                <strong>Our approach:</strong> Visualization is reviewed against drawings, proportions, finishes and site context so the output stays useful for both presentation and planning.
                             </p>
                             <p className="text-gray-700">
-                                <strong>The Result:</strong> High-trust marketing assets that lead to faster pre-bookings.
+                                <strong>The result:</strong> Clearer visuals for approvals, buyer communication and internal decision-making.
                             </p>
                         </div>
                     </div>
@@ -291,9 +290,9 @@ export default function WalkthroughCompanyLucknow() {
 
                     <div className="bg-[#F4F1EC] p-10 rounded-lg">
                         <p className="text-2xl text-gray-800 italic leading-relaxed mb-6">
-                            "Trygve's 3D walkthrough for our township in Gomti Nagar was the primary reason we
-                            hit 70% pre-bookings within the first month. Their attention to Lucknow's local materials
-                            made the renders look 'lived-in' and trustworthy."
+                            "Trygve's 3D walkthrough for our township in Gomti Nagar helped our sales and design
+                            teams present the project more clearly. Their attention to local materials made the
+                            renders feel believable and easier for buyers to understand."
                         </p>
                         <div className="text-gray-600">
                             <strong>Director, Leading Real Estate Group</strong><br />
@@ -312,7 +311,7 @@ export default function WalkthroughCompanyLucknow() {
                         {[
                             {
                                 q: "What is the typical cost of a 3D walkthrough in Lucknow?",
-                                a: "Cost depends on the project scope and animation length. In 2026, premium 3D animations range from ₹40,000 to ₹1.5 Lakhs for high-end walkthroughs. Static photorealistic renders typically start from ₹7,000 per view."
+                                a: "Cost depends on the project scale, number of views, animation length and level of detailing. We usually share estimates after reviewing drawings, desired output formats and deadlines."
                             },
                             {
                                 q: "How long does it take to create a photorealistic render?",
@@ -346,7 +345,7 @@ export default function WalkthroughCompanyLucknow() {
                             "name": "What is the typical cost of a 3D walkthrough in Lucknow?",
                             "acceptedAnswer": {
                                 "@type": "Answer",
-                                "text": "In 2026, premium 3D animations range from ₹40,000 to ₹1.5 Lakhs. Static photorealistic renders typically start from ₹7,000 per view."
+                                "text": "Cost depends on the project scale, number of views, animation length and level of detailing. We usually share estimates after reviewing drawings, desired output formats and deadlines."
                             }
                         },
                         {
@@ -365,10 +364,10 @@ export default function WalkthroughCompanyLucknow() {
             <section className="py-20 px-6 bg-gray-900 text-white">
                 <div className="max-w-4xl mx-auto text-center">
                     <h2 className="text-4xl md:text-5xl font-light mb-6">
-                        Impress Your Investors
+                        Review Your Project in 3D
                     </h2>
                     <p className="text-xl font-light mb-10 opacity-80">
-                        High-end visualization for developers, architects, and discerning homeowners.
+                        Visualization support for developers, architects and homeowners who need clearer project communication.
                     </p>
                     <Link
                         href="/contact-us"

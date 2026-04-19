@@ -78,13 +78,13 @@ export default function ArchitectureFirmsLucknow() {
                     {/* CRO Trust Badges */}
                     <div className="flex flex-wrap justify-center gap-3 mb-8">
                         <span className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-4 py-1.5 rounded-full text-sm font-medium tracking-wide">✓ ISO 9001:2015</span>
-                        <span className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-4 py-1.5 rounded-full text-sm font-medium tracking-wide">✓ 200+ Projects</span>
-                        <span className="bg-white/10 backdrop-blur-md border border-white/20 text-#white px-4 py-1.5 rounded-full text-sm font-medium tracking-wide">✓ Verified Experts</span>
+                        <span className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-4 py-1.5 rounded-full text-sm font-medium tracking-wide">✓ Design & Build Support</span>
+                        <span className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-4 py-1.5 rounded-full text-sm font-medium tracking-wide">✓ Residential & Commercial</span>
                     </div>
 
                     <p className="text-xl md:text-2xl text-gray-200 font-light max-w-3xl mx-auto leading-relaxed">
-                        ISO-certified full-service architecture firm delivering exceptional design solutions
-                        across residential, commercial, and institutional sectors since 2019.
+                        Architecture, planning and execution support in Lucknow for homes, workspaces
+                        and mixed-use projects that need clear coordination from concept to site.
                     </p>
 
                     <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
@@ -113,27 +113,27 @@ export default function ArchitectureFirmsLucknow() {
                                 Why Choose Our Architecture Firm?
                             </h2>
                             <p className="text-xl text-gray-600 font-light leading-relaxed mb-8">
-                                Trygve Studio stands among Lucknow's premier architecture firms, combining
-                                technical excellence with innovative design thinking. Our multidisciplinary
-                                team delivers comprehensive architectural solutions tailored to your vision.
+                                We work as a planning and design partner for clients who want one team to
+                                coordinate architecture, interiors, approvals and execution support with a
+                                practical understanding of how projects move in Lucknow.
                             </p>
 
                             <div className="space-y-4">
                                 <div className="flex items-start gap-3">
                                     <span className="text-2xl">✓</span>
-                                    <p className="text-gray-700"><strong>200+ Projects:</strong> Successfully delivered across all categories</p>
+                                    <p className="text-gray-700"><strong>Structured planning:</strong> Design decisions backed by drawings, specifications and site coordination</p>
                                 </div>
                                 <div className="flex items-start gap-3">
                                     <span className="text-2xl">✓</span>
-                                    <p className="text-gray-700"><strong>Licensed & Insured:</strong> Full regulatory compliance</p>
+                                    <p className="text-gray-700"><strong>Multi-disciplinary support:</strong> Architecture, interiors and visualization aligned in one workflow</p>
                                 </div>
                                 <div className="flex items-start gap-3">
                                     <span className="text-2xl">✓</span>
-                                    <p className="text-gray-700"><strong>Sustainable Design:</strong> Energy-efficient, eco-conscious solutions</p>
+                                    <p className="text-gray-700"><strong>Local relevance:</strong> Design choices shaped around climate, approvals and material availability</p>
                                 </div>
                                 <div className="flex items-start gap-3">
                                     <span className="text-2xl">✓</span>
-                                    <p className="text-gray-700"><strong>Timely Delivery:</strong> 98% on-time project completion rate</p>
+                                    <p className="text-gray-700"><strong>Clear communication:</strong> Practical updates so scope, cost and execution stay easier to track</p>
                                 </div>
                             </div>
                         </div>
@@ -226,11 +226,11 @@ export default function ArchitectureFirmsLucknow() {
             {/* Honest Comparison Section */}
             <section className="py-20 px-6 bg-white">
                 <div className="max-w-5xl mx-auto">
-                    <h2 className="text-4xl font-light mb-8 text-center">How We Compare to Other Firms</h2>
+                    <h2 className="text-4xl font-light mb-8 text-center">How Our Approach Differs</h2>
 
                     <p className="text-lg text-gray-700 mb-8 text-center max-w-3xl mx-auto">
-                        We get this question a lot: "What makes you different from the other 50+ architecture firms in Lucknow?"
-                        Here's an honest comparison:
+                        Different firms suit different project types. This is where our working style
+                        usually fits best for clients looking for architecture support in Lucknow.
                     </p>
 
                     <div className="grid md:grid-cols-2 gap-8 mb-12">
@@ -240,12 +240,12 @@ export default function ArchitectureFirmsLucknow() {
                                 <strong>Their Strength:</strong> Big teams, multiple ongoing projects, established processes.
                             </p>
                             <p className="text-gray-700 mb-4">
-                                <strong>The Reality:</strong> You'll likely work with junior architects while partners focus on
-                                high-value clients. Your ₹50 lakh project might not get the attention it deserves.
+                                <strong>Typical challenge:</strong> Communication can become layered, especially when the design team,
+                                coordination team and site team are all separate.
                             </p>
                             <p className="text-gray-700">
-                                <strong>Our Approach:</strong> We're selective about projects. Every client gets partner-level
-                                attention because we cap our intake at 8-10 active projects.
+                                <strong>Our Approach:</strong> We keep the workflow more direct so design, detailing and client
+                                decisions stay connected through the project.
                             </p>
                         </div>
 
@@ -255,37 +255,37 @@ export default function ArchitectureFirmsLucknow() {
                                 <strong>Their Strength:</strong> Personal touch, lower fees, direct access to the architect.
                             </p>
                             <p className="text-gray-700 mb-4">
-                                <strong>The Reality:</strong> Limited bandwidth. If they get sick or busy, your project stalls.
-                                Also, one person can't be expert in structural, MEP, and interior design.
+                                <strong>Typical challenge:</strong> A single-person setup can struggle when a project needs parallel
+                                input across structure, interiors, visualization and approvals.
                             </p>
                             <p className="text-gray-700">
-                                <strong>Our Approach:</strong> We have a team of 12 specialists (structure, MEP, interiors, 3D)
-                                coordinated by one point person. You get expertise across all domains.
+                                <strong>Our Approach:</strong> We coordinate across design disciplines while keeping one clear point
+                                of contact for the client.
                             </p>
                         </div>
                     </div>
 
                     <div className="bg-[#F4F1EC] p-8 rounded-lg">
-                        <h3 className="text-2xl font-semibold mb-4 text-gray-900">So Who Are We For?</h3>
+                        <h3 className="text-2xl font-semibold mb-4 text-gray-900">Who We Usually Work Best With</h3>
                         <p className="text-gray-700 leading-relaxed mb-4">
-                            You're a good fit for Trygve Studio if you:
+                            Our process tends to work well for clients who:
                         </p>
                         <ul className="space-y-3 text-gray-700">
                             <li className="flex items-start">
                                 <span className="mr-3 text-green-600 font-bold">✓</span>
-                                Want a balanced approach — not too corporate, not too casual
+                                Want a balanced process that is structured without becoming impersonal
                             </li>
                             <li className="flex items-start">
                                 <span className="mr-3 text-green-600 font-bold">✓</span>
-                                Value transparent communication over sales pitches
+                                Value clear communication over heavy sales language
                             </li>
                             <li className="flex items-start">
                                 <span className="mr-3 text-green-600 font-bold">✓</span>
-                                Need someone who'll tell you "that's a bad idea" when needed (politely, of course)
+                                Want practical design feedback before money gets committed on site
                             </li>
                             <li className="flex items-start">
                                 <span className="mr-3 text-green-600 font-bold">✓</span>
-                                Are willing to invest in quality design (our sweet spot is ₹40 lakh to ₹5 crore projects)
+                                Need planning support for projects where coordination quality matters
                             </li>
                         </ul>
                     </div>
@@ -295,10 +295,10 @@ export default function ArchitectureFirmsLucknow() {
             {/* Real Timeline Section */}
             <section className="py-20 px-6 bg-gray-50">
                 <div className="max-w-5xl mx-auto">
-                    <h2 className="text-4xl font-light mb-8 text-center">What Actually Happens After You Sign Up</h2>
+                    <h2 className="text-4xl font-light mb-8 text-center">What the Process Usually Looks Like</h2>
 
                     <p className="text-lg text-gray-700 mb-12 text-center">
-                        No fluff. Here's the real timeline for a typical 2500 sq ft residential project:
+                        A typical residential project in Lucknow moves through these stages before construction starts.
                     </p>
 
                     <div className="space-y-6">
@@ -308,9 +308,8 @@ export default function ArchitectureFirmsLucknow() {
                                 <span className="text-sm text-gray-500">2 weeks</span>
                             </div>
                             <p className="text-gray-700">
-                                We visit your site 2-3 times, measure everything, take soil samples, check sun paths.
-                                Meanwhile, we're bombarding you with questions about your lifestyle, budget priorities,
-                                and pet peeves. This phase determines everything else.
+                                We visit the site, review constraints, understand your brief and align on budget priorities,
+                                lifestyle needs and project goals. This phase shapes the rest of the design work.
                             </p>
                         </div>
 
@@ -320,9 +319,8 @@ export default function ArchitectureFirmsLucknow() {
                                 <span className="text-sm text-gray-500">3 weeks</span>
                             </div>
                             <p className="text-gray-700">
-                                We present 2-3 layout options with 3D renders. You pick one. Then we iterate 4-5 times
-                                until you're excited (not just "okay"). This takes longer than we'd like, but rushing
-                                this phase causes regrets later.
+                                We present layout directions and early visual references, then refine the selected option
+                                through feedback rounds until the planning approach is ready for detailed development.
                             </p>
                         </div>
 
@@ -332,9 +330,8 @@ export default function ArchitectureFirmsLucknow() {
                                 <span className="text-sm text-gray-500">3 weeks</span>
                             </div>
                             <p className="text-gray-700">
-                                Electrical points, plumbing lines, HVAC, false ceiling details — the boring but critical
-                                stuff. You'll review 40+ pages of drawings. Most people's eyes glaze over, but we walk
-                                you through what matters.
+                                This stage covers electrical layouts, plumbing, structure coordination, ceilings,
+                                finishes and construction details so execution teams can work with clarity.
                             </p>
                         </div>
 
@@ -344,9 +341,8 @@ export default function ArchitectureFirmsLucknow() {
                                 <span className="text-sm text-gray-500">6 weeks (usually)</span>
                             </div>
                             <p className="text-gray-700">
-                                This is mostly waiting. We submit, they ask for clarifications, we resubmit. Rinse, repeat.
-                                Officially it's "15 days" but realistically plan for 6-8 weeks. We check status twice weekly
-                                and bug them politely.
+                                Submission, review comments and clarifications usually take time. We plan for practical
+                                approval timelines rather than ideal ones and keep the file moving with follow-ups.
                             </p>
                         </div>
 
@@ -356,8 +352,8 @@ export default function ArchitectureFirmsLucknow() {
                                 <span className="text-sm text-gray-500">9-12 months</span>
                             </div>
                             <p className="text-gray-700">
-                                We do weekly site visits during construction. When contractors say "sir, we can skip this step,"
-                                we're the ones who say no. That's what you're paying us for — to be the annoying quality police.
+                                Once work begins, site coordination helps drawings translate properly on ground and keeps
+                                key quality decisions from drifting during execution.
                             </p>
                         </div>
                     </div>
@@ -367,45 +363,43 @@ export default function ArchitectureFirmsLucknow() {
             {/* Local Expertise */}
             <section className="py-20 px-6 bg-white">
                 <div className="max-w-5xl mx-auto">
-                    <h2 className="text-4xl font-light mb-8">Why Local Expertise Actually Matters</h2>
+                    <h2 className="text-4xl font-light mb-8">Why Local Context Matters in Lucknow</h2>
 
                     <p className="text-lg text-gray-700 mb-8">
-                        Some architects treat Lucknow like any other city. Big mistake. Here's what we know that others might miss:
+                        Design decisions in Lucknow are shaped by climate, approvals, site conditions and material choices.
+                        These are some of the local factors that usually need attention.
                     </p>
 
                     <div className="space-y-6">
                         <div className="border-l-4 border-gray-300 pl-6">
                             <h3 className="text-xl font-semibold mb-2">Gomti Riverfront Projects</h3>
                             <p className="text-gray-700">
-                                If your plot is near Gomti, the water table is high. We design basements differently here —
-                                extra waterproofing, anti-buoyancy measures, specific foundation systems. Learned this the hard
-                                way in 2020.
+                                Plots closer to the riverfront often need more attention around waterproofing, foundation
+                                strategy and basement detailing because of local soil and water-table conditions.
                             </p>
                         </div>
 
                         <div className="border-l-4 border-gray-300 pl-6">
                             <h3 className="text-xl font-semibold mb-2">Ring Road Noise Pollution</h3>
                             <p className="text-gray-700">
-                                Houses along Ring Road need acoustic insulation that's not standard in other Lucknow areas.
-                                We use double-glazed windows and specific wall assemblies. Worth the extra ₹2-3 lakh for
-                                peace of mind (literally).
+                                Sites along high-traffic stretches may need better acoustic planning, glazing choices and
+                                wall assemblies to keep indoor comfort at the right level.
                             </p>
                         </div>
 
                         <div className="border-l-4 border-gray-300 pl-6">
                             <h3 className="text-xl font-semibold mb-2">The Termite Situation</h3>
                             <p className="text-gray-700">
-                                Lucknow's soil loves termites. We don't use wood for door frames at ground level anymore after
-                                seeing too many replacements. uPVC or aluminum with wood finish — looks the same, lasts 10x longer.
+                                Ground-contact detailing, material choice and preventive treatment matter because termite
+                                risk is a practical issue on many sites in this region.
                             </p>
                         </div>
 
                         <div className="border-l-4 border-gray-300 pl-6">
                             <h3 className="text-xl font-semibold mb-2">Materials That Actually Work Here</h3>
                             <p className="text-gray-700">
-                                Italian marble in Lucknow's climate? It'll develop a patina in 3 years. We recommend vitrified
-                                tiles that look identical but handle the humidity better. Save that real marble for feature
-                                walls, not floors.
+                                Not every premium-looking material performs equally well here. Finishes need to be selected
+                                around maintenance, humidity and long-term usability, not just showroom appearance.
                             </p>
                         </div>
                     </div>
@@ -504,7 +498,7 @@ export default function ArchitectureFirmsLucknow() {
 
                     <div className="mt-12 text-center">
                         <p className="text-gray-600 mb-6">
-                            Exploring other architectural services in Lucknow?
+                            Explore related services in Lucknow:
                         </p>
                         <div className="flex flex-wrap gap-4 justify-center">
                             <Link href="/services/architects-in-lucknow" className="text-[#234D7E] hover:underline">
