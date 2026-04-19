@@ -20,6 +20,18 @@ export default function InteriorDesignerLayout({ children }) {
           content="dv4u9r79rw2om8h9acntau6pjitnsy"
         />
         <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-TGWQ4KRSTH"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics-gtag" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-TGWQ4KRSTH');
+          `}
+        </Script>
+        <Script
           src="https://www.googletagmanager.com/gtag/js?id=AW-10884548494"
           strategy="afterInteractive"
         />
