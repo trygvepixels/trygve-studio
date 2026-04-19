@@ -1,26 +1,33 @@
 import ProjectListClient from "./ProjectListClient";
 
 export const metadata = {
-    title: "Luxury Portfolio | Premium Architecture & Interior Design | Trygve Studio",
+    title: "Architecture & Interior Design Projects in Lucknow | Portfolio 2026 | Trygve Studio",
     description:
-        "Explore our award-winning portfolio of 200+ luxury villas, commercial spaces, and premium interiors in Lucknow and PAN India. 2026 Updated Gallery.",
+        "Browse Trygve Studio's portfolio of residential architecture, interior design and turnkey construction projects in Lucknow and PAN India. 200+ completed spaces — villas, offices, hospitality and commercial projects.",
+    keywords: [
+        "architecture projects in lucknow",
+        "interior design portfolio lucknow",
+        "residential architecture portfolio",
+        "turnkey construction portfolio lucknow",
+        "trygve studio projects",
+    ],
     alternates: {
         canonical: "https://trygvestudio.com/projects",
     },
     openGraph: {
-        title: "Our Portfolio | 200+ Luxury Projects | Trygve Studio",
+        title: "Architecture & Interior Design Projects | 200+ Completed | Trygve Studio",
         description:
-            "Award-winning villas, commercial spaces & premium interiors across Lucknow and PAN India. View our 2026 portfolio.",
+            "Browse Trygve Studio's portfolio — residential, commercial & hospitality projects across Lucknow and PAN India. 200+ completed since 2019.",
         url: "https://trygvestudio.com/projects",
         siteName: "Trygve Studio",
-        images: [{ url: "https://trygvestudio.com/og-image.jpg", width: 1200, height: 630 }],
+        images: [{ url: "https://trygvestudio.com/og-image.jpg", width: 1200, height: 630, alt: "Architecture Projects — Trygve Studio" }],
         locale: "en_IN",
         type: "website",
     },
     twitter: {
         card: "summary_large_image",
-        title: "Portfolio | 200+ Luxury Architecture & Interior Projects",
-        description: "Explore Trygve Studio's award-winning portfolio of luxury villas and premium interiors.",
+        title: "Architecture & Interior Design Portfolio | Trygve Studio Lucknow",
+        description: "Explore Trygve Studio's portfolio — villas, residences, offices, retail and hospitality projects across Lucknow since 2019.",
         images: ["https://trygvestudio.com/twitter-image.jpg"],
     },
 };

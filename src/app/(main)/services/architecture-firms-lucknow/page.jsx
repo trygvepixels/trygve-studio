@@ -74,7 +74,7 @@ export default function ArchitectureFirmsLucknow() {
                 </div>
 
                 <div className="relative z-10 text-center max-w-6xl px-6">
-                    <h1 className="text-6xl md:text-8xl font-light text-white mb-6 tracking-tight text-center sm:text-left">
+                    <h1 className="text-4xl md:text-6xl font-light text-white mb-6 tracking-tight text-center sm:text-left">
                         Award-Winning Architecture Firm in
                         <br />
                         <span className="font-normal text-white">Lucknow</span>

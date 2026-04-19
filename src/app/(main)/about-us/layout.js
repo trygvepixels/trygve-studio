@@ -7,11 +7,11 @@ import Script from "next/script";
 export const metadata = {
   metadataBase: new URL("https://trygvestudio.com"),
   title: {
-    default: "About Us — Trygve Studio Private Limited",
+    default: "About Trygve Studio | ISO-Certified Architecture Firm in Lucknow | Founded 2019",
     template: "%s | Trygve Studio",
   },
   description:
-    "We are a full-fledged Architectural & allied Engineering firm based in Lucknow, India — delivering Architecture, Interiors, PMC, EPC & 3D visualisation worldwide. Founded in 2017; incorporated on 10 Dec 2021; 11–50 team members.",
+    "Trygve Studio is an architecture and interior design practice serving clients in Lucknow and beyond. ISO 9001:2015 certified. COA-licensed architects. Led by Ar. Harsh Vardhan & Umme Maryam. 200+ projects since 2019.",
   keywords: [
     "Trygve Studio",
     "about Trygve Studio",
@@ -27,18 +27,16 @@ export const metadata = {
     type: "profile",
     url: "https://trygvestudio.com/about-us",
     siteName: "Trygve Studio",
-    title: "About Trygve Studio — Architecture, Interiors, PMC, EPC & 3D",
+    title: "About Trygve Studio | ISO-Certified Architecture Firm in Lucknow",
     description:
-      "Architectural & allied engineering studio headquartered in Lucknow with global delivery across APAC, EMEA & North America.",
+      "Architecture and interior design practice in Lucknow. ISO 9001:2015 certified. COA-licensed architects. 200+ projects since 2019 across residential, commercial, and hospitality sectors.",
     locale: "en_IN",
-    // images: [{ url: '/og/og-about.jpg', width: 1200, height: 630, alt: 'Trygve Studio — About Us' }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "About Trygve Studio",
+    title: "About Trygve Studio | Architecture Firm in Lucknow",
     description:
-      "Architecture, Interiors, PMC, EPC & 3D visualisation — global delivery, local understanding.",
-    // images: ['/og/og-about.jpg'],
+      "ISO-certified architecture & interior design firm in Lucknow. 200+ projects. COA-licensed architects. Founded 2019.",
   },
   robots: { index: true, follow: true },
   category: "architecture",

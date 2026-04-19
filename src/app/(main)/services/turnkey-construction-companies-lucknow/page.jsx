@@ -5,23 +5,32 @@ import logo from "@/assets/logo.png";
 import Script from "next/script";
 
 export const metadata = {
-    title: "Top Turnkey Construction Company in Lucknow | 2026 Home Builds",
+    title: "Turnkey Construction Company in Lucknow | Design to Handover | Trygve Studio",
     description:
-        "Experience hassle-free building with Lucknow's best turnkey construction company. ISO certified, zero cost overruns & end-to-end execution. 2026 Updated.",
+        "ISO-certified turnkey construction company in Lucknow. Complete home building — from LDA map to handover. ₹1,650–₹2,850 per sq ft. No hidden costs. 200+ projects delivered. Free estimate — +91-9554440400.",
+    keywords: [
+        "turnkey construction company in lucknow",
+        "turnkey construction lucknow",
+        "design build company lucknow",
+        "construction company lucknow",
+        "house construction lucknow",
+        "construction cost per sq ft lucknow",
+        "build house lucknow",
+    ],
     alternates: {
-        canonical: "/services/turnkey-construction-companies-lucknow",
+        canonical: "https://trygvestudio.com/services/turnkey-construction-companies-lucknow",
     },
     openGraph: {
-        title: "Top Turnkey Construction Company in Lucknow | 2026 Home Builds",
+        title: "Turnkey Construction Company in Lucknow | Design to Handover | Trygve Studio",
         description:
-            "ISO certified turnkey construction firm delivering end-to-end building solutions. From maps to handover, we manage it all without the headache of daily contractors. 2026 Edition.",
+            "ISO-certified turnkey construction in Lucknow. Architecture, LDA approvals, construction and interior fit-out under one contract. ₹1,650–₹2,850/sq ft. 200+ projects.",
         url: "https://trygvestudio.com/services/turnkey-construction-companies-lucknow",
         images: [
             {
                 url: "https://trygvestudio.com/images/architecture-firms-lucknow.jpg",
                 width: 1200,
                 height: 630,
-                alt: "Turnkey Construction in Lucknow - Trygve Studio",
+                alt: "Turnkey Construction in Lucknow — Trygve Studio",
             },
         ],
     },
@@ -69,10 +78,10 @@ export default function TurnkeyConstructionLucknow() {
                 </div>
 
                 <div className="relative z-10 text-center max-w-6xl px-6">
-                    <h1 className="text-6xl md:text-8xl font-light text-white mb-6 tracking-tight">
-                        Turnkey Construction
+                    <h1 className="text-4xl md:text-6xl font-light text-white mb-6 tracking-tight">
+                        Turnkey Construction Company in Lucknow
                         <br />
-                        <span className="font-normal text-white">Companies in Lucknow</span>
+                        <span className="font-normal text-white">From Design to Handover</span>
                     </h1>
 
                     {/* CRO Trust Badges */}
@@ -480,7 +489,7 @@ export default function TurnkeyConstructionLucknow() {
                             },
                             {
                                 q: "How much does turnkey construction cost in Lucknow?",
-                                a: "In 2026, standard premium construction in Lucknow ranges from ₹1,800 to ₹2,500 per sq ft. Luxury builds generally start at ₹2,800/sq ft. Our turnkey packages guarantee these rates upfront, protecting you from mid-project material price hikes."
+                                a: "In 2026, turnkey construction in Lucknow ranges from ₹1,650/sq ft (standard) to ₹2,150/sq ft (premium) to ₹2,850+/sq ft (luxury). Rates include material, labour, design, and approval costs. Government fees and plot registration are separate. Trygve Studio offers fixed-price contracts — no hidden cost surprises. Use our free calculator to get your estimate."
                             },
                             {
                                 q: "Why shouldn't I just hire a local thekedar for cheaper?",
@@ -536,7 +545,7 @@ export default function TurnkeyConstructionLucknow() {
                             "name": "How much does turnkey construction cost in Lucknow?",
                             "acceptedAnswer": {
                                 "@type": "Answer",
-                                "text": "In 2026, standard premium construction in Lucknow ranges from ₹1,800 to ₹2,500 per sq ft. Luxury builds generally start at ₹2,800/sq ft. Our turnkey packages guarantee these rates upfront."
+                                "text": "In 2026, turnkey construction in Lucknow ranges from ₹1,650/sq ft (standard) to ₹2,150/sq ft (premium) to ₹2,850+/sq ft (luxury). Rates include material, labour, design, and approval costs. Trygve Studio offers fixed-price contracts with no hidden cost surprises."
                             }
                         },
                         {

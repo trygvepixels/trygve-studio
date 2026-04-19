@@ -23,18 +23,18 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   metadataBase: new URL("https://trygvestudio.com"),
-  title: "Trygve Studio | Award-Winning Architects in Lucknow (ISO Certified)",
+  title: "Trygve Studio | Architects, Interiors & Turnkey Design in Lucknow",
   description:
-    "Ranked among the best architects in Lucknow and recognized as a leading architecture company in India. ISO 9001:2015 certified design firm with 200+ luxury residential and commercial projects delivered.",
+    "Architecture, interior design and turnkey construction in Lucknow. Trygve Studio helps homeowners and businesses with planning, approvals, execution and fit-out.",
   keywords: [
-    "Best Architecture Company in India",
+    "Best Architects in Lucknow",
+    "Architect near me Lucknow",
     "Trygve Studio",
-    "Architects in Lucknow",
-    "best architects in lucknow",
     "interior designers in lucknow",
     "architecture firms in lucknow",
     "Turnkey construction Lucknow",
-    "Architects in Gomti Nagar",
+    "construction cost Lucknow 2026",
+    "architect charges per sq ft",
     "luxury home designers lucknow",
     "3D elevation design Lucknow",
   ],
@@ -46,9 +46,9 @@ export const metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Trygve Studio | Award-Winning Architects in Lucknow (ISO Certified)",
+    title: "Trygve Studio | Architects, Interiors & Turnkey Design in Lucknow",
     description:
-      "Lucknow's top-rated architecture firm specializing in luxury villas, premium interiors & turnkey construction. 200+ projects delivered. 2026 Edition.",
+      "Work with Trygve Studio for architecture, interiors and turnkey project delivery in Lucknow.",
     url: "https://trygvestudio.com/",
     siteName: "Trygve Studio",
     images: [
@@ -56,7 +56,7 @@ export const metadata = {
         url: "https://trygvestudio.com/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Trygve Studio - Premium Architecture & Interior Design",
+        alt: "Trygve Studio - Architects and Interior Designers in Lucknow",
       },
     ],
     locale: "en_US",
@@ -69,13 +69,13 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Trygve Studio | Award-Winning Architects in Lucknow (ISO Certified)",
+    title: "Trygve Studio | Architects, Interiors & Turnkey Design in Lucknow",
     description:
-      "Lucknow's top-rated architecture firm specializing in luxury villas, premium interiors & turnkey construction. 200+ projects delivered. 2026 Edition.",
+      "Architecture, interiors and turnkey project delivery in Lucknow.",
     images: [
       {
         url: "https://trygvestudio.com/twitter-image.jpg",
-        alt: "Trygve Studio - Premium Architecture & Interior Design",
+        alt: "Trygve Studio - Architects and Interior Designers in Lucknow",
       },
     ],
   },
@@ -197,13 +197,14 @@ export default function RootLayout({ children }) {
         <Script id="ld-local-business" type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "LocalBusiness",
+            "@type": ["LocalBusiness", "Architect", "ProfessionalService"],
             name: "Trygve Studio",
             legalName: "TRYGVE STUDIO PRIVATE LIMITED",
             url: "https://trygvestudio.com/",
             logo: "https://trygvestudio.com/logo.png",
             image: "https://trygvestudio.com/og-image.jpg",
             telephone: "+91-9554440400",
+            email: "faisal.saif@trygvestudio.com",
             priceRange: "$$$",
             address: {
               "@type": "PostalAddress",
@@ -216,12 +217,18 @@ export default function RootLayout({ children }) {
             },
             geo: {
               "@type": "GeoCoordinates",
-              latitude: 26.9325, // Updated to match exact location
+              latitude: 26.9325,
               longitude: 80.9688,
             },
             areaServed: [
               { "@type": "City", name: "Lucknow" },
+              { "@type": "City", name: "Kanpur" },
               { "@type": "City", name: "Patna" },
+              { "@type": "City", name: "Delhi" },
+              { "@type": "City", name: "Noida" },
+              { "@type": "City", name: "Agra" },
+              { "@type": "City", name: "Varanasi" },
+              { "@type": "Place", name: "Uttar Pradesh" },
               { "@type": "Country", name: "India" },
               { "@type": "Place", name: "United Arab Emirates" },
               { "@type": "Place", name: "Saudi Arabia" },

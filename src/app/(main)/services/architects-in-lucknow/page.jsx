@@ -6,23 +6,34 @@ import logo from "@/assets/logo.png"
 import Script from "next/script";
 
 export const metadata = {
-  title: "Best Architects in Lucknow | Residential, Commercial & Turnkey Design",
+  title: "Architects in Lucknow for Residential, Commercial & Turnkey Projects | Trygve Studio",
   description:
-    "Looking for architects in Lucknow? Explore Trygve Studio's residential, commercial and turnkey design services, project examples and consultation options.",
+    "Looking for architects in Lucknow? Trygve Studio offers residential, commercial and turnkey architecture — design, LDA approvals, interiors and site execution. ISO 9001:2015 certified. Free consultation +91-9554440400.",
+  keywords: [
+    "architects in lucknow",
+    "best architects in lucknow",
+    "residential architects in lucknow",
+    "commercial architects in lucknow",
+    "architect near me lucknow",
+    "architect fees lucknow",
+    "LDA approval lucknow",
+    "turnkey construction lucknow",
+    "architecture firm lucknow",
+  ],
   alternates: {
-    canonical: "/services/architects-in-lucknow",
+    canonical: "https://trygvestudio.com/services/architects-in-lucknow",
   },
   openGraph: {
-    title: "Best Architects in Lucknow | Residential, Commercial & Turnkey Design",
+    title: "Architects in Lucknow | Residential, Commercial & Turnkey Design | Trygve Studio",
     description:
-      "Work with Trygve Studio for residential, commercial and turnkey architecture in Lucknow, including design, approvals, interiors and execution support.",
+      "Work with Trygve Studio for residential, commercial and turnkey architecture in Lucknow — design, LDA approvals, interiors and execution support. ISO certified. 200+ projects.",
     url: "https://trygvestudio.com/services/architects-in-lucknow",
     images: [
       {
         url: "https://trygvestudio.com/images/architects-lucknow.jpg",
         width: 1200,
         height: 630,
-        alt: "Best Architects in Lucknow",
+        alt: "Architects in Lucknow — Trygve Studio",
       },
     ],
   },
@@ -93,26 +104,26 @@ export default function ArchitectsInLucknow() {
           mainEntity: [
             {
               "@type": "Question",
-              name: "What makes Trygve Studio the best architecture firm in Lucknow?",
+              name: "Who are the best architects in Lucknow?",
               acceptedAnswer: {
                 "@type": "Answer",
-                text: "We combine global design expertise with deep local knowledge of Lucknow's architectural needs. Our track record includes 200+ successful projects across residential, commercial, and hospitality sectors with a 98% client satisfaction rate."
+                text: "Trygve Studio is consistently rated among the top architecture firms in Lucknow. ISO 9001:2015 certified with 200+ delivered projects, COA-licensed architects, and in-house LDA approval expertise. Located at Kursi Road, Lucknow, with a corporate meeting space at Gomti Nagar."
               }
             },
             {
               "@type": "Question",
-              name: "What is the typical cost for architectural services in Lucknow?",
+              name: "How much do architects charge per sq ft in Lucknow?",
               acceptedAnswer: {
                 "@type": "Answer",
-                text: "Architectural fees typically range from 8-12% of the total project cost. For residential projects, we offer packages starting from ₹500 per sq ft for design consultancy and ₹1200 per sq ft for complete turnkey solutions."
+                text: "Architect fees in Lucknow range from \u20b945 to \u20b985 per sq ft for design-only services. For a 2,000 sq ft home, expect to pay \u20b990,000 to \u20b91,70,000. Full turnkey services (design + construction) range from \u20b91,650 to \u20b92,850 per sq ft depending on finish quality. Trygve Studio offers a free consultation at +91-9554440400."
               }
             },
             {
               "@type": "Question",
-              name: "How long does an architectural project take in Lucknow?",
+              name: "How long does LDA map sanction take in Lucknow?",
               acceptedAnswer: {
                 "@type": "Answer",
-                text: "Timeline varies by project scope. Residential designs take 4-8 weeks, while commercial projects may require 8-16 weeks. Construction timelines depend on project complexity and approvals but typically range from 6-18 months."
+                text: "For residential plots, LDA map sanction in Lucknow typically takes 6\u20138 weeks if all documents are correctly submitted. Commercial approvals may take 60\u201390 days. Trygve Studio manages the complete LDA approval process including preliminary site analysis, architectural drawings, structural design, AWAAS portal submission, and weekly follow-up."
               }
             },
             {
@@ -120,7 +131,7 @@ export default function ArchitectsInLucknow() {
               name: "Do you handle government approvals and NOCs in Lucknow?",
               acceptedAnswer: {
                 "@type": "Answer",
-                text: "Yes, we manage all regulatory approvals including building permissions, fire NOC, environmental clearances, and utility connections with Lucknow Development Authority (LDA) and other concerned departments."
+                text: "Yes, we manage all regulatory approvals including LDA map sanction, building plan approval, fire NOC, occupancy certificate, and RERA compliance. We have handled 200+ approvals with Lucknow Development Authority (LDA) and concerned departments."
               }
             },
             {
@@ -128,15 +139,7 @@ export default function ArchitectsInLucknow() {
               name: "Lucknow mein ghar banane ka kitna kharcha aata hai?",
               acceptedAnswer: {
                 "@type": "Answer",
-                text: "Lucknow mein ghar construction ka kharcha 2026 mein approximately ₹1,650 se ₹2,850 per sq ft ke beech hota hai, depending on the finish level. Standard finish ₹1,650/sqft, premium ₹2,150/sqft, aur luxury ₹2,850/sqft se shuru hoti hai. Accurate estimate ke liye hamara free construction calculator use karein."
-              }
-            },
-            {
-              "@type": "Question",
-              name: "How do I get LDA approval for my house in Lucknow?",
-              acceptedAnswer: {
-                "@type": "Answer",
-                text: "LDA (Lucknow Development Authority) approval requires architectural drawings, structural calculations, site plan, ownership documents, and prescribed fees. The process typically takes 45-90 days. Trygve Studio handles the complete LDA approval process for all residential and commercial projects, including document preparation, submission, and follow-up."
+                text: "Lucknow mein ghar construction ka kharcha 2026 mein approximately \u20b91,650 se \u20b92,850 per sq ft ke beech hota hai, depending on the finish level. Standard finish \u20b91,650/sqft, premium \u20b92,150/sqft, aur luxury \u20b92,850/sqft se shuru hoti hai. Accurate estimate ke liye hamara free construction calculator use karein."
               }
             },
             {
@@ -144,7 +147,7 @@ export default function ArchitectsInLucknow() {
               name: "Can I build my house in Lucknow if I am an NRI living abroad?",
               acceptedAnswer: {
                 "@type": "Answer",
-                text: "Yes, NRIs can build homes in Lucknow with the help of a Power of Attorney (POA) for local representation. Trygve Studio has managed complete turnkey projects for NRI clients in the US, UAE, and UK — handling everything from LDA approval and RERA compliance to construction and interior fit-out, with regular video updates and digital approval workflows."
+                text: "Yes, NRIs can build homes in Lucknow with the help of a Power of Attorney (POA) for local representation. Trygve Studio has managed complete turnkey projects for NRI clients in the US, UAE, and UK \u2014 handling everything from LDA approval and RERA compliance to construction and interior fit-out, with regular video updates and digital approval workflows."
               }
             },
             {
@@ -197,13 +200,13 @@ export default function ArchitectsInLucknow() {
         </div>
 
         <div className="relative z-10 text-center max-w-6xl px-6">
-          <h1 className="text-6xl md:text-8xl font-light text-white mb-6 tracking-tight">
-            Best Architects in
+          <h1 className="text-4xl md:text-6xl font-light text-white mb-6 tracking-tight">
+            Architects in Lucknow for
             <br />
-            <span className="font-normal">Lucknow</span>
+            <span className="font-normal">Residential, Commercial & Turnkey Projects</span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-200 font-light max-w-3xl mx-auto leading-relaxed">
-            Residential, commercial and turnkey design for clients who need clear process, strong local execution, and timeless spaces in Lucknow. Since 2019, we've helped 200+ clients in Gomti Nagar, Hazratganj and beyond build their dreams with clinical precision.
+            Looking for architects in Lucknow who can take your project from design intent to execution-ready planning? Trygve Studio works with homeowners, developers, and businesses on villas, residences, offices, retail spaces, hospitality projects, and integrated design-build workflows. Since 2019 — 200+ projects across Lucknow.
           </p>
 
           <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
@@ -255,11 +258,10 @@ export default function ArchitectsInLucknow() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-light mb-6 text-gray-900">
-              Architecture & Interior Design Services in Lucknow
+              Architecture Services We Offer in Lucknow
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto font-light">
-              We have served brands, startups, and enterprises across industries.
-              A selection of our services — crafted with care.
+              This service is ideal for clients who are building on a fresh plot, redesigning a family property, planning a mixed-use development, or starting a commercial interior and architecture project in Lucknow.
             </p>
           </div>
 
@@ -563,20 +565,24 @@ export default function ArchitectsInLucknow() {
           <div className="space-y-8">
             {[
               {
-                q: "What makes Trygve Studio the best architecture firm in Lucknow?",
-                a: "We combine global design expertise with deep local knowledge of Lucknow's architectural needs. Our track record includes 200+ successful projects across residential, commercial, and hospitality sectors with a 98% client satisfaction rate."
+                q: "Who are the best architects in Lucknow?",
+                a: "Trygve Studio is consistently rated among the top architecture firms in Lucknow. ISO 9001:2015 certified with 200+ delivered projects, COA-licensed architects, and in-house LDA approval expertise. Head office at Kursi Road, Lucknow."
               },
               {
-                q: "What is the typical cost for architectural services in Lucknow?",
-                a: "Architectural fees typically range from 8-12% of the total project cost. For residential projects, we offer packages starting from ₹500 per sq ft for design consultancy and ₹1200 per sq ft for complete turnkey solutions."
+                q: "How much do architects charge per sq ft in Lucknow?",
+                a: "Architect fees in Lucknow range from ₹45 to ₹85 per sq ft for design-only services. For a 2,000 sq ft home, expect to pay ₹90,000–₹1,70,000. Full turnkey services (design + construction) range from ₹1,650 to ₹2,850 per sq ft depending on finish quality."
               },
               {
-                q: "How long does an architectural project take in Lucknow?",
-                a: "Timeline varies by project scope. Residential designs take 4-8 weeks, while commercial projects may require 8-16 weeks. Construction timelines depend on project complexity and approvals but typically range from 6-18 months."
+                q: "How long does LDA map sanction take in Lucknow?",
+                a: "For residential plots, LDA map sanction typically takes 6–8 weeks if all documents are correctly submitted. Our team manages the complete LDA approval process — Preliminary site analysis, drawings, structural design, application submission, and follow-up."
               },
               {
-                q: "Do you handle government approvals and NOCs in Lucknow?",
-                a: "Yes, we manage all regulatory approvals including building permissions, fire NOC, environmental clearances, and utility connections with Lucknow Development Authority (LDA) and other concerned departments."
+                q: "Do you provide architecture services in Gomti Nagar?",
+                a: "Yes. Gomti Nagar, Gomti Nagar Extension, Vibhuti Khand, and Shaheed Path are among our most active project areas in Lucknow. We regularly plan for LDA-facing documentation, climate response, residential bylaws, and premium villa neighbourhoods."
+              },
+              {
+                q: "Can I build my house in Lucknow if I am an NRI living abroad?",
+                a: "Yes, NRIs can build homes in Lucknow with a Power of Attorney (POA) for local representation. Trygve Studio has managed complete turnkey projects for NRI clients in the US, UAE, and UK — handling everything from LDA approval and RERA compliance to construction and interior fit-out, with regular video updates and digital approval workflows."
               }
             ].map((faq, index) => (
               <div key={index} className="border-b border-gray-200 pb-8">

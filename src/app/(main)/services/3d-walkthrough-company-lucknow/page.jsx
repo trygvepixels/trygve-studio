@@ -69,7 +69,7 @@ export default function WalkthroughCompanyLucknow() {
                 </div>
 
                 <div className="relative z-10 text-center max-w-6xl px-6">
-                    <h1 className="text-6xl md:text-8xl font-light text-white mb-6 tracking-tight">
+                    <h1 className="text-4xl md:text-6xl font-light text-white mb-6 tracking-tight">
                         3D Walkthrough
                         <br />
                         <span className="font-normal text-3xl md:text-5xl block mt-2">Company in Lucknow</span>

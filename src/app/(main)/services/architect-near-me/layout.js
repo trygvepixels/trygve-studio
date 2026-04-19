@@ -1,6 +1,6 @@
 export const metadata = {
-    title: "Award-Winning Architect Near Me | Certified Architecture Firm in Lucknow",
-    description: "Experience the highest-rated architecture office near you. Trygve Studio offers LDA-approved residential design, luxury interiors & site supervision in Gomti Nagar, Indira Nagar & across Lucknow. 2026 Updated.",
+    title: "Architect Near Me in Lucknow | Design, Approval & Site Support",
+    description: "Looking for an architect near you in Lucknow? Trygve Studio handles residential design, LDA approvals, interiors and site coordination across Gomti Nagar, Indira Nagar and nearby areas.",
     alternates: {
         canonical: "https://trygvestudio.com/services/architect-near-me",
     },

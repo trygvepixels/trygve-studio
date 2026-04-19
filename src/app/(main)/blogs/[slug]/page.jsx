@@ -118,8 +118,18 @@ export default async function BlogDetails({ params }) {
         })}
       </Script>
 
-      {/* FAQ Schema */}
-      {((blog.faqs && blog.faqs.length > 0) || blog.slug?.includes('lda') || blog.title?.toLowerCase().includes('lda')) && (
+      {/* FAQ Schema — triggers for blogs with FAQs OR architecture/cost topics */}
+      {((blog.faqs && blog.faqs.length > 0) ||
+        blog.slug?.includes('lda') ||
+        blog.title?.toLowerCase().includes('lda') ||
+        blog.slug?.includes('architect') ||
+        blog.title?.toLowerCase().includes('architect') ||
+        blog.slug?.includes('construction-cost') ||
+        blog.title?.toLowerCase().includes('construction cost') ||
+        blog.slug?.includes('interior-design') ||
+        blog.title?.toLowerCase().includes('interior design') ||
+        blog.slug?.includes('fees') ||
+        blog.title?.toLowerCase().includes('fees')) && (
         <Script id="faq-schema-server" type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
@@ -151,7 +161,28 @@ export default async function BlogDetails({ params }) {
                     text: "LDA map approval typically takes 30 to 60 days if all documentation is complete and complies with the latest 2026 building bylaws.",
                   }
                 }
-              ] : [])
+              ] : []),
+              // Programmatic Injection for architect-fee and construction-cost blogs
+              ...((blog.slug?.includes('architect') || blog.title?.toLowerCase().includes('architect') ||
+                   blog.slug?.includes('fees') || blog.title?.toLowerCase().includes('fees')) &&
+                 !blog.faqs?.some(f => f.question?.toLowerCase().includes('charge')) ? [
+                {
+                  "@type": "Question",
+                  name: "How much do architects charge per sq ft in India?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Architect fees per sq ft in India range from ₹35 to ₹150 depending on the city and firm. In Lucknow, fees typically range from ₹45–₹85/sq ft. In Delhi/Mumbai, fees can go up to ₹100–₹150/sq ft for premium firms. Trygve Studio in Lucknow offers transparent fixed-rate packages starting at ₹45/sq ft.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "What is the architect fee percentage of construction cost in India?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Architect fees as a percentage of construction cost in India typically range from 3% to 8% of total construction value. For a ₹50 lakh project, architecture fees would be approximately ₹1.5–₹4 lakhs.",
+                  },
+                },
+              ] : []),
             ],
           })}
         </Script>

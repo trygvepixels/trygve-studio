@@ -11,6 +11,7 @@ import TestimonialsMarquee from "@/components/TestimonialsMarquee";
 import FeatureProjects from "@/components/FeatureProjects";
 import Stats from "@/components/Stats";
 import CoreCapabilities from "@/components/CoreCapabilities";
+import BIMSection from "@/components/BIMSection";
 import Popup from "@/components/Popup";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { useRouter } from "next/navigation";
@@ -222,6 +223,23 @@ const Page = () => {
                   "@type": "Offer",
                   "itemOffered": {
                     "@type": "Service",
+                    "name": "BIM Outsourcing & Revit Modeling",
+                    "areaServed": "Worldwide",
+                    "description": "Revit BIM modeling (LOD 100-500), Construction Documentation, Clash Detection, and As-Built documentation for global architecture firms.",
+                  },
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Turnkey Construction",
+                    "areaServed": "Lucknow",
+                  },
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
                     "name": "Project Management Consultancy (PMC)",
                   },
                 },
@@ -251,10 +269,10 @@ const Page = () => {
         <Image src={whatsapp} alt="Chat on WhatsApp" height={50} />
       </a>
       <Hero />
-      {/* <About /> */}
-      <ClientsMarquee />
+       <ClientsMarquee />
       <Stats />
-      {/* <CoreCapabilities /> */}
+      <CoreCapabilities />
+      <BIMSection />
       <FeatureProjects />
       <Projects />
       <ProjectsGrid />

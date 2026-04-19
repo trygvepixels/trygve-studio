@@ -6,28 +6,13 @@ import { interiorDesignCities } from "../data/interiorDesignCities";
 // This ensures new blog posts are automatically included in the sitemap
 export const revalidate = 172800;
 
-// Blog slugs that are 301-redirected to service pages — exclude from sitemap
-const redirectedBlogSlugs = [
-  "how-much-do-architects-charge-in-india-a-city-wise-breakdown-2026-guide",
-  "from-permit-to-plinth-budgeting-for-lda-sanction-fees-in-lucknows-2026-market",
-  "why-hiring-the-best-residential-architects-in-lucknow-saves-you-20percent-on-long-term-construction-costs",
-  "lucknow-real-estate-2026-why-lda-approval-costs-are-changing-and-how-to-prepare",
-  "false-ceiling-cost-per-sq-ft-in-lucknow-2026-pricing-guide",
-  "marble-vs-marble-finish-tiles-best-budget-luxury-choice-for-homes-in-2026",
-  "modern-bedroom-design-trends-in-india-for-2026-or-trygve-studio",
-  "dream-home-blueprint-7-secrets-to-finding-the-best-residential-architects-in-lucknow-for-your-2024-build",
-  "affordable-luxury-interior-trends-for-indian-homes-in-2026",
-  "beyond-blueprints-how-bim-saves-homeowners-20percent-on-hidden-construction-costs",
-  "the-ultimate-checklist-for-choosing-the-best-architect-in-lucknow",
-  "best-architects-and-interior-designers-in-lucknow-or-trygve-studio",
-  "how-to-find-the-best-residential-architects-in-lucknow-for-a-turnkey-project",
-];
+const indexedInteriorCitySlugs = new Set(["lucknow", "kanpur", "delhi"]);
 
 export default async function sitemap() {
   const baseUrl = "https://trygvestudio.com";
 
   // Fixed date for static pages — update this when you actually change static pages
-  const staticLastModified = new Date("2026-04-06");
+  const staticLastModified = new Date("2026-04-20");
 
   // 1. Static Pages (removed duplicate blog entries — they're already in dynamic section)
   const staticPages = [
@@ -138,21 +123,19 @@ export default async function sitemap() {
   }));
 
   // 2a. Interior Design City Pages
-  const interiorDesignCityPages = interiorDesignCities.map((city) => ({
-    url: `${baseUrl}/services/interior-design/${city.citySlug}`,
-    lastModified: staticLastModified,
-    changeFrequency: "monthly",
-    priority: 0.7,
-  }));
+  const interiorDesignCityPages = interiorDesignCities
+    .filter((city) => indexedInteriorCitySlugs.has(city.citySlug))
+    .map((city) => ({
+      url: `${baseUrl}/services/interior-design/${city.citySlug}`,
+      lastModified: staticLastModified,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    }));
 
-  // 3. Dynamic Blogs — filter out 301-redirected slugs to save crawl budget
+  // 3. Dynamic Blogs
   const blogs = await getBlogs();
   const blogPostPages = Array.isArray(blogs)
     ? blogs
-        .filter((blog) => {
-          const slug = blog.urlSlug || blog.slug;
-          return !redirectedBlogSlugs.includes(slug);
-        })
         .map((blog) => ({
           url: `${baseUrl}/blogs/${blog.urlSlug || blog.slug}`,
           lastModified: new Date(

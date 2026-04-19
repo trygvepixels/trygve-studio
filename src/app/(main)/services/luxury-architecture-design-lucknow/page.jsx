@@ -70,7 +70,7 @@ export default function LuxuryArchitectureLucknow() {
                 </div>
 
                 <div className="relative z-10 text-center max-w-6xl px-6">
-                    <h1 className="text-6xl md:text-8xl font-light text-white mb-6 tracking-tight">
+                    <h1 className="text-4xl md:text-6xl font-light text-white mb-6 tracking-tight">
                         Luxury Architecture
                         <br />
                         <span className="font-normal">Design in Lucknow</span>

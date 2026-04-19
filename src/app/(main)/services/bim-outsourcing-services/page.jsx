@@ -1,137 +1,217 @@
-import Image from "next/image";
 import Link from "next/link";
-import { FiCheck, FiGlobe, FiClock, FiShield } from "react-icons/fi";
+import { FiCheck, FiArrowRight } from "react-icons/fi";
 
 export const metadata = {
-    title: "BIM Outsourcing Services | Global ISO-Certified Architectural Support",
+    title: "BIM Outsourcing Services | Revit Modeling & Drafting Support | Trygve Studio",
     description:
-        "Scale your architecture firm with precision BIM outsourcing & drafting services. ISO-certified Revit modeling, CAD documentation, and VDC support for US, UK & UAE firms.",
+        "Scale your architecture firm with precision BIM outsourcing — ISO-certified Revit modeling (LOD 100–500), CAD documentation, clash detection and VDC support. 24-hr turnaround for US, UK & UAE firms.",
     alternates: {
-        canonical: "/services/bim-outsourcing-services",
+        canonical: "https://trygvestudio.com/services/bim-outsourcing-services",
     },
 };
+
+const COMPETENCIES = [
+    {
+        title: "Architectural BIM (LOD 100–500)",
+        items: [
+            "Schematic Design to Design Development (SD/DD)",
+            "Construction Documentation (CD) Production",
+            "BIM Content & Family Creation (Revit)",
+            "Clash Detection & BIM Coordination",
+        ],
+    },
+    {
+        title: "Drafting & Asset Management",
+        items: [
+            "As-Built Drawing Generation from Point Clouds",
+            "Millwork and Joinery Detailing",
+            "Landscape Architecture Drafting",
+            "Floor Plan Conversions (PDF to CAD/BIM)",
+        ],
+    },
+];
+
+const VALUE_PROPS = [
+    {
+        title: "24/7 Production Cycle",
+        desc: "Leverage time-zone differences. Send us redlines at night, receive completed drafts by morning.",
+    },
+    {
+        title: "US / UK / UAE Compliance",
+        desc: "Expertise in AIA standards, RIBA protocols, and Imperial/Metric precision across regions.",
+    },
+    {
+        title: "40–60% Cost Reduction",
+        desc: "Significantly lower your overhead without compromising on architectural quality or timelines.",
+    },
+];
+
+const SOFTWARE = [
+    "Autodesk Revit 2024", "AutoCAD", "Navisworks", "ArchiCAD",
+    "Rhino 3D", "Lumion", "Enscape", "BIM 360", "Bluebeam Revu",
+];
 
 export default function BIMOutsourcingServices() {
     return (
         <main className="min-h-screen bg-white text-gray-900">
-            {/* Professional B2B Hero */}
-            <section className="bg-gray-950 text-white pt-32 pb-20 px-6">
-                <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
-                    <div>
-                        <div className="inline-flex items-center gap-2 bg-blue-500/10 text-blue-400 px-4 py-1.5 rounded-full text-sm font-bold mb-6 border border-blue-500/20">
-                            <FiGlobe /> Global Architecture Partner
-                        </div>
-                        <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
-                            BIM Outsourcing Services & <br />
-                            <span className="text-blue-500 text-3xl md:text-5xl font-light">Drafting Support</span>
-                        </h1>
-                        <p className="text-xl text-gray-400 font-light mb-10 max-w-xl">
-                            We act as an extension of your design team. Delivering RevitDigital Twins and Construction Documentation with localized code compliance for US, UK, and Middle East.
-                        </p>
-                        <div className="flex flex-col sm:flex-row gap-4">
-                            <Link href="/contact-us" className="bg-blue-600 text-white px-8 py-4 text-lg font-bold hover:bg-blue-700 transition-all text-center">
-                                Book a Capabilities Briefing
-                            </Link>
-                            <Link href="/projects" className="border border-white/20 text-white px-8 py-4 text-lg font-bold hover:bg-white/10 transition-all text-center">
-                                Review Quality Samples
-                            </Link>
-                        </div>
-                    </div>
-                    <div className="relative aspect-video rounded-xl overflow-hidden shadow-2xl shadow-blue-500/10 border border-white/10">
-                        <Image
-                            src="https://images.unsplash.com/photo-1541888941259-79d745bc472a"
-                            alt="BIM Outsourcing Services Architecture"
-                            fill
-                            className="object-cover"
-                        />
+
+            {/* Hero */}
+            <section className="bg-[#F4F1EC] pt-28 pb-16 px-5">
+                <div className="max-w-7xl mx-auto">
+                    <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-[10px] font-bold uppercase tracking-widest mb-5">
+                        <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse" />
+                        Global Architecture Partner
+                    </span>
+                    <h1 className="text-3xl md:text-5xl font-semibold text-gray-900 mb-5 leading-tight max-w-3xl">
+                        BIM Outsourcing &amp; <br className="hidden sm:block" />
+                        Revit Drafting Services
+                    </h1>
+                    <p className="text-gray-600 text-lg max-w-2xl mb-8 leading-relaxed">
+                        We act as an extension of your design team. Delivering precision Revit models, Digital Twins and Construction Documentation with localised code compliance for US, UK and Middle East.
+                    </p>
+                    <div className="flex flex-col sm:flex-row gap-3">
+                        <Link
+                            href="/contact-us"
+                            className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#101010] text-white px-6 py-3 text-sm font-medium hover:opacity-90 transition-all"
+                        >
+                            Book a Capabilities Briefing
+                            <FiArrowRight className="h-4 w-4" />
+                        </Link>
+                        <Link
+                            href="/projects"
+                            className="inline-flex items-center justify-center gap-2 rounded-xl border border-gray-300 px-6 py-3 text-sm font-medium hover:bg-black/5 transition-all"
+                        >
+                            Review Quality Samples
+                        </Link>
                     </div>
                 </div>
             </section>
 
-            {/* B2B Value Props */}
-            <section className="py-24 px-6">
-                <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-12">
-                    {[
-                        { title: "24/7 Production Cycle", icon: <FiClock />, desc: "Leverage time-zone differences. Send us redlines at night, get drafts by morning." },
-                        { title: "US/UK Compliance", icon: <FiCheck />, desc: "Expertise in AIA standards, RIBA protocols, and Imperial/Metric precision." },
-                        { title: "Cost Efficiency", icon: <FiShield />, desc: "Reduce overheads by 40-60% without compromising on architectural rigor." }
-                    ].map((v, i) => (
-                        <div key={i} className="p-8 border border-gray-100 rounded-2xl hover:border-blue-100 transition-all group">
-                            <div className="text-3xl text-blue-600 mb-6 group-hover:scale-110 transition-transform">{v.icon}</div>
-                            <h3 className="text-2xl font-bold mb-4">{v.title}</h3>
-                            <p className="text-gray-600 font-light leading-relaxed">{v.desc}</p>
+            {/* Value Props */}
+            <section className="py-16 px-5 border-b border-gray-100">
+                <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-6">
+                    {VALUE_PROPS.map((v, i) => (
+                        <div key={i} className="p-6 rounded-2xl bg-[#F4F1EC] border border-gray-200 hover:border-blue-200 transition-all">
+                            <h3 className="text-base font-semibold text-gray-900 mb-2">{v.title}</h3>
+                            <p className="text-gray-500 text-sm leading-relaxed">{v.desc}</p>
                         </div>
                     ))}
                 </div>
             </section>
 
             {/* Core Competencies */}
-            <section className="py-24 px-6 bg-gray-50">
+            <section className="py-16 px-5">
                 <div className="max-w-7xl mx-auto">
-                    <div className="text-center mb-16">
-                        <h2 className="text-4xl font-bold mb-4">Our Core BIM Competencies</h2>
-                        <p className="text-gray-500 max-w-2xl mx-auto italic">Industry-standard software stack: Revit 2024, AutoCAD, ArchiCAD, and Bluebeam.</p>
-                    </div>
-
-                    <div className="grid md:grid-cols-2 gap-8">
-                        <div className="bg-white p-10 rounded-2xl">
-                            <h3 className="text-2xl font-bold mb-6 text-blue-600 border-b pb-4">Architectural BIM (LOD 100-500)</h3>
-                            <ul className="space-y-4">
-                                <li className="flex gap-3"><FiCheck className="text-green-500 mt-1" /><span>Schematic Design to Design Development (SD/DD)</span></li>
-                                <li className="flex gap-3"><FiCheck className="text-green-500 mt-1" /><span>Construction Documentation (CD) Production</span></li>
-                                <li className="flex gap-3"><FiCheck className="text-green-500 mt-1" /><span>BIM Content & Family Creation (Revit)</span></li>
-                                <li className="flex gap-3"><FiCheck className="text-green-500 mt-1" /><span>Clash Detection & BIM Coordination</span></li>
-                            </ul>
-                        </div>
-                        <div className="bg-white p-10 rounded-2xl">
-                            <h3 className="text-2xl font-bold mb-6 text-blue-600 border-b pb-4">Drafting & Asset Management</h3>
-                            <ul className="space-y-4">
-                                <li className="flex gap-3"><FiCheck className="text-green-500 mt-1" /><span>As-Built Drawing Generation from Point Clouds</span></li>
-                                <li className="flex gap-3"><FiCheck className="text-green-500 mt-1" /><span>Millwork and Joinery Detailing</span></li>
-                                <li className="flex gap-3"><FiCheck className="text-green-500 mt-1" /><span>Landscape Architecture Drafting</span></li>
-                                <li className="flex gap-3"><FiCheck className="text-green-500 mt-1" /><span>Floor Plan Conversions (PDF to CAD/BIM)</span></li>
-                            </ul>
-                        </div>
+                    <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-3">Core BIM Competencies</h2>
+                    <p className="text-gray-500 mb-10 text-sm">
+                        Industry-standard software stack: Revit 2024, AutoCAD, ArchiCAD and Bluebeam.
+                    </p>
+                    <div className="grid md:grid-cols-2 gap-5">
+                        {COMPETENCIES.map((c, i) => (
+                            <div key={i} className="p-8 rounded-2xl border border-gray-200 bg-[#F4F1EC]">
+                                <h3 className="text-base font-semibold text-gray-900 mb-5 pb-3 border-b border-gray-200">
+                                    {c.title}
+                                </h3>
+                                <ul className="space-y-3">
+                                    {c.items.map((item) => (
+                                        <li key={item} className="flex gap-3 text-sm text-gray-600">
+                                            <FiCheck className="text-blue-600 mt-0.5 shrink-0" />
+                                            {item}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </section>
 
-            {/* NRI Home Build Section */}
-            <section className="py-24 px-6 bg-[#234D7E] text-white">
-                <div className="max-w-5xl mx-auto text-center">
-                    <div className="inline-block px-4 py-1.5 rounded-full bg-white/10 text-blue-200 text-xs font-black uppercase tracking-widest mb-6">
-                        For NRIs in USA · UAE · UK
+            {/* How We Work */}
+            <section className="py-16 px-5 bg-[#F4F1EC] border-y border-gray-200">
+                <div className="max-w-7xl mx-auto">
+                    <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-10 text-center">How We Work</h2>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+                        {[
+                            { step: "01", label: "Brief & Standards", desc: "You share your project brief, templates and code compliance requirements." },
+                            { step: "02", label: "Model Setup", desc: "We initialise the Revit project file, coordinate system and worksets per your firm standards." },
+                            { step: "03", label: "Production Sprint", desc: "Daily or weekly deliverables — floor plans, 3D model, detail sheets — via shared cloud or BIM 360." },
+                            { step: "04", label: "QC & Handover", desc: "Internal QA review against your checklist before final .rvt / .dwg / PDF handover." },
+                        ].map((s, i) => (
+                            <div key={i} className="p-6 rounded-2xl bg-white border border-gray-200 text-center">
+                                <div className="text-2xl font-light text-blue-600 mb-3">{s.step}</div>
+                                <h4 className="font-semibold text-gray-900 mb-2 text-sm">{s.label}</h4>
+                                <p className="text-gray-500 text-xs leading-relaxed">{s.desc}</p>
+                            </div>
+                        ))}
                     </div>
-                    <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-                        Building Your Dream Home in Lucknow <br />
-                        <span className="text-blue-300">While Living Abroad?</span>
+                </div>
+            </section>
+
+            {/* Software Stack */}
+            <section className="py-14 px-5">
+                <div className="max-w-7xl mx-auto text-center">
+                    <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-5">Software Stack</p>
+                    <div className="flex flex-wrap justify-center gap-2">
+                        {SOFTWARE.map((s) => (
+                            <span
+                                key={s}
+                                className="px-3 py-1.5 rounded-full border border-gray-200 bg-[#F4F1EC] text-gray-600 text-xs font-medium hover:border-blue-200 hover:text-blue-700 transition-colors"
+                            >
+                                {s}
+                            </span>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* NRI / Remote Section */}
+            <section className="py-16 px-5 bg-[#F4F1EC] border-t border-gray-200">
+                <div className="max-w-4xl mx-auto">
+                    <span className="inline-block px-3 py-1 rounded-full bg-blue-50 text-blue-600 text-[10px] font-bold uppercase tracking-widest border border-blue-100 mb-5">
+                        For NRIs · USA · UAE · UK
+                    </span>
+                    <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-4 leading-snug">
+                        Building Your Dream Home in Lucknow While Living Abroad?
                     </h2>
-                    <p className="text-blue-100 text-xl mb-10 max-w-3xl mx-auto font-light leading-relaxed">
-                        We manage your entire Lucknow project remotely — from LDA sanctions and RERA compliance to construction supervision and furnished handover. Regular video updates, digital approvals, and zero-stress execution.
+                    <p className="text-gray-600 mb-7 leading-relaxed">
+                        We manage your entire Lucknow project remotely — from LDA sanctions and RERA compliance to construction supervision and furnished handover. Regular video updates, digital approvals, zero-stress execution.
                     </p>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <Link href="/blogs/building-home-in-lucknow-nri-guide-2026" className="bg-white text-[#234D7E] px-8 py-4 text-base font-bold rounded-lg hover:bg-blue-50 transition-colors">
-                            Read the NRI Home Guide 2026 →
+                    <div className="flex flex-col sm:flex-row gap-3">
+                        <Link
+                            href="/blogs/building-home-in-lucknow-nri-guide-2026"
+                            className="inline-flex items-center gap-2 rounded-xl bg-[#101010] text-white px-6 py-3 text-sm font-medium hover:opacity-90 transition-all"
+                        >
+                            Read the NRI Home Guide 2026
+                            <FiArrowRight className="h-4 w-4" />
                         </Link>
-                        <Link href="/contact-us" className="border border-white/30 text-white px-8 py-4 text-base font-bold rounded-lg hover:bg-white/10 transition-colors">
+                        <Link
+                            href="/contact-us"
+                            className="inline-flex items-center gap-2 rounded-xl border border-gray-300 px-6 py-3 text-sm font-medium hover:bg-black/5 transition-all"
+                        >
                             Book a Free Remote Consultation
                         </Link>
                     </div>
                 </div>
             </section>
 
-            {/* Outro */}
-            <section className="py-24 px-6 text-center">
-                <h2 className="text-4xl font-bold mb-6">Partner With Experience</h2>
-                <p className="text-xl text-gray-600 mb-10 max-w-3xl mx-auto font-light leading-relaxed">
-                    We aren't just draftsmen; we are trained architects who understand the intent behind the line.
-                    Let's discuss how we can help your project meet deadlines and stay under budget.
+            {/* Final CTA */}
+            <section className="py-16 px-5 text-center">
+                <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-4">
+                    Partner With Experience
+                </h2>
+                <p className="text-gray-500 mb-8 max-w-2xl mx-auto leading-relaxed">
+                    We aren&apos;t just draftsmen — we are trained architects who understand the intent behind every line.
+                    Let&apos;s discuss how we can help your project meet deadlines and stay under budget.
                 </p>
-                <Link href="/contact-us" className="bg-gray-900 text-white px-12 py-5 text-xl font-bold rounded-full hover:bg-blue-600 transition-all shadow-xl active:scale-95">
-                    Request Pricing & Turnaround Times
+                <Link
+                    href="/contact-us"
+                    className="inline-flex items-center gap-2 rounded-xl bg-[#101010] text-white px-8 py-3.5 text-sm font-medium hover:opacity-90 transition-all shadow-sm"
+                >
+                    Request Pricing &amp; Turnaround Times
+                    <FiArrowRight className="h-4 w-4" />
                 </Link>
             </section>
+
         </main>
     );
 }
-

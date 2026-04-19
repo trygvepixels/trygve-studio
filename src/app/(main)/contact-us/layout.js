@@ -6,30 +6,32 @@ import Script from "next/script";
 
 export const metadata = {
   metadataBase: new URL("https://trygvestudio.com"),
-  title: "Contact Us | Trygve Studio Private Limited",
+  title: "Contact Trygve Studio | Architects in Lucknow | Free Consultation | +91-9554440400",
   description:
-    "Start a project or ask a question. Call +91 95544 40400 or email faisal.saif@trygvestudio.com. Head Office in Lucknow with projects delivered worldwide.",
+    "Talk to Trygve Studio about your project. Book a free consultation with architects & interior designers in Lucknow. Call +91-9554440400 or WhatsApp. Head office: Kursi Road, Lucknow. Open Mon–Sat, 10 AM–7 PM.",
   keywords: [
-    "Trygve Studio contact",
-    "architect phone Lucknow",
-    "architecture firm email",
-    "interior design contact",
+    "contact architects in lucknow",
+    "book architecture consultation lucknow",
+    "interior design consultation lucknow",
+    "trygve studio contact",
+    "architect phone lucknow",
+    "free consultation architect lucknow",
   ],
   alternates: { canonical: "https://trygvestudio.com/contact-us" },
   openGraph: {
     type: "website",
     url: "https://trygvestudio.com/contact-us",
     siteName: "Trygve Studio",
-    title: "Contact Trygve Studio",
+    title: "Contact Trygve Studio | Free Architecture Consultation in Lucknow",
     description:
-      "Start a project or say hello: +91 95544 40400 • faisal.saif@trygvestudio.com",
+      "Book a free consultation with Lucknow's top architects & interior designers. +91-9554440400 • faisal.saif@trygvestudio.com. Mon–Sat, 10 AM–7 PM.",
     locale: "en_IN",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Contact — Trygve Studio",
+    title: "Contact Trygve Studio | Architects in Lucknow",
     description:
-      "Start a project or say hello: +91 95544 40400 • faisal.saif@trygvestudio.com",
+      "Book a free consultation: +91-9554440400 • faisal.saif@trygvestudio.com. Head office: Kursi Road, Lucknow.",
   },
 };
 

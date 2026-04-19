@@ -6,20 +6,22 @@ import Header from "./Header";
 
 export const metadata = {
   metadataBase: new URL("https://trygvestudio.com"),
-  title: "Lucknow Construction Cost Calculator 2026 | Instant Home Building Estimate",
+  title: "Free Construction Cost Calculator Lucknow 2026 | ₹1,650–₹2,850/sq ft Instant Estimate",
   description:
-    "Estimate your 2026 home construction, architecture or interior project cost in Lucknow. Get a quick budget range based on area, scope and finish level.",
+    "Get an instant construction cost estimate for your Lucknow home. ₹1,650–₹2,850/sq ft for turnkey projects. Architect fees from ₹45/sq ft. Free tool by Trygve Studio — 200+ projects delivered.",
   alternates: { canonical: "https://trygvestudio.com/price-calculator" },
   keywords: [
-    "Construction cost calculator Lucknow",
-    "Interior design price calculator",
-    "House construction rate 2026 Lucknow",
-    "Turnkey construction cost",
+    "construction cost calculator Lucknow 2026",
+    "house construction cost per sq ft Lucknow",
+    "architect fees Lucknow",
+    "interior design cost calculator",
+    "turnkey construction cost Lucknow",
+    "construction rate Lucknow 2026",
   ],
   openGraph: {
-    title: "Lucknow Construction Cost Calculator 2026 | Trygve Studio",
+    title: "Free Construction Cost Calculator — Lucknow 2026 | Trygve Studio",
     description:
-      "Instantly estimate your home construction, architecture or interior project cost in Lucknow. Free calculator by Trygve Studio.",
+      "Instant home construction budget. ₹1,650–₹2,850/sq ft turnkey. Architect fees from ₹45/sq ft. Enter your area and get your estimate — free.",
     url: "https://trygvestudio.com/price-calculator",
     siteName: "Trygve Studio",
     images: [
@@ -27,7 +29,7 @@ export const metadata = {
         url: "https://trygvestudio.com/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Trygve Studio Construction Cost Calculator",
+        alt: "Trygve Studio Construction Cost Calculator — Lucknow 2026",
       },
     ],
     locale: "en_IN",
@@ -35,9 +37,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Lucknow Construction Cost Calculator 2026 | Trygve Studio",
+    title: "Free Lucknow Construction Cost Calculator 2026 | Trygve Studio",
     description:
-      "Free instant home building cost estimate for Lucknow. Calculate your budget now.",
+      "Instant home building cost estimate. ₹1,650–₹2,850/sq ft. Architect fees from ₹45/sq ft. Calculate now — free.",
     images: ["https://trygvestudio.com/twitter-image.jpg"],
   },
 };
@@ -119,7 +121,7 @@ export default function InteriorDesignerLayout({ children }) {
             "name": "How much do architects charge in Lucknow?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Architects in Lucknow charge between ₹45 and ₹85 per square foot for design services. For a 2,000 sq ft home, architecture fees range from ₹90,000 to ₹1,70,000. Many firms offer free initial consultations."
+              "text": "Architects in Lucknow charge between ₹45 and ₹85 per square foot for design services. For a 2,000 sq ft home, architecture fees range from ₹90,000 to ₹1,70,000. Many firms offer free initial consultations. Call Trygve Studio at +91-9554440400."
             }
           },
           {
@@ -136,6 +138,30 @@ export default function InteriorDesignerLayout({ children }) {
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "Yes, construction in outer Lucknow areas like Amar Shaheed Path and Kursi Road is typically 5% lower than Gomti Nagar or Hazratganj, roughly ₹80-140 per sq ft less on the base rate."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How much do architects charge per sq ft in India?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Architect fees per sq ft in India range from ₹35 to ₹150 depending on the city and firm. In Lucknow, fees typically range from ₹45–₹85/sq ft. In Delhi/Mumbai, fees can go up to ₹100–₹150/sq ft for premium firms."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Where is the architect office near me in Lucknow?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Trygve Studio's architecture office is located in Eden Enclave, Kursi Road, Lucknow (Uttar Pradesh). We serve clients across Lucknow, including Gomti Nagar, Jankipuram, Amar Shaheed Path, and Hazratganj. Call +91-9554440400 to book a free consultation."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the architect fee percentage of construction cost in India?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Architect fees as a percentage of construction cost in India typically range from 3% to 8% of the total construction value. For a ₹50 lakh project, architecture fees would be approximately ₹1.5–₹4 lakhs. At Trygve Studio, we offer transparent fixed-rate fee structures starting at ₹45/sq ft."
             }
           }
         ]

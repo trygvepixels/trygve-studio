@@ -1,28 +1,52 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import herobg from '@/assets/hero/herobg.jpg'
 export default function Hero() {
   return (
     <section className="bg- md:px-0 px-4">
       {/* Headline */}
       <div className="max-w-7xl mx-auto px-4 sm:px-0 pt-10 sm:pt-10">
-        <div className="flex justify-end mb-4">
+        <div className="flex justify-start mb-4">
           <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-blue-800 text-[10px] font-bold uppercase tracking-widest shadow-sm">
             <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse"></span>
-            Ranked #1 Best Architecture Company in India
+            Architecture, Interiors & Turnkey Delivery
           </span>
         </div>
-        <h1 className="
-          md:text-5xl text-2xl text-right font-semibold leading-tight
-         
-        ">
-          we are <span className="bg-[#234D7E] text-white px-2 rounded-md">
-            architects
-          </span>  & <span className="bg-[#234D7E] text-white px-2 rounded-md">interior designers</span><br className="" />
-          we create timeless spaces,<br className="hidden sm:block" />
-          integrating form, function, and detail,<br className="hidden sm:block" />
-          to craft places people remember.
+        <h1 className="max-w-5xl md:text-5xl text-3xl text-left font-semibold leading-tight">
+          Architects in <span className="bg-[#234D7E] text-white px-2 rounded-md">Lucknow</span> for
+          residential design, interiors and turnkey execution
         </h1>
+        <p className="mt-5 max-w-4xl text-left text-base md:text-xl text-zinc-700 leading-relaxed">
+          Trygve Studio helps homeowners, developers and business owners plan and deliver
+          homes, villas, offices, cafes and hospitality spaces across Lucknow. From early
+          concept and approvals to interior detailing and site execution, we keep the process
+          clear, practical and buildable.
+        </p>
+        <p className="mt-3 max-w-4xl text-left text-sm md:text-base text-zinc-600 leading-relaxed">
+          Common project zones include Gomti Nagar, Gomti Nagar Extension, Hazratganj,
+          Sushant Golf City, Jankipuram, Kursi Road and the Shaheed Path growth corridor.
+        </p>
+        <div className="mt-8 flex flex-wrap gap-3">
+          <Link
+            href="/contact-us#project-form"
+            className="inline-flex items-center rounded-full bg-[#234D7E] px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-[#1b3b62]"
+          >
+            Book a Consultation
+          </Link>
+          <Link
+            href="/services/architects-in-lucknow"
+            className="inline-flex items-center rounded-full border border-zinc-300 bg-white px-5 py-3 text-sm font-semibold text-zinc-900 transition hover:bg-zinc-50"
+          >
+            Explore Services
+          </Link>
+          <Link
+            href="/price-calculator"
+            className="inline-flex items-center rounded-full border border-zinc-300 bg-white px-5 py-3 text-sm font-semibold text-zinc-900 transition hover:bg-zinc-50"
+          >
+            Check Construction Cost
+          </Link>
+        </div>
       </div>
 
       {/* Image */}
@@ -30,7 +54,7 @@ export default function Hero() {
         <div className="relative w-full h-[220px] sm:h-[360px] md:h-[440px] lg:h-[520px]">
           <Image
             src={herobg}
-            alt="Modern home exterior"
+            alt="Residential architecture and interior design project by Trygve Studio in Lucknow"
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1200px"
             quality={85}

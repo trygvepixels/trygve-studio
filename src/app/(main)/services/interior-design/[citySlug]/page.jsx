@@ -12,6 +12,7 @@ import Testimonial from "@/models/Testimonial";
 import { connectDB } from "@/lib/mongodb";
 
 const FALLBACK_HERO_IMAGE = "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6";
+const INDEXED_CITY_SLUGS = new Set(["lucknow", "kanpur", "delhi"]);
 
 // Pre-generate all city paths for Static Site Generation (SSG)
 export async function generateStaticParams() {
@@ -179,10 +180,13 @@ const getCityPageData = cache(async (citySlug) => {
 
   const testimonials = [...staticTestimonials, ...dbTestimonials].slice(0, 8);
 
-  const introOK = typeof city.introCopy === "string" && city.introCopy.trim().length > 30;
+  const introOK =
+    typeof city.introCopy === "string" && city.introCopy.trim().length > 30;
   const areasCount = Array.isArray(city.areas) ? city.areas.length : 0;
-  // Index even without projects if we have intro and area-wise SEO
-  const indexable = areasCount >= 5 && introOK;
+  const hasProof =
+    testimonials.length >= 2 && (projects.length > 0 || city.citySlug === "lucknow");
+  const indexable =
+    INDEXED_CITY_SLUGS.has(city.citySlug) && introOK && areasCount >= 5 && hasProof;
 
   return {
     city,
@@ -198,15 +202,38 @@ export async function generateMetadata({ params }) {
   if (!data) return {};
   const { city, indexable } = data;
   const canonical = `https://trygvestudio.com/services/interior-design/${city.citySlug}`;
-  const title = `Top Interior Designers in ${city.cityName} | Trygve Studio - Premium Luxury Design`;
-  const seoDesc = city.detailedIntro
-    ? city.detailedIntro.substring(0, 160).trim() + "..."
-    : `Looking for the best interior designers in ${city.cityName}? Trygve Studio offers luxury residential & commercial interiors in ${city.cityName} with architectural precision and turnkey execution.`;
-  const description = seoDesc;
+
+  // Title follows SEO_PAGE_COPY_GUIDE template: "Interior Designers in {City} for Homes, Offices and Turnkey Interiors"
+  const title = indexable
+    ? `Interior Designers in ${city.cityName} for Homes, Offices and Turnkey Interiors | Trygve Studio`
+    : `Interior Designers in ${city.cityName} | Trygve Studio`;
+
+  // Description: use city's detailedIntro if available, otherwise use guide-aligned template
+  const isLucknow = city.citySlug === "lucknow";
+  const fallbackDesc = isLucknow
+    ? `Top-rated interior designers in Lucknow specialising in luxury residential & commercial interiors. Turnkey packages from ₹1,200/sq ft. Gomti Nagar, Hazratganj & PAN-Lucknow. Free consultation — +91-9554440400.`
+    : `Trygve Studio offers interior design support for clients in ${city.cityName} — structured planning, refined aesthetics, and smoother execution for homes, offices and commercial spaces. Free consultation.`;
+
+  const description =
+    city.detailedIntro && city.detailedIntro.trim().length > 80
+      ? city.detailedIntro.substring(0, 158).trim() + "…"
+      : fallbackDesc;
+
+  const keywords = [
+    `interior designers in ${city.cityName.toLowerCase()}`,
+    `interior design ${city.cityName.toLowerCase()}`,
+    `best interior designers in ${city.cityName.toLowerCase()}`,
+    `home interior design ${city.cityName.toLowerCase()}`,
+    `luxury interior design ${city.cityName.toLowerCase()}`,
+    `turnkey interior ${city.cityName.toLowerCase()}`,
+    "interior design firm lucknow",
+    "modular kitchen lucknow",
+  ];
 
   return {
     title,
     description,
+    keywords,
     alternates: { canonical },
     robots: {
       index: indexable,
@@ -226,7 +253,7 @@ export async function generateMetadata({ params }) {
           url: city.heroImage || FALLBACK_HERO_IMAGE,
           width: 1200,
           height: 630,
-          alt: `Best Interior Designers in ${city.cityName}`,
+          alt: `Interior Designers in ${city.cityName} — Trygve Studio`,
         },
       ],
     },
@@ -908,4 +935,3 @@ function Breadcrumbs({ cityName, light = false }) {
     </nav>
   );
 }
-

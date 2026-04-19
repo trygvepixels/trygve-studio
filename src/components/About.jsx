@@ -28,39 +28,63 @@ export default function TrygveAnnouncement() {
             {/* Eyebrow */}
             <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-xs font-medium tracking-wide text-blue-800 shadow-sm">
               <span className="inline-block h-2 w-2 rounded-full bg-blue-500 animate-pulse" />
-              Ranked #1 Best Architecture Company in India 2026
+              Built for Real Projects in Lucknow
             </div>
 
-            {/* Headline */}
-            <h1 className="text-3xl leading-tight font-semibold tracking-tight md:text-5xl">
-              Trygve Studio, promoted by{" "}
+            <h2 className="text-3xl leading-tight font-semibold tracking-tight md:text-5xl">
+              Trygve Studio is an{" "}
               <span className="bg-gradient-to-r from-indigo-600 to-emerald-600 bg-clip-text text-transparent">
-                Trygve Engineering Pvt. Ltd
+                architecture and interior design studio
               </span>
-              , is a full-fledged{" "}
+              {" "}serving homeowners and businesses from{" "}
               <Link href="/services/architects-in-lucknow" className="hover:underline decoration-indigo-500">
-                Architectural
+                Lucknow
               </Link>{" "}
-              & allied Engineering service company based in{" "}
-              <Link href="/services/architects-in-lucknow" className="hover:underline decoration-emerald-500">
-                Lucknow, India
-              </Link>.
-            </h1>
+              to nearby growth corridors.
+            </h2>
 
-            {/* Subhead */}
             <p className="mt-4 max-w-3xl text-zinc-600 md:text-lg leading-relaxed">
-              We focus on delivering the best{" "}
-              <Link href="/services" className="font-semibold text-zinc-800 hover:underline">
-                3D Architectural Design Services
-              </Link>{" "}
-              in the region. Our experienced team of{" "}
+              We work on residences, villas, commercial spaces, cafes and hospitality projects
+              with a design process that balances function, aesthetics, technical clarity and
+              execution discipline. Clients come to us when they want more than drawings. They
+              want better decisions before site work starts and stronger coordination after it does.
+            </p>
+
+            <p className="mt-4 max-w-3xl text-zinc-600 md:text-lg leading-relaxed">
+              Our work typically spans{" "}
               <Link href="/services/architects-in-lucknow" className="font-medium hover:underline text-zinc-800">
-                Architects
+                architecture
               </Link>,{" "}
               <Link href="/services/interior-design/lucknow" className="font-medium hover:underline text-zinc-800">
-                Interior Designers
-              </Link> & Visualisers crafts high-impact spaces, visuals, and documentation end-to-end.
+                interior design
+              </Link>,{" "}
+              <Link href="/services/turnkey-construction-companies-lucknow" className="font-medium hover:underline text-zinc-800">
+                turnkey delivery
+              </Link>{" "}
+              and visualization support for clients building in Gomti Nagar, Hazratganj,
+              Sushant Golf City, Jankipuram and surrounding areas.
             </p>
+
+            <div className="mt-8 grid gap-4 md:grid-cols-3">
+              <div className="rounded-2xl border border-zinc-200 bg-zinc-50 p-4">
+                <h3 className="text-sm font-semibold text-zinc-900">Planning & Approvals</h3>
+                <p className="mt-2 text-sm leading-relaxed text-zinc-600">
+                  Concept development, layout thinking, local planning logic and approval-oriented documentation.
+                </p>
+              </div>
+              <div className="rounded-2xl border border-zinc-200 bg-zinc-50 p-4">
+                <h3 className="text-sm font-semibold text-zinc-900">Interiors & Detailing</h3>
+                <p className="mt-2 text-sm leading-relaxed text-zinc-600">
+                  Space planning, materials, furniture, lighting and site-ready detail development.
+                </p>
+              </div>
+              <div className="rounded-2xl border border-zinc-200 bg-zinc-50 p-4">
+                <h3 className="text-sm font-semibold text-zinc-900">Execution Support</h3>
+                <p className="mt-2 text-sm leading-relaxed text-zinc-600">
+                  Better project coordination from drawings to handover for clients who want fewer surprises.
+                </p>
+              </div>
+            </div>
 
             {/* CTA block */}
             <div className="mt-8 flex flex-wrap items-center gap-3">
@@ -72,28 +96,21 @@ export default function TrygveAnnouncement() {
                 Call: +91 95544 40400
               </a>
 
-              <a
-                href="https://wa.me/919554440400"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-white px-5 py-3 text-sm font-semibold text-emerald-700 shadow-sm transition hover:bg-emerald-50"
-              >
-                <FaWhatsapp className="h-4 w-4" />
-                WhatsApp
-              </a>
-
-              <a
-                href="mailto:faisal.saif@trygvestudio.com"
+              <Link
+                href="/projects"
                 className="inline-flex items-center gap-2 rounded-full border border-zinc-200 bg-white px-5 py-3 text-sm font-semibold text-zinc-800 shadow-sm transition hover:bg-zinc-50"
               >
-                <FiMail className="h-4 w-4" />
-                faisal.saif@trygvestudio.com
-              </a>
+                View Projects
+              </Link>
+
+              <Link href="/services/architects-in-lucknow" className="hover:underline decoration-emerald-500">
+                Architecture Services
+              </Link>.
             </div>
 
             {/* Micro badges */}
             <div className="mt-6 flex flex-wrap gap-2">
-              {["Architecture", "3D Visualization", "Engineering", "BIM-ready", "End-to-end Delivery"].map(
+              {["Architecture", "Interior Design", "Turnkey Delivery", "Visualization", "Project Coordination"].map(
                 (tag) => (
                   <span
                     key={tag}

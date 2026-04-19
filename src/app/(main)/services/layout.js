@@ -9,30 +9,29 @@ export const metadata = {
   metadataBase: new URL("https://trygvestudio.com"),
   title: {
     default:
-      "Services — Architecture, Interiors, PMC, EPC & 3D Visualisation | Trygve Studio",
+      "Architecture & Interior Design Services in Lucknow | Trygve Studio",
     template: "%s | Trygve Studio",
   },
   description:
-    "Trygve Studio offers comprehensive services including Architecture, Interior Design, Project Management Consultancy (PMC), Engineering-Procurement-Construction (EPC), and 3D Visualisation—delivering excellence from concept to execution globally.",
+    "Architecture design, interior design, turnkey construction, 3D visualisation, PMC and EPC services in Lucknow. One studio for concept to handover — from ₹45/sq ft. ISO 9001:2015 certified. Free consultation.",
   keywords: [
-    "Trygve Studio services",
-    "architecture services",
-    "interior design services",
-    "PMC services",
-    "EPC services",
-    "3D visualisation services",
-    "architectural consultancy India",
-    "project management consultancy",
-    "engineering procurement construction",
+    "architecture and interior design services lucknow",
+    "pmc services lucknow",
+    "3d walkthrough company lucknow",
+    "turnkey construction lucknow",
+    "architecture firm lucknow",
+    "interior design services lucknow",
+    "architectural consultancy lucknow",
+    "project management consultancy lucknow",
+    "engineering procurement construction lucknow",
   ],
   alternates: { canonical: "https://trygvestudio.com/services" },
 
   twitter: {
     card: "summary_large_image",
-    title: "Trygve Studio — Services",
+    title: "Architecture & Interior Design Services in Lucknow | Trygve Studio",
     description:
-      "Architecture · Interiors · PMC · EPC · 3D Visualisation — global services delivered with local expertise.",
-    // images: ['/og/og-services.jpg'],
+      "Architecture design, interior design, turnkey construction, PMC, EPC and 3D visualisation in Lucknow. From ₹45/sq ft. ISO 9001:2015 certified.",
   },
   robots: { index: true, follow: true },
   category: "architecture",
