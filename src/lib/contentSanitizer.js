@@ -217,6 +217,16 @@ export function sanitizeHtml(html) {
 }
 
 /**
+ * Unwrap existing anchors from imported HTML.
+ * Many external CMS/doc sources over-link large content spans, which makes
+ * entire paragraphs/headings render as blue underlined links.
+ */
+export function unwrapExistingAnchors(content) {
+  if (!content) return "";
+  return content.replace(/<a\b[^>]*>([\s\S]*?)<\/a>/gi, "$1");
+}
+
+/**
  * Convert markdown-style bold (**text**) to HTML if present
  */
 export function convertMarkdownBold(content) {
@@ -234,6 +244,9 @@ export function sanitizeBlogContent(content) {
 
   // 1. Remove dangerous HTML
   cleaned = sanitizeHtml(cleaned);
+
+  // 1.5 Remove imported anchor wrappers before styling/injecting our own links
+  cleaned = unwrapExistingAnchors(cleaned);
 
   // 2. Remove citations
   cleaned = removeCitations(cleaned);

@@ -6,7 +6,7 @@ import { FiArrowRight } from "react-icons/fi";
 const BIM_CAPABILITIES = [
   {
     icon: "📐",
-    title: "Revit BIM Modeling",
+    title: "  BIM Modeling",
     desc: "LOD 100–500 architectural BIM models for residential, commercial & institutional projects.",
     tag: "LOD 100–500",
   },
@@ -65,7 +65,7 @@ export default function BIMSection() {
               Building Information Modeling
             </h2>
             <p className="mt-2 text-gray-500 max-w-xl">
-              Precision Revit models and production-ready construction documents — delivered as an extension of your design team for US, UK &amp; UAE firms.
+              Precision  models and production-ready construction documents — delivered as an extension of your design team for US, UK &amp; UAE firms.
             </p>
           </div>
           <Link
@@ -108,7 +108,7 @@ export default function BIMSection() {
           <div className="p-6 rounded-2xl border border-gray-200 bg-[#F4F1EC]">
             <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-4">Software Stack</p>
             <div className="flex flex-wrap gap-2">
-              {["Autodesk Revit 2024", "AutoCAD", "Navisworks", "ArchiCAD", "Rhino 3D", "Lumion", "Enscape", "BIM 360", "Bluebeam"].map((s) => (
+              {["Autodesk  2024", "AutoCAD", "Navisworks", "ArchiCAD", "Rhino 3D", "Lumion", "Enscape", "BIM 360", "Bluebeam"].map((s) => (
                 <span
                   key={s}
                   className="px-3 py-1 rounded-full border border-gray-200 bg-white text-gray-600 text-xs font-medium"

@@ -126,7 +126,7 @@ export default function BlogsClientUI({ blog }) {
               {/* Fallback: render sanitized HTML or plain text if content isn’t valid Editor.js JSON */}
               {typeof blog?.content === "string" ? (
                 <div
-                  className="blog-content"
+                  className="blog-detail-content blog-content"
                   dangerouslySetInnerHTML={{ __html: sanitizeBlogContent(blog.content) }}
                 />
               ) : (

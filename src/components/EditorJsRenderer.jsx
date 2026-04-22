@@ -17,7 +17,7 @@ export default function EditorJsRenderer({ content }) {
   if (!content || !Array.isArray(content.blocks)) return null;
 
   return (
-    <div className="max-w-7xl mx-auto space-y-8 text-gray-900 leading-relaxed [&_a]:text-blue-600 [&_a]:underline">
+    <div className="blog-detail-content max-w-7xl mx-auto space-y-8 text-gray-900 leading-relaxed [&_a]:text-blue-600">
       {content.blocks.map((block) => {
         const { type, data, id } = block;
 

@@ -176,6 +176,22 @@ body {
 
 } 
 
+.blog-detail-content,
+.blog-detail-content * {
+  text-decoration: none !important;
+}
+
+.blog-detail-content a,
+.blog-detail-content a * {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+.blog-detail-content a:hover,
+.blog-detail-content a:hover * {
+  text-decoration: underline !important;
+}
+
 button{
   cursor: pointer;
 }

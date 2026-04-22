@@ -218,9 +218,9 @@ const Page = () => {
                   "@type": "Offer",
                   "itemOffered": {
                     "@type": "Service",
-                    "name": "BIM Outsourcing & Revit Modeling",
+                    "name": "BIM Outsourcing &   Modeling",
                     "areaServed": "Worldwide",
-                    "description": "Revit BIM modeling (LOD 100-500), Construction Documentation, Clash Detection, and As-Built documentation for global architecture firms.",
+                    "description": "  BIM modeling (LOD 100-500), Construction Documentation, Clash Detection, and As-Built documentation for global architecture firms.",
                   },
                 },
                 {

@@ -20,7 +20,7 @@ const capabilities = [
   },
   {
     title: "BIM & 3D Visualization",
-    description: "Revit BIM modeling (LOD 100–500), clash detection, and photorealistic 3D renders for global architecture firms and local projects.",
+    description: "  BIM modeling (LOD 100–500), clash detection, and photorealistic 3D renders for global architecture firms and local projects.",
     href: "/services/bim-outsourcing-services",
     tag: "BIM Ready",
     icon: "📐",
