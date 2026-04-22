@@ -14,10 +14,10 @@ export default function ResourcesPage() {
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-6">
         <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-5xl md:text-7xl font-light tracking-tight text-gray-900 mb-6">
+          <h1 className="text-3xl md:text-5xl font-light tracking-tight text-gray-900 mb-5">
             Authority Hub
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto font-light leading-relaxed">
+          <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto font-light leading-relaxed">
             Our collective knowledge on architecture, interiors, and construction 
             excellence—curated for founders, homeowners, and industry professionals.
           </p>
@@ -71,8 +71,8 @@ export default function ResourcesPage() {
       <section className="mt-32 px-6">
         <div className="max-w-3xl mx-auto bg-gray-900 rounded-[2rem] p-12 text-center text-white relative overflow-hidden">
           <div className="relative z-10">
-            <h2 className="text-3xl md:text-4xl font-light mb-6">Need specialist insight for your project?</h2>
-            <p className="text-gray-400 mb-10 font-light text-lg">
+            <h2 className="text-2xl md:text-3xl font-light mb-6">Need specialist insight for your project?</h2>
+            <p className="text-gray-400 mb-10 font-light text-base md:text-lg">
               Our team of experts is ready to help you navigate the complexities of design and construction.
             </p>
             <Link 

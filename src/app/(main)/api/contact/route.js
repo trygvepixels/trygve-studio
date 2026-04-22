@@ -45,6 +45,15 @@ function stringifyMeta(value) {
   }
 }
 
+function successResponse(body, status = 201) {
+  return NextResponse.json(body, {
+    status,
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+    },
+  });
+}
+
 export async function OPTIONS() {
   return NextResponse.json(
     {},
@@ -86,7 +95,7 @@ export async function POST(req) {
     };
 
     // honeypot (optional)
-    if (clean(body.website)) {
+    if (clean(body.website || body._honey)) {
       return NextResponse.json({ ok: true }, { status: 202 }); // silently accept bots
     }
 
@@ -128,76 +137,90 @@ export async function POST(req) {
 
     const GAS_URL =
       process.env.GOOGLE_APPS_SCRIPT_URL ||
-      "https://script.google.com/macros/s/AKfycbx-fEc6gUTXne3hmbHK-kZEBdwYXaM68dP8SUfDyPHjEFJHx7ZrHpf1g9X2xtg1SOdn/exec";
+      "https://script.google.com/macros/s/AKfycbxDnkcQSG1tjDvKV1EGv-eLejhG9fDReoLizhPJjvnd8FFaYgsD3nRk5M7uq7MHQCbx/exec";
     const GAS_TOKEN = process.env.GOOGLE_APPS_SCRIPT_TOKEN;
 
     if (!GAS_URL) {
       console.warn(
         "WARNING: GOOGLE_APPS_SCRIPT_URL is not defined. Submission logged to console only.",
       );
-      return NextResponse.json(
-        {
-          ok: true,
-          message: "Submission received (Dev Mode: Logged to console)",
-        },
-        {
-          status: 201,
-          headers: { "Access-Control-Allow-Origin": "*" },
-        },
-      );
+      return successResponse({
+        ok: true,
+        delivered: false,
+        message: "Submission received (Dev Mode: Logged to console)",
+      });
     }
 
     // Forward to Google Apps Script (which appends to the sheet)
-    const res = await fetch(GAS_URL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        ...(GAS_TOKEN ? { "X-API-KEY": GAS_TOKEN } : {}),
-      },
-      body: JSON.stringify({
-        // These keys become columns in your sheet (Apps Script auto-creates headers)
-        name: payload.fullName,
-        email: payload.email,
-        phone: payload.phone,
-        company: payload.company,
-        location: payload.location,
-        projectType: payload.projectType,
-        budget: payload.budget,
-        timeline: payload.timeline,
-        message: payload.message,
-        consent: "Yes",
-        submissionType: payload.submissionType,
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 10000);
+    let upstreamOk = false;
 
-        // Useful metadata
-        page: payload.page,
-        utm: payload.utm,
-        submittedAt: payload.submittedAt,
-        userAgent: payload.userAgent,
-        referer: payload.referer,
-        ip: payload.ip,
-        estimatedPrice: clean(body.estimatedPrice ? String(body.estimatedPrice) : ""),
-      }),
-      // You can optionally set a timeout with AbortController if needed.
-    });
+    try {
+      const res = await fetch(GAS_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          ...(GAS_TOKEN ? { "X-API-KEY": GAS_TOKEN } : {}),
+        },
+        body: JSON.stringify({
+          // These keys become columns in your sheet (Apps Script auto-creates headers)
+          name: payload.fullName,
+          email: payload.email,
+          phone: payload.phone,
+          company: payload.company,
+          location: payload.location,
+          projectType: payload.projectType,
+          budget: payload.budget,
+          timeline: payload.timeline,
+          message: payload.message,
+          consent: "Yes",
+          submissionType: payload.submissionType,
 
-    // We keep it simple — if GAS responded at all, treat as success
-    if (!res.ok) {
-      const text = await res.text().catch(() => "");
-      return NextResponse.json(
-        { error: "Upstream error", detail: text },
-        { status: 502 },
+          // Useful metadata
+          page: payload.page,
+          utm: payload.utm,
+          submittedAt: payload.submittedAt,
+          userAgent: payload.userAgent,
+          referer: payload.referer,
+          ip: payload.ip,
+          estimatedPrice: clean(body.estimatedPrice ? String(body.estimatedPrice) : ""),
+        }),
+        signal: controller.signal,
+        redirect: "manual",
+      });
+
+      if (res.ok || [301, 302, 303, 307, 308].includes(res.status)) {
+        upstreamOk = true;
+      } else {
+        const text = await res.text().catch(() => "");
+        console.error("POST /api/contact upstream non-OK:", {
+          status: res.status,
+          statusText: res.statusText,
+          detail: text,
+          submissionType: payload.submissionType,
+          page: payload.page,
+        });
+      }
+    } catch (err) {
+      console.error("POST /api/contact upstream fetch failed:", err);
+    } finally {
+      clearTimeout(timeout);
+    }
+
+    if (!upstreamOk) {
+      return successResponse(
+        {
+          ok: true,
+          delivered: false,
+          message:
+            "Submission received. Our primary lead pipeline is temporarily unavailable, but your request has been accepted.",
+        },
+        202,
       );
     }
 
-    return NextResponse.json(
-      { ok: true },
-      {
-        status: 201,
-        headers: {
-          "Access-Control-Allow-Origin": "*",
-        },
-      },
-    );
+    return successResponse({ ok: true, delivered: true });
   } catch (err) {
     console.error("POST /api/contact error:", err);
     return NextResponse.json({ error: "Server error" }, { status: 500 });

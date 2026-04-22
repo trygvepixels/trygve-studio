@@ -161,7 +161,6 @@ export default function ContactPopup({ isOpen, onClose }) {
                             name="location"
                             value={formData.location}
                             onChange={handleChange}
-                            required
                             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#234D7E] focus:border-transparent outline-none transition"
                             placeholder="Lucknow, India"
                         />
@@ -177,7 +176,6 @@ export default function ContactPopup({ isOpen, onClose }) {
                             name="projectType"
                             value={formData.projectType}
                             onChange={handleChange}
-                            required
                             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#234D7E] focus:border-transparent outline-none transition"
                         >
                             <option value="">Select project type</option>
@@ -200,7 +198,6 @@ export default function ContactPopup({ isOpen, onClose }) {
                             name="message"
                             value={formData.message}
                             onChange={handleChange}
-                            required
                             rows={4}
                             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#234D7E] focus:border-transparent outline-none transition resize-none"
                             placeholder="Tell us about your project..."

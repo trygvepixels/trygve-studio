@@ -39,10 +39,9 @@ export default function ArchitectsGomtiNagar() {
                 })}
             </Script>
 
-            <Breadcrumbs />
-
             {/* Hero Section */}
-            <section className="relative w-full h-[70vh] flex items-center justify-center overflow-hidden">
+            <section className="relative w-full h-[70vh] flex items-center justify-center overflow-hidden pt-24">
+                <Breadcrumbs />
                 <div className="absolute inset-0 z-0">
                     <Image
                         src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750"
@@ -54,11 +53,11 @@ export default function ArchitectsGomtiNagar() {
                 </div>
 
                 <div className="relative z-10 text-center max-w-4xl px-6">
-                    <h1 className="text-5xl md:text-7xl font-light text-white mb-6">
+                    <h1 className="text-3xl md:text-5xl font-light text-white mb-5 leading-tight">
                         Architects in <br />
                         <span className="font-bold">Gomti Nagar</span>
                     </h1>
-                    <p className="text-xl text-gray-200 font-light mb-8">
+                    <p className="text-base md:text-lg text-gray-200 font-light mb-8 max-w-3xl mx-auto leading-relaxed">
                         Specialized architecture and interior design solutions for Lucknow's premium residential hub.
                     </p>
                     <Link href="/contact-us" className="bg-white text-gray-900 px-8 py-4 text-lg font-medium hover:bg-gray-100 transition-all">
@@ -133,17 +132,17 @@ export default function ArchitectsGomtiNagar() {
 
 function Breadcrumbs() {
     return (
-        <nav aria-label="Breadcrumb" className="max-w-7xl mx-auto px-6 pt-8 -mb-4 relative z-20">
-            <ol className="flex items-center space-x-2 text-[14px] text-gray-500">
+        <nav aria-label="Breadcrumb" className="absolute top-6 left-0 right-0 z-20 max-w-7xl mx-auto px-6">
+            <ol className="inline-flex flex-wrap items-center gap-2 rounded-full bg-black/20 backdrop-blur-md px-4 py-2 text-[14px] text-white/85">
                 <li className="flex items-center">
-                    <Link href="/" className="flex items-center hover:text-black transition-colors">
+                    <Link href="/" className="flex items-center hover:text-white transition-colors">
                         <FiHome className="mr-1.5" />
                         <span>Home</span>
                     </Link>
                 </li>
                 <li className="flex items-center gap-2">
-                    <FiChevronRight className="text-gray-300" />
-                    <span>Architects in Gomti Nagar</span>
+                    <FiChevronRight className="text-white/50" />
+                    <span className="font-semibold text-white">Architects in Gomti Nagar</span>
                 </li>
             </ol>
         </nav>

@@ -55,10 +55,9 @@ export default function LuxuryArchitectureLucknow() {
                     "description": "Exclusive luxury architecture design services for ultra-premium residential properties in Lucknow including villas, penthouses, and private estates."
                 })}
             </Script>
-            <Breadcrumbs />
-
             {/* Hero Section */}
-            <section className="relative w-full h-screen flex items-center justify-center overflow-hidden">
+            <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden pt-24 md:pt-28">
+                <Breadcrumbs />
                 <div className="absolute inset-0 z-0">
                     <Image
                         src="https://images.unsplash.com/photo-1613490493576-7fde63acd811"
@@ -69,8 +68,8 @@ export default function LuxuryArchitectureLucknow() {
                     />
                 </div>
 
-                <div className="relative z-10 text-center max-w-6xl px-6">
-                    <h1 className="text-4xl md:text-6xl font-light text-white mb-6 tracking-tight">
+                <div className="relative z-10 text-center max-w-5xl px-6">
+                    <h1 className="text-3xl md:text-5xl font-light text-white mb-5 tracking-tight leading-tight">
                         Luxury Architecture
                         <br />
                         <span className="font-normal">Design in Lucknow</span>
@@ -83,7 +82,7 @@ export default function LuxuryArchitectureLucknow() {
                         <span className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-4 py-1.5 rounded-full text-sm font-medium tracking-wide">✓ 100% Discretion</span>
                     </div>
 
-                    <p className="text-xl md:text-2xl text-gray-200 font-light max-w-3xl mx-auto leading-relaxed">
+                    <p className="text-base md:text-xl text-gray-200 font-light max-w-4xl mx-auto leading-relaxed">
                         Bespoke architectural masterpieces for discerning clientele.
                         Where timeless elegance meets contemporary innovation.
                     </p>
@@ -624,23 +623,23 @@ export default function LuxuryArchitectureLucknow() {
 
 function Breadcrumbs() {
     return (
-        <nav aria-label="Breadcrumb" className="max-w-7xl mx-auto px-6 pt-8 -mb-4 relative z-20">
-            <ol className="flex items-center space-x-2 text-[14px] text-gray-500">
+        <nav aria-label="Breadcrumb" className="absolute top-6 left-0 right-0 z-20 max-w-7xl mx-auto px-6">
+            <ol className="inline-flex flex-wrap items-center gap-2 rounded-full bg-black/20 backdrop-blur-md px-4 py-2 text-[14px] text-white/85">
                 <li className="flex items-center">
-                    <Link href="/" className="flex items-center hover:text-black transition-colors">
+                    <Link href="/" className="flex items-center hover:text-white transition-colors">
                         <FiHome className="mr-1.5" />
                         <span>Home</span>
                     </Link>
                 </li>
                 <li className="flex items-center gap-2">
-                    <FiChevronRight className="text-gray-300" />
-                    <Link href="/services" className="hover:text-black transition-colors">
+                    <FiChevronRight className="text-white/50" />
+                    <Link href="/services" className="hover:text-white transition-colors">
                         Services
                     </Link>
                 </li>
                 <li className="flex items-center gap-2">
-                    <FiChevronRight className="text-gray-300" />
-                    <span className="font-semibold text-black">Luxury Architecture Design</span>
+                    <FiChevronRight className="text-white/50" />
+                    <span className="font-semibold text-white">Luxury Architecture Design</span>
                 </li>
             </ol>
         </nav>

@@ -101,11 +101,11 @@ export default async function PillarPage({ params }) {
             </span>
           </div>
 
-          <h1 className="text-4xl md:text-6xl font-light text-gray-900 mb-8 leading-[1.1] tracking-tight">
+          <h1 className="text-3xl md:text-5xl font-light text-gray-900 mb-6 leading-[1.1] tracking-tight">
             {pillar.title}
           </h1>
 
-          <p className="text-xl md:text-2xl text-gray-600 font-light leading-relaxed max-w-3xl">
+          <p className="text-base md:text-xl text-gray-600 font-light leading-relaxed max-w-3xl">
             {pillar.description}
           </p>
 
@@ -135,18 +135,18 @@ export default async function PillarPage({ params }) {
       {/* Article Content */}
       <article className="max-w-4xl mx-auto px-6 py-20">
         <div className="prose prose-lg prose-neutral max-w-none">
-          <h2 className="text-3xl font-light text-gray-900 mb-8">Introduction</h2>
+          <h2 className="text-2xl md:text-3xl font-light text-gray-900 mb-8">Introduction</h2>
           <p className="text-lg text-gray-600 font-light leading-relaxed mb-12">
             {content.intro}
           </p>
 
-          <div className="my-16 p-10 bg-[#F4F1EC]/50 border-l-4 border-gray-900 rounded-r-2xl italic text-xl text-gray-700 font-light leading-relaxed">
+          <div className="my-16 p-10 bg-[#F4F1EC]/50 border-l-4 border-gray-900 rounded-r-2xl italic text-lg md:text-xl text-gray-700 font-light leading-relaxed">
             "{content.quote}"
           </div>
 
           {content.sections.map((section, idx) => (
             <div key={idx} className="mb-16">
-              <h2 className="text-3xl font-light text-gray-900 mb-8">{section.title}</h2>
+              <h2 className="text-2xl md:text-3xl font-light text-gray-900 mb-8">{section.title}</h2>
               <p className="text-lg text-gray-600 font-light leading-relaxed mb-8">
                 {section.text}
               </p>
@@ -177,7 +177,7 @@ export default async function PillarPage({ params }) {
             <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl group-hover:bg-white/10 transition-colors" />
           </div>
 
-          <h2 className="text-3xl font-light text-gray-900 mb-8">Conclusion</h2>
+          <h2 className="text-2xl md:text-3xl font-light text-gray-900 mb-8">Conclusion</h2>
           <p className="text-lg text-gray-600 font-light leading-relaxed mb-0">
             Mastering <strong>{pillar.title}</strong> is a journey of continuous refinement. At Trygve Studio, we are dedicated to pushing the boundaries of what is possible in the built environment. Explore our other guides to deepen your understanding of premium design and project execution.
           </p>

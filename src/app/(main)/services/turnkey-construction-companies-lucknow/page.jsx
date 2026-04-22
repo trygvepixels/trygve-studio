@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FiHome, FiChevronRight } from "react-icons/fi";
 import logo from "@/assets/logo.png";
+import heroBg from "@/assets/hero/herobg.jpg";
 import Script from "next/script";
 
 export const metadata = {
@@ -63,13 +64,13 @@ export default function TurnkeyConstructionLucknow() {
                     "description": "Premium turnkey residential and commercial construction company in Lucknow. We handle PMC, EPC, architecture, and complete execution."
                 })}
             </Script>
-            <Breadcrumbs />
-
             {/* Hero Section */}
-            <section className="relative w-full h-screen flex items-center justify-center overflow-hidden">
+            <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden pt-24 md:pt-28">
+                <Breadcrumbs />
+
                 <div className="absolute inset-0 z-0">
                     <Image
-                        src="https://images.unsplash.com/photo-1541888081622-14dc74c760ee?auto=format&fit=crop&w=2800&q=80"
+                        src={heroBg}
                         alt="Turnkey Construction Companies in Lucknow - Trygve Studio"
                         fill
                         className="object-cover brightness-50"
@@ -77,8 +78,8 @@ export default function TurnkeyConstructionLucknow() {
                     />
                 </div>
 
-                <div className="relative z-10 text-center max-w-6xl px-6">
-                    <h1 className="text-4xl md:text-6xl font-light text-white mb-6 tracking-tight">
+                <div className="relative z-10 text-center max-w-5xl px-6">
+                    <h1 className="text-3xl md:text-5xl font-light text-white mb-5 tracking-tight leading-tight">
                         Turnkey Construction Company in Lucknow
                         <br />
                         <span className="font-normal text-white">From Design to Handover</span>
@@ -91,7 +92,7 @@ export default function TurnkeyConstructionLucknow() {
                         <span className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-4 py-1.5 rounded-full text-sm font-medium tracking-wide">✓ Design to Handover</span>
                     </div>
 
-                    <p className="text-xl md:text-2xl text-gray-200 font-light max-w-3xl mx-auto leading-relaxed">
+                    <p className="text-base md:text-xl text-gray-200 font-light max-w-4xl mx-auto leading-relaxed">
                         We support turnkey construction projects in Lucknow with design thinking,
                         approval guidance, project planning and coordinated site execution so the
                         process stays clearer from concept to handover.
@@ -587,23 +588,23 @@ export default function TurnkeyConstructionLucknow() {
 
 function Breadcrumbs() {
     return (
-        <nav aria-label="Breadcrumb" className="max-w-7xl mx-auto px-6 pt-8 -mb-4 relative z-20">
-            <ol className="flex items-center space-x-2 text-[14px] text-gray-500">
+        <nav aria-label="Breadcrumb" className="absolute top-6 left-0 right-0 z-20 max-w-7xl mx-auto px-6">
+            <ol className="inline-flex flex-wrap items-center gap-2 rounded-full bg-black/20 backdrop-blur-md px-4 py-2 text-[14px] text-white/85">
                 <li className="flex items-center">
-                    <Link href="/" className="flex items-center hover:text-black transition-colors">
+                    <Link href="/" className="flex items-center hover:text-white transition-colors">
                         <FiHome className="mr-1.5" />
                         <span>Home</span>
                     </Link>
                 </li>
                 <li className="flex items-center gap-2">
-                    <FiChevronRight className="text-gray-300" />
-                    <Link href="/services" className="hover:text-black transition-colors">
+                    <FiChevronRight className="text-white/50" />
+                    <Link href="/services" className="hover:text-white transition-colors">
                         Services
                     </Link>
                 </li>
                 <li className="flex items-center gap-2">
-                    <FiChevronRight className="text-gray-300" />
-                    <span className="font-semibold text-black">Turnkey Construction Companies in Lucknow</span>
+                    <FiChevronRight className="text-white/50" />
+                    <span className="font-semibold text-white">Turnkey Construction Companies in Lucknow</span>
                 </li>
             </ol>
         </nav>

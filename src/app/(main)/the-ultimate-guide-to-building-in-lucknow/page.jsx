@@ -54,14 +54,14 @@ export default function PillarPageLucknowBuilding() {
             <Breadcrumbs />
 
             {/* Hero Section */}
-            <section className="relative max-w-5xl mx-auto px-6 pt-16 pb-12 text-center">
+            <section className="relative max-w-5xl mx-auto px-6 pt-14 pb-10 text-center">
                 <div className="inline-block px-4 py-2 bg-[#234D7E]/10 text-[#234D7E] rounded-full text-sm font-semibold mb-6 uppercase tracking-wider">
                     Comprehensive Details
                 </div>
-                <h1 className="text-5xl md:text-7xl font-semibold tracking-tight text-gray-900 mb-6 leading-tight">
+                <h1 className="text-3xl md:text-5xl font-semibold tracking-tight text-gray-900 mb-5 leading-tight">
                     The Ultimate Guide to <br className="hidden md:block" /> Building a Home in Lucknow
                 </h1>
-                <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
                     From navigating <strong className="text-gray-900">LDA approvals</strong> to understanding the nuances of <strong className="text-gray-900">2026 construction costs</strong>.
                     Everything you need to know before you lay the first brick.
                 </p>
@@ -69,8 +69,8 @@ export default function PillarPageLucknowBuilding() {
 
             <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-[1fr_350px] gap-12 mt-8">
                 {/* Main Content Area */}
-                <article className="bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-gray-100 prose prose-lg prose-blue max-w-none">
-                    <p className="lead text-2xl text-gray-600 font-light mb-8">
+                <article className="bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-gray-100 prose prose-base md:prose-lg prose-blue max-w-none">
+                    <p className="lead text-lg md:text-xl text-gray-600 font-light mb-8 leading-relaxed">
                         Building a house in Lucknow has changed dramatically in the past five years. With expanding urban boundaries into areas like Gomti Nagar Extension and Shaheed Path, navigating the local real estate and construction landscape requires expert, local knowledge.
                     </p>
 
@@ -135,7 +135,7 @@ export default function PillarPageLucknowBuilding() {
                     <div className="text-center mt-8 mb-4 not-prose">
                         <Link
                             href="/price-calculator"
-                            className="inline-flex items-center gap-2 bg-black text-white hover:bg-gray-800 px-8 py-4 rounded-full text-lg font-medium transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"
+                            className="inline-flex items-center gap-2 bg-black text-white hover:bg-gray-800 px-7 py-3.5 rounded-full text-base md:text-lg font-medium transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"
                         >
                             Open the 2026 Price Calculator <FiChevronRight />
                         </Link>
@@ -157,7 +157,7 @@ export default function PillarPageLucknowBuilding() {
                 {/* Sidebar / Quick Links */}
                 <aside className="space-y-8">
                     <div className="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 sticky top-8">
-                        <h3 className="text-xl font-semibold mb-6 flex items-center gap-2">
+                        <h3 className="text-lg md:text-xl font-semibold mb-6 flex items-center gap-2">
                             <FiMapPin className="text-[#234D7E]" /> Quick Navigation
                         </h3>
                         <ul className="space-y-4">

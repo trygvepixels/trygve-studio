@@ -91,7 +91,7 @@ export default function ContactPage() {
                 <span>Architecture & Interiors — Delivered Worldwide</span>
               </div>
 
-              <h1 className="mt-4 text-4xl leading-[1.05] md:text-6xl font-semibold tracking-tight">
+              <h1 className="mt-4 text-3xl leading-[1.05] md:text-5xl font-semibold tracking-tight">
                 Let’s design your legacy — <br className="hidden md:block" />
                 anywhere in the world.
               </h1>
@@ -270,7 +270,7 @@ export default function ContactPage() {
                 </div>
 
                 <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
-                  <Field label="Phone / WhatsApp" name="phone" />
+                  <Field label="Phone / WhatsApp" name="phone" required />
                   <Field label="Company / Brand (optional)" name="company" />
                 </div>
 
@@ -288,9 +288,8 @@ export default function ContactPage() {
                       "Concept / Feasibility",
                       "Others"
                     ]}
-                    required
                   />
-                  <Field label="City & Country" name="location" placeholder="e.g., Mumbai, India / Dubai, UAE" required />
+                  <Field label="City & Country" name="location" placeholder="e.g., Mumbai, India / Dubai, UAE" />
                 </div>
 
                 <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
@@ -321,11 +320,10 @@ export default function ContactPage() {
                   label="Tell us about your project"
                   name="message"
                   placeholder="Site details, area (sqft/sqm), style inspirations, constraints, goals…"
-                  required
                 />
 
                 <label className="flex items-start gap-3 text-sm text-neutral-700">
-                  <input type="checkbox" name="consent" value="yes" className="mt-1" required />
+                  <input type="checkbox" name="consent" value="yes" className="mt-1" required defaultChecked />
                   I consent to Trygve Studio contacting me about this enquiry and agree to the privacy policy.
                 </label>
 
