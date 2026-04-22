@@ -89,11 +89,11 @@ export default function ProjectDetailClient({ project }) {
           <h2 className="text-sm font-bold text-blue-400 uppercase tracking-widest mb-2">
             {project.category || "Architecture & Design"}
           </h2>
-          <h1 className="text-5xl font-semibold tracking-tight text-white mb-4 leading-tight">
+          <h1 className="text-3xl md:text-5xl font-semibold tracking-tight text-white mb-4 leading-tight">
             {project.title}
           </h1>
           {(project.client || project.year) && (
-            <p className="text-gray-200 text-lg">
+            <p className="text-gray-200 text-base md:text-lg">
               {project.client}
               {project.client && project.year ? " • " : ""}
               {project.year}
@@ -106,7 +106,7 @@ export default function ProjectDetailClient({ project }) {
       {project.description && (
         <div className="mt-16 max-w-7xl px-4 mx-auto">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">About this {project.category || "Project"}</h2>
-          <p className="text-lg text-gray-700 leading-8 whitespace-pre-line font-light">
+          <p className="text-base md:text-lg text-gray-700 leading-7 md:leading-8 whitespace-pre-line font-light">
             {project.description}
           </p>
         </div>
@@ -152,7 +152,7 @@ export default function ProjectDetailClient({ project }) {
                 >
                   <div className="absolute inset-0 rounded-xl pointer-events-none" />
                   <p
-                    className="md:text-4xl text-2xl font-semibold text-[#244D7E] relative z-10"
+                    className="text-xl md:text-4xl font-semibold text-[#244D7E] relative z-10"
                   // style={{ color: accent }}
                   >
                     {stat.value}

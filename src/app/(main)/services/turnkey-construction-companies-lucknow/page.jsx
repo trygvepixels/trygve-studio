@@ -79,10 +79,10 @@ export default function TurnkeyConstructionLucknow() {
                 </div>
 
                 <div className="relative z-10 text-center max-w-5xl px-6">
-                    <h1 className="text-3xl md:text-5xl font-light text-white mb-5 tracking-tight leading-tight">
+                    <h1 className="text-3xl md:text-4xl font-semibold text-white mb-5 tracking-tight leading-tight">
                         Turnkey Construction Company in Lucknow
                         <br />
-                        <span className="font-normal text-white">From Design to Handover</span>
+                        <span className="font-semibold text-white">From Design to Handover</span>
                     </h1>
 
                     {/* CRO Trust Badges */}
@@ -92,7 +92,7 @@ export default function TurnkeyConstructionLucknow() {
                         <span className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-4 py-1.5 rounded-full text-sm font-medium tracking-wide">✓ Design to Handover</span>
                     </div>
 
-                    <p className="text-base md:text-xl text-gray-200 font-light max-w-4xl mx-auto leading-relaxed">
+                    <p className="text-base md:text-lg text-gray-200 font-medium max-w-4xl mx-auto leading-relaxed">
                         We support turnkey construction projects in Lucknow with design thinking,
                         approval guidance, project planning and coordinated site execution so the
                         process stays clearer from concept to handover.
@@ -101,13 +101,13 @@ export default function TurnkeyConstructionLucknow() {
                     <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
                         <Link
                             href="/price-calculator"
-                            className="bg-[#234D7E] text-white px-8 py-4 text-lg font-medium hover:bg-[#1a3a60] transition-all duration-300 shadow-lg"
+                            className="bg-[#234D7E] text-white px-7 py-3.5 text-base md:text-lg font-medium hover:bg-[#1a3a60] transition-all duration-300 shadow-lg"
                         >
                             Calculate Construction Cost
                         </Link>
                         <Link
                             href="/contact-us#project-form"
-                            className="bg-[#F4F1EC] text-gray-900 border border-transparent px-8 py-4 text-lg font-medium hover:bg-gray-100 transition-all duration-300"
+                            className="bg-[#F4F1EC] text-gray-900 border border-transparent px-7 py-3.5 text-base md:text-lg font-medium hover:bg-gray-100 transition-all duration-300"
                         >
                             Book Site Visit
                         </Link>
@@ -120,10 +120,10 @@ export default function TurnkeyConstructionLucknow() {
                 <div className="max-w-7xl mx-auto">
                     <div className="grid lg:grid-cols-2 gap-16 items-center">
                         <div>
-                            <h2 className="text-4xl md:text-5xl font-light mb-6">
+                            <h2 className="text-3xl md:text-4xl font-semibold mb-6">
                                 Why Choose Our Turnkey Construction Company?
                             </h2>
-                            <p className="text-xl text-gray-600 font-light leading-relaxed mb-8">
+                            <p className="text-base md:text-lg text-gray-600 font-medium leading-relaxed mb-8">
                                 Trygve Studio stands among Lucknow's premier construction companies, combining
                                 technical excellence with transparent project management. Our multidisciplinary
                                 team delivers comprehensive building solutions from empty plot to key handover.
@@ -165,10 +165,10 @@ export default function TurnkeyConstructionLucknow() {
             <section className="py-20 px-6 bg-gray-50">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-16">
-                        <h2 className="text-4xl md:text-5xl font-light mb-6">
+                        <h2 className="text-3xl md:text-4xl font-semibold mb-6">
                             Our Turnkey Services
                         </h2>
-                        <p className="text-xl text-gray-600 max-w-3xl mx-auto font-light">
+                        <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto font-medium">
                             End-to-end building solutions from concept to key handover
                         </p>
                     </div>
@@ -208,8 +208,8 @@ export default function TurnkeyConstructionLucknow() {
                         ].map((service, i) => (
                             <div key={i} className="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow">
                                 <div className="text-5xl mb-4">{service.icon}</div>
-                                <h3 className="text-2xl font-normal mb-3">{service.title}</h3>
-                                <p className="text-gray-600 font-light">{service.desc}</p>
+                                <h3 className="text-xl md:text-2xl font-semibold mb-3">{service.title}</h3>
+                                <p className="text-gray-600 font-medium">{service.desc}</p>
                             </div>
                         ))}
                     </div>
@@ -219,15 +219,15 @@ export default function TurnkeyConstructionLucknow() {
             {/* CTA Section */}
             <section className="py-20 px-6 bg-[#234D7E] text-white">
                 <div className="max-w-4xl mx-auto text-center">
-                    <h2 className="text-4xl md:text-5xl font-light mb-6">
+                    <h2 className="text-3xl md:text-4xl font-semibold mb-6">
                         Ready to Start Building?
                     </h2>
-                    <p className="text-xl font-light mb-10">
+                    <p className="text-base md:text-lg font-medium mb-10">
                         Schedule a free consultation with Lucknow's premier construction company today.
                     </p>
                     <Link
                         href="/contact-us"
-                        className="inline-block bg-white text-[#234D7E] px-10 py-4 text-lg font-medium hover:bg-gray-100 transition-all"
+                        className="inline-block bg-white text-[#234D7E] px-8 py-3.5 text-base md:text-lg font-medium hover:bg-gray-100 transition-all"
                     >
                         Contact Us Now
                     </Link>
@@ -237,9 +237,9 @@ export default function TurnkeyConstructionLucknow() {
             {/* Honest Comparison Section */}
             <section className="py-20 px-6 bg-white">
                 <div className="max-w-5xl mx-auto">
-                    <h2 className="text-4xl font-light mb-8 text-center">How We Compare to Traditional Thekedars</h2>
+                    <h2 className="text-3xl md:text-4xl font-semibold mb-8 text-center">How We Compare to Traditional Thekedars</h2>
 
-                    <p className="text-lg text-gray-700 mb-8 text-center max-w-3xl mx-auto">
+                    <p className="text-base md:text-lg text-gray-700 mb-8 text-center max-w-3xl mx-auto">
                         We get this question a lot: "Why should I hire a turnkey company instead of managing labor myself?"
                         Here's an honest comparison:
                     </p>
@@ -277,7 +277,7 @@ export default function TurnkeyConstructionLucknow() {
                     </div>
 
                     <div className="bg-[#F4F1EC] p-8 rounded-lg">
-                        <h3 className="text-2xl font-semibold mb-4 text-gray-900">So Who Are We For?</h3>
+                        <h3 className="text-xl md:text-2xl font-semibold mb-4 text-gray-900">So Who Are We For?</h3>
                         <p className="text-gray-700 leading-relaxed mb-4">
                             You're a good fit for Trygve Studio if you:
                         </p>
@@ -306,9 +306,9 @@ export default function TurnkeyConstructionLucknow() {
             {/* Real Timeline Section */}
             <section className="py-20 px-6 bg-gray-50">
                 <div className="max-w-5xl mx-auto">
-                    <h2 className="text-4xl font-light mb-8 text-center">What Actually Happens After You Sign Up</h2>
+                    <h2 className="text-3xl md:text-4xl font-semibold mb-8 text-center">What Actually Happens After You Sign Up</h2>
 
-                    <p className="text-lg text-gray-700 mb-12 text-center">
+                    <p className="text-base md:text-lg text-gray-700 mb-12 text-center">
                         No fluff. Here's the real timeline for a typical 2500 sq ft residential project:
                     </p>
 
@@ -378,9 +378,9 @@ export default function TurnkeyConstructionLucknow() {
             {/* Local Expertise */}
             <section className="py-20 px-6 bg-white">
                 <div className="max-w-5xl mx-auto">
-                    <h2 className="text-4xl font-light mb-8">Why Local Expertise Actually Matters</h2>
+                    <h2 className="text-3xl md:text-4xl font-semibold mb-8">Why Local Expertise Actually Matters</h2>
 
-                    <p className="text-lg text-gray-700 mb-8">
+                    <p className="text-base md:text-lg text-gray-700 mb-8">
                         Some architects treat Lucknow like any other city. Big mistake. Here's what we know that others might miss:
                     </p>
 
@@ -426,7 +426,7 @@ export default function TurnkeyConstructionLucknow() {
             {/* Client Testimonials */}
             <section className="py-20 px-6 bg-gray-50">
                 <div className="max-w-5xl mx-auto">
-                    <h2 className="text-4xl font-light mb-12 text-center">What Our Clients Say</h2>
+                    <h2 className="text-3xl md:text-4xl font-semibold mb-12 text-center">What Our Clients Say</h2>
 
                     <div className="space-y-8">
                         <div className="bg-white p-8 rounded-lg">
@@ -481,7 +481,7 @@ export default function TurnkeyConstructionLucknow() {
             {/* FAQ Section */}
             <section className="py-20 px-6 bg-white">
                 <div className="max-w-4xl mx-auto">
-                    <h2 className="text-4xl font-light mb-12 text-center">Common Questions About Turnkey Construction</h2>
+                    <h2 className="text-3xl md:text-4xl font-semibold mb-12 text-center">Common Questions About Turnkey Construction</h2>
 
                     <div className="space-y-8">
                         {[

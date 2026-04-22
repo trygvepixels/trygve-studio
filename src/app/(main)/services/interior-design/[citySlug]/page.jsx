@@ -410,11 +410,11 @@ export default async function InteriorDesignCityPage({ params }) {
 
         <div className="relative z-10 text-center max-w-6xl px-6">
           <h1 
-            className="text-3xl md:text-5xl font-light mb-5 tracking-tight leading-tight"
+            className="text-3xl md:text-5xl font-semibold mb-5 tracking-tight leading-tight"
             style={{ color: '#F4F1EC' }}
           >
             Best Interior Designers in <br />
-            <span className="font-normal" style={{ color: 'white' }}>{city.cityName}</span>
+            <span className="font-semibold" style={{ color: 'white' }}>{city.cityName}</span>
           </h1>
 
           <div className="flex flex-wrap justify-center gap-3 mb-8">
@@ -429,7 +429,7 @@ export default async function InteriorDesignCityPage({ params }) {
             </span>
           </div>
 
-          <p className="text-base md:text-lg text-gray-200 font-light max-w-4xl mx-auto leading-relaxed">
+          <p className="text-base md:text-lg text-gray-200 font-medium max-w-4xl mx-auto leading-relaxed">
             {city.introCopy}
           </p>
 
@@ -454,10 +454,10 @@ export default async function InteriorDesignCityPage({ params }) {
       {(city.detailedIntro || city.introCopy) && (
         <section className="py-12  px-6 bg-[#F4F1EC]">
           <div className="max-w-4xl mx-auto text-center border-b border-gray-200  ">
-            <h2 className="text-lg md:text-2xl font-light mb-8 text-gray-800 uppercase tracking-widest">
+            <h2 className="text-lg md:text-2xl font-semibold mb-8 text-gray-800 uppercase tracking-widest">
               Our Professional Design Approach in {city.cityName}
             </h2>
-            <div className="text-md md:text-xl text-gray-700 font-light leading-relaxed space-y-6">
+            <div className="text-md md:text-xl text-gray-700 font-medium leading-relaxed space-y-6">
               {/* Splitting text into paragraphs for better readability if it's the long version */}
               {(city.detailedIntro || city.introCopy).split('. ').map((sentence, i, arr) => (
                 <span key={i}>
@@ -475,11 +475,11 @@ export default async function InteriorDesignCityPage({ params }) {
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-6">
-              <h2 className="text-2xl md:text-4xl font-light text-gray-900">
+              <h2 className="text-2xl md:text-4xl font-semibold text-gray-900">
                 Why Choose Trygve Studio for Interior Design in{" "}
                 {city.cityName}?
               </h2>
-              <p className="text-base md:text-lg text-gray-600 font-light leading-relaxed">
+              <p className="text-base md:text-lg text-gray-600 font-medium leading-relaxed">
                 {city.cityName} clients trust us for modern, functional interiors
                 designed around real spaces and real usage.
               </p>
@@ -529,10 +529,10 @@ export default async function InteriorDesignCityPage({ params }) {
       <section className="py-20 px-6 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-2xl md:text-4xl font-light mb-6 text-gray-900">
+            <h2 className="text-2xl md:text-4xl font-semibold mb-6 text-gray-900">
               Interior Design Services in {city.cityName}
             </h2>
-            <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto font-light">
+            <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto font-medium">
               From residential to commercial interiors, our solutions are
               customized, functional and timeless—built for your city’s lifestyle.
             </p>
@@ -583,13 +583,13 @@ export default async function InteriorDesignCityPage({ params }) {
                   />
                 </div>
                 <div className="space-y-3">
-                  <h3 className="text-2xl font-normal text-gray-900">
+                  <h3 className="text-2xl font-semibold text-gray-900">
                     {service.title}
                   </h3>
                   <p className="text-sm uppercase tracking-wider text-gray-500 font-light">
                     {service.subtitle}
                   </p>
-                  <p className="text-gray-600 font-light leading-relaxed">
+                  <p className="text-gray-600 font-medium leading-relaxed">
                     {service.description}
                   </p>
                 </div>
@@ -603,10 +603,10 @@ export default async function InteriorDesignCityPage({ params }) {
       <section className="py-20 px-6 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-2xl md:text-4xl font-light mb-6">
+            <h2 className="text-2xl md:text-4xl font-semibold mb-6">
               Recent Interior Projects in {city.cityName}
             </h2>
-            <p className="text-base md:text-lg text-gray-600 font-light">
+            <p className="text-base md:text-lg text-gray-600 font-medium">
               A glimpse into our recent interior transformations and design decisions for{" "}
               {city.cityName}.
             </p>
@@ -614,7 +614,7 @@ export default async function InteriorDesignCityPage({ params }) {
 
           {projects.length === 0 ? (
             <div className="text-center bg-white rounded-3xl border border-gray-200 p-10">
-              <p className="text-lg font-light text-gray-700">
+              <p className="text-lg font-medium text-gray-700">
                 We are adding more {city.cityName} projects soon. Request a consultation to see relevant work.
               </p>
             </div>
@@ -651,8 +651,8 @@ export default async function InteriorDesignCityPage({ params }) {
                       index % 2 === 1 ? "lg:col-start-1" : ""
                     }`}
                   >
-                    <h3 className="text-2xl md:text-3xl font-light">{project.title}</h3>
-                    <p className="text-lg text-gray-600 font-light leading-relaxed">
+                    <h3 className="text-2xl md:text-3xl font-semibold">{project.title}</h3>
+                    <p className="text-lg text-gray-600 font-medium leading-relaxed">
                       {project.description}
                     </p>
                     <Link
@@ -678,11 +678,11 @@ export default async function InteriorDesignCityPage({ params }) {
                 <h2 className="text-sm uppercase tracking-[0.2em] text-[#234D7E] font-medium mb-4">
                   The Trygve Engineering Standard
                 </h2>
-                <h3 className="text-2xl md:text-4xl font-light text-gray-900 leading-tight">
+                <h3 className="text-2xl md:text-4xl font-semibold text-gray-900 leading-tight">
                   Design that's backed by <span className="italic">Architectural Integrity.</span>
                 </h3>
               </div>
-              <p className="text-lg text-gray-600 font-light leading-relaxed">
+              <p className="text-lg text-gray-600 font-medium leading-relaxed">
                 At Trygve Studio, we believe that premium interiors are not just about aesthetics—they are about structural precision and engineering excellence. For every project in {city.cityName}, we follow a rigorous architectural framework.
               </p>
               
@@ -705,13 +705,13 @@ export default async function InteriorDesignCityPage({ params }) {
             <div className="lg:w-1/2 grid grid-cols-2 gap-4">
               <div className="aspect-[4/5] bg-gray-50 rounded-2xl border border-gray-100 flex items-center justify-center p-8 text-center">
                 <div>
-                  <div className="text-4xl font-light text-[#234D7E] mb-2">120+</div>
+                  <div className="text-4xl font-semibold text-[#234D7E] mb-2">120+</div>
                   <div className="text-xs uppercase tracking-widest text-gray-400">Projects Delivered</div>
                 </div>
               </div>
               <div className="aspect-[4/5] bg-[#F4F1EC] rounded-2xl border border-gray-200 flex items-center justify-center p-8 text-center mt-12">
                 <div>
-                  <div className="text-4xl font-light text-gray-800 mb-2">100%</div>
+                  <div className="text-4xl font-semibold text-gray-800 mb-2">100%</div>
                   <div className="text-xs uppercase tracking-widest text-gray-400">Design Transparency</div>
                 </div>
               </div>
@@ -724,10 +724,10 @@ export default async function InteriorDesignCityPage({ params }) {
       <section className="py-20 px-6 bg-[#F4F1EC]">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
           <div>
-            <h2 className="text-3xl md:text-4xl font-light mb-6">
+            <h2 className="text-3xl md:text-4xl font-semibold mb-6">
               Real Transformation: {caseStudy?.title || city.cityName} Project
             </h2>
-            <p className="text-lg text-gray-600 font-light leading-relaxed mb-8">
+            <p className="text-lg text-gray-600 font-medium leading-relaxed mb-8">
               {caseStudy?.description
                 ? caseStudy.description
                 : `We design interiors in ${city.cityName} with open layouts, smart storage, and durable finishes tailored to your space and lifestyle.`}
@@ -786,10 +786,10 @@ export default async function InteriorDesignCityPage({ params }) {
       {/* Service Areas */}
       <section className="py-20 px-6 bg-gray-50">
         <div className="max-w-7xl mx-auto text-center mb-16">
-          <h2 className="text-2xl md:text-5xl font-light mb-6">
+          <h2 className="text-2xl md:text-5xl font-semibold mb-6">
             Interior Design Services Across {city.cityName}
           </h2>
-          <p className="text-base md:text-xl text-gray-600 font-light">
+          <p className="text-base md:text-xl text-gray-600 font-medium">
             We frequently work across popular neighborhoods of{" "}
             {city.cityName}—from modern high-rises to premium villas.
           </p>
@@ -801,7 +801,7 @@ export default async function InteriorDesignCityPage({ params }) {
               key={`${area}-${index}`}
               className="text-center p-6 bg-[#F4F1EC] rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-100"
             >
-              <h3 className="text-lg font-normal text-gray-900 mb-2">
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">
                 Interior Design in {area}
               </h3>
               <p className="text-sm text-gray-600 font-light">
@@ -825,7 +825,7 @@ export default async function InteriorDesignCityPage({ params }) {
               />
               <div className="absolute bottom-8 left-8 right-8 p-6 bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl">
                 <p className="text-sm font-medium text-[#234D7E] mb-1 uppercase tracking-widest">Lead Architect</p>
-                <h4 className="text-2xl font-light text-gray-900">Ar. Harsh Vardhan</h4>
+                <h4 className="text-2xl font-semibold text-gray-900">Ar. Harsh Vardhan</h4>
                 <p className="text-xs text-gray-400 mt-2 italic px-2 py-1 bg-gray-50 rounded-lg inline-block border border-gray-100 italic">Registered with COA - Council of Architecture, India</p>
               </div>
             </div>
@@ -833,12 +833,12 @@ export default async function InteriorDesignCityPage({ params }) {
             <div className="space-y-8">
               <div className="space-y-4">
                 <h2 className="text-sm uppercase tracking-[0.2em] text-[#234D7E] font-medium">Design Philosophy</h2>
-                <h3 className="text-3xl md:text-5xl font-light text-gray-900 leading-tight">
+                <h3 className="text-3xl md:text-5xl font-semibold text-gray-900 leading-tight">
                   Design should be <span className="italic underline underline-offset-8">Invisible</span> but felt.
                 </h3>
               </div>
               
-              <div className="space-y-6 text-lg text-gray-600 font-light leading-relaxed">
+              <div className="space-y-6 text-lg text-gray-600 font-medium leading-relaxed">
                 <p>
                   At Trygve Studio, our vision for {city.cityName} is to create environments that are technologically advanced yet deeply rooted in human comfort. We don't just decorate rooms; we engineer lifestyles.
                 </p>
@@ -863,7 +863,7 @@ export default async function InteriorDesignCityPage({ params }) {
       {/* FAQs */}
       <section className="py-20 px-6 bg-[#F4F1EC]">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl md:text-4xl font-light mb-12 text-center">
+          <h2 className="text-2xl md:text-4xl font-semibold mb-12 text-center">
             Frequently Asked Questions
           </h2>
           <div className="space-y-8">
@@ -872,7 +872,7 @@ export default async function InteriorDesignCityPage({ params }) {
                 key={index}
                 className="border-b border-gray-200 pb-8"
               >
-                <h3 className="text-lg md:text-xl font-normal text-gray-900 mb-4">
+                <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-4">
                   {f.q}
                 </h3>
                 <p className="text-gray-600 font-light leading-relaxed">

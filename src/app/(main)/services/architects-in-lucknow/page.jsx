@@ -199,12 +199,12 @@ export default function ArchitectsInLucknow() {
         </div>
 
         <div className="relative z-10 text-center max-w-5xl px-6">
-          <h1 className="text-3xl md:text-5xl font-light text-white mb-5 tracking-tight leading-tight">
+          <h1 className="text-3xl md:text-4xl font-light text-white mb-5 tracking-tight leading-tight">
             Architects in Lucknow for
             <br />
             <span className="font-normal">Residential, Commercial & Turnkey Projects</span>
           </h1>
-          <p className="text-base md:text-xl text-gray-200 font-light max-w-4xl mx-auto leading-relaxed">
+          <p className="text-base md:text-lg text-gray-200 font-light max-w-4xl mx-auto leading-relaxed">
             Looking for architects in Lucknow who can take your project from design intent to execution-ready planning? Trygve Studio works with homeowners, developers, and businesses on villas, residences, offices, retail spaces, hospitality projects, and integrated design-build workflows. Since 2019 — 200+ projects across Lucknow.
           </p>
 
@@ -256,10 +256,10 @@ export default function ArchitectsInLucknow() {
       <section className="py-20 px-6 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-light mb-6 text-gray-900">
+            <h2 className="text-2xl md:text-4xl font-medium md:font-light mb-5 md:mb-6 text-gray-900 leading-tight">
               Architecture Services We Offer in Lucknow
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto font-light">
+            <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto font-normal md:font-light leading-relaxed">
               This service is ideal for clients who are building on a fresh plot, redesigning a family property, planning a mixed-use development, or starting a commercial interior and architecture project in Lucknow.
             </p>
           </div>
@@ -276,7 +276,7 @@ export default function ArchitectsInLucknow() {
                   />
                 </div>
                 <div className="space-y-3">
-                  <h3 className="text-2xl font-normal text-gray-900">{service.title}</h3>
+                  <h3 className="text-xl md:text-xl font-medium md:font-normal text-gray-900 leading-snug">{service.title}</h3>
                   <p className="text-sm uppercase tracking-wider text-gray-500 font-light">
                     {service.subtitle}
                   </p>
@@ -298,10 +298,10 @@ export default function ArchitectsInLucknow() {
             {/* Content */}
             <div className="space-y-8">
               <div>
-                <h2 className="text-4xl md:text-5xl font-light mb-6 text-gray-900">
+                <h2 className="text-2xl md:text-4xl font-medium md:font-light mb-5 md:mb-6 text-gray-900 leading-tight">
                   Why Choose the Best Architecture Firm in Lucknow?
                 </h2>
-                <p className="text-xl text-gray-600 font-light leading-relaxed">
+                <p className="text-base md:text-lg text-gray-600 font-normal md:font-light leading-relaxed">
                   At Trygve Studio, we provide comprehensive architectural and interior design solutions
                   across Lucknow, Gomti Nagar, Hazratganj, and beyond. From concept to execution,
                   we ensure every project reflects your vision. Use our{' '}
@@ -317,7 +317,7 @@ export default function ArchitectsInLucknow() {
                   <div className="w-12 h-12 bg-gray-100 flex items-center justify-center">
                     <span className="text-2xl">🏗️</span>
                   </div>
-                  <h3 className="text-xl font-normal">Expert Architects</h3>
+                  <h3 className="text-lg md:text-xl font-medium md:font-normal">Expert Architects</h3>
                   <p className="text-gray-600 font-light">
                     Award-winning architects with global experience and local expertise in Lucknow's unique architectural landscape.
                   </p>
@@ -327,7 +327,7 @@ export default function ArchitectsInLucknow() {
                   <div className="w-12 h-12 bg-gray-100 flex items-center justify-center">
                     <span className="text-2xl">🌱</span>
                   </div>
-                  <h3 className="text-xl font-normal">Sustainable Design</h3>
+                  <h3 className="text-lg md:text-xl font-medium md:font-normal">Sustainable Design</h3>
                   <p className="text-gray-600 font-light">
                     Modern, eco-friendly designs that reduce environmental impact while maximizing functionality and aesthetics.
                   </p>
@@ -337,7 +337,7 @@ export default function ArchitectsInLucknow() {
                   <div className="w-12 h-12 bg-gray-100 flex items-center justify-center">
                     <span className="text-2xl">📋</span>
                   </div>
-                  <h3 className="text-xl font-normal">End-to-End Management</h3>
+                  <h3 className="text-lg md:text-xl font-medium md:font-normal">End-to-End Management</h3>
                   <p className="text-gray-600 font-light">
                     Complete project management services (PMC + EPC) ensuring timely delivery and budget adherence.
                   </p>
@@ -347,7 +347,7 @@ export default function ArchitectsInLucknow() {
                   <div className="w-12 h-12 bg-gray-100 flex items-center justify-center">
                     <span className="text-2xl">🎯</span>
                   </div>
-                  <h3 className="text-xl font-normal">3D Visualization</h3>
+                  <h3 className="text-lg md:text-xl font-medium md:font-normal">3D Visualization</h3>
                   <p className="text-gray-600 font-light">
                     Advanced 3D modeling and virtual reality walkthroughs before construction begins.
                   </p>
@@ -374,10 +374,10 @@ export default function ArchitectsInLucknow() {
       <section id="portfolio" className="py-20 px-6 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-light mb-6">
+            <h2 className="text-2xl md:text-4xl font-medium md:font-light mb-5 md:mb-6 leading-tight">
               Recent Projects in Lucknow
             </h2>
-            <p className="text-xl text-gray-600 font-light">
+            <p className="text-base md:text-lg text-gray-600 font-normal md:font-light leading-relaxed">
               A selection of recent work — crafted with care across Lucknow's diverse neighborhoods.
             </p>
           </div>
@@ -403,8 +403,8 @@ export default function ArchitectsInLucknow() {
 
                 {/* Content */}
                 <div className={`space-y-6 ${index % 2 === 1 ? 'lg:col-start-1' : ''}`}>
-                  <h3 className="text-3xl font-light">{project.title}</h3>
-                  <p className="text-xl text-gray-600 font-light leading-relaxed">
+                  <h3 className="text-2xl md:text-2xl font-medium md:font-light leading-tight">{project.title}</h3>
+                  <p className="text-base md:text-lg text-gray-600 font-normal md:font-light leading-relaxed">
                     {project.description}
                   </p>
                   <Link
@@ -428,10 +428,10 @@ export default function ArchitectsInLucknow() {
             {/* Content */}
             <div className="space-y-8">
               <div>
-                <h2 className="text-4xl md:text-5xl font-light mb-6">
+                <h2 className="text-2xl md:text-4xl font-medium md:font-light mb-5 md:mb-6 leading-tight">
                   Real Transformation: 2BHK Apartment in Indira Nagar
                 </h2>
-                <p className="text-xl text-gray-600 font-light leading-relaxed mb-8">
+                <p className="text-base md:text-lg text-gray-600 font-normal md:font-light leading-relaxed mb-8">
                   Our clients in Lucknow's Indira Nagar faced a common challenge: a cramped 2BHK
                   apartment that lacked natural light and felt claustrophobic.
                 </p>
@@ -511,10 +511,10 @@ export default function ArchitectsInLucknow() {
       <section className="py-20 px-6 bg-gray-900 text-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-light mb-6">
+            <h2 className="text-2xl md:text-4xl font-medium md:font-light mb-5 md:mb-6 leading-tight">
               What Our Clients Say
             </h2>
-            <p className="text-xl text-gray-400 font-light">
+            <p className="text-base md:text-lg text-gray-400 font-normal md:font-light leading-relaxed">
               Trusted by homeowners, businesses, and enterprises across Lucknow.
             </p>
           </div>
@@ -527,10 +527,10 @@ export default function ArchitectsInLucknow() {
       <section className="py-20 px-6 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-light mb-6">
+            <h2 className="text-2xl md:text-4xl font-medium md:font-light mb-5 md:mb-6 text-gray-900 leading-tight">
               Architecture Services Across Lucknow
             </h2>
-            <p className="text-xl text-gray-600 font-light">
+            <p className="text-base md:text-lg text-gray-600 font-normal md:font-light leading-relaxed">
               We proudly serve clients across all major areas of Lucknow with our comprehensive architectural services.
             </p>
           </div>
@@ -542,7 +542,7 @@ export default function ArchitectsInLucknow() {
               "Chinhat", "Alambagh", "Faizabad Road", "IT City"
             ].map((area, index) => (
               <div key={index} className="text-center p-6 bg-[#F4F1EC] rounded-lg shadow-sm hover:shadow-md transition-shadow">
-                <h3 className="text-lg font-normal text-gray-900 mb-2">
+                <h3 className="text-base md:text-lg font-medium md:font-normal text-gray-900 mb-2">
                   Architects in {area}
                 </h3>
                 <p className="text-sm text-gray-600 font-light">
@@ -557,7 +557,7 @@ export default function ArchitectsInLucknow() {
       {/* FAQ Section */}
       <section className="py-20 px-6 bg-[#F4F1EC]">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-light mb-12 text-center">
+          <h2 className="text-2xl md:text-4xl font-medium md:font-light mb-8 md:mb-12 text-center leading-tight">
             Frequently Asked Questions
           </h2>
 
@@ -585,7 +585,7 @@ export default function ArchitectsInLucknow() {
               }
             ].map((faq, index) => (
               <div key={index} className="border-b border-gray-200 pb-8">
-                <h3 className="text-xl font-normal text-gray-900 mb-4">
+                <h3 className="text-lg md:text-xl font-medium md:font-normal text-gray-900 mb-4 leading-snug">
                   {faq.q}
                 </h3>
                 <p className="text-gray-600 font-light leading-relaxed">
@@ -600,7 +600,7 @@ export default function ArchitectsInLucknow() {
       {/* Real Talk Section - Authentic Content */}
       <section className="py-20 px-6 bg-white">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl font-light mb-8">Let's Talk About What Really Matters</h2>
+          <h2 className="text-2xl md:text-4xl font-medium md:font-light mb-6 md:mb-8 leading-tight">Let's Talk About What Really Matters</h2>
 
           <div className="prose prose-lg max-w-none">
             <p className="text-lg text-gray-700 leading-relaxed mb-6">
