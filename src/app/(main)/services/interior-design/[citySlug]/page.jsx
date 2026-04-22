@@ -361,6 +361,11 @@ export default async function InteriorDesignCityPage({ params }) {
                   "longitude": "80.9462"
                 },
                 "telephone": "+91-9554440400",
+                "aggregateRating": {
+                  "@type": "AggregateRating",
+                  "ratingValue": ratingValue,
+                  "reviewCount": reviewCount
+                },
                 "review": testimonialToPass.slice(0, 3).map((t) => ({
                   "@type": "Review",
                   "author": { "@type": "Person", "name": t.name },
