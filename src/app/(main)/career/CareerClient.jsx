@@ -119,7 +119,7 @@ export default function Careers() {
             <span className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-black/5 px-3 py-1 text-xs tracking-wide uppercase">
               <span className="inline-block h-2 w-2 rounded-full bg-green-500 animate-pulse" /> We’re hiring
             </span>
-            <h1 className="mt-6 text-4xl font-semibold leading-tight md:text-6xl text-black">
+            <h1 className="mt-6 text-3xl font-semibold leading-tight md:text-6xl text-black">
               Build the future with <span className="text-[#234D7E]">Trygve Studio</span>
             </h1>
             <p className="mt-6 text-base text-black/70 md:text-lg">
@@ -150,7 +150,7 @@ export default function Careers() {
       <section id="openings" className="mx-auto max-w-7xl px-6 py-20">
         <div className="flex items-end justify-between gap-6">
           <div>
-            <h2 className="text-3xl font-semibold md:text-4xl">Open Positions</h2>
+            <h2 className="text-2xl font-semibold md:text-4xl">Open Positions</h2>
             <p className="mt-2 text-black/60">We hire for craft, curiosity, and ownership.</p>
           </div>
           <a

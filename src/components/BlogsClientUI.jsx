@@ -102,7 +102,7 @@ export default function BlogsClientUI({ blog }) {
           <span className="bg-white/20 backdrop-blur px-4 py-2 rounded-full text-xs font-medium w-fit mb-3">
             {blog.category}
           </span>
-          <h1 className="text-4xl md:text-5xl font-semibold mb-3 special-font ">
+          <h1 className="text-3xl md:text-5xl font-semibold mb-3 special-font ">
             {blog.title}
           </h1>
           <p className="text-sm text-gray-300">
@@ -190,7 +190,7 @@ export default function BlogsClientUI({ blog }) {
       <section className="max-w-7xl mx-auto py-4 md:px-0 px-4">
         <div className="rounded-2xl bg-white border border-gray-200 p-8 md:p-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
           <div className="max-w-2xl">
-            <h2 className="text-2xl md:text-3xl font-medium text-gray-900 mb-3">
+            <h2 className="text-xl md:text-3xl font-medium text-gray-900 mb-3">
               Planning a Similar Project in Lucknow?
             </h2>
             <p className="text-gray-600 leading-relaxed">

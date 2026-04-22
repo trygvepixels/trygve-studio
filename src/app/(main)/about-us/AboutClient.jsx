@@ -262,7 +262,7 @@ export default function AboutUs() {
             <FiGlobe className="shrink-0" />
             <span>Architectural & Interior Works — Delivered Worldwide</span>
           </div>
-          <h1 className="mt-4 text-4xl leading-[1.05] text-[#234D7E ] md:text-6xl font-semibold tracking-tight">
+          <h1 className="mt-4 text-3xl leading-[1.05] text-[#234D7E ] md:text-6xl font-semibold tracking-tight">
             TRYGVE STUDIO PRIVATE LIMITED
           </h1>
           <p className="mt-5 max-w-3xl text-[17px] md:text-lg text-neutral-700">

@@ -16,7 +16,7 @@ const LocalityGuides = dynamic(() => Promise.resolve(({ activeLocality, setActiv
     <section className="py-16 md:py-24 px-6 bg-[#F9F7F4]">
         <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-3">The Local Expert Vault</h2>
+                <h2 className="text-2xl md:text-4xl font-bold tracking-tight mb-3">The Local Expert Vault</h2>
                 <p className="text-neutral-500 max-w-2xl mx-auto text-sm md:text-base">
                     We don't just design; we understand the geography, laws, and soil of Lucknow.
                 </p>
@@ -50,7 +50,7 @@ const LocalityGuides = dynamic(() => Promise.resolve(({ activeLocality, setActiv
                         <div className="inline-block px-4 py-1.5 rounded-full bg-blue-50 text-[#234D7E] text-[10px] md:text-xs font-black uppercase tracking-widest">
                             {detailedLocalities[activeLocality].usp}
                         </div>
-                        <h3 className="text-2xl md:text-4xl font-bold leading-tight">
+                        <h3 className="text-xl md:text-4xl font-bold leading-tight">
                             Architectural Insights for {detailedLocalities[activeLocality].name}
                         </h3>
                         <p className="text-base md:text-lg text-neutral-600 leading-relaxed">
@@ -94,7 +94,7 @@ const TrustVault = dynamic(() => Promise.resolve(({ FiShield, FiAward, FiBriefca
         <div className="absolute bottom-0 right-0 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-blue-900/20 rounded-full translate-x-1/3 translate-y-1/3 blur-[80px] md:blur-[120px] pointer-events-none" />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
             <div className="max-w-2xl mb-12 md:mb-16">
-                <h2 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6">Why Choose Us Locally?</h2>
+                <h2 className="text-2xl md:text-5xl font-bold mb-4 md:mb-6">Why Choose Us Locally?</h2>
                 <p className="text-base md:text-xl text-white/60">
                     Beyond aesthetics, we bring the structural and legal integrity required for Lucknow's unique geography.
                 </p>
@@ -132,7 +132,7 @@ const FAQSection = dynamic(() => Promise.resolve(({ faqs, FiInfo }) => (
     <section className="py-16 md:py-24 px-6 bg-white">
         <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12 md:mb-16">
-                <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-3 md:mb-4">Location FAQ</h2>
+                <h2 className="text-2xl md:text-4xl font-bold tracking-tight mb-3 md:mb-4">Location FAQ</h2>
                 <p className="text-neutral-500 text-sm md:text-base">Answers to the most common queries from Lucknow homeowners.</p>
             </div>
             
@@ -168,7 +168,7 @@ const TurnkeyBenefits = dynamic(() => Promise.resolve(({ FiCheck, FiZap, FiAward
                         <div className="inline-block px-4 py-1.5 rounded-full bg-white/10 text-blue-200 text-[10px] md:text-xs font-black uppercase tracking-widest mb-6">
                             The Trygve Advantage
                         </div>
-                        <h2 className="text-3xl md:text-5xl font-bold mb-8 md:mb-10 tracking-tight leading-tight">
+                        <h2 className="text-2xl md:text-5xl font-bold mb-8 md:mb-10 tracking-tight leading-tight">
                             Why Turnkey is <br /><span className="text-blue-300">Non-Negotiable</span> for You.
                         </h2>
                         
@@ -334,7 +334,7 @@ export default function ArchitectNearMe() {
                             initial={{ y: 20, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
                             transition={{ delay: 0.1 }}
-                            className="text-4xl md:text-7xl font-bold tracking-tight mb-6 leading-[1.1]"
+                            className="text-3xl md:text-7xl font-bold tracking-tight mb-6 leading-[1.1]"
                         >
                              Lucknow's Most <br />
                             <span className="text-[#234D7E] italic">Trusted</span> Architect.
@@ -356,7 +356,7 @@ export default function ArchitectNearMe() {
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
                         <div>
-                            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-3">Built Near You.</h2>
+                            <h2 className="text-2xl md:text-4xl font-bold tracking-tight mb-3">Built Near You.</h2>
                             <p className="text-neutral-500 max-w-lg text-sm md:text-base">
                                 Real projects from our portfolio executed across Lucknow's premier localities. 
                             </p>
@@ -436,7 +436,7 @@ export default function ArchitectNearMe() {
                 >
                     <div className="absolute top-0 right-0 w-64 md:w-96 h-64 md:h-96 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-[80px] md:blur-[100px]" />
                     <div className="relative z-10">
-                        <h2 className="text-3xl md:text-6xl font-bold mb-6 md:mb-8 tracking-tighter">Ready to Build <br /> Near You?</h2>
+                        <h2 className="text-2xl md:text-6xl font-bold mb-6 md:mb-8 tracking-tighter">Ready to Build <br /> Near You?</h2>
                         <p className="text-lg md:text-xl opacity-70 mb-8 md:mb-12 max-w-2xl mx-auto font-light">
                             Unlock Lucknow's premier architectural experience. Get a detailed quote based on current market rates.
                         </p>
