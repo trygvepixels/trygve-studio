@@ -3,20 +3,10 @@
 import { useEffect, useState } from "react";
 import { FaPlus, FaMinus } from "react-icons/fa";
 import EditorJsRenderer from "./EditorJsRenderer";
-import BlogSidebarContactForm from "./BlogSidebarContactForm";
 import { FiHome, FiChevronRight } from "react-icons/fi";
 import Link from "next/link";
 import { sanitizeBlogContent } from "@/lib/contentSanitizer";
-import Script from "next/script";
-
-// Reusable text cleaner
-function cleanText(input = "") {
-  return String(input || "")
-    .replace(/&nbsp;/g, " ")
-    .replace(/<br\s*\/?>/gi, "")
-    .replace(/\s+/g, " ")
-    .trim();
-}
+import { extractHeadingsFromEditorJs, extractHeadingsFromHtml } from "@/lib/blogToc";
 
 // Renders content blocks
 
@@ -76,6 +66,13 @@ export default function BlogsClientUI({ blog }) {
     return Math.max(1, Math.ceil(wordCount / 200)); // 200 words per minute
   })();
 
+  const sanitizedHtmlContent =
+    typeof blog?.content === "string" ? sanitizeBlogContent(blog.content) : "";
+
+  const tableOfContents = contentData
+    ? extractHeadingsFromEditorJs(contentData)
+    : extractHeadingsFromHtml(sanitizedHtmlContent);
+
   useEffect(() => setMounted(true), []);
   if (!mounted) return null;
 
@@ -119,6 +116,25 @@ export default function BlogsClientUI({ blog }) {
       {/* Main Content Area */}
       <div className="max-w-7xl bg-[#F4F1EC] mx-auto md:px-0 px-4 mt-10 flex flex-col lg:flex-row gap-8">
         <div className="w-full">
+          {tableOfContents.length > 0 && (
+            <section className="mb-8 rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+              <h2 className="text-xl font-semibold text-gray-900">Table of Contents</h2>
+              <ul className="mt-4 space-y-3">
+                {tableOfContents.map((item) => (
+                  <li key={item.id}>
+                    <a
+                      href={`#${item.id}`}
+                      className="block text-[#234D7E] underline underline-offset-4 hover:text-[#1d3f68]"
+                      style={{ paddingLeft: `${Math.max(0, item.level - 2) * 16}px` }}
+                    >
+                      {item.text}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
+
           {contentData ? (
             <EditorJsRenderer content={contentData} />
           ) : (
@@ -127,7 +143,7 @@ export default function BlogsClientUI({ blog }) {
               {typeof blog?.content === "string" ? (
                 <div
                   className="blog-detail-content blog-content"
-                  dangerouslySetInnerHTML={{ __html: sanitizeBlogContent(blog.content) }}
+                  dangerouslySetInnerHTML={{ __html: sanitizedHtmlContent }}
                 />
               ) : (
                 <p className="text-slate-600">No content available.</p>

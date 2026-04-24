@@ -2,6 +2,7 @@
  * Content Sanitization Utility
  * Cleans up external CMS content by removing citations, garbled text, and applying Tailwind styling
  */
+import { addIdsToHtmlHeadings } from "@/lib/blogToc";
 
 const KEYWORD_LINK_MAP = [
   { keywords: ["architects in lucknow", "best architects in lucknow", "architecture firms in lucknow"], link: "/services/architects-in-lucknow" },
@@ -12,37 +13,45 @@ const KEYWORD_LINK_MAP = [
   { keywords: ["price calculator", "estimate cost", "construction cost"], link: "/price-calculator" }
 ];
 
+function getSortedKeywords() {
+  return KEYWORD_LINK_MAP.flatMap((item) =>
+    item.keywords.map((kw) => ({ kw, link: item.link }))
+  ).sort((a, b) => b.kw.length - a.kw.length);
+}
+
+export function createInternalLinkInjector() {
+  const linkedKeywords = new Set();
+
+  return (content) => {
+    if (!content) return "";
+
+    let linkedContent = content;
+
+    getSortedKeywords().forEach(({ kw, link }) => {
+      if (linkedKeywords.has(kw)) return;
+
+      const regex = new RegExp(`(?<!<a[^>]*>)\\b(${kw})\\b(?!<\\/a>)`, "gi");
+      let hasLinkedThisKeyword = false;
+
+      linkedContent = linkedContent.replace(regex, (match) => {
+        if (hasLinkedThisKeyword) return match;
+        hasLinkedThisKeyword = true;
+        linkedKeywords.add(kw);
+        return `<a href="${link}" class="text-blue-600 hover:text-blue-800 underline transition-colors font-medium">${match}</a>`;
+      });
+    });
+
+    return linkedContent;
+  };
+}
+
 /**
  * Inject internal links for specific keywords
  */
 export function injectInternalLinks(content) {
   if (!content) return "";
-  
-  let linkedContent = content;
-  
-  // Sort keywords by length descending to prevent partial matches (e.g. "architect" vs "architects in lucknow")
-  const allKeywords = KEYWORD_LINK_MAP.flatMap(item => 
-    item.keywords.map(kw => ({ kw, link: item.link }))
-  ).sort((a, b) => b.kw.length - a.kw.length);
 
-  allKeywords.forEach(({ kw, link }) => {
-    // Only link if not already inside an <a> tag
-    // This regex is a simple heuristic: match keyword if not preceded by <a or followed by </a>
-    // For more robustness with HTML, a DOM parser would be better, but this works for most blog structures
-    const regex = new RegExp(`(?<!<a[^>]*>)\\b(${kw})\\b(?!<\\/a>)`, "gi");
-    
-    // We only link the first occurrence to avoid over-optimization/spamminess
-    let count = 0;
-    linkedContent = linkedContent.replace(regex, (match) => {
-      if (count === 0) {
-        count++;
-        return `<a href="${link}" class="text-blue-600 hover:text-blue-800 underline transition-colors font-medium">${match}</a>`;
-      }
-      return match;
-    });
-  });
-
-  return linkedContent;
+  return createInternalLinkInjector()(content);
 }
 
 /**
@@ -256,6 +265,9 @@ export function sanitizeBlogContent(content) {
 
   // 4. Convert markdown bold **text** to <strong>text</strong>
   cleaned = convertMarkdownBold(cleaned);
+
+  // 4.5 Add deterministic ids to headings for TOC/hash linking
+  cleaned = addIdsToHtmlHeadings(cleaned);
 
   // 5. Add Tailwind styling
   cleaned = addTailwindStyling(cleaned);

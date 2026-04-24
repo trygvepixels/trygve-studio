@@ -1,6 +1,8 @@
 "use client";
 
 import React from "react";
+import { createHeadingId } from "@/lib/blogToc";
+import { createInternalLinkInjector } from "@/lib/contentSanitizer";
 
 /** Utility: decode HTML entities safely */
 function decodeHtmlEntities(str = "") {
@@ -15,6 +17,8 @@ function decodeHtmlEntities(str = "") {
 /** ✅ Redesigned EditorJsRenderer */
 export default function EditorJsRenderer({ content }) {
   if (!content || !Array.isArray(content.blocks)) return null;
+  const usedHeadingIds = new Map();
+  const injectInternalLinks = createInternalLinkInjector();
 
   return (
     <div className="blog-detail-content max-w-7xl mx-auto space-y-8 text-gray-900 leading-relaxed [&_a]:text-blue-600">
@@ -33,10 +37,12 @@ export default function EditorJsRenderer({ content }) {
               5: "text-lg",
               6: "text-base",
             };
+            const headingId = createHeadingId(data.text || "", usedHeadingIds);
             return (
               <Tag
                 key={id}
-                className={`${sizes[data.level] || "text-2xl"} font-semibold mt-8`}
+                id={headingId}
+                className={`${sizes[data.level] || "text-2xl"} font-semibold mt-8 scroll-mt-32`}
                 dangerouslySetInnerHTML={{ __html: decodeHtmlEntities(data.text || "") }}
               />
             );
@@ -49,7 +55,9 @@ export default function EditorJsRenderer({ content }) {
               <p
                 key={id}
                 className="text-base leading-7"
-                dangerouslySetInnerHTML={{ __html: decodeHtmlEntities(data.text) }}
+                dangerouslySetInnerHTML={{
+                  __html: injectInternalLinks(decodeHtmlEntities(data.text)),
+                }}
               />
             );
           }
@@ -75,7 +83,9 @@ export default function EditorJsRenderer({ content }) {
                   return (
                     <li
                       key={i}
-                      dangerouslySetInnerHTML={{ __html: decodeHtmlEntities(value) }}
+                      dangerouslySetInnerHTML={{
+                        __html: injectInternalLinks(decodeHtmlEntities(value)),
+                      }}
                     />
                   );
                 })}

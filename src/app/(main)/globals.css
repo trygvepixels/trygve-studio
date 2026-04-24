@@ -176,6 +176,10 @@ body {
 
 } 
 
+html {
+  scroll-behavior: smooth;
+}
+
 .blog-detail-content,
 .blog-detail-content * {
   text-decoration: none !important;
@@ -190,6 +194,14 @@ body {
 .blog-detail-content a:hover,
 .blog-detail-content a:hover * {
   text-decoration: underline !important;
+}
+
+.blog-detail-content h2[id],
+.blog-detail-content h3[id],
+.blog-detail-content h4[id],
+.blog-detail-content h5[id],
+.blog-detail-content h6[id] {
+  scroll-margin-top: 8rem;
 }
 
 button{
