@@ -15,7 +15,7 @@ PRODUCT DEVELOPMENT
           </span>
         </div>
         <h1 className="max-w-5xl md:text-5xl text-3xl text-left font-semibold leading-tight">
-         Architecture, Engineering, BIM and Product  <span className="bg-[#234D7E] text-white px-2 rounded-md"> Development in Lucknow</span>  
+         Architecture, Engineering, <br />BIM and Product <br />  <span className="bg-[#234D7E] text-white px-2 rounded-md"> Development in Lucknow</span>  
         </h1>
         <p className="mt-5 max-w-4xl text-left text-base md:text-xl text-zinc-700 leading-relaxed">
 A multi-disciplinary design and engineering firm delivering architecture, interiors, BIM coordination, technical detailing and product development for residential, commercial and corporate
