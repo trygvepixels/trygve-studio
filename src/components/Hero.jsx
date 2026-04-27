@@ -1,4 +1,4 @@
-"use client";
+ "use client";
 import Image from "next/image";
 import Link from "next/link";
 import herobg from '@/assets/hero/herobg.jpg'
@@ -10,19 +10,16 @@ export default function Hero() {
         <div className="flex justify-start mb-4">
           <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-blue-800 text-[10px] font-bold uppercase tracking-widest shadow-sm">
             <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse"></span>
-            Architecture, Interiors & Turnkey Delivery
+           ARCHITECTURE • ENGINEERING • BIM •
+PRODUCT DEVELOPMENT
           </span>
         </div>
         <h1 className="max-w-5xl md:text-5xl text-3xl text-left font-semibold leading-tight">
-          Architects in <span className="bg-[#234D7E] text-white px-2 rounded-md">Lucknow</span> for
-          residential design, interiors and turnkey execution
+         Architecture, Engineering, BIM and Product  <span className="bg-[#234D7E] text-white px-2 rounded-md"> Development in Lucknow</span>  
         </h1>
         <p className="mt-5 max-w-4xl text-left text-base md:text-xl text-zinc-700 leading-relaxed">
-          Trygve Studio helps homeowners, developers and business owners plan and deliver
-          homes, villas, offices, cafes and hospitality spaces across Lucknow. From early
-          concept and approvals to interior detailing and site execution, we keep the process
-          clear, practical and buildable.
-        </p>
+A multi-disciplinary design and engineering firm delivering architecture, interiors, BIM coordination, technical detailing and product development for residential, commercial and corporate
+projects.        </p>
         <p className="mt-3 max-w-4xl text-left text-sm md:text-base text-zinc-600 leading-relaxed">
           Common project zones include Gomti Nagar, Gomti Nagar Extension, Hazratganj,
           Sushant Golf City, Jankipuram, Kursi Road and the Shaheed Path growth corridor.
