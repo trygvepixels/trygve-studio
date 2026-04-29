@@ -30,8 +30,8 @@ function getCitySeededStats(cityName) {
   // Deterministic count between 180 and 310
   const reviewCount = 180 + (seed % 131);
   // Deterministic rating between 4.8 and 4.9
-  const ratingValue = (4.8 + (seed % 10) / 100).toFixed(1);
-  return { reviewCount: String(reviewCount), ratingValue: String(ratingValue) };
+  const ratingValue = Number((4.8 + (seed % 10) / 100).toFixed(1));
+  return { reviewCount, ratingValue };
 }
 
 function getCityBySlug(citySlug) {
@@ -295,10 +295,37 @@ export default async function InteriorDesignCityPage({ params }) {
             {
               "@context": "https://schema.org",
               "@id": "https://trygvestudio.com/#organization",
-              "@type": "Organization",
+              "@type": "LocalBusiness",
               "name": "Trygve Studio",
               "url": "https://trygvestudio.com",
-              "logo": "https://trygvestudio.com/logo.png"
+              "logo": "https://trygvestudio.com/logo.png",
+              "image": city.heroImage || FALLBACK_HERO_IMAGE,
+              "priceRange": "₹₹₹ - Premium Luxury",
+              "openingHours": "Mo-Sa 10:00-19:00",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": city.cityName,
+                "addressRegion": city.stateName,
+                "addressCountry": "IN"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "26.8467",
+                "longitude": "80.9462"
+              },
+              "telephone": "+91-9554440400",
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": ratingValue,
+                "reviewCount": reviewCount
+              },
+              "review": testimonialToPass.slice(0, 3).map((t) => ({
+                "@type": "Review",
+                "author": { "@type": "Person", "name": t.name },
+                "reviewRating": { "@type": "Rating", "ratingValue": 5 },
+                "reviewBody": t.message
+              })),
+              "employee": { "@id": "https://trygvestudio.com/#architect" }
             },
             {
               "@context": "https://schema.org",
@@ -342,38 +369,7 @@ export default async function InteriorDesignCityPage({ params }) {
               "@context": "https://schema.org",
               "@type": "Service",
               "serviceType": "Interior Design",
-              "provider": {
-                "@type": "LocalBusiness",
-                "name": "Trygve Studio",
-                "url": "https://trygvestudio.com",
-                "priceRange": "₹₹₹ - Premium Luxury",
-                "openingHours": "Mo-Sa 10:00-19:00",
-                "image": city.heroImage || FALLBACK_HERO_IMAGE,
-                "address": {
-                  "@type": "PostalAddress",
-                  "addressLocality": city.cityName,
-                  "addressRegion": city.stateName,
-                  "addressCountry": "IN"
-                },
-                "geo": {
-                  "@type": "GeoCoordinates",
-                  "latitude": "26.8467",
-                  "longitude": "80.9462"
-                },
-                "telephone": "+91-9554440400",
-                "aggregateRating": {
-                  "@type": "AggregateRating",
-                  "ratingValue": ratingValue,
-                  "reviewCount": reviewCount
-                },
-                "review": testimonialToPass.slice(0, 3).map((t) => ({
-                  "@type": "Review",
-                  "author": { "@type": "Person", "name": t.name },
-                  "reviewRating": { "@type": "Rating", "ratingValue": "5" },
-                  "reviewBody": t.message
-                })),
-                "employee": { "@id": "https://trygvestudio.com/#architect" }
-              },
+              "provider": { "@id": "https://trygvestudio.com/#organization" },
               "areaServed": {
                 "@type": "City",
                 "name": city.cityName
