@@ -2,21 +2,42 @@ import Link from "next/link";
 import { FiCheck, FiArrowRight } from "react-icons/fi";
 
 export const metadata = {
-    title: "BIM Outsourcing Services |  Modeling & Drafting Support | Trygve Studio",
+    title: "Revit BIM Outsourcing Services | BIM Modeling & Drafting Support | Trygve Studio",
     description:
-        "Scale your architecture firm with precision BIM outsourcing — ISO-certified  modeling (LOD 100–500), CAD documentation, clash detection and VDC support. 24-hr turnaround for US, UK & UAE firms.",
+        "Revit BIM outsourcing services for architecture firms in the US, UK and UAE. ISO-certified modeling (LOD 100–500), CAD documentation, clash detection and VDC support. 24-hr turnaround available.",
     alternates: {
         canonical: "https://trygvestudio.com/services/bim-outsourcing-services",
+    },
+    openGraph: {
+        title: "Revit BIM Outsourcing Services | Trygve Studio",
+        description:
+            "Scale your architecture firm with precision Revit BIM outsourcing — LOD 100–500 modeling, CAD documentation, clash detection. Serving US, UK and UAE firms. 40–60% cost savings.",
+        url: "https://trygvestudio.com/services/bim-outsourcing-services",
+        images: [
+            {
+                url: "https://trygvestudio.com/og-image.jpg",
+                width: 1200,
+                height: 630,
+                alt: "BIM Outsourcing Services - Trygve Studio",
+            },
+        ],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Revit BIM Outsourcing Services | Trygve Studio",
+        description:
+            "Precision Revit BIM modeling and CAD drafting for architecture firms. 24-hr turnaround, LOD 100–500, serving US, UK and UAE.",
+        images: ["https://trygvestudio.com/og-image.jpg"],
     },
 };
 
 const COMPETENCIES = [
     {
-        title: "Architectural BIM (LOD 100–500)",
+        title: "Architectural BIM — Revit (LOD 100–500)",
         items: [
             "Schematic Design to Design Development (SD/DD)",
             "Construction Documentation (CD) Production",
-            "BIM Content & Family Creation ()",
+            "BIM Content & Revit Family Creation",
             "Clash Detection & BIM Coordination",
         ],
     },
@@ -47,9 +68,10 @@ const VALUE_PROPS = [
 ];
 
 const SOFTWARE = [
-    "Autodesk  2024", "AutoCAD", "Navisworks", "ArchiCAD",
+    "Revit 2024", "AutoCAD", "Navisworks", "ArchiCAD",
     "Rhino 3D", "Lumion", "Enscape", "BIM 360", "Bluebeam Revu",
 ];
+
 
 export default function BIMOutsourcingServices() {
     return (
@@ -63,11 +85,11 @@ export default function BIMOutsourcingServices() {
                         Global Architecture Partner
                     </span>
                     <h1 className="text-3xl md:text-5xl font-semibold text-gray-900 mb-5 leading-tight max-w-3xl">
-                        BIM Outsourcing &amp; <br className="hidden sm:block" />
-                         Drafting Services
+                        Revit BIM Outsourcing & <br className="hidden sm:block" />
+                        Drafting Services
                     </h1>
                     <p className="text-gray-600 text-lg max-w-2xl mb-8 leading-relaxed">
-                        We act as an extension of your design team. Delivering precision  models, Digital Twins and Construction Documentation with localised code compliance for US, UK and Middle East.
+                        We act as an extension of your design team. Delivering precision Revit BIM models, Digital Twins and Construction Documentation with localised code compliance for US, UK and Middle East.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-3">
                         <Link
@@ -104,7 +126,7 @@ export default function BIMOutsourcingServices() {
                 <div className="max-w-7xl mx-auto">
                     <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-3">Core BIM Competencies</h2>
                     <p className="text-gray-500 mb-10 text-sm">
-                        Industry-standard software stack:  2024, AutoCAD, ArchiCAD and Bluebeam.
+                        Industry-standard software stack: Revit 2024, AutoCAD, ArchiCAD and Bluebeam.
                     </p>
                     <div className="grid md:grid-cols-2 gap-5">
                         {COMPETENCIES.map((c, i) => (
@@ -133,7 +155,7 @@ export default function BIMOutsourcingServices() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
                         {[
                             { step: "01", label: "Brief & Standards", desc: "You share your project brief, templates and code compliance requirements." },
-                            { step: "02", label: "Model Setup", desc: "We initialise the  project file, coordinate system and worksets per your firm standards." },
+                            { step: "02", label: "Model Setup", desc: "We initialise the Revit project file, coordinate system and worksets per your firm standards." },
                             { step: "03", label: "Production Sprint", desc: "Daily or weekly deliverables — floor plans, 3D model, detail sheets — via shared cloud or BIM 360." },
                             { step: "04", label: "QC & Handover", desc: "Internal QA review against your checklist before final .rvt / .dwg / PDF handover." },
                         ].map((s, i) => (

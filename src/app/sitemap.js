@@ -12,7 +12,7 @@ export default async function sitemap() {
   const baseUrl = "https://trygvestudio.com";
 
   // Fixed date for static pages — update this when you actually change static pages
-  const staticLastModified = new Date("2026-04-20");
+  const staticLastModified = new Date("2026-05-01");
 
   // 1. Static Pages (removed duplicate blog entries — they're already in dynamic section)
   const staticPages = [
@@ -67,9 +67,9 @@ export default async function sitemap() {
     {
       url: `${baseUrl}/services/bim-outsourcing-services`,
       lastModified: staticLastModified,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },,
     // Static city-specific blog posts (file-based, not in DB)
     {
       url: `${baseUrl}/blogs/designing-luxury-homes-in-south-delhi-2026-trends`,
@@ -129,7 +129,8 @@ export default async function sitemap() {
       url: `${baseUrl}/services/interior-design/${city.citySlug}`,
       lastModified: staticLastModified,
       changeFrequency: "monthly",
-      priority: 0.8,
+      // Lucknow interior design gets a higher priority — it has active impressions
+      priority: city.citySlug === "lucknow" ? 0.9 : 0.8,
     }));
 
   // 3. Dynamic Blogs

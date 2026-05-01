@@ -5,16 +5,16 @@ import logo from "@/assets/logo.png";
 import Script from "next/script";
 
 export const metadata = {
-    title: "3D Walkthrough Company in Lucknow | Architectural Visualization",
+    title: "3D Walkthrough Company in Lucknow | Architectural Rendering & Visualization | Trygve Studio",
     description:
-        "3D walkthrough and architectural visualization services in Lucknow for developers, architects and project teams who need clearer design communication before execution.",
+        "Top 3D walkthrough company in Lucknow for real estate developers, architects and homeowners. Photorealistic renders, virtual tours, and architectural animations. 15-day delivery guarantee.",
     alternates: {
-        canonical: "/services/3d-walkthrough-company-lucknow",
+        canonical: "https://trygvestudio.com/services/3d-walkthrough-company-lucknow",
     },
     openGraph: {
-        title: "3D Walkthrough Company in Lucknow | High-End Visualization",
+        title: "3D Walkthrough Company in Lucknow | Cinematic Architectural Visualization",
         description:
-            "Photorealistic renderings and 3D walkthroughs to help clients and buyers understand spaces before construction starts.",
+            "Photorealistic 3D walkthroughs and architectural renders in Lucknow. Trusted by real estate developers and design firms for pre-sale visualization and buyer communication.",
         url: "https://trygvestudio.com/services/3d-walkthrough-company-lucknow",
         images: [
             {
@@ -25,7 +25,15 @@ export const metadata = {
             },
         ],
     },
+    twitter: {
+        card: "summary_large_image",
+        title: "3D Walkthrough Company in Lucknow | Trygve Studio",
+        description:
+            "Cinematic 3D walkthroughs and photorealistic renders for real estate projects in Lucknow. Book a free consultation.",
+        images: ["https://trygvestudio.com/images/3d-walkthrough-lucknow.jpg"],
+    },
 };
+
 
 export default function WalkthroughCompanyLucknow() {
     return (
