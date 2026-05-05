@@ -15,14 +15,13 @@ PRODUCT DEVELOPMENT
           </span>
         </div>
         <h1 className="max-w-5xl md:text-5xl text-3xl text-left font-semibold leading-tight">
-         Architecture, Engineering, <br />BIM and Product <br />  <span className="bg-[#234D7E] text-white px-2 rounded-md"> Development in Lucknow</span>  
+         Architecture, Engineering, <br />BIM and Product   <br />  <span className="bg-[#234D7E] text-white px-2 rounded-md"> Development in Lucknow
+</span>  
         </h1>
         <p className="mt-5 max-w-4xl text-left text-base md:text-xl text-zinc-700 leading-relaxed">
-A multi-disciplinary design and engineering firm delivering architecture, interiors, BIM coordination, technical detailing and product development for residential, commercial and corporate
-projects.        </p>
+A multi-disciplinary architecture and engineering studio helping homeowners and businesses with design, interiors, approvals, BIM coordination, technical detailing and execution planning for residential, commercial and hospitality projects.</p>
         <p className="mt-3 max-w-4xl text-left text-sm md:text-base text-zinc-600 leading-relaxed">
-          Common project zones include Gomti Nagar, Gomti Nagar Extension, Hazratganj,
-          Sushant Golf City, Jankipuram, Kursi Road and the Shaheed Path growth corridor.
+          If you are searching for an architect office near by me in Lucknow, our consultation coverage typically includes Gomti Nagar, Gomti Nagar Extension, Hazratganj, Sushant Golf City, Jankipuram, Kursi Road and the Shaheed Path growth corridor.
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
           <Link

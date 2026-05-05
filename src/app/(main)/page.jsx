@@ -2,16 +2,16 @@ import HomeClient from "./HomeClient";
 import Script from "next/script";
 
 export const metadata = {
-    title: "Architects in Lucknow | Residential, Interior & Turnkey Design | Trygve Studio",
+    title: "Architect Office Near Me in Lucknow | Residential, Interior & Turnkey Design | Trygve Studio",
     description:
-        "Architects in Lucknow for residential design, interiors and turnkey construction. Trygve Studio helps homeowners and businesses with planning, approvals, execution and fit-out.",
+        "Looking for an architect office near me in Lucknow? Trygve Studio supports homes, interiors and turnkey projects with local consultation, planning, approvals and execution guidance.",
     alternates: {
         canonical: "https://trygvestudio.com/",
     },
     openGraph: {
-        title: "Architects in Lucknow | Residential, Interior & Turnkey Design",
+        title: "Architect Office Near Me in Lucknow | Residential, Interior & Turnkey Design",
         description:
-            "Architecture, interior design and turnkey project delivery in Lucknow for homes, commercial spaces and hospitality projects.",
+            "A Lucknow-based architect office for homes, commercial spaces, interiors and turnkey project delivery across key local growth corridors.",
         url: "https://trygvestudio.com/",
     },
 };
@@ -58,6 +58,14 @@ const homeFaqSchema = {
             acceptedAnswer: {
                 "@type": "Answer",
                 text: "Trygve Studio serves all major areas in Lucknow including Gomti Nagar, Hazratganj, Kursi Road, Sushant Golf City, Shaheed Path, Jankipuram, Amar Shaheed Path, and surrounding regions.",
+            },
+        },
+        {
+            "@type": "Question",
+            name: "Where is your architect office near me in Lucknow?",
+            acceptedAnswer: {
+                "@type": "Answer",
+                text: "Trygve Studio works with clients across Lucknow and offers meeting access near Kursi Road, Vikas Nagar and Gomti Nagar, depending on the project stage and consultation requirement.",
             },
         },
     ],

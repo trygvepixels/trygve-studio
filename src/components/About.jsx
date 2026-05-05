@@ -51,6 +51,12 @@ export default function TrygveAnnouncement() {
             </p>
 
             <p className="mt-4 max-w-3xl text-zinc-600 md:text-lg leading-relaxed">
+              For people searching an architect office near by me, our project discussions usually
+              start around accessible Lucknow meeting points near Kursi Road, Vikas Nagar and Gomti Nagar,
+              depending on the scope, location and stage of the work.
+            </p>
+
+            <p className="mt-4 max-w-3xl text-zinc-600 md:text-lg leading-relaxed">
               Our work typically spans{" "}
               <Link href="/services/architects-in-lucknow" className="font-medium hover:underline text-zinc-800">
                 architecture
