@@ -6,9 +6,9 @@ import Script from "next/script";
 
 export const metadata = {
   metadataBase: new URL("https://trygvestudio.com"),
-  title: "Contact Trygve Studio | Architects in Lucknow | Free Consultation | +91-9554440400",
+  title: "Contact Trygve Studio | Architects and Interior Consultants in Lucknow",
   description:
-    "Talk to Trygve Studio about your project. Book a free consultation with architects & interior designers in Lucknow. Call +91-9554440400 or WhatsApp. Head office: Kursi Road, Lucknow. Open Mon–Sat, 10 AM–7 PM.",
+    "Talk to Trygve Studio about your project. Reach our architects and interior consultants in Lucknow by phone, WhatsApp or email.",
   keywords: [
     "contact architects in lucknow",
     "book architecture consultation lucknow",
@@ -22,16 +22,16 @@ export const metadata = {
     type: "website",
     url: "https://trygvestudio.com/contact-us",
     siteName: "Trygve Studio",
-    title: "Contact Trygve Studio | Free Architecture Consultation in Lucknow",
+    title: "Contact Trygve Studio | Architecture and Interior Consultation in Lucknow",
     description:
-      "Book a free consultation with Lucknow's top architects & interior designers. +91-9554440400 • faisal.saif@trygvestudio.com. Mon–Sat, 10 AM–7 PM.",
+      "Reach the Trygve Studio team in Lucknow for architecture, interiors and project planning consultations.",
     locale: "en_IN",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Contact Trygve Studio | Architects in Lucknow",
+    title: "Contact Trygve Studio | Architecture Consultation in Lucknow",
     description:
-      "Book a free consultation: +91-9554440400 • faisal.saif@trygvestudio.com. Head office: Kursi Road, Lucknow.",
+      "Reach Trygve Studio by phone, WhatsApp or email for architecture and interior consultations in Lucknow.",
   },
 };
 

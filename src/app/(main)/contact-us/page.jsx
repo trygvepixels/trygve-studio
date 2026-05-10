@@ -1,16 +1,16 @@
 import ContactClient from "./ContactClient";
 
 export const metadata = {
-    title: "Contact Trygve Studio | Book a Free Architectural Consultation",
+    title: "Contact Trygve Studio | Architecture and Interior Consultation in Lucknow",
     description:
-        "Ready to build your dream space? Contact Trygve Studio for premium architecture, interior design, and turnkey construction. Offices in Lucknow & Patna.",
+        "Contact Trygve Studio for architecture, interior design and turnkey project consultations in Lucknow. Reach our team by phone, WhatsApp or email.",
     alternates: {
         canonical: "https://trygvestudio.com/contact-us",
     },
     openGraph: {
-        title: "Contact Trygve Studio | Free Consultation",
+        title: "Contact Trygve Studio | Architecture Consultation in Lucknow",
         description:
-            "Book a free architectural consultation. Premium architecture, interior design & turnkey construction in Lucknow.",
+            "Talk to the Trygve Studio team in Lucknow about architecture, interiors and turnkey project requirements.",
         url: "https://trygvestudio.com/contact-us",
         siteName: "Trygve Studio",
         images: [{ url: "https://trygvestudio.com/og-image.jpg", width: 1200, height: 630 }],
@@ -19,8 +19,8 @@ export const metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "Contact Trygve Studio | Book Free Consultation",
-        description: "Get in touch for architecture, interior design & construction in Lucknow & Patna.",
+        title: "Contact Trygve Studio | Architecture Consultation in Lucknow",
+        description: "Get in touch with Trygve Studio for architecture, interiors and project planning support in Lucknow.",
         images: ["https://trygvestudio.com/twitter-image.jpg"],
     },
 };

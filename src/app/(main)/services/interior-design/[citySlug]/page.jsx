@@ -25,15 +25,6 @@ function normalizeSlug(slug) {
   return String(slug || "").trim().toLowerCase().replace(/\s+/g, "-");
 }
 
-function getCitySeededStats(cityName) {
-  const seed = cityName.charCodeAt(0) + cityName.length;
-  // Deterministic count between 180 and 310
-  const reviewCount = 180 + (seed % 131);
-  // Deterministic rating between 4.8 and 4.9
-  const ratingValue = Number((4.8 + (seed % 10) / 100).toFixed(1));
-  return { reviewCount, ratingValue };
-}
-
 function getCityBySlug(citySlug) {
   const slug = normalizeSlug(citySlug);
   return interiorDesignCities.find((c) => normalizeSlug(c.citySlug) === slug);
@@ -283,8 +274,6 @@ export default async function InteriorDesignCityPage({ params }) {
     message: t.message,
     image: t.image,
   }));
-  const { reviewCount, ratingValue } = getCitySeededStats(city.cityName);
-
   return (
     <article className="min-h-screen bg-[#F4F1EC] text-gray-900" itemscope itemtype="https://schema.org/Article">
       <Script
@@ -314,17 +303,6 @@ export default async function InteriorDesignCityPage({ params }) {
                 "longitude": "80.9462"
               },
               "telephone": "+91-9554440400",
-              "aggregateRating": {
-                "@type": "AggregateRating",
-                "ratingValue": ratingValue,
-                "reviewCount": reviewCount
-              },
-              "review": testimonialToPass.slice(0, 3).map((t) => ({
-                "@type": "Review",
-                "author": { "@type": "Person", "name": t.name },
-                "reviewRating": { "@type": "Rating", "ratingValue": 5 },
-                "reviewBody": t.message
-              })),
               "employee": { "@id": "https://trygvestudio.com/#architect" }
             },
             {

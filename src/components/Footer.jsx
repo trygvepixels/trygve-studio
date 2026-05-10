@@ -200,6 +200,9 @@ export default function FooterPremium({ variant = "bronze" }) {
                 { label: "Projects", href: "/projects" },
                 { label: "Blogs", href: "/blogs" },
                 { label: "Contact", href: "/contact-us" },
+                { label: "Privacy", href: "/privacy" },
+                { label: "Terms", href: "/terms" },
+                { label: "Editorial Policy", href: "/editorial-policy" },
               ].map((link) => (
                 <li key={link.href}>
                   <Link
@@ -323,19 +326,14 @@ export default function FooterPremium({ variant = "bronze" }) {
           className="mx-auto flex max-w-7xl flex-col gap-3 px-5 py-5 text-[13px] md:flex-row md:items-center md:justify-between"
           style={{ color: c.ink }}
         >
-          <div className="flex items-center gap-3 opacity-80">
-            <Link
-              href="/privacy"
-              className="hover:underline hover:opacity-100 transition-opacity"
-            >
-              Privacy
-            </Link>
+          <div className="  items-center gap-3 opacity-80">
+          
             <span className="opacity-40">•</span>
             <Link
-              href="/terms"
+              href="/editorial-policy"
               className="hover:underline hover:opacity-100 transition-opacity"
             >
-              Terms
+              Editorial Policy
             </Link>
             <span className="opacity-40">•</span>
             <span className="text-[10px] font-bold text-blue-600 bg-blue-50 px-2 py-0.5 rounded border border-blue-100">
@@ -357,7 +355,10 @@ export default function FooterPremium({ variant = "bronze" }) {
             <span>© {new Date().getFullYear()} Trygve Studio</span>
           </div>
 
-          <div className="opacity-80 text-center md:text-right">
+        </div>
+      </section>
+
+          <div className="opacity-80 py-4 text-center md:text-right">
             <p className="text-center">
               Designed & Developed by{" "}
               <a
@@ -372,8 +373,6 @@ export default function FooterPremium({ variant = "bronze" }) {
               {" "}— Global Web & App Development Agency
             </p>
           </div>
-        </div>
-      </section>
     </footer>
   );
 }

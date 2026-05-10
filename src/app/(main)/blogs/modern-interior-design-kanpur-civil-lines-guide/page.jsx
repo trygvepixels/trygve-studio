@@ -15,7 +15,7 @@ export default function Page() {
         title: "Modern Interior Design in Kanpur: A Guide to Luxury in Civil Lines & Swaroop Nagar",
         urlSlug: "modern-interior-design-kanpur-civil-lines-guide",
         category: "Local Design",
-        author: "Trygve Studio Team",
+        author: "Umme Maryam",
         createdAt: new Date().toISOString(),
         featuredImage: "https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=1200&q=80",
         imageAlt: "Modern luxury home interior in Kanpur Civil Lines",

@@ -6,7 +6,7 @@ export default function Page() {
         title: "Building Your Dream Home in Lucknow: The Complete 2026 Guide for NRIs",
         urlSlug: "building-home-in-lucknow-nri-guide-2026",
         category: "NRI Solutions",
-        author: "Trygve Studio Team",
+        author: "Ar. Harsh Vardhan",
         createdAt: new Date().toISOString(),
         featuredImage: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80",
         imageAlt: "Luxury rendering of a modern home in Lucknow",

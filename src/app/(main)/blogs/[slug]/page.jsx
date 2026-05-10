@@ -1,8 +1,11 @@
-export const dynamic = 'force-dynamic';
-// optionally:
-export const revalidate = 0; import { notFound } from "next/navigation";
+import { notFound } from "next/navigation";
 import BlogsClientUI from "@/components/BlogsClientUI";
 import Script from "next/script";
+import Team from "@/models/Team";
+import { connectDB } from "@/lib/mongodb";
+
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 
 const API_BASE = "https://trygvestudio.com";
 
@@ -18,6 +21,41 @@ async function getBlog(slug) {
   }
 }
 
+function normalizeAuthorSlug(author = "") {
+  return String(author || "")
+    .trim()
+    .toLowerCase()
+    .replace(/^ar\.\s*/i, "")
+    .replace(/[^\w\s-]/g, "")
+    .replace(/\s+/g, "-");
+}
+
+async function getAuthorProfile(authorName) {
+  if (!authorName) return null;
+  try {
+    await connectDB();
+    const guessedSlug = normalizeAuthorSlug(authorName);
+    const member =
+      (await Team.findOne({
+        active: true,
+        $or: [{ slug: guessedSlug }, { name: authorName }],
+      }).lean()) || null;
+    if (!member) return null;
+    return {
+      name: member.name,
+      slug: member.slug,
+      position: member.position,
+      description: member.description,
+      image: member.image?.src || "",
+      imageAlt: member.image?.alt || member.name,
+      url: `https://trygvestudio.com/team/${member.slug}`,
+    };
+  } catch (err) {
+    console.error("❌ getAuthorProfile error:", err.message);
+    return null;
+  }
+}
+
 // --- metadata ---
 export async function generateMetadata({ params }) {
   const { slug } = await params;                 // ✅ await params
@@ -25,6 +63,8 @@ export async function generateMetadata({ params }) {
     const res = await fetch(`${API_BASE}/api/blogs/${slug}`, { cache: "no-store" });
     if (!res.ok) return {};
     const blog = await res.json();
+    const authorProfile = await getAuthorProfile(blog.author);
+    const authorName = authorProfile?.name || blog.author || "Trygve Studio Editorial Team";
 
     return {
       title: blog.metaTitle || blog.title,
@@ -39,7 +79,7 @@ export async function generateMetadata({ params }) {
         images: blog.image ? [{ url: blog.image, width: 1200, height: 630 }] : [],
         publishedTime: blog.createdAt,
         modifiedTime: blog.lastUpdated || blog.updatedAt || blog.createdAt,
-        authors: [blog.author || "Trygve Studio Team"],
+        authors: [authorName],
         section: blog.category || "Architecture & Design",
       },
       twitter: {
@@ -74,6 +114,8 @@ export default async function BlogDetails({ params }) {
   const { slug } = await params;                 // ✅ await params
   const blog = await getBlog(slug);
   if (!blog) return notFound();
+  const authorProfile = await getAuthorProfile(blog.author);
+  const authorName = authorProfile?.name || blog.author || "Trygve Studio Editorial Team";
 
   return (
     <div>
@@ -93,8 +135,9 @@ export default async function BlogDetails({ params }) {
           "dateModified": blog.lastUpdated || blog.updatedAt || blog.createdAt,
           "author": {
             "@type": "Person",
-            "name": blog.author || "Trygve Studio Team",
-            "url": "https://trygvestudio.com/about-us"
+            "name": authorName,
+            ...(authorProfile?.url ? { "url": authorProfile.url } : { "url": "https://trygvestudio.com/about-us" }),
+            ...(authorProfile?.position ? { "jobTitle": authorProfile.position } : {}),
           },
           "publisher": {
             "@type": "Organization",
@@ -213,7 +256,7 @@ export default async function BlogDetails({ params }) {
           ]
         })}
       </Script>
-      <BlogsClientUI key={blog._id} blog={blog} />
+      <BlogsClientUI key={blog._id} blog={blog} authorProfile={authorProfile} />
     </div>
   );
 }

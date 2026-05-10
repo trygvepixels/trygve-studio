@@ -15,7 +15,7 @@ export default function Page() {
         title: "Best Architects in Gomti Nagar, Lucknow: A Guide to Premium Home Design",
         urlSlug: "best-architects-in-gomti-nagar-lucknow-guide",
         category: "Local Design",
-        author: "Trygve Studio Team",
+        author: "Ar. Harsh Vardhan",
         createdAt: new Date().toISOString(),
         featuredImage: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
         imageAlt: "Luxury home architecture in Gomti Nagar Lucknow",

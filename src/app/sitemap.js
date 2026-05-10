@@ -101,6 +101,12 @@ export default async function sitemap() {
       changeFrequency: "monthly",
       priority: 0.3,
     },
+    {
+      url: `${baseUrl}/editorial-policy`,
+      lastModified: staticLastModified,
+      changeFrequency: "monthly",
+      priority: 0.5,
+    },
   ];
 
   // 2. Specific Service Landing Pages (These have their own folders and specific content)

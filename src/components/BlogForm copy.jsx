@@ -478,7 +478,7 @@ export default function BlogForm({ initialData = {}, onSubmit }) {
 
               <Field
                 label="URL Slug"
-                hint={`Permalink: /blog/${form.urlSlug || "…"} `}
+                hint={`Permalink: /blogs/${form.urlSlug || "…"} `}
               >
                 <Input name="urlSlug" value={form.urlSlug} onChange={handleChange} />
               </Field>
@@ -590,7 +590,7 @@ export default function BlogForm({ initialData = {}, onSubmit }) {
                 <Input name="metaTitle" value={form.metaTitle} onChange={handleChange} />
               </Field>
               <Field label="Canonical URL">
-                <Input name="canonicalUrl" value={form.canonicalUrl} onChange={handleChange} placeholder="https://example.com/blog/..." />
+                <Input name="canonicalUrl" value={form.canonicalUrl} onChange={handleChange} placeholder="https://example.com/blogs/..." />
               </Field>
               <Field
                 label="Meta Description"
@@ -724,7 +724,7 @@ export default function BlogForm({ initialData = {}, onSubmit }) {
             <div className="inline-flex gap-2 rounded-full border border-black/15 bg-white/95 px-3 py-2 shadow-[0_12px_40px_rgba(0,0,0,0.15)]">
               <button
                 type="button"
-                onClick={() => window.open(`/blog/${form.urlSlug || ""}`, "_blank")}
+                onClick={() => window.open(`/blogs/${form.urlSlug || ""}`, "_blank")}
                 className="rounded-full border border-black/20 px-3 py-1.5 text-sm hover:bg-black/5"
               >
                 Preview

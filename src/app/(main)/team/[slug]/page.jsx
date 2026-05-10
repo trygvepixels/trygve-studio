@@ -28,11 +28,20 @@ export async function generateMetadata({ params }) {
 
     return {
       title: `${member.name} | ${member.position} | Trygve Studio`,
-      description: member.description?.substring(0, 160) || `Meet ${member.name}, ${member.position} at Trygve Studio.`,
+      description: member.description?.substring(0, 160) || `Meet ${member.name}, ${member.position} at Trygve Studio in Lucknow.`,
+      alternates: {
+        canonical: `https://trygvestudio.com/team/${slug}`,
+      },
       openGraph: {
         title: `${member.name} | Trygve Studio`,
         description: member.description?.substring(0, 160),
         images: member.image?.src ? [{ url: member.image.src }] : [],
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: `${member.name} | Trygve Studio`,
+        description: member.description?.substring(0, 160) || `Meet ${member.name}, ${member.position} at Trygve Studio.`,
+        images: member.image?.src ? [member.image.src] : [],
       },
     };
   } catch (err) {
@@ -58,11 +67,19 @@ export default async function TeamMemberPage({ params }) {
           "jobTitle": member.position,
           "description": member.description,
           "image": member.image?.src,
+          "url": `https://trygvestudio.com/team/${member.slug}`,
           "worksFor": {
             "@type": "Organization",
             "name": "Trygve Studio",
             "url": "https://trygvestudio.com"
-          }
+          },
+          ...(member.achievements?.length
+            ? {
+                "knowsAbout": member.achievements
+                  .map((achievement) => achievement?.text)
+                  .filter(Boolean),
+              }
+            : {}),
         })}
       </Script>
 
@@ -129,6 +146,15 @@ export default async function TeamMemberPage({ params }) {
                   </p>
                 </div>
               )}
+
+              <div className="rounded-2xl border border-zinc-200 bg-zinc-50 p-5">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-zinc-500">
+                  Contributor Role
+                </p>
+                <p className="mt-2 text-sm md:text-[15px] leading-relaxed text-zinc-700">
+                  {member.name} contributes to project thinking, public-facing service guidance and editorial review where their subject expertise applies.
+                </p>
+              </div>
 
               {/* Achievements Section */}
               {member.achievements && member.achievements.length > 0 && (

@@ -4,11 +4,12 @@ import TestimonialsMarquee from "./TestimonialsMarquee";
 import { FiHome, FiChevronRight } from "react-icons/fi";
 import logo from "@/assets/logo.png"
 import Script from "next/script";
+import TrustReviewedBlock from "@/components/TrustReviewedBlock";
 
 export const metadata = {
-  title: "Architects in Lucknow for Residential, Commercial & Turnkey Projects | Trygve Studio",
+  title: "Architects in Lucknow for Homes, Commercial Projects and Planning Support | Trygve Studio",
   description:
-    "Looking for architects in Lucknow? Trygve Studio offers residential, commercial and turnkey architecture — design, LDA approvals, interiors and site execution. ISO 9001:2015 certified. Free consultation +91-9554440400.",
+    "Architects in Lucknow for homes, commercial spaces and planning support. Trygve Studio helps with design, interiors, approvals and execution guidance through local consultation.",
   keywords: [
     "architects in lucknow",
     "best architects in lucknow",
@@ -24,9 +25,9 @@ export const metadata = {
     canonical: "https://trygvestudio.com/services/architects-in-lucknow",
   },
   openGraph: {
-    title: "Architects in Lucknow | Residential, Commercial & Turnkey Design | Trygve Studio",
+    title: "Architects in Lucknow for Homes, Commercial Projects and Planning Support",
     description:
-      "Work with Trygve Studio for residential, commercial and turnkey architecture in Lucknow — design, LDA approvals, interiors and execution support. ISO certified. 200+ projects.",
+      "A Lucknow-based architecture studio for homes, commercial spaces, interiors and planning support.",
     url: "https://trygvestudio.com/services/architects-in-lucknow",
     images: [
       {
@@ -224,6 +225,15 @@ export default function ArchitectsInLucknow() {
           </div>
         </div>
       </section>
+
+      <div className="max-w-7xl mx-auto px-6 -mt-8 relative z-20">
+        <TrustReviewedBlock
+          reviewedBy="Ar. Harsh Vardhan"
+          reviewerRole="Lead Architect, Trygve Studio"
+          reviewedOn="May 2026"
+          note="Service information on this page is reviewed against current consultation scope, local approval support and active project delivery experience in Lucknow."
+        />
+      </div>
 
       {/* At a Glance - GEO/AI Optimization */}
       <section className="bg-white py-12 px-6">

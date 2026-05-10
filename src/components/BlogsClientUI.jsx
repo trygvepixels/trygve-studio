@@ -30,7 +30,7 @@ function FaqItem({ faq }) {
 }
 
 // ⬇ MAIN CLIENT COMPONENT ⬇
-export default function BlogsClientUI({ blog }) {
+export default function BlogsClientUI({ blog, authorProfile }) {
   const [mounted, setMounted] = useState(false);
   const defaultServiceLinks = [
     { name: "Architects in Lucknow", link: "/services/architects-in-lucknow" },
@@ -103,7 +103,7 @@ export default function BlogsClientUI({ blog }) {
             {blog.title}
           </h1>
           <p className="text-sm text-gray-300">
-            {"Trygve Studio Team"} •{" "}
+            {authorProfile?.name || blog.author || "Trygve Studio Editorial Team"} •{" "}
             {blog?.createdAt ? new Date(blog.createdAt).toLocaleDateString("en-GB", {
               day: "2-digit",
               month: "short",
@@ -116,6 +116,37 @@ export default function BlogsClientUI({ blog }) {
       {/* Main Content Area */}
       <div className="max-w-7xl bg-[#F4F1EC] mx-auto md:px-0 px-4 mt-10 flex flex-col lg:flex-row gap-8">
         <div className="w-full">
+          <section className="mb-8 rounded-2xl border border-gray-200 bg-white p-5 shadow-sm text-sm text-gray-600">
+            <p>
+              Reviewed for editorial accuracy by{" "}
+              <span className="font-medium text-gray-900">
+                {authorProfile?.name || blog.author || "Trygve Studio Editorial Team"}
+              </span>
+              {authorProfile?.position ? ` · ${authorProfile.position}` : ""}.
+            </p>
+            <p className="mt-1">
+              Published:{" "}
+              {blog?.createdAt
+                ? new Date(blog.createdAt).toLocaleDateString("en-GB", {
+                    day: "2-digit",
+                    month: "short",
+                    year: "numeric",
+                  })
+                : "N/A"}
+              {blog?.lastUpdated || blog?.updatedAt
+                ? ` · Updated: ${new Date(blog.lastUpdated || blog.updatedAt).toLocaleDateString("en-GB", {
+                    day: "2-digit",
+                    month: "short",
+                    year: "numeric",
+                  })}`
+                : ""}
+              {" · "}
+              <Link href="/editorial-policy" className="font-medium text-blue-600 hover:underline">
+                Editorial policy
+              </Link>
+            </p>
+          </section>
+
           {tableOfContents.length > 0 && (
             <section className="mb-8 rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
               <h2 className="text-xl font-semibold text-gray-900">Table of Contents</h2>
@@ -154,15 +185,32 @@ export default function BlogsClientUI({ blog }) {
           {/* About Author Section (EEAT) */}
           <div className="mt-16 p-8 border border-gray-200 rounded-2xl bg-white shadow-sm flex flex-col md:flex-row items-center gap-6">
             <div className="w-24 h-24 rounded-full bg-gray-100 flex items-center justify-center overflow-hidden shrink-0 border-2 border-gray-50">
-              <img src="/logo.webp" alt="Trygve Studio Team" className="w-full h-full object-contain p-2" />
+              <img
+                src={authorProfile?.image || "/logo.webp"}
+                alt={authorProfile?.imageAlt || authorProfile?.name || "Trygve Studio Editorial Team"}
+                className={`w-full h-full ${authorProfile?.image ? "object-cover" : "object-contain p-2"}`}
+              />
             </div>
             <div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">About the Author: {"Trygve Studio Team"}</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                About the Author: {authorProfile?.name || blog.author || "Trygve Studio Editorial Team"}
+              </h3>
               <p className="text-gray-600 leading-relaxed text-[15px]">
-                The editorial team at <span className="font-medium text-black">Trygve Studio</span> consists of experienced architects and interior designers dedicated to sharing insights on modern architecture, luxury interiors, and sustainable design practices. With a portfolio spanning global projects, we aim to inspire and educate through expert-backed content.
+                {authorProfile?.description ? (
+                  <>
+                    <span className="font-medium text-black">{authorProfile.name}</span>
+                    {" "}is {authorProfile.position?.toLowerCase() || "part of the Trygve Studio team"} and contributes to content related to architecture, interiors, project planning and execution guidance.
+                  </>
+                ) : (
+                  <>
+                    The editorial team at <span className="font-medium text-black">Trygve Studio</span> consists of experienced architects and interior designers dedicated to sharing insights on modern architecture, luxury interiors, and sustainable design practices.
+                  </>
+                )}
               </p>
               <div className="mt-4 flex gap-4">
-                <Link href="/about-us" className="text-sm font-medium text-blue-600 hover:underline">Learn more about our team →</Link>
+                <Link href={authorProfile?.slug ? `/team/${authorProfile.slug}` : "/about-us"} className="text-sm font-medium text-blue-600 hover:underline">
+                  {authorProfile?.slug ? "View author profile →" : "Learn more about our team →"}
+                </Link>
               </div>
             </div>
           </div>

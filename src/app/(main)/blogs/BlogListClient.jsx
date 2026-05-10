@@ -49,7 +49,7 @@ export default function Page() {
             readTime: blog.readTime || "5 mins read",
             title: blog.title,
             summary: blog.metaDescription,
-            authorName: blog.author || "Unknown",
+            authorName: blog.author || "Trygve Studio Editorial Team",
             authorImage: "/authors/default.jpg",
             timestamp: new Date(blog.createdAt).getTime(),
             views: blog.views || 0,

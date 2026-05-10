@@ -4,11 +4,12 @@ import { FiHome, FiChevronRight } from "react-icons/fi";
 import logo from "@/assets/logo.png";
 import heroBg from "@/assets/hero/herobg.jpg";
 import Script from "next/script";
+import TrustReviewedBlock from "@/components/TrustReviewedBlock";
 
 export const metadata = {
-    title: "Turnkey Construction Company in Lucknow | Design to Handover | Trygve Studio",
+    title: "Turnkey Construction Company in Lucknow | Design, Planning and Execution Support | Trygve Studio",
     description:
-        "Turnkey construction company in Lucknow for design, approvals, project planning and coordinated execution. Explore how Trygve Studio supports projects from concept to handover.",
+        "Turnkey construction company in Lucknow for design, approvals, budgeting and coordinated execution support. Explore how Trygve Studio helps from planning to handover.",
     keywords: [
         "turnkey construction company in lucknow",
         "turnkey construction lucknow",
@@ -22,9 +23,9 @@ export const metadata = {
         canonical: "https://trygvestudio.com/services/turnkey-construction-companies-lucknow",
     },
     openGraph: {
-        title: "Turnkey Construction Company in Lucknow | Design to Handover | Trygve Studio",
+        title: "Turnkey Construction Company in Lucknow | Design, Planning and Execution Support",
         description:
-            "Turnkey construction in Lucknow with architecture, approvals, budgeting, construction coordination and interior fit-out support.",
+            "A Lucknow-based turnkey construction team for architecture, approvals, budgeting and execution coordination.",
         url: "https://trygvestudio.com/services/turnkey-construction-companies-lucknow",
         images: [
             {
@@ -114,6 +115,15 @@ export default function TurnkeyConstructionLucknow() {
                     </div>
                 </div>
             </section>
+
+            <div className="max-w-7xl mx-auto px-5 md:px-6 -mt-8 relative z-20">
+                <TrustReviewedBlock
+                    reviewedBy="Ar. Harsh Vardhan"
+                    reviewerRole="Lead Architect, Trygve Studio"
+                    reviewedOn="May 2026"
+                    note="This page is reviewed against current turnkey delivery scope, planning assumptions and project coordination process used by the Trygve Studio team in Lucknow."
+                />
+            </div>
 
             {/* Firm Overview */}
             <section className="bg-white py-14 md:py-20 px-5 md:px-6">

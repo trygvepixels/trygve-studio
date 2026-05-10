@@ -15,7 +15,7 @@ export default function Page() {
         title: "Designing Luxury Homes in South Delhi: 2026 Trends & Expert Guide",
         urlSlug: "designing-luxury-homes-in-south-delhi-2026-trends",
         category: "Interior Trends",
-        author: "Trygve Studio Team",
+        author: "Ar. Faisal Saif",
         createdAt: new Date().toISOString(),
         featuredImage: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80",
         imageAlt: "Luxury living room design in South Delhi",

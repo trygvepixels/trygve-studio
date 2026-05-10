@@ -145,7 +145,7 @@ export async function POST(request) {
       faqs: data.faqs,
       schemaMarkup: data.schemaMarkup,
       category: data.category,
-      author: data.author || "Team Trygve Studio", // Updated default author
+      author: data.author || "Trygve Studio Editorial Team",
       // Image fields from external CMS
       image: data.featuredImage || data.imageUrl || data.image,
       featuredImage: data.featuredImage,
@@ -240,7 +240,7 @@ export async function PUT(request) {
         faqs: data.faqs,
         schemaMarkup: data.schemaMarkup,
         category: data.category,
-        author: data.author || "Team Trygve Studio ",
+        author: data.author || "Trygve Studio Editorial Team",
         image: data.featuredImage || data.imageUrl || data.image,
         featuredImage: data.featuredImage,
         imageUrl: data.imageUrl,

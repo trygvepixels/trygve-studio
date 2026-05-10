@@ -18,6 +18,7 @@ import Image from "next/image";
 import faisal from "@/assets/image.png";
 import TeamSection from "@/components/TeamSection";
 import LocationsList from "@/components/LocationsList";
+import TrustReviewedBlock from "@/components/TrustReviewedBlock";
 
 
 import Script from 'next/script';
@@ -35,6 +36,21 @@ export default function AboutUs() {
       para: "AR. Faisal Saif is the Founder and Director of Trygve Studio. With a passion for design and a keen eye for detail, he leads the team in delivering exceptional architectural and interior solutions. His vision drives the studio's commitment to excellence and innovation in every project.",
     },
 
+  ];
+
+  const trustPoints = [
+    {
+      title: "Project Review Process",
+      body: "Service pages, calculators and guidance content are reviewed against current project planning assumptions, local approval workflows and execution inputs used by the Trygve Studio team.",
+    },
+    {
+      title: "Local Office Access",
+      body: "Clients can coordinate through Lucknow office and meeting points across Kursi Road, Vikas Nagar and Gomti Nagar depending on the project stage.",
+    },
+    {
+      title: "Cross-Disciplinary Delivery",
+      body: "Architecture, interiors, visualisation and project planning are handled as one connected workflow so clients do not have to restart context between teams.",
+    },
   ];
 
   const specialties = [
@@ -260,18 +276,17 @@ export default function AboutUs() {
         <div className="relative max-w-7xl mx-auto px-5 pt-16 pb-10 md:pt-24 md:pb-16">
           <div className="flex items-center gap-2 text-sm tracking-wide text-neutral-700">
             <FiGlobe className="shrink-0" />
-            <span>Architectural & Interior Works — Delivered Worldwide</span>
+            <span>Lucknow-based practice for architecture, interiors and project planning</span>
           </div>
           <h1 className="mt-4 text-3xl leading-[1.05] text-[#234D7E ] md:text-6xl font-semibold tracking-tight">
             TRYGVE STUDIO PRIVATE LIMITED
           </h1>
           <p className="mt-5 max-w-3xl text-[17px] md:text-lg text-neutral-700">
-            We are a full-fledged Architectural & allied Engineering services
-            company based in Lucknow, India — delivering projects across every
-            country, state and city worldwide. From concept to completion, our
-            experienced team of Architects, Engineers and Visualisers craft
-            timeless spaces for Residential, Commercial, Retail, Hospitality and
-            more.
+            Trygve Studio is a Lucknow-based architecture and interior design practice
+            supporting residential, commercial and turnkey projects with design,
+            planning, visualisation and coordination guidance. Our work combines local
+            project understanding with structured delivery across homes, offices,
+            hospitality and branded commercial spaces.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
@@ -401,6 +416,32 @@ export default function AboutUs() {
               faisal.saif@trygvestudio.com
             </a>
           </p>
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-5 pb-6">
+        <TrustReviewedBlock
+          reviewedBy="Ar. Harsh Vardhan"
+          reviewerRole="Lead Architect, Trygve Studio"
+          reviewedOn="May 2026"
+          note="This page summarises our office presence, review standards and contributor model for public-facing service and advisory content."
+        />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-5 pb-6">
+        <div className="rounded-2xl border border-black/10 bg-white p-6 md:p-8">
+          <div className="flex items-center gap-2">
+            <FiCheckCircle />
+            <h2 className="text-2xl font-semibold">Why Clients Trust Our Team</h2>
+          </div>
+          <div className="mt-5 grid gap-4 md:grid-cols-3">
+            {trustPoints.map((item) => (
+              <div key={item.title} className="rounded-xl border border-black/10 bg-[#F4F1EC] p-5">
+                <h3 className="text-lg font-semibold text-neutral-900">{item.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-neutral-700">{item.body}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 

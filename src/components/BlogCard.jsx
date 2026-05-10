@@ -40,14 +40,10 @@ const BlogCard = ({
         <h3 className="text-lg font-medium  mb-1">{toTitleCase(title)}</h3>
         <p className="text-sm text-gray-600 line-clamp-2">{summary}</p>
         <div className="flex items-center gap-2 mt-4">
-          {/* <img
-            src={authorImage}
-            alt={authorName}
-            width={28}
-            height={28}
-            className="rounded-full object-cover"
-          /> */}
-          <p className="text-sm font-medium text-gray-800">Team Trygve Studio</p>
+          <p className="text-xs uppercase tracking-wide text-gray-500">By</p>
+          <p className="text-sm font-medium text-gray-800">
+            {authorName || "Trygve Studio Editorial Team"}
+          </p>
         </div>
       </div>
     </div>

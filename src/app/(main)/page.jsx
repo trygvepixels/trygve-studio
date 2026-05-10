@@ -1,17 +1,18 @@
 import HomeClient from "./HomeClient";
 import Script from "next/script";
+import TrustReviewedBlock from "@/components/TrustReviewedBlock";
 
 export const metadata = {
-    title: "Architect Office Near Me in Lucknow | Residential, Interior & Turnkey Design | Trygve Studio",
+    title: "Architect Office Near Me in Lucknow | Local Design, Planning & Turnkey Support | Trygve Studio",
     description:
-        "Looking for an architect office near me in Lucknow? Trygve Studio supports homes, interiors and turnkey projects with local consultation, planning, approvals and execution guidance.",
+        "Looking for an architect office near me in Lucknow? Trygve Studio offers local consultation for homes, interiors and turnkey projects with design, planning and approval guidance.",
     alternates: {
         canonical: "https://trygvestudio.com/",
     },
     openGraph: {
-        title: "Architect Office Near Me in Lucknow | Residential, Interior & Turnkey Design",
+        title: "Architect Office Near Me in Lucknow | Local Design and Planning Support",
         description:
-            "A Lucknow-based architect office for homes, commercial spaces, interiors and turnkey project delivery across key local growth corridors.",
+            "A Lucknow-based architect office for homes, interiors, commercial spaces and project planning support.",
         url: "https://trygvestudio.com/",
     },
 };
@@ -77,6 +78,7 @@ export default function HomePage() {
             <Script id="home-faq-schema" type="application/ld+json">
                 {JSON.stringify(homeFaqSchema)}
             </Script>
+            
             <HomeClient />
         </>
     );

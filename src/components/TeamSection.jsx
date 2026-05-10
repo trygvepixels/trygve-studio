@@ -23,9 +23,12 @@ export default function TeamSection() {
   return (
     <section className="max-w-7xl mx-auto px-5 pb-16">
       <div className="bg-white p-8 md:p-12 rounded-[2.5rem] shadow-sm border border-zinc-100">
-        <h2 className="text-3xl font-bold flex items-center gap-3 mb-16 text-zinc-900">
+        <h2 className="text-3xl font-bold flex items-center gap-3 mb-4 text-zinc-900">
           <AiOutlineTeam className="text-blue-600" /> Our Team
         </h2>
+        <p className="max-w-3xl text-sm md:text-base leading-relaxed text-zinc-600 mb-12">
+          Meet the people who contribute to architecture, interiors, planning guidance and editorial reviews across the Trygve Studio website.
+        </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
           {teams.map((member) => (
@@ -60,6 +63,29 @@ export default function TeamSection() {
                   </span>
                 ))}
               </p>
+
+              {member.description ? (
+                <p className="mt-4 max-w-xs text-sm leading-relaxed text-zinc-600 line-clamp-4">
+                  {member.description}
+                </p>
+              ) : null}
+
+              {member.achievements?.length ? (
+                <div className="mt-4 flex flex-wrap justify-center gap-2">
+                  {member.achievements.slice(0, 3).map((achievement, index) => (
+                    <span
+                      key={`${member._id}-achievement-${index}`}
+                      className="rounded-full bg-zinc-50 border border-zinc-200 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-zinc-600"
+                    >
+                      {achievement.text}
+                    </span>
+                  ))}
+                </div>
+              ) : null}
+
+              <span className="mt-5 text-sm font-semibold text-[#234D7E]">
+                View full profile →
+              </span>
             </Link>
           ))}
         </div>
