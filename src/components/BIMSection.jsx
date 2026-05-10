@@ -150,12 +150,7 @@ export default function BIMSection() {
             Explore BIM Outsourcing
             <FiArrowRight className="h-4 w-4" />
           </Link>
-          <Link
-            href="/contact-us"
-            className="inline-flex items-center justify-center gap-2 rounded-xl border border-gray-200 px-6 py-3 text-sm font-medium hover:bg-black/5 transition-all"
-          >
-            Request Sample Models
-          </Link>
+        
           <p className="text-xs text-gray-400 sm:ml-2">For architecture firms in US, UK &amp; UAE</p>
         </div>
 
