@@ -69,7 +69,7 @@ export default async function sitemap() {
       lastModified: staticLastModified,
       changeFrequency: "monthly",
       priority: 0.85,
-    },,
+    },
     // Static city-specific blog posts (file-based, not in DB)
     {
       url: `${baseUrl}/blogs/designing-luxury-homes-in-south-delhi-2026-trends`,
